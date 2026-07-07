@@ -1,0 +1,1998 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2685.6">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="es"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1">&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1">&lt;meta name="viewport" content="width=device-width,<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">  </span>initial-scale=1.0, maximum-scale=1.0"&gt;</p>
+<p class="p1">&lt;title&gt;PredioApp — Demo&lt;/title&gt;</p>
+<p class="p1">&lt;style&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">/* ══════════════════════════════════════</p>
+<p class="p1"><span class="Apple-converted-space">   </span>VARIABLES Y RESET</p>
+<p class="p1">══════════════════════════════════════ */</p>
+<p class="p1">:root {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>--verde-primary:<span class="Apple-converted-space">  </span>#2D6A4F;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>--verde-light:<span class="Apple-converted-space">    </span>#52B788;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>--verde-pale: <span class="Apple-converted-space">    </span>#D8F3DC;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>--amarillo: <span class="Apple-converted-space">      </span>#FFF3B0;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>--amarillo-input: #FFFDE7;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>--azul-calc:<span class="Apple-converted-space">      </span>#E3F2FD;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>--verde-total:<span class="Apple-converted-space">    </span>#E8F5E9;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>--naranja:<span class="Apple-converted-space">        </span>#FF6B35;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>--rojo: <span class="Apple-converted-space">          </span>#E63946;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>--gris-texto: <span class="Apple-converted-space">    </span>#2B2D42;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>--gris-borde: <span class="Apple-converted-space">    </span>#DEE2E6;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>--gris-claro: <span class="Apple-converted-space">    </span>#F8F9FA;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>--blanco: <span class="Apple-converted-space">        </span>#FFFFFF;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>--sombra: <span class="Apple-converted-space">        </span>0 2px 12px rgba(0,0,0,0.10);</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">* {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>margin: 0; padding: 0;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>box-sizing: border-box;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>-webkit-tap-highlight-color: transparent;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">body {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-family: -apple-system, BlinkMacSystemFont,</p>
+<p class="p1"><span class="Apple-converted-space">    </span>'Segoe UI', sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background: #1a1a2e;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>justify-content: center;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>align-items: flex-start;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>min-height: 100vh;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>padding: 20px 0;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">/* ══════════════════════════════════════</p>
+<p class="p1"><span class="Apple-converted-space">   </span>CONTENEDOR TELÉFONO</p>
+<p class="p1">══════════════════════════════════════ */</p>
+<p class="p1">.phone-shell {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>width: 390px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>min-height: 844px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background: var(--blanco);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border-radius: 44px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>overflow: hidden;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>box-shadow: 0 30px 80px rgba(0,0,0,0.5);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>position: relative;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">/* Notch */</p>
+<p class="p1">.notch {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background: #000;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>height: 44px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>justify-content: space-between;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>padding: 0 24px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>color: #fff;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-size: 13px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-weight: 600;</p>
+<p class="p1">}</p>
+<p class="p1">.notch-center {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>width: 120px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>height: 28px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background: #000;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border-radius: 0 0 18px 18px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>position: absolute;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>left: 50%;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>transform: translateX(-50%);</p>
+<p class="p1">}</p>
+<p class="p1">.notch-signal { font-size: 11px; }</p>
+<p class="p1">.notch-battery { font-size: 12px; }</p>
+<p class="p2"><br></p>
+<p class="p1">/* Pantallas */</p>
+<p class="p1">.screen {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>display: none;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>min-height: 800px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>flex-direction: column;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background: var(--blanco);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>overflow-y: auto;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>max-height: 800px;</p>
+<p class="p1">}</p>
+<p class="p1">.screen.active { display: flex; }</p>
+<p class="p2"><br></p>
+<p class="p1">/* ══════════════════════════════════════</p>
+<p class="p1"><span class="Apple-converted-space">   </span>COMPONENTES COMUNES</p>
+<p class="p1">══════════════════════════════════════ */</p>
+<p class="p2"><br></p>
+<p class="p1">/* Header */</p>
+<p class="p1">.header {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background: var(--verde-primary);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>color: white;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>padding: 16px 20px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>gap: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>position: sticky;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>top: 0;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>z-index: 10;</p>
+<p class="p1">}</p>
+<p class="p1">.header-back {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-size: 22px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>padding: 4px;</p>
+<p class="p1">}</p>
+<p class="p1">.header h2 {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-size: 17px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-weight: 700;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>flex: 1;</p>
+<p class="p1">}</p>
+<p class="p1">.header-icon {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-size: 20px;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">/* Tabs */</p>
+<p class="p1">.tabs {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background: var(--gris-claro);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border-bottom: 2px solid var(--gris-borde);</p>
+<p class="p1">}</p>
+<p class="p1">.tab {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>flex: 1;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>padding: 12px 8px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-size: 13px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-weight: 600;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>color: #888;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border-bottom: 3px solid transparent;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>transition: all 0.2s;</p>
+<p class="p1">}</p>
+<p class="p1">.tab.active {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>color: var(--verde-primary);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border-bottom-color: var(--verde-primary);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background: white;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">/* Sección */</p>
+<p class="p1">.section {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>padding: 16px 20px;</p>
+<p class="p1">}</p>
+<p class="p1">.section-title {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-size: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-weight: 700;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>color: var(--verde-primary);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>text-transform: uppercase;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>letter-spacing: 0.8px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>margin-bottom: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>padding-bottom: 6px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border-bottom: 2px solid var(--verde-pale);</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">/* Campo de formulario */</p>
+<p class="p1">.field {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>margin-bottom: 14px;</p>
+<p class="p1">}</p>
+<p class="p1">.field label {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>display: block;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-size: 13px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-weight: 600;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>color: var(--gris-texto);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>margin-bottom: 5px;</p>
+<p class="p1">}</p>
+<p class="p1">.field-hint {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-size: 11px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>color: #888;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>margin-bottom: 4px;</p>
+<p class="p1">}</p>
+<p class="p1">.field input,</p>
+<p class="p1">.field select,</p>
+<p class="p1">.field textarea {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>padding: 12px 14px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background: var(--amarillo-input);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border: 2px solid #E8D44D;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border-radius: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-size: 15px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>color: var(--gris-texto);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>outline: none;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>transition: border-color 0.2s;</p>
+<p class="p1">}</p>
+<p class="p1">.field input:focus,</p>
+<p class="p1">.field select:focus {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border-color: var(--verde-primary);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background: #FFFFF0;</p>
+<p class="p1">}</p>
+<p class="p1">.field input[type="number"] {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-size: 18px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-weight: 700;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">/* Campo calculado (azul) */</p>
+<p class="p1">.field-calc input,</p>
+<p class="p1">.field-calc .calc-value {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background: var(--azul-calc);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border-color: #90CAF9;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>color: #1565C0;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-weight: 700;</p>
+<p class="p1">}</p>
+<p class="p1">.calc-value {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>padding: 12px 14px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background: var(--azul-calc);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border: 2px solid #90CAF9;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border-radius: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-size: 18px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-weight: 700;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>color: #1565C0;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">/* Campo resultado (verde) */</p>
+<p class="p1">.result-box {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background: var(--verde-total);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border: 2px solid var(--verde-light);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border-radius: 14px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>padding: 14px 16px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>margin: 12px 0;</p>
+<p class="p1">}</p>
+<p class="p1">.result-box .result-label {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-size: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-weight: 700;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>color: var(--verde-primary);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>text-transform: uppercase;</p>
+<p class="p1">}</p>
+<p class="p1">.result-box .result-value {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-size: 22px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-weight: 800;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>color: var(--verde-primary);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>margin-top: 2px;</p>
+<p class="p1">}</p>
+<p class="p1">.result-box .result-sub {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-size: 13px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>color: #52B788;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>margin-top: 2px;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">/* Botones */</p>
+<p class="p1">.btn {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>padding: 16px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border: none;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border-radius: 16px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-size: 16px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-weight: 700;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>transition: all 0.2s;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>justify-content: center;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>gap: 8px;</p>
+<p class="p1">}</p>
+<p class="p1">.btn-primary {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background: var(--verde-primary);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>color: white;</p>
+<p class="p1">}</p>
+<p class="p1">.btn-primary:active {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background: #1B4332;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>transform: scale(0.98);</p>
+<p class="p1">}</p>
+<p class="p1">.btn-secondary {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background: var(--verde-pale);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>color: var(--verde-primary);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border: 2px solid var(--verde-light);</p>
+<p class="p1">}</p>
+<p class="p1">.btn-outline {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background: transparent;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>color: var(--verde-primary);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border: 2px solid var(--verde-primary);</p>
+<p class="p1">}</p>
+<p class="p1">.btn-danger {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background: #FFEBEE;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>color: var(--rojo);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border: 2px solid #FFCDD2;</p>
+<p class="p1">}</p>
+<p class="p1">.btn-sm {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>padding: 10px 16px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-size: 14px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border-radius: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>width: auto;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">/* Alerta/Info */</p>
+<p class="p1">.alert {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border-radius: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>padding: 12px 14px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>margin: 8px 0;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>gap: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>align-items: flex-start;</p>
+<p class="p1">}</p>
+<p class="p1">.alert-warning {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background: #FFF8E1;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border: 1px solid #FFE082;</p>
+<p class="p1">}</p>
+<p class="p1">.alert-info {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background: #E3F2FD;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border: 1px solid #90CAF9;</p>
+<p class="p1">}</p>
+<p class="p1">.alert-danger {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background: #FFEBEE;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border: 1px solid #FFCDD2;</p>
+<p class="p1">}</p>
+<p class="p1">.alert-success {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background: var(--verde-pale);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border: 1px solid var(--verde-light);</p>
+<p class="p1">}</p>
+<p class="p1">.alert-icon { font-size: 20px; }</p>
+<p class="p1">.alert-text { font-size: 13px; line-height: 1.5; }</p>
+<p class="p1">.alert-text strong { display: block; margin-bottom: 2px; }</p>
+<p class="p2"><br></p>
+<p class="p1">/* Card de rubro */</p>
+<p class="p1">.rubro-card {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background: white;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border: 2px solid var(--gris-borde);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border-radius: 16px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>padding: 16px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>margin-bottom: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>transition: all 0.2s;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>gap: 14px;</p>
+<p class="p1">}</p>
+<p class="p1">.rubro-card:active {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border-color: var(--verde-light);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background: var(--verde-pale);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>transform: scale(0.99);</p>
+<p class="p1">}</p>
+<p class="p1">.rubro-card.has-data {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border-color: var(--verde-light);</p>
+<p class="p1">}</p>
+<p class="p1">.rubro-emoji {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-size: 32px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>width: 48px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>text-align: center;</p>
+<p class="p1">}</p>
+<p class="p1">.rubro-info { flex: 1; }</p>
+<p class="p1">.rubro-name {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-size: 16px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-weight: 700;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>color: var(--gris-texto);</p>
+<p class="p1">}</p>
+<p class="p1">.rubro-status {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-size: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>color: #888;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>margin-top: 3px;</p>
+<p class="p1">}</p>
+<p class="p1">.progress-bar {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>height: 6px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background: var(--gris-borde);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border-radius: 3px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>margin-top: 6px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>overflow: hidden;</p>
+<p class="p1">}</p>
+<p class="p1">.progress-fill {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>height: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background: var(--verde-light);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border-radius: 3px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>transition: width 0.3s;</p>
+<p class="p1">}</p>
+<p class="p1">.rubro-arrow {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-size: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>color: #ccc;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">/* Checkbox personalizado */</p>
+<p class="p1">.checkbox-item {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>gap: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>padding: 14px 16px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background: var(--gris-claro);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border-radius: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>margin-bottom: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border: 2px solid transparent;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>transition: all 0.2s;</p>
+<p class="p1">}</p>
+<p class="p1">.checkbox-item.selected {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background: var(--verde-pale);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border-color: var(--verde-light);</p>
+<p class="p1">}</p>
+<p class="p1">.checkbox-box {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>width: 24px; height: 24px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border-radius: 6px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border: 2px solid #ccc;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>justify-content: center;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-size: 14px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background: white;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>flex-shrink: 0;</p>
+<p class="p1">}</p>
+<p class="p1">.checkbox-item.selected .checkbox-box {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background: var(--verde-primary);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border-color: var(--verde-primary);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>color: white;</p>
+<p class="p1">}</p>
+<p class="p1">.checkbox-label {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-size: 15px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-weight: 600;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>flex: 1;</p>
+<p class="p1">}</p>
+<p class="p1">.checkbox-emoji { font-size: 22px; }</p>
+<p class="p2"><br></p>
+<p class="p1">/* Selector de mes */</p>
+<p class="p1">.mes-selector {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>gap: 6px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>overflow-x: auto;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>padding: 4px 0 10px 0;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>scrollbar-width: none;</p>
+<p class="p1">}</p>
+<p class="p1">.mes-selector::-webkit-scrollbar { display: none; }</p>
+<p class="p1">.mes-btn {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>flex-shrink: 0;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>width: 44px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>height: 44px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border-radius: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border: 2px solid var(--gris-borde);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background: white;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-size: 11px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-weight: 700;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>color: #888;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>flex-direction: column;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>justify-content: center;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>gap: 2px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>transition: all 0.2s;</p>
+<p class="p1">}</p>
+<p class="p1">.mes-btn.active {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background: var(--verde-primary);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border-color: var(--verde-primary);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>color: white;</p>
+<p class="p1">}</p>
+<p class="p1">.mes-btn.has-data::after {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>content: '●';</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-size: 6px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>color: var(--verde-light);</p>
+<p class="p1">}</p>
+<p class="p1">.mes-btn.active.has-data::after {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>color: #90EE90;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">/* Foto upload */</p>
+<p class="p1">.foto-upload {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border: 2px dashed var(--gris-borde);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border-radius: 14px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>padding: 16px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>gap: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background: var(--gris-claro);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>transition: all 0.2s;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>margin-top: 6px;</p>
+<p class="p1">}</p>
+<p class="p1">.foto-upload:active {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border-color: var(--verde-primary);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background: var(--verde-pale);</p>
+<p class="p1">}</p>
+<p class="p1">.foto-upload-icon { font-size: 28px; }</p>
+<p class="p1">.foto-upload-text {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-size: 13px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>color: #666;</p>
+<p class="p1">}</p>
+<p class="p1">.foto-upload-text strong {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>display: block;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>color: var(--verde-primary);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-size: 14px;</p>
+<p class="p1">}</p>
+<p class="p1">.foto-thumb {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>width: 64px; height: 64px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border-radius: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>object-fit: cover;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background: #ddd;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>justify-content: center;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-size: 24px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>flex-shrink: 0;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">/* Bottom nav */</p>
+<p class="p1">.bottom-nav {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background: white;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border-top: 1px solid var(--gris-borde);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>padding: 8px 0 12px 0;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>position: sticky;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>bottom: 0;</p>
+<p class="p1">}</p>
+<p class="p1">.nav-item {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>flex: 1;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>flex-direction: column;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>gap: 3px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>padding: 4px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>color: #aaa;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>transition: color 0.2s;</p>
+<p class="p1">}</p>
+<p class="p1">.nav-item.active { color: var(--verde-primary); }</p>
+<p class="p1">.nav-icon { font-size: 22px; }</p>
+<p class="p1">.nav-label { font-size: 10px; font-weight: 600; }</p>
+<p class="p2"><br></p>
+<p class="p1">/* Toast */</p>
+<p class="p1">.toast {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>position: fixed;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>bottom: 100px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>left: 50%;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>transform: translateX(-50%);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background: #333;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>color: white;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>padding: 12px 24px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border-radius: 24px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-size: 14px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-weight: 600;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>opacity: 0;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>transition: opacity 0.3s;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>z-index: 999;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>white-space: nowrap;</p>
+<p class="p1">}</p>
+<p class="p1">.toast.show { opacity: 1; }</p>
+<p class="p2"><br></p>
+<p class="p1">/* Tabla UA */</p>
+<p class="p1">.ua-table {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border-collapse: collapse;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-size: 13px;</p>
+<p class="p1">}</p>
+<p class="p1">.ua-table th {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background: var(--verde-primary);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>color: white;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>padding: 10px 8px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-size: 12px;</p>
+<p class="p1">}</p>
+<p class="p1">.ua-table th:first-child { text-align: left; }</p>
+<p class="p1">.ua-table td {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>padding: 10px 8px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border-bottom: 1px solid var(--gris-borde);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>text-align: center;</p>
+<p class="p1">}</p>
+<p class="p1">.ua-table td:first-child { text-align: left; font-weight: 600; }</p>
+<p class="p1">.ua-table input {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>width: 60px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>padding: 6px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border: 1px solid #E8D44D;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border-radius: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background: var(--amarillo-input);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-size: 13px;</p>
+<p class="p1">}</p>
+<p class="p1">.ua-total {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background: var(--verde-total);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-weight: 800;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>color: var(--verde-primary);</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">/* KPI card */</p>
+<p class="p1">.kpi-grid {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>display: grid;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>grid-template-columns: 1fr 1fr;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>gap: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>margin: 4px 0;</p>
+<p class="p1">}</p>
+<p class="p1">.kpi-card {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background: white;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border: 1px solid var(--gris-borde);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border-radius: 14px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>padding: 14px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>text-align: center;</p>
+<p class="p1">}</p>
+<p class="p1">.kpi-value {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-size: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-weight: 800;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>color: var(--gris-texto);</p>
+<p class="p1">}</p>
+<p class="p1">.kpi-label {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-size: 11px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>color: #888;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>margin-top: 3px;</p>
+<p class="p1">}</p>
+<p class="p1">.kpi-card.positive .kpi-value { color: var(--verde-primary); }</p>
+<p class="p1">.kpi-card.warning<span class="Apple-converted-space">  </span>.kpi-value { color: #F57C00; }</p>
+<p class="p1">.kpi-card.negative .kpi-value { color: var(--rojo); }</p>
+<p class="p2"><br></p>
+<p class="p1">/* Badge */</p>
+<p class="p1">.badge {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>display: inline-block;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>padding: 3px 10px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border-radius: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-size: 11px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-weight: 700;</p>
+<p class="p1">}</p>
+<p class="p1">.badge-green { background: var(--verde-pale); color: var(--verde-primary); }</p>
+<p class="p1">.badge-yellow { background: #FFF8E1; color: #F57C00; }</p>
+<p class="p1">.badge-red { background: #FFEBEE; color: var(--rojo); }</p>
+<p class="p1">.badge-gray { background: var(--gris-claro); color: #888; }</p>
+<p class="p2"><br></p>
+<p class="p1">/* Divider */</p>
+<p class="p1">.divider {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>height: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background: var(--gris-claro);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>margin: 0 -20px;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">/* Fab button */</p>
+<p class="p1">.fab {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>position: fixed;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>bottom: 80px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>right: calc(50% - 195px + 16px);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>width: 56px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>height: 56px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background: var(--verde-primary);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border-radius: 28px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>justify-content: center;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-size: 24px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>color: white;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>box-shadow: 0 4px 16px rgba(45,106,79,0.4);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border: none;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>z-index: 100;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;!-- ════════════════════════════════════════</p>
+<p class="p1"><span class="Apple-converted-space">     </span>SHELL DEL TELÉFONO</p>
+<p class="p1">════════════════════════════════════════ --&gt;</p>
+<p class="p1">&lt;div class="phone-shell"&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- Barra de estado --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="notch"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;span class="notch-signal"&gt;📶 9:41&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="notch-center"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;span class="notch-battery"&gt;87% 🔋&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- ══════════════════════════════════</p>
+<p class="p1"><span class="Apple-converted-space">       </span>PANTALLA 1: BIENVENIDA</p>
+<p class="p1"><span class="Apple-converted-space">  </span>══════════════════════════════════ --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="screen active" id="s-splash"</p>
+<p class="p1"><span class="Apple-converted-space">    </span>style="background: linear-gradient(160deg, #1B4332 0%, #2D6A4F 60%, #52B788 100%);</p>
+<p class="p1"><span class="Apple-converted-space">           </span>align-items: center; justify-content: center; gap: 24px; padding: 40px 30px;"&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div style="text-align:center;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div style="font-size:72px; margin-bottom:8px;"&gt;🌿&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div style="color:white; font-size:32px; font-weight:900; letter-spacing:-1px;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>PredioApp</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div style="color:#B7E4C7; font-size:15px; margin-top:6px;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>Registro simple para tu campo</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div style="width:100%; margin-top:16px; display:flex; flex-direction:column; gap:12px;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;button class="btn" onclick="goTo('s-perfil')"</p>
+<p class="p1"><span class="Apple-converted-space">        </span>style="background:white; color:#1B4332; font-size:17px; padding:18px;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>🟢 &amp;nbsp; Iniciar sesión</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;button class="btn btn-outline"</p>
+<p class="p1"><span class="Apple-converted-space">        </span>style="border-color:rgba(255,255,255,0.6); color:white; font-size:17px; padding:18px;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>➕ &amp;nbsp; Crear cuenta</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div style="color:#B7E4C7; font-size:13px; text-align:center; margin-top:8px;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>¿Tiene código de programa?&lt;br&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;span style="text-decoration:underline; cursor:pointer;"&gt;Ingresar código →&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div style="position:absolute; bottom:24px; color:#95D5B2; font-size:11px;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>v1.0 · Demo para testeo</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- ══════════════════════════════════</p>
+<p class="p1"><span class="Apple-converted-space">       </span>PANTALLA 2: PERFIL PRODUCTOR</p>
+<p class="p1"><span class="Apple-converted-space">  </span>══════════════════════════════════ --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="screen" id="s-perfil"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="header"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;span class="header-back" onclick="goTo('s-splash')"&gt;←&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;h2&gt;Datos del Productor&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;span class="header-icon"&gt;👤&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div style="overflow-y:auto; padding-bottom:100px;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;!-- Foto del predio --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div style="background:#F0FFF4; padding:20px; text-align:center;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div style="width:120px; height:120px; border-radius:20px;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>background:#C7F9CC; margin:0 auto 12px;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>display:flex; align-items:center; justify-content:center;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>font-size:48px; border:3px dashed #52B788; cursor:pointer;"</p>
+<p class="p1"><span class="Apple-converted-space">          </span>onclick="showToast('📷 Abrir cámara')"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>🏡</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div style="font-size:13px; color:#52B788; font-weight:600;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>Toca para agregar foto del predio</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="section"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="section-title"&gt;Información personal&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="field"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;label&gt;👤 Nombre completo&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;input type="text" placeholder="Ej: Juan Pérez González"</p>
+<p class="p1"><span class="Apple-converted-space">            </span>value="María Gonzalez Rojas"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="field"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;label&gt;📱 Teléfono&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;input type="tel" placeholder="+56 9 1234 5678"</p>
+<p class="p1"><span class="Apple-converted-space">            </span>value="+56 9 8234 5678"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="field"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;label&gt;🏡 Nombre predio&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;input type="text" placeholder="Los Álamos"</p>
+<p class="p1"><span class="Apple-converted-space">              </span>value="El Canelo"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="field"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;label&gt;📅 Año&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;input type="number" value="2025"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="field"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;label&gt;📍 Región&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;select&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;option&gt;Los Ríos&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;option&gt;Los Lagos&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;option&gt;La Araucanía&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;option&gt;Biobío&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;option&gt;Maule&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;option&gt;O'Higgins&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/select&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="field"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;label&gt;📐 Tamaño del predio (ha)&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;input type="number" placeholder="0" value="85"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="alert alert-info"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="alert-icon"&gt;💡&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="alert-text"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;strong&gt;¿Por qué pedimos estos datos?&lt;/strong&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>Para calcular la carga animal y el gross profit por hectárea de su predio.</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div style="margin-top:20px;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;button class="btn btn-primary" onclick="goTo('s-rubros')"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>Siguiente: Mis Rubros →</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- ══════════════════════════════════</p>
+<p class="p1"><span class="Apple-converted-space">       </span>PANTALLA 3: SELECCIÓN DE RUBROS</p>
+<p class="p1"><span class="Apple-converted-space">  </span>══════════════════════════════════ --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="screen" id="s-rubros"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="header"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;span class="header-back" onclick="goTo('s-perfil')"&gt;←&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;h2&gt;Mis Rubros Productivos&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div style="overflow-y:auto; padding-bottom:120px;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div style="padding:16px 20px 8px; background:#F8F9FA;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div style="font-size:14px; color:#555; line-height:1.5;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>Seleccione &lt;strong&gt;todos los rubros&lt;/strong&gt; que tiene en su predio</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="section"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="section-title"&gt;🐄 Ganadería&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="checkbox-item selected" onclick="toggleCheck(this)"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="checkbox-emoji"&gt;🐄&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="checkbox-label"&gt;Ganadería Bovina&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="checkbox-box"&gt;✓&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="checkbox-item" onclick="toggleCheck(this)"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="checkbox-emoji"&gt;🐑&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="checkbox-label"&gt;Ganadería Ovina&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="checkbox-box"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="checkbox-item" onclick="toggleCheck(this)"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="checkbox-emoji"&gt;🐖&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="checkbox-label"&gt;Ganadería Porcina&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="checkbox-box"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="checkbox-item" onclick="toggleCheck(this)"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="checkbox-emoji"&gt;🐐&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="checkbox-label"&gt;Ganadería Caprina&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="checkbox-box"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="checkbox-item" onclick="toggleCheck(this)"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="checkbox-emoji"&gt;🐔&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="checkbox-label"&gt;Avicultura - Huevos&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="checkbox-box"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="divider"&gt;&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="section"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="section-title"&gt;🌾 Agricultura&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="checkbox-item selected" onclick="toggleCheck(this)"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="checkbox-emoji"&gt;🌾&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="checkbox-label"&gt;Forraje - Agrícola&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="checkbox-box"&gt;✓&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="checkbox-item" onclick="toggleCheck(this)"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="checkbox-emoji"&gt;🌽&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="checkbox-label"&gt;Cultivos Anuales&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="checkbox-box"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="checkbox-item" onclick="toggleCheck(this)"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="checkbox-emoji"&gt;🥬&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="checkbox-label"&gt;Hortalizas - Huerta&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="checkbox-box"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="checkbox-item" onclick="toggleCheck(this)"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="checkbox-emoji"&gt;🍎&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="checkbox-label"&gt;Frutales&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="checkbox-box"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="divider"&gt;&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="section"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="section-title"&gt;🏕️ Otros&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="checkbox-item" onclick="toggleCheck(this)"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="checkbox-emoji"&gt;🏕️&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="checkbox-label"&gt;Turismo&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="checkbox-box"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="checkbox-item" onclick="toggleCheck(this)"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="checkbox-emoji"&gt;🍯&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="checkbox-label"&gt;Apicultura&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="checkbox-box"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="checkbox-item" onclick="toggleCheck(this)"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="checkbox-emoji"&gt;🧀&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="checkbox-label"&gt;Agroindustria Quesos&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="checkbox-box"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="checkbox-item" onclick="toggleCheck(this)"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="checkbox-emoji"&gt;🥛&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="checkbox-label"&gt;Agroindustria Lácteos&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="checkbox-box"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="checkbox-item" onclick="toggleCheck(this)"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="checkbox-emoji"&gt;🪱&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="checkbox-label"&gt;Lombricultura&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="checkbox-box"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Botón fijo abajo --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div style="position:sticky; bottom:0; background:white;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding:16px 20px; border-top:1px solid #eee;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;button class="btn btn-primary" onclick="goTo('s-home')"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>✅ &amp;nbsp; Confirmar rubros seleccionados (2)</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- ══════════════════════════════════</p>
+<p class="p1"><span class="Apple-converted-space">       </span>PANTALLA 4: HOME / DASHBOARD</p>
+<p class="p1"><span class="Apple-converted-space">  </span>══════════════════════════════════ --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="screen" id="s-home"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div style="background: var(--verde-primary); padding:20px 20px 24px;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div style="color:#B7E4C7; font-size:12px; font-weight:600;"&gt;PREDIO&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div style="color:white; font-size:20px; font-weight:800;"&gt;El Canelo&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div style="display:flex; gap:12px; font-size:22px;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span&gt;🔔&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span onclick="goTo('s-perfil')"&gt;👤&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;!-- Resumen financiero --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div style="background:rgba(255,255,255,0.15); border-radius:18px; padding:16px;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div style="color:#B7E4C7; font-size:11px; font-weight:700; margin-bottom:10px;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>RESUMEN 2025 · TODOS LOS RUBROS</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div style="text-align:center;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div style="color:white; font-size:17px; font-weight:800;"&gt;$12,4M&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div style="color:#B7E4C7; font-size:10px;"&gt;Ingresos&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div style="text-align:center; border-left:1px solid rgba(255,255,255,0.2); border-right:1px solid rgba(255,255,255,0.2);"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div style="color:white; font-size:17px; font-weight:800;"&gt;$8,1M&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div style="color:#B7E4C7; font-size:10px;"&gt;Costos&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div style="text-align:center;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div style="color:#B7E4C7; font-size:17px; font-weight:800;"&gt;34,7%&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div style="color:#B7E4C7; font-size:10px;"&gt;GP Margin&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div style="overflow-y:auto; padding-bottom:80px;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="section"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="section-title"&gt;Mis Rubros&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="rubro-card has-data" onclick="goTo('s-bovina-tabs')"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="rubro-emoji"&gt;🐄&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="rubro-info"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="rubro-name"&gt;Ganadería Bovina&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="rubro-status"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;span class="badge badge-green"&gt;Con datos&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&amp;nbsp;8 de 12 meses</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="progress-bar"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="progress-fill" style="width:67%"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="rubro-arrow"&gt;›&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="rubro-card" onclick="goTo('s-bovina-tabs')"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="rubro-emoji"&gt;🌾&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="rubro-info"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="rubro-name"&gt;Forraje - Agrícola&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="rubro-status"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;span class="badge badge-gray"&gt;Sin datos&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&amp;nbsp;0 de 12 meses</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="progress-bar"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="progress-fill" style="width:0%"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="rubro-arrow"&gt;›&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button class="btn btn-secondary" onclick="goTo('s-rubros')"</p>
+<p class="p1"><span class="Apple-converted-space">          </span>style="margin-top:4px;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>➕ &amp;nbsp; Agregar rubro</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="divider"&gt;&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;!-- Alertas --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="section"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="section-title"&gt;⚠️ Alertas&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="alert alert-warning"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="alert-icon"&gt;⚠️&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="alert-text"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;strong&gt;Forraje sin datos&lt;/strong&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>No ha registrado ningún mes en Forraje-Agrícola.</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="alert alert-danger"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="alert-icon"&gt;🔴&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="alert-text"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;strong&gt;Forraje conservado = $0&lt;/strong&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>Bovina - Junio: este campo es clave para análisis Weak Link.</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="alert alert-success"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="alert-icon"&gt;✅&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="alert-text"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>Datos Enero y Febrero guardados correctamente.</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="divider"&gt;&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;!-- Acceso rápido --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="section"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="section-title"&gt;Acceso Rápido&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div style="display:grid; grid-template-columns:1fr 1fr; gap:10px;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;button class="btn btn-secondary btn-sm"</p>
+<p class="p1"><span class="Apple-converted-space">            </span>onclick="goTo('s-costos-fijos')"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>🏠 Costos Fijos</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;button class="btn btn-secondary btn-sm"</p>
+<p class="p1"><span class="Apple-converted-space">            </span>onclick="goTo('s-resumen')"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>📊 Resumen</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;button class="btn btn-secondary btn-sm"</p>
+<p class="p1"><span class="Apple-converted-space">            </span>onclick="goTo('s-weak-link')"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>🔗 Weak Link</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;button class="btn btn-secondary btn-sm"</p>
+<p class="p1"><span class="Apple-converted-space">            </span>onclick="showToast('📤 Generando Excel...')"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>📤 Exportar Excel</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Bottom Nav --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="bottom-nav"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="nav-item active" onclick="goTo('s-home')"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="nav-icon"&gt;🏠&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="nav-label"&gt;Inicio&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="nav-item" onclick="goTo('s-resumen')"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="nav-icon"&gt;📊&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="nav-label"&gt;Resumen&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="nav-item" onclick="showToast('📷 Abrir galería')"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="nav-icon"&gt;📷&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="nav-label"&gt;Fotos&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="nav-item" onclick="showToast('🔔 Alertas')"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="nav-icon"&gt;🔔&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="nav-label"&gt;Alertas&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- ══════════════════════════════════</p>
+<p class="p1"><span class="Apple-converted-space">       </span>PANTALLA 5: BOVINA — TABS</p>
+<p class="p1"><span class="Apple-converted-space">  </span>══════════════════════════════════ --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="screen" id="s-bovina-tabs"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="header"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;span class="header-back" onclick="goTo('s-home')"&gt;←&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;h2&gt;🐄 Ganadería Bovina&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;span class="header-icon"&gt;📷&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="tabs"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="tab active" onclick="switchTab(this,'tab-ingresos')"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>💰 Ingresos</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="tab" onclick="switchTab(this,'tab-costos')"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>📉 Costos</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="tab" onclick="switchTab(this,'tab-ua')"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>🐄 UA</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Selector de mes --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div style="padding:12px 16px 0; background:white;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div style="font-size:12px; color:#888; margin-bottom:8px; font-weight:600;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>📅 Seleccione el mes a registrar:</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="mes-selector"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="mes-btn has-data" onclick="selectMes(this)"&gt;ENE&lt;span style="font-size:6px;color:green"&gt;●&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="mes-btn has-data active" onclick="selectMes(this)"&gt;FEB&lt;span style="font-size:6px;color:green"&gt;●&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="mes-btn" onclick="selectMes(this)"&gt;MAR&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="mes-btn" onclick="selectMes(this)"&gt;ABR&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="mes-btn" onclick="selectMes(this)"&gt;MAY&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="mes-btn" onclick="selectMes(this)"&gt;JUN&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="mes-btn" onclick="selectMes(this)"&gt;JUL&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="mes-btn" onclick="selectMes(this)"&gt;AGO&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="mes-btn" onclick="selectMes(this)"&gt;SEP&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="mes-btn" onclick="selectMes(this)"&gt;OCT&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="mes-btn" onclick="selectMes(this)"&gt;NOV&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="mes-btn" onclick="selectMes(this)"&gt;DIC&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div style="font-size:13px; color:var(--verde-primary); font-weight:700; padding:8px 0 4px;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>Mes: FEBRERO 2025</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- PESTAÑA INGRESOS --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="tab-ingresos" style="overflow-y:auto; padding-bottom:100px; display:block;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="section"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="section-title"&gt;💰 Ingresos Brutos&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="field"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;label&gt;Venta de animales (kg / cabezas)&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;input type="number" placeholder="$0"</p>
+<p class="p1"><span class="Apple-converted-space">            </span>oninput="calcTotal()" id="ing-1" value="4200000"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="foto-upload" onclick="showToast('📷 Adjuntar boleta de venta')"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="foto-thumb"&gt;🧾&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="foto-upload-text"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;strong&gt;📷 Adjuntar boleta&lt;/strong&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>Toca para sacar foto o subir archivo</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="field"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;label&gt;Venta subproductos (leche, lana, cuero)&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;input type="number" placeholder="$0"</p>
+<p class="p1"><span class="Apple-converted-space">            </span>oninput="calcTotal()" id="ing-2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="field"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;label&gt;Venta reproductores / pie de cría&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;input type="number" placeholder="$0"</p>
+<p class="p1"><span class="Apple-converted-space">            </span>oninput="calcTotal()" id="ing-3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="field"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;label&gt;Subsidios / bonos&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;input type="number" placeholder="$0"</p>
+<p class="p1"><span class="Apple-converted-space">            </span>oninput="calcTotal()" id="ing-4" value="380000"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="field"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;label&gt;Mediería&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;input type="number" placeholder="$0"</p>
+<p class="p1"><span class="Apple-converted-space">            </span>oninput="calcTotal()" id="ing-5"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="field"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;label&gt;Arriendo de parcela&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;input type="number" placeholder="$0"</p>
+<p class="p1"><span class="Apple-converted-space">            </span>oninput="calcTotal()" id="ing-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="field"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;label&gt;Otro ingreso&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;input type="number" placeholder="$0"</p>
+<p class="p1"><span class="Apple-converted-space">            </span>oninput="calcTotal()" id="ing-7"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- TOTAL --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="result-box"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="result-label"&gt;📊 Total Ingresos — Febrero&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="result-value" id="total-ingresos"&gt;$ 4.580.000&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="result-sub"&gt;calculado automáticamente&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div style="margin-top:16px; display:flex; gap:10px;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;button class="btn btn-secondary"</p>
+<p class="p1"><span class="Apple-converted-space">            </span>style="flex:1" onclick="switchTab(</p>
+<p class="p1"><span class="Apple-converted-space">              </span>document.querySelectorAll('.tab')[1],'tab-costos')"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>Siguiente: Costos →</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button class="btn btn-primary" style="margin-top:10px;"</p>
+<p class="p1"><span class="Apple-converted-space">          </span>onclick="showToast('✅ Ingresos de Febrero guardados')"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>💾 &amp;nbsp; Guardar Febrero</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- PESTAÑA COSTOS --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="tab-costos" style="overflow-y:auto; padding-bottom:100px; display:none;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="section"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="section-title"&gt;📉 Costos Directos&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="alert alert-info"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="alert-icon"&gt;ℹ️&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="alert-text"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>Solo costos que &lt;strong&gt;desaparecen&lt;/strong&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>si elimina este rubro del predio.</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="field"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;label&gt;Tipo de Alimentación Principal&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;select&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;option&gt;Forraje / pradera&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;option&gt;Concentrado / grano (maíz, afrecho)&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;option&gt;Suplemento mineral / sales&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;option&gt;Otro (especifique)&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/select&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="field"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;label&gt;Suplemento mineral / sales&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;input type="number" placeholder="$0" value="85000"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="field"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;label&gt;Concentrados / pellets&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;input type="number" placeholder="$0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="field"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;label&gt;⚠️ Forraje conservado (heno, ensilaje, fardos)&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="field-hint" style="color:#E63946; font-weight:600;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>Campo obligatorio para análisis Weak Link</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;input type="number" placeholder="$0"</p>
+<p class="p1"><span class="Apple-converted-space">            </span>style="border-color:#E63946;" value="320000"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="field"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;label&gt;Veterinaria y medicamentos&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;input type="number" placeholder="$0" value="145000"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="foto-upload"</p>
+<p class="p1"><span class="Apple-converted-space">            </span>onclick="showToast('📷 Foto de boleta veterinaria')"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="foto-thumb"&gt;💊&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="foto-upload-text"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;strong&gt;📷 Boleta veterinaria&lt;/strong&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>Toca para adjuntar foto</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="field"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;label&gt;Mano de obra PAGADA&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;select style="margin-bottom:8px;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;option&gt;Permanente&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;option&gt;Temporal / temporada&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;option&gt;Contratista externo&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/select&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;input type="number" placeholder="$0" value="280000"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="field"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;label&gt;Transporte / flete&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;input type="number" placeholder="$0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="field"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;label&gt;Manejo de praderas</p>
+<p class="p1"><span class="Apple-converted-space">            </span>(fertilización, encalado)</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;input type="number" placeholder="$0" value="190000"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="field"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;label&gt;Maquinaria / arriendo maquinaria&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;input type="number" placeholder="$0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="field"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;label&gt;Compra animales para reposición&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;input type="number" placeholder="$0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Total costos --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="result-box" style="background:#FFF3E0; border-color:#FFCC80;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="result-label" style="color:#E65100;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>📉 Total Costos Directos — Febrero</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="result-value" style="color:#E65100;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>$ 1.020.000</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="result-sub" style="color:#FF8F00;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>calculado automáticamente</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Gross Profit --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="result-box"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="result-label"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>✅ Gross Profit — Febrero</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="result-value"&gt;$ 3.560.000&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="result-sub"&gt;GP Margin: 77.7%&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Costos anuales --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div style="margin-top:20px; padding:14px; background:#F3E5F5;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>border-radius:14px; border:1px solid #CE93D8;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div style="font-size:13px; font-weight:700; color:#6A1B9A; margin-bottom:10px;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>📅 Costos esporádicos (solo una vez al año)</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="field"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;label&gt;Sub-ítem 1 (descripción)&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;input type="text" placeholder="Ej: Certificación orgánica"</p>
+<p class="p1"><span class="Apple-converted-space">              </span>style="background:#F9F0FF; border-color:#CE93D8; margin-bottom:8px;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;input type="number" placeholder="Monto anual $"</p>
+<p class="p1"><span class="Apple-converted-space">              </span>style="background:#F9F0FF; border-color:#CE93D8;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;button class="btn btn-outline btn-sm"</p>
+<p class="p1"><span class="Apple-converted-space">            </span>style="border-color:#9C27B0; color:#6A1B9A;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>➕ Agregar otro sub-ítem</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button class="btn btn-primary" style="margin-top:20px;"</p>
+<p class="p1"><span class="Apple-converted-space">          </span>onclick="showToast('✅ Costos de Febrero guardados')"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>💾 &amp;nbsp; Guardar Costos Febrero</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- PESTAÑA UA --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="tab-ua" style="overflow-y:auto; padding-bottom:100px; display:none;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="section"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="section-title"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>🐄 Unidades Animales (UA)</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="alert alert-info"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="alert-icon"&gt;ℹ️&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="alert-text"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>Factor UA = Peso promedio ÷ 450 kg (vaca estándar).</p>
+<p class="p1"><span class="Apple-converted-space">            </span>Se calcula automáticamente.</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Tabla UA --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div style="overflow-x:auto; margin: 0 -20px; padding: 0 20px;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;table class="ua-table"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;thead&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;th&gt;Categoría&lt;/th&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;th&gt;N°&lt;/th&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;th&gt;Kg prom&lt;/th&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;th&gt;UA&lt;/th&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/thead&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;tbody&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;td&gt;🐂 Toro&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;td&gt;&lt;input type="number" value="2" min="0"</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>oninput="calcUA()"&gt;&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;td&gt;&lt;input type="number" value="520" min="0"</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>oninput="calcUA()"&gt;&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;td class="field-calc" id="ua-toro"&gt;2.3&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;td&gt;🐄 Vaca&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;td&gt;&lt;input type="number" value="42" min="0"</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>oninput="calcUA()"&gt;&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;td&gt;&lt;input type="number" value="420" min="0"</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>oninput="calcUA()"&gt;&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;td class="field-calc" id="ua-vaca"&gt;39.2&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;td&gt;🐃 Novillo&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;td&gt;&lt;input type="number" value="18" min="0"</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>oninput="calcUA()"&gt;&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;td&gt;&lt;input type="number" value="320" min="0"</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>oninput="calcUA()"&gt;&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;td class="field-calc" id="ua-novillo"&gt;12.8&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;td&gt;🐄 Novilla&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;td&gt;&lt;input type="number" value="10" min="0"</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>oninput="calcUA()"&gt;&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;td&gt;&lt;input type="number" value="280" min="0"</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>oninput="calcUA()"&gt;&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;td class="field-calc" id="ua-novilla"&gt;6.2&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;td&gt;🐮 Ternero&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;td&gt;&lt;input type="number" value="24" min="0"</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>oninput="calcUA()"&gt;&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;td&gt;&lt;input type="number" value="160" min="0"</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>oninput="calcUA()"&gt;&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;td class="field-calc" id="ua-ternero"&gt;8.5&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;td&gt;🐮 Ternera&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;td&gt;&lt;input type="number" value="20" min="0"</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>oninput="calcUA()"&gt;&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;td&gt;&lt;input type="number" value="150" min="0"</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>oninput="calcUA()"&gt;&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;td class="field-calc" id="ua-ternera"&gt;6.7&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;tr class="ua-total"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;td colspan="3"&gt;▶ TOTAL UA Bovina&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;td id="ua-total-bovina"&gt;75.7&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/tbody&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/table&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Carga animal --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div style="margin-top:20px;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="field"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>📐 Superficie pastoreo efectiva (ha)</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;input type="number" value="72"</p>
+<p class="p1"><span class="Apple-converted-space">              </span>oninput="calcCarga()"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="result-box"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="result-label"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>▶ Carga Animal Efectiva</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="result-value" id="carga-animal"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>1.05 UA/ha</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="result-sub"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>Total UA: 75.7 ÷ 72 ha</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Foto animales --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div style="margin-top:16px;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div style="font-size:13px; font-weight:600;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color:var(--gris-texto); margin-bottom:8px;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>📷 Foto del rodeo (opcional)</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="foto-upload"</p>
+<p class="p1"><span class="Apple-converted-space">            </span>onclick="showToast('📷 Abrir cámara para fotos del rodeo')"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="foto-thumb"&gt;🐄&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="foto-upload-text"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;strong&gt;Sacar foto del rodeo&lt;/strong&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>Ayuda a verificar la información</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="field" style="margin-top:16px;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;label&gt;📝 Notas adicionales&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;textarea rows="3"</p>
+<p class="p1"><span class="Apple-converted-space">            </span>style="background:var(--amarillo-input);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border:2px solid #E8D44D; border-radius:12px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding:12px; width:100%; font-size:14px;"</p>
+<p class="p1"><span class="Apple-converted-space">            </span>placeholder="Ej: 5 vacas en gestación avanzada..."&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/textarea&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button class="btn btn-primary" style="margin-top:12px;"</p>
+<p class="p1"><span class="Apple-converted-space">          </span>onclick="showToast('✅ Unidades Animales guardadas')"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>💾 &amp;nbsp; Guardar UA</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- ══════════════════════════════════</p>
+<p class="p1"><span class="Apple-converted-space">       </span>PANTALLA 6: COSTOS FIJOS</p>
+<p class="p1"><span class="Apple-converted-space">  </span>══════════════════════════════════ --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="screen" id="s-costos-fijos"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="header"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;span class="header-back" onclick="goTo('s-home')"&gt;←&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;h2&gt;Costos Fijos del Predio&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div style="overflow-y:auto; padding-bottom:100px;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div style="padding:16px 20px; background:#FFF8E1;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="alert alert-warning" style="margin:0;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="alert-icon"&gt;⚠️&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="alert-text"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;strong&gt;¡Importante!&lt;/strong&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>NO repita estos costos en las hojas de cada rubro.</p>
+<p class="p1"><span class="Apple-converted-space">            </span>Solo se registran aquí, una vez al año.</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="section"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="section-title"&gt;💰 Costos Anuales Fijos&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="field"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;label&gt;🏘️ Arriendo de campo&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;input type="number" placeholder="$0 / año"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="field"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;label&gt;🏦 Crédito / dividendo del predio&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;input type="number" placeholder="$0 / año" value="1800000"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="field"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;label&gt;💡 Luz&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;input type="number" placeholder="$0 / año" value="480000"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="field"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;label&gt;💧 Agua&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;input type="number" placeholder="$0 / año" value="120000"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="field"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;label&gt;📊 Contador&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;input type="number" placeholder="$0 / año" value="600000"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="field"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;label&gt;⛽ Combustible / mantención maquinaria&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;input type="number" placeholder="$0 / año" value="920000"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="field"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;label&gt;🛡️ Seguros&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;input type="number" placeholder="$0 / año"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="field"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;label&gt;🏛️ Contribuciones / impuestos&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;input type="number" placeholder="$0 / año" value="240000"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="field"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;label&gt;👨‍⚕️ Veterinario externo (asesoría)&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;input type="number" placeholder="$0 / año"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="field"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;label&gt;🌱 Agrónomo (asesoría técnica)&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;input type="number" placeholder="$0 / año"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="field"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;label&gt;Otro costo fijo&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;input type="text" placeholder="Descripción"</p>
+<p class="p1"><span class="Apple-converted-space">            </span>style="margin-bottom:8px;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;input type="number" placeholder="$0 / año"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Total fijo --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="result-box" style="background:#E8EAF6; border-color:#9FA8DA;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="result-label" style="color:#283593;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>TOTAL COSTOS FIJOS (referencial)</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="result-value" style="color:#283593;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>$ 4.160.000</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="result-sub" style="color:#5C6BC0;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ℹ️ Se integrará al análisis en Taller 2</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button class="btn btn-primary" style="margin-top:16px;"</p>
+<p class="p1"><span class="Apple-converted-space">          </span>onclick="showToast('✅ Costos fijos guardados')"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>💾 &amp;nbsp; Guardar Costos Fijos</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- ══════════════════════════════════</p>
+<p class="p1"><span class="Apple-converted-space">       </span>PANTALLA 7: RESUMEN PREDIAL</p>
+<p class="p1"><span class="Apple-converted-space">  </span>══════════════════════════════════ --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="screen" id="s-resumen"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="header"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;span class="header-back" onclick="goTo('s-home')"&gt;←&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;h2&gt;📊 Resumen Predial 2025&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div style="overflow-y:auto; padding-bottom:80px;"&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;!-- KPIs principales --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div style="background:var(--verde-primary); padding:20px;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div style="color:#B7E4C7; font-size:11px; font-weight:700;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>margin-bottom:12px;"&gt;TOTAL PREDIO · EL CANELO&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="kpi-grid"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="kpi-card positive"</p>
+<p class="p1"><span class="Apple-converted-space">            </span>style="background:rgba(255,255,255,0.15); border-color:rgba(255,255,255,0.2);"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="kpi-value" style="color:white; font-size:18px;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>$12,4M</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="kpi-label" style="color:#B7E4C7;"&gt;Ingresos&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="kpi-card"</p>
+<p class="p1"><span class="Apple-converted-space">            </span>style="background:rgba(255,255,255,0.15); border-color:rgba(255,255,255,0.2);"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="kpi-value" style="color:#FFE082; font-size:18px;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>$8,1M</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="kpi-label" style="color:#B7E4C7;"&gt;Costos Dir.&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="kpi-card positive"</p>
+<p class="p1"><span class="Apple-converted-space">            </span>style="background:rgba(255,255,255,0.15); border-color:rgba(255,255,255,0.2);"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="kpi-value" style="color:#B7E4C7; font-size:18px;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>34,7%</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="kpi-label" style="color:#B7E4C7;"&gt;GP Margin&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="kpi-card"</p>
+<p class="p1"><span class="Apple-converted-space">            </span>style="background:rgba(255,255,255,0.15); border-color:rgba(255,255,255,0.2);"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="kpi-value" style="color:white; font-size:18px;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>$4,3M</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="kpi-label" style="color:#B7E4C7;"&gt;Gross Profit&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="section"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="section-title"&gt;Por Rubro (Enterprise)&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Bovina --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div style="background:white; border:2px solid #C8E6C9;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>border-radius:16px; padding:16px; margin-bottom:12px;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div style="display:flex; justify-content:space-between;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>align-items:center; margin-bottom:10px;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div style="font-size:16px; font-weight:700;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>🐄 Ganadería Bovina</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;span class="badge badge-green"&gt;34,7% GP&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px; font-size:13px;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div style="text-align:center;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div style="font-weight:700; color:var(--verde-primary);"&gt;$9,2M&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div style="color:#888;"&gt;Ingresos&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div style="text-align:center;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div style="font-weight:700; color:#E65100;"&gt;$6,1M&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div style="color:#888;"&gt;Costos&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div style="text-align:center;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div style="font-weight:700; color:var(--verde-primary);"&gt;$3,1M&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div style="color:#888;"&gt;GP&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div style="margin-top:10px;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div style="height:8px; background:#eee; border-radius:4px; overflow:hidden;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div style="width:74%; height:100%; background:var(--verde-light);"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div style="font-size:11px; color:#888; margin-top:3px;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>74% del ingreso total del predio</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Forraje --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div style="background:#F5F5F5; border:2px solid #EEE;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>border-radius:16px; padding:16px; margin-bottom:12px;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div style="display:flex; justify-content:space-between;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>align-items:center;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div style="font-size:16px; font-weight:700; color:#aaa;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>🌾 Forraje - Agrícola</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;span class="badge badge-gray"&gt;Sin datos&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div style="font-size:13px; color:#aaa; margin-top:8px;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>No hay registros para este rubro</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;button class="btn btn-outline btn-sm"</p>
+<p class="p1"><span class="Apple-converted-space">            </span>style="margin-top:10px; border-color:#ccc; color:#888;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>→ Ir a ingresar datos</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Diversificación --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="section-title" style="margin-top:16px;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>Indicadores de Diversificación</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="kpi-grid"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="kpi-card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="kpi-value"&gt;1&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="kpi-label"&gt;Rubros con ingresos&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="kpi-card warning"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="kpi-value"&gt;74%&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="kpi-label"&gt;Concentración en rubro principal&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="divider"&gt;&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;!-- UA Predio --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="section"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="section-title"&gt;🐄 Unidades Animales — Predio&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div style="background:var(--verde-pale); border-radius:16px; padding:16px;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div style="display:flex; justify-content:space-between; margin-bottom:8px;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;span style="font-size:14px; font-weight:600;"&gt;Bovina&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;span style="font-weight:700; color:var(--verde-primary);"&gt;75.7 UA&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div style="display:flex; justify-content:space-between; padding-top:8px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-top:1px solid #ccc; margin-top:4px;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;span style="font-size:14px; font-weight:700;"&gt;TOTAL PREDIO&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;span style="font-weight:800; color:var(--verde-primary); font-size:16px;"&gt;75.7 UA&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div style="margin-top:10px; padding-top:8px; border-top:1px solid #ccc;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div style="font-size:12px; color:#666; margin-bottom:6px;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>Superficie pastoreo: 72 ha</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div style="font-size:14px; font-weight:700; color:var(--verde-primary);"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>▶ Carga Animal: 1.05 UA/ha</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="section"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button class="btn btn-primary"</p>
+<p class="p1"><span class="Apple-converted-space">          </span>onclick="showToast('📤 Generando Excel... LosCanelo_ProcesamientoInfo_2025-07-15.xlsx')"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>📤 &amp;nbsp; Exportar Excel completo</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div style="font-size:12px; color:#888; text-align:center; margin-top:8px;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>Formato compatible con Piloto v5</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="bottom-nav"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="nav-item" onclick="goTo('s-home')"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="nav-icon"&gt;🏠&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="nav-label"&gt;Inicio&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="nav-item active" onclick="goTo('s-resumen')"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="nav-icon"&gt;📊&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="nav-label"&gt;Resumen&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="nav-item" onclick="showToast('📷 Galería')"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="nav-icon"&gt;📷&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="nav-label"&gt;Fotos&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="nav-item" onclick="showToast('🔔 Alertas')"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="nav-icon"&gt;🔔&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="nav-label"&gt;Alertas&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- ══════════════════════════════════</p>
+<p class="p1"><span class="Apple-converted-space">       </span>PANTALLA 8: WEAK LINK</p>
+<p class="p1"><span class="Apple-converted-space">  </span>══════════════════════════════════ --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="screen" id="s-weak-link"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="header"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;span class="header-back" onclick="goTo('s-home')"&gt;←&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;h2&gt;🔗 Eslabones Débiles&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div style="overflow-y:auto; padding-bottom:100px;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div style="padding:16px 20px; background:#FFF3E0;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div style="font-size:13px; color:#E65100; line-height:1.5;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>Registre aquí los eslabones débiles identificados</p>
+<p class="p1"><span class="Apple-converted-space">          </span>en el taller. Solo es de registro, no tiene cálculos.</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="section"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="section-title"&gt;➕ Nuevo Eslabón Débil&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="field"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;label&gt;Rubro&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;select&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;option&gt;🐄 Ganadería Bovina&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;option&gt;🌾 Forraje - Agrícola&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/select&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="field"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;label&gt;Descripción del eslabón débil&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;textarea rows="3"</p>
+<p class="p1"><span class="Apple-converted-space">            </span>style="background:var(--amarillo-input);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border:2px solid #E8D44D; border-radius:12px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding:12px; width:100%; font-size:14px;"</p>
+<p class="p1"><span class="Apple-converted-space">            </span>placeholder="Ej: Alto costo de forraje conservado en invierno..."&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/textarea&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="field"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;label&gt;Costo relacionado&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;select&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;option&gt;Forraje conservado (heno, fardos)&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;option&gt;Mano de obra&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;option&gt;Veterinaria&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;option&gt;Alimentación&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;option&gt;Otro&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/select&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="field"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;label&gt;Prioridad&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div style="display:flex; gap:8px; margin-top:4px;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;button class="btn btn-sm"</p>
+<p class="p1"><span class="Apple-converted-space">              </span>style="background:#FFEBEE; color:#C62828;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>border:2px solid #FFCDD2; flex:1;"</p>
+<p class="p1"><span class="Apple-converted-space">              </span>onclick="setPrioridad(this,'Alta')"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>🔴 Alta</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;button class="btn btn-sm"</p>
+<p class="p1"><span class="Apple-converted-space">              </span>style="background:#FFF8E1; color:#F57C00;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>border:2px solid #FFE082; flex:1;"</p>
+<p class="p1"><span class="Apple-converted-space">              </span>onclick="setPrioridad(this,'Media')"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>🟡 Media</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;button class="btn btn-sm"</p>
+<p class="p1"><span class="Apple-converted-space">              </span>style="background:#F1F8E9; color:#558B2F;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>border:2px solid #C5E1A5; flex:1;"</p>
+<p class="p1"><span class="Apple-converted-space">              </span>onclick="setPrioridad(this,'Baja')"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>🟢 Baja</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="field"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;label&gt;Taller N°&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;select&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;option&gt;Taller 1&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;option&gt;Taller 2&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;option&gt;Taller 3&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/select&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button class="btn btn-primary"</p>
+<p class="p1"><span class="Apple-converted-space">          </span>onclick="showToast('✅ Eslabón débil registrado')"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>💾 &amp;nbsp; Guardar Eslabón</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="divider"&gt;&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="section"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="section-title"&gt;📋 Registrados&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div style="background:white; border:2px solid #FFCDD2;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>border-left:5px solid #E63946; border-radius:14px;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>padding:14px; margin-bottom:10px;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div style="display:flex; justify-content:space-between; margin-bottom:6px;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;span style="font-weight:700;"&gt;🐄 Bovina&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;span class="badge badge-red"&gt;🔴 Alta&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div style="font-size:13px; color:#555; margin-bottom:6px;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>Costo de forraje conservado muy alto en meses de invierno (jun-ago)</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div style="font-size:12px; color:#888;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>📎 Costo: Forraje conservado · Taller 1</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- Toast global --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="toast" id="toast"&gt;&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;/div&gt;&lt;!-- /phone-shell --&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;script&gt;</p>
+<p class="p1">// ══════════════════════════════════</p>
+<p class="p1">// NAVEGACIÓN</p>
+<p class="p1">// ══════════════════════════════════</p>
+<p class="p1">function goTo(screenId) {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>document.querySelectorAll('.screen')</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.forEach(s =&gt; s.classList.remove('active'));</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const target = document.getElementById(screenId);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>if (target) {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>target.classList.add('active');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>target.scrollTop = 0;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">// ══════════════════════════════════</p>
+<p class="p1">// TABS</p>
+<p class="p1">// ══════════════════════════════════</p>
+<p class="p1">function switchTab(el, tabId) {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>// Desactivar tabs</p>
+<p class="p1"><span class="Apple-converted-space">  </span>el.closest('.tabs') ?</p>
+<p class="p1"><span class="Apple-converted-space">    </span>el.closest('.tabs')</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.querySelectorAll('.tab')</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.forEach(t =&gt; t.classList.remove('active')) :</p>
+<p class="p1"><span class="Apple-converted-space">    </span>document.querySelectorAll('.tab')</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.forEach(t =&gt; t.classList.remove('active'));</p>
+<p class="p1"><span class="Apple-converted-space">  </span>el.classList.add('active');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>// Ocultar todos los tab-content del screen activo</p>
+<p class="p1"><span class="Apple-converted-space">  </span>['tab-ingresos','tab-costos','tab-ua'].forEach(id =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const el = document.getElementById(id);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>if (el) el.style.display = 'none';</p>
+<p class="p1"><span class="Apple-converted-space">  </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>const content = document.getElementById(tabId);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>if (content) content.style.display = 'block';</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">// ══════════════════════════════════</p>
+<p class="p1">// SELECTOR DE MES</p>
+<p class="p1">// ══════════════════════════════════</p>
+<p class="p1">function selectMes(el) {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>el.closest('.mes-selector')</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.querySelectorAll('.mes-btn')</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.forEach(b =&gt; b.classList.remove('active'));</p>
+<p class="p1"><span class="Apple-converted-space">  </span>el.classList.add('active');</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">// ══════════════════════════════════</p>
+<p class="p1">// CHECKBOX</p>
+<p class="p1">// ══════════════════════════════════</p>
+<p class="p1">function toggleCheck(el) {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>el.classList.toggle('selected');</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const box = el.querySelector('.checkbox-box');</p>
+<p class="p1"><span class="Apple-converted-space">  </span>if (el.classList.contains('selected')) {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>box.textContent = '✓';</p>
+<p class="p1"><span class="Apple-converted-space">  </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>box.textContent = '';</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">// ══════════════════════════════════</p>
+<p class="p1">// CÁLCULOS AUTOMÁTICOS</p>
+<p class="p1">// ══════════════════════════════════</p>
+<p class="p1">function calcTotal() {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>let total = 0;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>for (let i = 1; i &lt;= 7; i++) {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const el = document.getElementById(`ing-${i}`);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>if (el) total += parseFloat(el.value || 0);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const el = document.getElementById('total-ingresos');</p>
+<p class="p1"><span class="Apple-converted-space">  </span>if (el) {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>el.textContent = '$ ' + total.toLocaleString('es-CL');</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">function calcUA() {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const REF_UA = 450;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const categorias = [</p>
+<p class="p1"><span class="Apple-converted-space">    </span>{ inputs: ['toro'], id: 'ua-toro' },</p>
+<p class="p1"><span class="Apple-converted-space">    </span>{ inputs: ['vaca'], id: 'ua-vaca' },</p>
+<p class="p1"><span class="Apple-converted-space">    </span>{ inputs: ['novillo'], id: 'ua-novillo' },</p>
+<p class="p1"><span class="Apple-converted-space">    </span>{ inputs: ['novilla'], id: 'ua-novilla' },</p>
+<p class="p1"><span class="Apple-converted-space">    </span>{ inputs: ['ternero'], id: 'ua-ternero' },</p>
+<p class="p1"><span class="Apple-converted-space">    </span>{ inputs: ['ternera'], id: 'ua-ternera' },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>];</p>
+<p class="p1"><span class="Apple-converted-space">  </span>let totalUA = 0;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>document.querySelectorAll('.ua-table tbody tr:not(.ua-total)')</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.forEach(row =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const inputs = row.querySelectorAll('input');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const n<span class="Apple-converted-space">    </span>= parseFloat(inputs[0]?.value || 0);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const peso = parseFloat(inputs[1]?.value || 0);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const ua <span class="Apple-converted-space">  </span>= (n * peso / REF_UA);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>totalUA += ua;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const td = row.querySelector('td:last-child');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>if (td) td.textContent = ua.toFixed(1);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>});</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const totEl = document.getElementById('ua-total-bovina');</p>
+<p class="p1"><span class="Apple-converted-space">  </span>if (totEl) totEl.textContent = totalUA.toFixed(1);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>calcCarga(totalUA);</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">function calcCarga(totalUA) {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const haInput = document.querySelector(</p>
+<p class="p1"><span class="Apple-converted-space">    </span>'#tab-ua input[type="number"]');</p>
+<p class="p1"><span class="Apple-converted-space">  </span>if (!haInput) return;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const ha = parseFloat(haInput.value || 1);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const ua = totalUA ||</p>
+<p class="p1"><span class="Apple-converted-space">    </span>parseFloat(</p>
+<p class="p1"><span class="Apple-converted-space">      </span>document.getElementById('ua-total-bovina')</p>
+<p class="p1"><span class="Apple-converted-space">        </span>?.textContent || 0);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const carga = (ua / ha).toFixed(2);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const el = document.getElementById('carga-animal');</p>
+<p class="p1"><span class="Apple-converted-space">  </span>if (el) {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>el.textContent = `${carga} UA/ha`;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const sub = el.nextElementSibling;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>if (sub) sub.textContent =</p>
+<p class="p1"><span class="Apple-converted-space">      </span>`Total UA: ${ua.toFixed(1)} ÷ ${ha} ha`;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">// ══════════════════════════════════</p>
+<p class="p1">// PRIORIDAD WEAK LINK</p>
+<p class="p1">// ══════════════════════════════════</p>
+<p class="p1">function setPrioridad(btn, nivel) {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>btn.parentElement.querySelectorAll('.btn')</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.forEach(b =&gt; b.style.fontWeight = 'normal');</p>
+<p class="p1"><span class="Apple-converted-space">  </span>btn.style.fontWeight = '800';</p>
+<p class="p1"><span class="Apple-converted-space">  </span>btn.style.transform = 'scale(1.05)';</p>
+<p class="p1"><span class="Apple-converted-space">  </span>setTimeout(() =&gt; btn.style.transform = '', 200);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>showToast(`Prioridad: ${nivel}`);</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">// ══════════════════════════════════</p>
+<p class="p1">// TOAST</p>
+<p class="p1">// ══════════════════════════════════</p>
+<p class="p1">function showToast(msg) {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const t = document.getElementById('toast');</p>
+<p class="p1"><span class="Apple-converted-space">  </span>t.textContent = msg;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>t.classList.add('show');</p>
+<p class="p1"><span class="Apple-converted-space">  </span>setTimeout(() =&gt; t.classList.remove('show'), 2500);</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">// ══════════════════════════════════</p>
+<p class="p1">// INIT</p>
+<p class="p1">// ══════════════════════════════════</p>
+<p class="p1">document.addEventListener('DOMContentLoaded', () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>// Listener para carga animal en tab-ua</p>
+<p class="p1"><span class="Apple-converted-space">  </span>document.addEventListener('input', (e) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>if (e.target.closest('#tab-ua')) calcUA();</p>
+<p class="p1"><span class="Apple-converted-space">  </span>});</p>
+<p class="p1">});</p>
+<p class="p1">&lt;/script&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
