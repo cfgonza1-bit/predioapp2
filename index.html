@@ -3,12 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PredioApp — Demo Completo</title>
+<title>PredioApp — Con Registro Rápido</title>
 <style>
 :root{
   --v:#2D6A4F;--vl:#52B788;--vp:#D8F3DC;
   --am:#FFFDE7;--az:#E3F2FD;--gr:#F8F9FA;
   --bo:#DEE2E6;--ro:#E63946;--na:#FF6B35;
+  --mo:#6A1B9A;--mp:#F3E5F5;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
@@ -16,31 +17,23 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
   padding:20px 0;min-height:100vh}
 .phone{width:390px;min-height:844px;background:white;
   border-radius:44px;overflow:hidden;
-  box-shadow:0 30px 80px rgba(0,0,0,.5)}
+  box-shadow:0 30px 80px rgba(0,0,0,.5);position:relative}
 .sb{background:#000;height:44px;display:flex;align-items:center;
   justify-content:space-between;padding:0 24px;
   color:#fff;font-size:13px;font-weight:600}
 .screen{display:none;flex-direction:column;
-  min-height:800px;overflow-y:auto;max-height:800px}
+  overflow-y:auto;max-height:800px}
 .screen.active{display:flex}
 .hdr{background:var(--v);color:white;padding:14px 20px;
   display:flex;align-items:center;gap:12px;
   position:sticky;top:0;z-index:10}
 .hdr h2{font-size:16px;font-weight:700;flex:1}
 .back{font-size:22px;cursor:pointer}
-/* TABS */
-.tabs{display:flex;background:var(--gr);border-bottom:2px solid var(--bo)}
-.tab{flex:1;padding:8px 4px;text-align:center;font-size:11px;
-  font-weight:700;color:#888;cursor:pointer;
-  border-bottom:3px solid transparent;line-height:1.4}
-.tab.active{color:var(--v);border-bottom-color:var(--v);background:white}
-/* SECTION */
 .sec{padding:14px 20px}
 .stit{font-size:11px;font-weight:700;color:var(--v);
   text-transform:uppercase;letter-spacing:.8px;
   margin-bottom:10px;padding-bottom:5px;
   border-bottom:2px solid var(--vp)}
-/* FIELDS */
 .f{margin-bottom:12px}
 .f label{display:block;font-size:13px;font-weight:600;
   color:#2B2D42;margin-bottom:4px}
@@ -48,41 +41,33 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
   background:var(--am);border:2px solid #E8D44D;
   border-radius:12px;font-size:14px;color:#2B2D42;
   outline:none;font-family:inherit}
-.f input[type=number]{font-size:17px;font-weight:700}
+.f input[type=number]{font-size:18px;font-weight:700}
+.f input[type=date]{font-size:15px}
 .hint{font-size:11px;color:#888;margin-bottom:4px}
 .hint-r{font-size:11px;color:var(--ro);font-weight:700;margin-bottom:4px}
-/* RESULTS */
 .res{border-radius:14px;padding:13px 15px;margin:10px 0;border:2px solid}
 .res-g{background:var(--vp);border-color:var(--vl)}
 .res-o{background:#FFF3E0;border-color:#FFCC80}
 .res-b{background:var(--az);border-color:#90CAF9}
-.res-p{background:#F3E5F5;border-color:#CE93D8}
 .rl{font-size:10px;font-weight:700;text-transform:uppercase;margin-bottom:2px}
-.res-g .rl{color:var(--v)} .res-o .rl{color:#E65100}
-.res-b .rl{color:#1565C0} .res-p .rl{color:#6A1B9A}
+.res-g .rl{color:var(--v)} .res-o .rl{color:#E65100} .res-b .rl{color:#1565C0}
 .rv{font-size:20px;font-weight:800}
-.res-g .rv{color:var(--v)} .res-o .rv{color:#E65100}
-.res-b .rv{color:#1565C0} .res-p .rv{color:#6A1B9A}
+.res-g .rv{color:var(--v)} .res-o .rv{color:#E65100} .res-b .rv{color:#1565C0}
 .rsub{font-size:12px;margin-top:2px;opacity:.7}
-/* BUTTONS */
 .btn{width:100%;padding:15px;border:none;border-radius:16px;
   font-size:15px;font-weight:700;cursor:pointer;
   display:flex;align-items:center;justify-content:center;gap:8px}
 .btn-p{background:var(--v);color:white}
 .btn-s{background:var(--vp);color:var(--v);border:2px solid var(--vl)}
-.btn-o{background:transparent;color:var(--v);border:2px solid var(--v)}
-.btn-sm{padding:9px 14px;font-size:13px;border-radius:12px;
+.btn-sm{padding:9px 14px;font-size:12px;border-radius:10px;
   width:auto;border:none;cursor:pointer;font-weight:700}
-/* ALERTS */
 .al{border-radius:12px;padding:11px 13px;margin:6px 0;
   display:flex;gap:10px;align-items:flex-start}
 .al-i{background:#E3F2FD;border:1px solid #90CAF9}
 .al-w{background:#FFF8E1;border:1px solid #FFE082}
-.al-d{background:#FFEBEE;border:1px solid #FFCDD2}
 .al-s{background:var(--vp);border:1px solid var(--vl)}
 .al-t{font-size:13px;line-height:1.5}
 .al-t strong{display:block;margin-bottom:2px}
-/* CARDS */
 .card{background:white;border:2px solid var(--bo);border-radius:16px;
   padding:14px;margin-bottom:10px;cursor:pointer;
   display:flex;align-items:center;gap:12px}
@@ -94,23 +79,26 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
 .prog{height:5px;background:var(--bo);border-radius:3px;
   margin-top:5px;overflow:hidden}
 .pf{height:100%;background:var(--vl);border-radius:3px}
-/* BADGES */
 .bdg{display:inline-block;padding:2px 8px;border-radius:20px;
   font-size:10px;font-weight:700}
 .bg{background:var(--vp);color:var(--v)}
 .br{background:#FFEBEE;color:#C62828}
 .by{background:#FFF8E1;color:#F57C00}
 .bgr{background:var(--gr);color:#888}
-/* CHECKBOX */
-.cbi{display:flex;align-items:center;gap:12px;padding:12px 15px;
-  background:var(--gr);border-radius:12px;margin-bottom:8px;
-  cursor:pointer;border:2px solid transparent}
-.cbi.sel{background:var(--vp);border-color:var(--vl)}
-.cbx{width:22px;height:22px;border-radius:6px;border:2px solid #ccc;
-  display:flex;align-items:center;justify-content:center;
-  font-size:13px;background:white;flex-shrink:0}
-.cbi.sel .cbx{background:var(--v);border-color:var(--v);color:white}
-/* MES SELECTOR */
+.bnav{display:flex;background:white;border-top:1px solid var(--bo);
+  padding:7px 0 12px;position:sticky;bottom:0;z-index:10}
+.ni{flex:1;display:flex;flex-direction:column;align-items:center;
+  gap:3px;padding:3px;cursor:pointer;color:#aaa}
+.ni.active{color:var(--v)}
+.ni-ic{font-size:22px}
+.ni-lb{font-size:10px;font-weight:600}
+.div{height:8px;background:var(--gr);margin:0 -20px}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.tabs{display:flex;background:var(--gr);border-bottom:2px solid var(--bo)}
+.tab{flex:1;padding:10px 4px;text-align:center;font-size:12px;
+  font-weight:700;color:#888;cursor:pointer;
+  border-bottom:3px solid transparent}
+.tab.active{color:var(--v);border-bottom-color:var(--v);background:white}
 .ms{display:flex;gap:5px;overflow-x:auto;padding:4px 0 8px;scrollbar-width:none}
 .ms::-webkit-scrollbar{display:none}
 .mb{flex-shrink:0;width:42px;height:42px;border-radius:11px;
@@ -119,101 +107,225 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
   display:flex;flex-direction:column;align-items:center;justify-content:center}
 .mb.active{background:var(--v);border-color:var(--v);color:white}
 .mb.done::after{content:'●';font-size:5px;color:var(--vl)}
-/* FOTO UPLOAD */
-.fu{border:2px dashed var(--bo);border-radius:13px;padding:11px 13px;
-  display:flex;align-items:center;gap:10px;cursor:pointer;
-  background:var(--gr);margin-top:5px}
-.ft{width:48px;height:48px;border-radius:10px;background:#ddd;
+
+/* ══════════════════════════════════════
+   REGISTRO RÁPIDO — ESTILOS ESPECÍFICOS
+══════════════════════════════════════ */
+
+/* Botón flotante FAB */
+.fab{
+  position:sticky;
+  bottom:72px;
+  left:calc(100% - 70px);
+  width:56px;height:56px;
+  background:var(--na);
+  border-radius:28px;
   display:flex;align-items:center;justify-content:center;
-  font-size:20px;flex-shrink:0}
-.ftx{font-size:12px;color:#666}
-.ftx strong{display:block;color:var(--v);font-size:13px}
-/* NAV */
-.bnav{display:flex;background:white;border-top:1px solid var(--bo);
-  padding:7px 0 12px;position:sticky;bottom:0;z-index:10}
-.ni{flex:1;display:flex;flex-direction:column;align-items:center;
-  gap:3px;padding:3px;cursor:pointer;color:#aaa}
-.ni.active{color:var(--v)}
-.ni-ic{font-size:22px}
-.ni-lb{font-size:10px;font-weight:600}
-/* DIVIDER */
-.div{height:8px;background:var(--gr);margin:0 -20px}
-/* UA TABLE */
-.uat{width:100%;border-collapse:collapse;font-size:12px}
-.uat th{background:var(--v);color:white;padding:7px 4px;
-  text-align:center;font-size:11px}
-.uat th:first-child{text-align:left;padding-left:8px}
-.uat td{padding:7px 4px;border-bottom:1px solid var(--bo);text-align:center}
-.uat td:first-child{text-align:left;font-weight:600;padding-left:8px;font-size:11px}
-.uat input{width:50px;padding:5px 3px;border:1px solid #E8D44D;
-  border-radius:7px;text-align:center;background:var(--am);font-size:12px}
-.uat-tot td{background:var(--vp);font-weight:800;color:var(--v)}
-.uc{background:var(--az);border:1px solid #90CAF9;border-radius:5px;
-  padding:3px 5px;font-size:11px;font-weight:700;
-  color:#1565C0;display:inline-block;min-width:32px}
-/* GRID */
-.g2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-/* KPI */
-.kg{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:6px 0}
-.kc{background:white;border:1px solid var(--bo);
-  border-radius:13px;padding:12px;text-align:center}
-.kv{font-size:18px;font-weight:800;color:#2B2D42}
-.kl{font-size:10px;color:#888;margin-top:2px}
-/* IND ROW */
-.ir{display:flex;align-items:center;gap:10px;padding:9px 0;
-  border-bottom:1px solid var(--bo)}
-.il{flex:1;font-size:13px;font-weight:600;color:#2B2D42}
-.iu{font-size:10px;color:#888;font-weight:400;display:block;margin-top:1px}
-.ic{font-size:14px;font-weight:800;color:#1565C0;
-  background:var(--az);border:1.5px solid #90CAF9;
-  border-radius:9px;padding:6px 8px;min-width:100px;text-align:center}
-/* FOTOS GALLERY */
-.fg{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin:10px 0}
-.fi{aspect-ratio:1;border-radius:10px;background:#E8F5E9;
+  font-size:26px;color:white;
+  box-shadow:0 4px 20px rgba(255,107,53,.5);
+  cursor:pointer;border:none;z-index:50;
+  margin-left:auto;
+  flex-shrink:0;
+  transition:transform .2s;
+}
+.fab:active{transform:scale(.93)}
+
+/* Toggle Ingreso / Costo */
+.tipo-toggle{
+  display:flex;border-radius:16px;overflow:hidden;
+  border:2px solid var(--bo);margin-bottom:4px;
+}
+.tipo-btn{
+  flex:1;padding:14px 10px;text-align:center;
+  font-size:15px;font-weight:700;cursor:pointer;
+  background:var(--gr);color:#888;
+  border:none;transition:all .2s;
+}
+.tipo-btn.ing.active{background:#E8F5E9;color:var(--v);}
+.tipo-btn.cos.active{background:#FFF3E0;color:#E65100;}
+
+/* Concepto desplegable con ícono */
+.concepto-select{
+  width:100%;padding:12px 13px;
+  background:var(--am);border:2px solid #E8D44D;
+  border-radius:12px;font-size:14px;font-weight:600;
+  color:#2B2D42;outline:none;
+  appearance:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%232D6A4F' stroke-width='2' fill='none'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;
+  background-position:right 14px center;
+  padding-right:36px;
+}
+
+/* Monto grande */
+.monto-wrap{
+  position:relative;display:flex;align-items:center;
+}
+.monto-prefix{
+  position:absolute;left:14px;font-size:20px;
+  font-weight:700;color:#2B2D42;
+}
+.monto-input{
+  width:100%;padding:14px 13px 14px 36px;
+  background:var(--am);border:2px solid #E8D44D;
+  border-radius:12px;font-size:24px;font-weight:800;
+  color:#2B2D42;outline:none;
+}
+
+/* Foto upload en RR */
+.foto-rr{
+  border:2px dashed var(--bo);border-radius:14px;
+  padding:0;overflow:hidden;margin-top:4px;
+  cursor:pointer;background:var(--gr);
+  transition:border-color .2s;
+}
+.foto-rr:active{border-color:var(--v)}
+.foto-rr-top{
+  display:flex;align-items:center;gap:12px;
+  padding:14px;
+}
+.foto-rr-thumb{
+  width:56px;height:56px;border-radius:10px;
+  background:#E8F5E9;display:flex;align-items:center;
+  justify-content:center;font-size:24px;flex-shrink:0;
+}
+.foto-rr-txt{font-size:13px;color:#666}
+.foto-rr-txt strong{display:block;color:var(--v);font-size:14px}
+.foto-preview{
+  width:100%;height:140px;object-fit:cover;
+  display:none;background:#ddd;
+}
+.foto-rr.has-foto{border-color:var(--vl);border-style:solid}
+.foto-rr.has-foto .foto-preview{display:flex;align-items:center;justify-content:center;font-size:60px}
+.foto-opciones{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:0;border-top:1px solid var(--bo);
+}
+.foto-opc-btn{
+  padding:12px;text-align:center;font-size:13px;
+  font-weight:700;color:var(--v);background:white;
+  border:none;cursor:pointer;
+}
+.foto-opc-btn:first-child{border-right:1px solid var(--bo)}
+.foto-opc-btn:active{background:var(--vp)}
+
+/* Badge de confirmación */
+.confirm-badge{
+  background:var(--v);color:white;border-radius:16px;
+  padding:16px;margin:12px 0;
+  display:flex;flex-direction:column;gap:6px;
+}
+.confirm-badge .cb-title{font-size:14px;font-weight:800}
+.confirm-badge .cb-row{
+  display:flex;align-items:center;gap:8px;
+  font-size:12px;opacity:.9;
+}
+
+/* Historial de registros */
+.hist-item{
+  background:white;border:1.5px solid var(--bo);
+  border-radius:14px;padding:13px;margin-bottom:8px;
+  cursor:pointer;
+}
+.hist-item:active{background:var(--gr)}
+.hist-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:5px}
+.hist-titulo{font-size:14px;font-weight:700;color:#2B2D42}
+.hist-monto{font-size:15px;font-weight:800}
+.hist-monto.ing{color:var(--v)}
+.hist-monto.cos{color:#E65100}
+.hist-sub{font-size:12px;color:#888;display:flex;gap:8px;align-items:center}
+.hist-foto{font-size:16px}
+
+/* Indicador mes en RR */
+.mes-indicador{
+  background:var(--vp);border-radius:10px;
+  padding:8px 12px;font-size:12px;font-weight:700;
+  color:var(--v);display:inline-flex;align-items:center;
+  gap:6px;margin-top:4px;
+}
+
+/* Step indicator */
+.steps{
+  display:flex;align-items:center;
+  padding:14px 20px;background:var(--gr);
+  border-bottom:1px solid var(--bo);
+}
+.step{
   display:flex;flex-direction:column;align-items:center;
-  justify-content:center;cursor:pointer;border:2px dashed var(--vl);
-  font-size:24px;color:var(--v)}
-.fi.filled{background:#ddd;border:none}
-.fi span{font-size:10px;font-weight:600;margin-top:4px}
-/* NOTIF */
-.ntf{background:white;border-radius:14px;padding:14px;
-  margin-bottom:10px;border-left:5px solid;
-  box-shadow:0 2px 8px rgba(0,0,0,.08)}
-.ntf-r{border-color:var(--ro)}
-.ntf-y{border-color:#F57C00}
-.ntf-g{border-color:var(--vl)}
-.ntf-b{border-color:#1565C0}
-.ntf-top{display:flex;justify-content:space-between;
-  align-items:center;margin-bottom:5px}
-.ntf-tit{font-size:14px;font-weight:700}
-.ntf-sub{font-size:12px;color:#666;line-height:1.4}
-.ntf-time{font-size:10px;color:#aaa}
-/* COMPARADOR */
-.comp-tab{display:flex;border-radius:12px;overflow:hidden;
-  border:2px solid var(--vl);margin-bottom:14px}
-.comp-t{flex:1;padding:10px;text-align:center;font-size:13px;
-  font-weight:700;color:var(--v);cursor:pointer;background:white}
-.comp-t.active{background:var(--v);color:white}
-.comp-row{display:flex;gap:8px;margin-bottom:8px}
-.comp-label{flex:1;font-size:12px;color:#555;padding-top:10px}
-.comp-in{flex:1;padding:9px;background:var(--am);
-  border:1.5px solid #E8D44D;border-radius:10px;
-  font-size:14px;font-weight:700;text-align:center;outline:none;width:100%}
-.comp-in2{flex:1;padding:9px;background:#E8F5E9;
-  border:1.5px solid var(--vl);border-radius:10px;
-  font-size:14px;font-weight:700;text-align:center;outline:none;width:100%}
-/* MERCADO */
-.mrc-card{background:white;border:2px solid var(--bo);
-  border-radius:14px;padding:14px;margin-bottom:10px}
-.mrc-top{display:flex;justify-content:space-between;
-  align-items:center;margin-bottom:8px}
-.mrc-name{font-size:15px;font-weight:700}
-/* TOAST */
-.toast{position:fixed;bottom:100px;left:50%;
+  gap:3px;flex:1;
+}
+.step-num{
+  width:26px;height:26px;border-radius:13px;
+  background:var(--bo);color:#888;
+  font-size:12px;font-weight:700;
+  display:flex;align-items:center;justify-content:center;
+}
+.step.active .step-num{background:var(--v);color:white}
+.step.done .step-num{background:var(--vl);color:white}
+.step-label{font-size:9px;color:#888;font-weight:600;text-align:center}
+.step.active .step-label{color:var(--v)}
+.step-line{height:2px;background:var(--bo);flex:1;margin:0 4px;margin-bottom:14px}
+.step-line.done{background:var(--vl)}
+
+/* TAG rojo forraje */
+.tag-obligatorio{
+  display:inline-block;background:#FFEBEE;color:var(--ro);
+  font-size:10px;font-weight:700;padding:2px 8px;
+  border-radius:20px;margin-left:6px;
+}
+
+/* Modal overlay para RR */
+.modal-overlay{
+  position:absolute;top:44px;left:0;right:0;bottom:0;
+  background:rgba(0,0,0,.5);z-index:200;
+  display:none;align-items:flex-end;
+}
+.modal-overlay.open{display:flex}
+.modal-sheet{
+  background:white;border-radius:24px 24px 0 0;
+  width:100%;max-height:90%;
+  overflow-y:auto;
+  padding-bottom:20px;
+  animation:slideUp .3s ease;
+}
+@keyframes slideUp{from{transform:translateY(100%)}to{transform:translateY(0)}}
+.modal-handle{
+  width:40px;height:4px;background:#ddd;
+  border-radius:2px;margin:12px auto 0;
+}
+.modal-hdr{
+  padding:14px 20px;display:flex;
+  align-items:center;justify-content:space-between;
+  border-bottom:1px solid var(--bo);
+}
+.modal-hdr h3{font-size:17px;font-weight:800;color:var(--v)}
+.modal-close{font-size:24px;cursor:pointer;color:#aaa;
+  background:none;border:none}
+
+/* Selección visual de rubro */
+.rubro-grid{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:8px;margin:8px 0;
+}
+.rubro-opt{
+  border:2px solid var(--bo);border-radius:12px;
+  padding:12px 10px;text-align:center;cursor:pointer;
+  background:white;transition:all .2s;
+}
+.rubro-opt.active{
+  border-color:var(--v);background:var(--vp);
+}
+.rubro-opt:active{transform:scale(.97)}
+.rubro-opt .ro-emoji{font-size:26px;display:block;margin-bottom:4px}
+.rubro-opt .ro-name{font-size:11px;font-weight:700;color:#2B2D42}
+.rubro-opt.active .ro-name{color:var(--v)}
+
+/* Toast */
+.toast{position:absolute;bottom:90px;left:50%;
   transform:translateX(-50%);background:#333;color:white;
   padding:11px 22px;border-radius:24px;font-size:13px;
   font-weight:600;opacity:0;transition:opacity .3s;
-  z-index:999;white-space:nowrap}
+  z-index:999;white-space:nowrap;pointer-events:none}
 .toast.show{opacity:1}
 </style>
 </head>
@@ -221,122 +333,10 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
 <div class="phone">
 <div class="sb"><span>📶 9:41</span><span>🔋 87%</span></div>
 
-<!-- ═══════════════════════════════════
-     1. SPLASH
-═══════════════════════════════════ -->
-<div class="screen active" id="s-splash"
-  style="background:linear-gradient(160deg,#1B4332,#2D6A4F 60%,#52B788);
-  align-items:center;justify-content:center;gap:20px;padding:40px 28px">
-  <div style="text-align:center">
-    <div style="font-size:68px;margin-bottom:6px">🌿</div>
-    <div style="color:white;font-size:30px;font-weight:900">PredioApp</div>
-    <div style="color:#B7E4C7;font-size:14px;margin-top:5px">Registro simple para tu campo</div>
-  </div>
-  <div style="width:100%;display:flex;flex-direction:column;gap:10px">
-    <button class="btn" onclick="goTo('s-perfil')"
-      style="background:white;color:#1B4332;font-size:16px;padding:17px">
-      🟢 &nbsp;Iniciar sesión
-    </button>
-    <button class="btn"
-      style="background:transparent;border:2px solid rgba(255,255,255,.6);color:white;font-size:16px;padding:17px">
-      ➕ &nbsp;Crear cuenta nueva
-    </button>
-  </div>
-  <div style="color:#B7E4C7;font-size:12px;text-align:center">
-    ¿Tiene código de programa?
-    <span style="text-decoration:underline;cursor:pointer;display:block;margin-top:3px">Ingresar código →</span>
-  </div>
-</div>
-
-<!-- ═══════════════════════════════════
-     2. PERFIL
-═══════════════════════════════════ -->
-<div class="screen" id="s-perfil">
-  <div class="hdr">
-    <span class="back" onclick="goTo('s-splash')">←</span>
-    <h2>Datos del Productor</h2>
-    <span>👤</span>
-  </div>
-  <div style="overflow-y:auto;padding-bottom:90px">
-    <div style="background:#F0FFF4;padding:18px;text-align:center">
-      <div style="width:110px;height:110px;border-radius:20px;background:#C7F9CC;
-        margin:0 auto 10px;display:flex;align-items:center;justify-content:center;
-        font-size:44px;border:3px dashed #52B788;cursor:pointer"
-        onclick="showToast('📷 Abrir cámara')">🏡</div>
-      <div style="font-size:12px;color:#52B788;font-weight:600">Toca para agregar foto del predio</div>
-    </div>
-    <div class="sec">
-      <div class="stit">Información personal</div>
-      <div class="f"><label>👤 Nombre completo</label><input type="text" value="María González Rojas"></div>
-      <div class="f"><label>📱 Teléfono</label><input type="tel" value="+56 9 8234 5678"></div>
-      <div class="g2">
-        <div class="f"><label>🏡 Nombre predio</label><input type="text" value="El Canelo"></div>
-        <div class="f"><label>📅 Año</label><input type="number" value="2025"></div>
-      </div>
-      <div class="f"><label>📍 Región</label>
-        <select><option>Los Ríos</option><option>Los Lagos</option><option>La Araucanía</option><option>Biobío</option><option>Maule</option></select>
-      </div>
-      <div class="f"><label>📐 Tamaño del predio (ha)</label><input type="number" value="85"></div>
-      <div class="al al-i">
-        <span>💡</span>
-        <div class="al-t"><strong>¿Por qué pedimos esto?</strong>Para calcular carga animal y gross profit por hectárea.</div>
-      </div>
-      <div style="margin-top:14px">
-        <button class="btn btn-p" onclick="goTo('s-rubros')">Siguiente: Mis Rubros →</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ═══════════════════════════════════
-     3. RUBROS
-═══════════════════════════════════ -->
-<div class="screen" id="s-rubros">
-  <div class="hdr">
-    <span class="back" onclick="goTo('s-perfil')">←</span>
-    <h2>Mis Rubros Productivos</h2>
-  </div>
-  <div style="overflow-y:auto;padding-bottom:110px">
-    <div style="padding:14px 20px 6px;background:#F8F9FA;font-size:13px;color:#555">
-      Seleccione <strong>todos los rubros</strong> que tiene en su predio
-    </div>
-    <div class="sec">
-      <div class="stit">🐄 Ganadería</div>
-      <div class="cbi sel" onclick="toggleCheck(this)"><span style="font-size:20px">🐄</span><span style="font-size:14px;font-weight:600;flex:1">Ganadería Bovina</span><div class="cbx">✓</div></div>
-      <div class="cbi sel" onclick="toggleCheck(this)"><span style="font-size:20px">🐑</span><span style="font-size:14px;font-weight:600;flex:1">Ganadería Ovina</span><div class="cbx">✓</div></div>
-      <div class="cbi" onclick="toggleCheck(this)"><span style="font-size:20px">🐖</span><span style="font-size:14px;font-weight:600;flex:1">Ganadería Porcina</span><div class="cbx"></div></div>
-      <div class="cbi" onclick="toggleCheck(this)"><span style="font-size:20px">🐐</span><span style="font-size:14px;font-weight:600;flex:1">Ganadería Caprina</span><div class="cbx"></div></div>
-      <div class="cbi" onclick="toggleCheck(this)"><span style="font-size:20px">🐔</span><span style="font-size:14px;font-weight:600;flex:1">Avicultura - Huevos</span><div class="cbx"></div></div>
-    </div>
-    <div class="div"></div>
-    <div class="sec">
-      <div class="stit">🌾 Agricultura</div>
-      <div class="cbi sel" onclick="toggleCheck(this)"><span style="font-size:20px">🌾</span><span style="font-size:14px;font-weight:600;flex:1">Forraje - Agrícola</span><div class="cbx">✓</div></div>
-      <div class="cbi" onclick="toggleCheck(this)"><span style="font-size:20px">🌽</span><span style="font-size:14px;font-weight:600;flex:1">Cultivos Anuales</span><div class="cbx"></div></div>
-      <div class="cbi" onclick="toggleCheck(this)"><span style="font-size:20px">🥬</span><span style="font-size:14px;font-weight:600;flex:1">Hortalizas - Huerta</span><div class="cbx"></div></div>
-      <div class="cbi" onclick="toggleCheck(this)"><span style="font-size:20px">🍎</span><span style="font-size:14px;font-weight:600;flex:1">Frutales</span><div class="cbx"></div></div>
-      <div class="cbi" onclick="toggleCheck(this)"><span style="font-size:20px">🌸</span><span style="font-size:14px;font-weight:600;flex:1">Flores</span><div class="cbx"></div></div>
-      <div class="cbi" onclick="toggleCheck(this)"><span style="font-size:20px">🍇</span><span style="font-size:14px;font-weight:600;flex:1">Viñedos</span><div class="cbx"></div></div>
-    </div>
-    <div class="div"></div>
-    <div class="sec">
-      <div class="stit">🏕️ Otros Rubros</div>
-      <div class="cbi" onclick="toggleCheck(this)"><span style="font-size:20px">🏕️</span><span style="font-size:14px;font-weight:600;flex:1">Turismo - Experiencias</span><div class="cbx"></div></div>
-      <div class="cbi" onclick="toggleCheck(this)"><span style="font-size:20px">🍯</span><span style="font-size:14px;font-weight:600;flex:1">Apicultura</span><div class="cbx"></div></div>
-      <div class="cbi" onclick="toggleCheck(this)"><span style="font-size:20px">🥛</span><span style="font-size:14px;font-weight:600;flex:1">Agroind. Lácteos</span><div class="cbx"></div></div>
-      <div class="cbi" onclick="toggleCheck(this)"><span style="font-size:20px">🧀</span><span style="font-size:14px;font-weight:600;flex:1">Agroind. Quesos</span><div class="cbx"></div></div>
-      <div class="cbi" onclick="toggleCheck(this)"><span style="font-size:20px">🪱</span><span style="font-size:14px;font-weight:600;flex:1">Lombricultura</span><div class="cbx"></div></div>
-    </div>
-  </div>
-  <div style="position:sticky;bottom:0;background:white;padding:14px 20px;border-top:1px solid #eee">
-    <button class="btn btn-p" onclick="goTo('s-home')">✅ &nbsp;Confirmar rubros seleccionados</button>
-  </div>
-</div>
-
-<!-- ═══════════════════════════════════
-     4. HOME
-═══════════════════════════════════ -->
-<div class="screen" id="s-home">
+<!-- ════════════════════════════════════
+     HOME
+════════════════════════════════════ -->
+<div class="screen active" id="s-home">
   <div style="background:var(--v);padding:18px 20px 22px">
     <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px">
       <div>
@@ -357,1361 +357,1432 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
       </div>
     </div>
   </div>
+
   <div style="overflow-y:auto;padding-bottom:80px">
-    <div class="sec">
-      <div class="stit">🐄 Ganadería</div>
-      <div class="card ok" onclick="goTo('s-bovina')"><div class="cem">🐄</div><div class="ci"><div class="cn">Ganadería Bovina</div><div class="cs"><span class="bdg bg">Con datos</span> 8/12 meses</div><div class="prog"><div class="pf" style="width:67%"></div></div></div><span style="font-size:18px;color:#ccc">›</span></div>
-      <div class="card ok" onclick="goTo('s-ovina')"><div class="cem">🐑</div><div class="ci"><div class="cn">Ganadería Ovina</div><div class="cs"><span class="bdg bg">Con datos</span> 5/12 meses</div><div class="prog"><div class="pf" style="width:42%"></div></div></div><span style="font-size:18px;color:#ccc">›</span></div>
-      <div class="card" onclick="goTo('s-porcina')"><div class="cem">🐖</div><div class="ci"><div class="cn">Ganadería Porcina</div><div class="cs"><span class="bdg bgr">Sin datos</span></div><div class="prog"><div class="pf" style="width:0%"></div></div></div><span style="font-size:18px;color:#ccc">›</span></div>
-      <div class="card" onclick="goTo('s-caprina')"><div class="cem">🐐</div><div class="ci"><div class="cn">Ganadería Caprina</div><div class="cs"><span class="bdg bgr">Sin datos</span></div><div class="prog"><div class="pf" style="width:0%"></div></div></div><span style="font-size:18px;color:#ccc">›</span></div>
-      <div class="card" onclick="goTo('s-avicultura')"><div class="cem">🐔</div><div class="ci"><div class="cn">Avicultura - Huevos</div><div class="cs"><span class="bdg bgr">Sin datos</span></div><div class="prog"><div class="pf" style="width:0%"></div></div></div><span style="font-size:18px;color:#ccc">›</span></div>
+
+    <!-- ACCESO RÁPIDO AL REGISTRO -->
+    <div style="padding:16px 20px;background:linear-gradient(135deg,#FFF3E0,#FFF8E1);border-bottom:2px solid #FFCC80">
+      <div style="font-size:12px;font-weight:700;color:#E65100;margin-bottom:10px;text-transform:uppercase;letter-spacing:.5px">
+        ⚡ Registro Rápido
+      </div>
+      <div style="font-size:13px;color:#555;margin-bottom:12px">
+        Registre un gasto o ingreso con foto de boleta. Se agrega automáticamente al mes correcto.
+      </div>
+      <button class="btn" onclick="abrirRR()"
+        style="background:var(--na);color:white;font-size:16px;padding:16px;border-radius:16px;box-shadow:0 4px 16px rgba(255,107,53,.3)">
+        ➕ &nbsp;Registrar Gasto o Ingreso
+      </button>
     </div>
-    <div class="div"></div>
+
+    <!-- ÚLTIMOS REGISTROS -->
     <div class="sec">
-      <div class="stit">🌾 Agricultura</div>
-      <div class="card" onclick="goTo('s-forraje')"><div class="cem">🌾</div><div class="ci"><div class="cn">Forraje - Agrícola</div><div class="cs"><span class="bdg bgr">Sin datos</span></div><div class="prog"><div class="pf" style="width:0%"></div></div></div><span style="font-size:18px;color:#ccc">›</span></div>
-      <div class="card" onclick="goTo('s-cultivos')"><div class="cem">🌽</div><div class="ci"><div class="cn">Cultivos Anuales</div><div class="cs"><span class="bdg bgr">Sin datos</span></div><div class="prog"><div class="pf" style="width:0%"></div></div></div><span style="font-size:18px;color:#ccc">›</span></div>
-      <div class="card" onclick="goTo('s-hortalizas')"><div class="cem">🥬</div><div class="ci"><div class="cn">Hortalizas - Huerta</div><div class="cs"><span class="bdg bgr">Sin datos</span></div><div class="prog"><div class="pf" style="width:0%"></div></div></div><span style="font-size:18px;color:#ccc">›</span></div>
-      <div class="card" onclick="goTo('s-frutales')"><div class="cem">🍎</div><div class="ci"><div class="cn">Frutales</div><div class="cs"><span class="bdg bgr">Sin datos</span></div><div class="prog"><div class="pf" style="width:0%"></div></div></div><span style="font-size:18px;color:#ccc">›</span></div>
-      <div class="card" onclick="goTo('s-flores')"><div class="cem">🌸</div><div class="ci"><div class="cn">Flores</div><div class="cs"><span class="bdg bgr">Sin datos</span></div><div class="prog"><div class="pf" style="width:0%"></div></div></div><span style="font-size:18px;color:#ccc">›</span></div>
-      <div class="card" onclick="goTo('s-viñedos')"><div class="cem">🍇</div><div class="ci"><div class="cn">Viñedos</div><div class="cs"><span class="bdg bgr">Sin datos</span></div><div class="prog"><div class="pf" style="width:0%"></div></div></div><span style="font-size:18px;color:#ccc">›</span></div>
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
+        <div class="stit" style="margin-bottom:0">📋 Últimos Registros</div>
+        <span onclick="goTo('s-historial')"
+          style="font-size:12px;color:var(--v);font-weight:700;cursor:pointer">
+          Ver todos →
+        </span>
+      </div>
+
+      <!-- items del historial preview -->
+      <div class="hist-item" onclick="goTo('s-historial')">
+        <div class="hist-top">
+          <div>
+            <div class="hist-titulo">🐄 Bovina — Forraje conservado</div>
+            <div class="hist-sub">
+              <span>📅 15 Jul 2025</span>
+              <span class="hist-foto">📷</span>
+              <span>5 fardos heno</span>
+            </div>
+          </div>
+          <div class="hist-monto cos">-$320.000</div>
+        </div>
+      </div>
+
+      <div class="hist-item" onclick="goTo('s-historial')">
+        <div class="hist-top">
+          <div>
+            <div class="hist-titulo">🐄 Bovina — Venta de animales</div>
+            <div class="hist-sub">
+              <span>📅 10 Jul 2025</span>
+              <span class="hist-foto">📷</span>
+              <span>12 novillos</span>
+            </div>
+          </div>
+          <div class="hist-monto ing">+$4.200.000</div>
+        </div>
+      </div>
+
+      <div class="hist-item" onclick="goTo('s-historial')">
+        <div class="hist-top">
+          <div>
+            <div class="hist-titulo">🐑 Ovina — Veterinaria</div>
+            <div class="hist-sub">
+              <span>📅 08 Jul 2025</span>
+              <span class="hist-foto">📷</span>
+              <span>Vacunación anual</span>
+            </div>
+          </div>
+          <div class="hist-monto cos">-$95.000</div>
+        </div>
+      </div>
+
     </div>
+
     <div class="div"></div>
+
+    <!-- RUBROS -->
     <div class="sec">
-      <div class="stit">🏕️ Otros</div>
-      <div class="card" onclick="goTo('s-turismo')"><div class="cem">🏕️</div><div class="ci"><div class="cn">Turismo - Experiencias</div><div class="cs"><span class="bdg bgr">Sin datos</span></div><div class="prog"><div class="pf" style="width:0%"></div></div></div><span style="font-size:18px;color:#ccc">›</span></div>
-      <div class="card" onclick="goTo('s-apicultura')"><div class="cem">🍯</div><div class="ci"><div class="cn">Apicultura</div><div class="cs"><span class="bdg bgr">Sin datos</span></div><div class="prog"><div class="pf" style="width:0%"></div></div></div><span style="font-size:18px;color:#ccc">›</span></div>
-      <div class="card" onclick="goTo('s-lacteos')"><div class="cem">🥛</div><div class="ci"><div class="cn">Agroind. Lácteos</div><div class="cs"><span class="bdg bgr">Sin datos</span></div><div class="prog"><div class="pf" style="width:0%"></div></div></div><span style="font-size:18px;color:#ccc">›</span></div>
-      <div class="card" onclick="goTo('s-quesos')"><div class="cem">🧀</div><div class="ci"><div class="cn">Agroind. Quesos</div><div class="cs"><span class="bdg bgr">Sin datos</span></div><div class="prog"><div class="pf" style="width:0%"></div></div></div><span style="font-size:18px;color:#ccc">›</span></div>
-      <div class="card" onclick="goTo('s-lombri')"><div class="cem">🪱</div><div class="ci"><div class="cn">Lombricultura</div><div class="cs"><span class="bdg bgr">Sin datos</span></div><div class="prog"><div class="pf" style="width:0%"></div></div></div><span style="font-size:18px;color:#ccc">›</span></div>
+      <div class="stit">Mis Rubros</div>
+      <div class="card ok" onclick="goTo('s-bovina')">
+        <div class="cem">🐄</div>
+        <div class="ci">
+          <div class="cn">Ganadería Bovina</div>
+          <div class="cs"><span class="bdg bg">Con datos</span> 8/12 meses</div>
+          <div class="prog"><div class="pf" style="width:67%"></div></div>
+        </div>
+        <span style="font-size:18px;color:#ccc">›</span>
+      </div>
+      <div class="card ok" onclick="goTo('s-ovina')">
+        <div class="cem">🐑</div>
+        <div class="ci">
+          <div class="cn">Ganadería Ovina</div>
+          <div class="cs"><span class="bdg bg">Con datos</span> 5/12 meses</div>
+          <div class="prog"><div class="pf" style="width:42%"></div></div>
+        </div>
+        <span style="font-size:18px;color:#ccc">›</span>
+      </div>
+      <div class="card" onclick="goTo('s-bovina')">
+        <div class="cem">🌾</div>
+        <div class="ci">
+          <div class="cn">Forraje - Agrícola</div>
+          <div class="cs"><span class="bdg bgr">Sin datos</span></div>
+          <div class="prog"><div class="pf" style="width:0%"></div></div>
+        </div>
+        <span style="font-size:18px;color:#ccc">›</span>
+      </div>
+      <button class="btn" style="background:var(--gr);color:var(--v);border:2px solid var(--vl);padding:12px;font-size:14px;margin-top:4px">
+        ➕ &nbsp;Ver todos los rubros
+      </button>
     </div>
+
     <div class="div"></div>
+
+    <!-- ACCESOS -->
     <div class="sec">
       <div class="stit">Herramientas</div>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
-        <button class="btn btn-s" style="padding:12px;font-size:13px" onclick="goTo('s-cf')">🏠 Costos Fijos</button>
+        <button class="btn btn-s" style="padding:12px;font-size:13px" onclick="goTo('s-historial')">📋 Historial</button>
         <button class="btn btn-s" style="padding:12px;font-size:13px" onclick="goTo('s-resumen')">📊 Resumen</button>
-        <button class="btn btn-s" style="padding:12px;font-size:13px" onclick="goTo('s-wl')">🔗 Weak Link</button>
-        <button class="btn btn-s" style="padding:12px;font-size:13px" onclick="goTo('s-comparador')">⚖️ Comparador</button>
-        <button class="btn btn-s" style="padding:12px;font-size:13px" onclick="goTo('s-mercado')">📈 Mercado</button>
+        <button class="btn btn-s" style="padding:12px;font-size:13px" onclick="goTo('s-cf')">🏠 Costos Fijos</button>
         <button class="btn btn-s" style="padding:12px;font-size:13px" onclick="showToast('📤 Generando Excel...')">📤 Exportar</button>
       </div>
     </div>
   </div>
+
+  <!-- FAB flotante alternativo -->
+  <button class="fab" onclick="abrirRR()" title="Registrar gasto o ingreso">➕</button>
+
   <div class="bnav">
     <div class="ni active"><span class="ni-ic">🏠</span><span class="ni-lb">Inicio</span></div>
+    <div class="ni" onclick="goTo('s-historial')"><span class="ni-ic">📋</span><span class="ni-lb">Registros</span></div>
     <div class="ni" onclick="goTo('s-resumen')"><span class="ni-ic">📊</span><span class="ni-lb">Resumen</span></div>
-    <div class="ni" onclick="goTo('s-fotos')"><span class="ni-ic">📷</span><span class="ni-lb">Fotos</span></div>
-    <div class="ni" onclick="goTo('s-notif')"><span class="ni-ic">🔔</span><span class="ni-lb">Alertas</span></div>
+    <div class="ni" onclick="showToast('📷 Galería')"><span class="ni-ic">📷</span><span class="ni-lb">Fotos</span></div>
   </div>
 </div>
 
-<!-- ═══════════════════════════════════
-     5. BOVINA (4 TABS)
-═══════════════════════════════════ -->
+<!-- ════════════════════════════════════
+     REGISTRO RÁPIDO — PANTALLA COMPLETA
+════════════════════════════════════ -->
+<div class="screen" id="s-rr">
+  <div class="hdr">
+    <span class="back" onclick="goTo('s-home')">←</span>
+    <h2>➕ Registro Rápido</h2>
+    <span onclick="goTo('s-historial')" style="cursor:pointer;font-size:12px;font-weight:700">Historial</span>
+  </div>
+
+  <!-- STEPS INDICADOR -->
+  <div class="steps">
+    <div class="step done" id="step1"><div class="step-num">✓</div><div class="step-label">Tipo</div></div>
+    <div class="step-line done"></div>
+    <div class="step done" id="step2"><div class="step-num">✓</div><div class="step-label">Fecha</div></div>
+    <div class="step-line done"></div>
+    <div class="step active" id="step3"><div class="step-num">3</div><div class="step-label">Rubro</div></div>
+    <div class="step-line"></div>
+    <div class="step" id="step4"><div class="step-num">4</div><div class="step-label">Concepto</div></div>
+    <div class="step-line"></div>
+    <div class="step" id="step5"><div class="step-num">5</div><div class="step-label">Monto</div></div>
+  </div>
+
+  <div style="overflow-y:auto;padding-bottom:100px">
+    <div class="sec">
+
+      <!-- TIPO TOGGLE -->
+      <div class="stit">1 · Tipo de movimiento</div>
+      <div class="tipo-toggle">
+        <button class="tipo-btn ing active" id="btn-ing"
+          onclick="setTipo('ing')">
+          💰 INGRESO
+        </button>
+        <button class="tipo-btn cos" id="btn-cos"
+          onclick="setTipo('cos')">
+          📉 COSTO / GASTO
+        </button>
+      </div>
+      <div id="tipo-hint" style="font-size:12px;color:var(--v);font-weight:600;padding:4px 0 8px">
+        Dinero que RECIBIÓ por su producción
+      </div>
+
+      <div class="div" style="margin:10px -20px"></div>
+
+      <!-- FECHA -->
+      <div class="stit" style="margin-top:14px">2 · Fecha del movimiento</div>
+      <div class="f">
+        <label>📅 Fecha</label>
+        <div class="hint">La app asigna el mes automáticamente según la fecha</div>
+        <input type="date" id="rr-fecha"
+          value="2025-07-15"
+          onchange="actualizarMes()">
+        <div class="mes-indicador" id="mes-ind">
+          📅 Mes asignado: JULIO 2025
+        </div>
+      </div>
+
+      <div class="div" style="margin:10px -20px"></div>
+
+      <!-- RUBRO -->
+      <div class="stit" style="margin-top:14px">3 · Rubro productivo</div>
+      <div class="hint" style="padding:0 0 8px">¿A qué actividad corresponde este movimiento?</div>
+
+      <div class="rubro-grid" id="rubro-grid">
+        <div class="rubro-opt active" onclick="selRubro(this,'bovina')">
+          <span class="ro-emoji">🐄</span>
+          <span class="ro-name">Ganadería Bovina</span>
+        </div>
+        <div class="rubro-opt" onclick="selRubro(this,'ovina')">
+          <span class="ro-emoji">🐑</span>
+          <span class="ro-name">Ganadería Ovina</span>
+        </div>
+        <div class="rubro-opt" onclick="selRubro(this,'porcina')">
+          <span class="ro-emoji">🐖</span>
+          <span class="ro-name">Ganadería Porcina</span>
+        </div>
+        <div class="rubro-opt" onclick="selRubro(this,'caprina')">
+          <span class="ro-emoji">🐐</span>
+          <span class="ro-name">Ganadería Caprina</span>
+        </div>
+        <div class="rubro-opt" onclick="selRubro(this,'avicultura')">
+          <span class="ro-emoji">🐔</span>
+          <span class="ro-name">Avicultura</span>
+        </div>
+        <div class="rubro-opt" onclick="selRubro(this,'forraje')">
+          <span class="ro-emoji">🌾</span>
+          <span class="ro-name">Forraje Agrícola</span>
+        </div>
+        <div class="rubro-opt" onclick="selRubro(this,'turismo')">
+          <span class="ro-emoji">🏕️</span>
+          <span class="ro-name">Turismo</span>
+        </div>
+        <div class="rubro-opt" onclick="selRubro(this,'apicultura')">
+          <span class="ro-emoji">🍯</span>
+          <span class="ro-name">Apicultura</span>
+        </div>
+        <div class="rubro-opt" onclick="selRubro(this,'hortalizas')">
+          <span class="ro-emoji">🥬</span>
+          <span class="ro-name">Hortalizas</span>
+        </div>
+        <div class="rubro-opt" onclick="selRubro(this,'frutales')">
+          <span class="ro-emoji">🍎</span>
+          <span class="ro-name">Frutales</span>
+        </div>
+        <div class="rubro-opt" onclick="selRubro(this,'lacteos')">
+          <span class="ro-emoji">🥛</span>
+          <span class="ro-name">Lácteos</span>
+        </div>
+        <div class="rubro-opt" onclick="selRubro(this,'quesos')">
+          <span class="ro-emoji">🧀</span>
+          <span class="ro-name">Quesos</span>
+        </div>
+      </div>
+
+      <div class="div" style="margin:14px -20px"></div>
+
+      <!-- CONCEPTO -->
+      <div class="stit" style="margin-top:14px">4 · Concepto específico</div>
+      <div id="concepto-hint" class="al al-i" style="margin-bottom:10px">
+        <span>💡</span>
+        <div class="al-t">Seleccione el concepto exacto para que se agregue a la fila correcta del mes.</div>
+      </div>
+      <div class="f">
+        <label id="lbl-concepto">Tipo de costo / gasto:</label>
+        <select class="concepto-select" id="rr-concepto" onchange="verificarObligatorio()">
+          <!-- Se llena dinámicamente según rubro + tipo -->
+        </select>
+        <div id="concepto-oblig" style="display:none" class="al al-w" style="margin-top:6px">
+          <span>⚠️</span>
+          <div class="al-t"><strong>Campo clave para Weak Link</strong>No olvide registrar este costo siempre — es obligatorio para el análisis de eslabones débiles.</div>
+        </div>
+      </div>
+
+      <div class="div" style="margin:10px -20px"></div>
+
+      <!-- MONTO -->
+      <div class="stit" style="margin-top:14px">5 · Monto</div>
+      <div class="f">
+        <label id="lbl-monto">Monto del gasto (CLP)</label>
+        <div class="monto-wrap">
+          <span class="monto-prefix">$</span>
+          <input type="number"
+            class="monto-input"
+            id="rr-monto"
+            placeholder="0"
+            inputmode="numeric"
+            oninput="formatMonto()">
+        </div>
+        <div id="monto-formateado"
+          style="font-size:12px;color:var(--v);font-weight:600;padding:4px 0;text-align:right">
+          Ingrese el monto
+        </div>
+      </div>
+
+      <div class="div" style="margin:10px -20px"></div>
+
+      <!-- FOTO BOLETA -->
+      <div class="stit" style="margin-top:14px">6 · Foto de la boleta o evidencia</div>
+      <div class="hint">Recomendado — ayuda a verificar el gasto luego</div>
+
+      <div class="foto-rr" id="foto-rr-box">
+        <div class="foto-rr-top" onclick="mostrarOpcionesFoto()">
+          <div class="foto-rr-thumb" id="foto-thumb-icono">📷</div>
+          <div class="foto-rr-txt">
+            <strong id="foto-rr-titulo">Adjuntar boleta o foto</strong>
+            <span id="foto-rr-sub">Toca para abrir cámara o galería</span>
+          </div>
+        </div>
+        <!-- Preview foto (simulado) -->
+        <div class="foto-preview" id="foto-preview-area"
+          style="display:none;font-size:60px;background:#E8F5E9">
+          🧾
+        </div>
+        <div class="foto-opciones" id="foto-opciones" style="display:none">
+          <button class="foto-opc-btn" onclick="simularFoto('camara')">
+            📷 Cámara
+          </button>
+          <button class="foto-opc-btn" onclick="simularFoto('galeria')">
+            🖼️ Galería
+          </button>
+        </div>
+      </div>
+
+      <div id="foto-confirmada" style="display:none;padding:8px 0">
+        <div class="al al-s">
+          <span>✅</span>
+          <div class="al-t">
+            <strong id="foto-nombre">foto_boleta.jpg</strong>
+            Adjunta y lista para subir cuando haya wifi
+          </div>
+        </div>
+      </div>
+
+      <div class="div" style="margin:14px -20px"></div>
+
+      <!-- NOTA -->
+      <div class="stit" style="margin-top:14px">7 · Nota (opcional)</div>
+      <div class="f">
+        <label>📝 Descripción o nota adicional</label>
+        <textarea
+          id="rr-nota"
+          rows="3"
+          style="background:var(--am);border:2px solid #E8D44D;border-radius:12px;
+            padding:12px;width:100%;font-size:14px;font-family:inherit;outline:none"
+          placeholder="Ej: 5 fardos heno · Proveedor Juan · para enero-febrero...">
+        </textarea>
+      </div>
+
+      <!-- RESUMEN ANTES DE GUARDAR -->
+      <div id="rr-preview"
+        style="background:var(--gr);border:2px solid var(--bo);
+          border-radius:14px;padding:14px;margin:12px 0">
+        <div style="font-size:11px;font-weight:700;color:#888;
+          text-transform:uppercase;margin-bottom:8px">
+          Vista previa del registro
+        </div>
+        <div style="display:flex;flex-direction:column;gap:5px;font-size:13px">
+          <div style="display:flex;justify-content:space-between">
+            <span style="color:#888">Tipo:</span>
+            <span id="pv-tipo" style="font-weight:700;color:var(--v)">💰 Ingreso</span>
+          </div>
+          <div style="display:flex;justify-content:space-between">
+            <span style="color:#888">Mes:</span>
+            <span id="pv-mes" style="font-weight:700">Julio 2025</span>
+          </div>
+          <div style="display:flex;justify-content:space-between">
+            <span style="color:#888">Rubro:</span>
+            <span id="pv-rubro" style="font-weight:700">🐄 Ganadería Bovina</span>
+          </div>
+          <div style="display:flex;justify-content:space-between">
+            <span style="color:#888">Concepto:</span>
+            <span id="pv-concepto" style="font-weight:700">Venta de animales</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;
+            padding-top:6px;border-top:1px solid var(--bo);margin-top:2px">
+            <span style="color:#888;font-weight:700">Monto:</span>
+            <span id="pv-monto" style="font-weight:800;font-size:16px;color:var(--v)">$0</span>
+          </div>
+        </div>
+        <div id="pv-foto-ind" style="display:none;margin-top:8px;
+          padding-top:8px;border-top:1px solid var(--bo)">
+          <span style="font-size:12px;color:var(--v)">📷 Foto adjunta</span>
+        </div>
+      </div>
+
+      <!-- BOTÓN GUARDAR -->
+      <button class="btn btn-p" onclick="guardarRR()"
+        style="font-size:17px;padding:17px;margin-top:4px">
+        💾 &nbsp;Guardar Registro
+      </button>
+
+      <button class="btn"
+        style="background:var(--gr);color:#888;border:2px solid var(--bo);
+          font-size:14px;padding:13px;margin-top:10px"
+        onclick="limpiarRR()">
+        🔄 Limpiar y nuevo registro
+      </button>
+
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════
+     CONFIRMACIÓN POST-GUARDADO
+════════════════════════════════════ -->
+<div class="screen" id="s-rr-ok">
+  <div style="flex:1;display:flex;flex-direction:column;
+    align-items:center;justify-content:center;
+    padding:30px 24px;gap:20px;background:white">
+
+    <!-- Ícono de éxito -->
+    <div style="width:90px;height:90px;border-radius:45px;
+      background:var(--vp);display:flex;align-items:center;
+      justify-content:center;font-size:44px">
+      ✅
+    </div>
+
+    <div style="text-align:center">
+      <div style="font-size:22px;font-weight:900;color:var(--v);margin-bottom:6px">
+        ¡Registro Guardado!
+      </div>
+      <div style="font-size:14px;color:#666;line-height:1.5">
+        El movimiento se agregó automáticamente al mes correcto
+      </div>
+    </div>
+
+    <!-- Detalle del guardado -->
+    <div class="confirm-badge" style="width:100%">
+      <div class="cb-title" id="ok-titulo">💰 Ingreso registrado</div>
+      <div class="cb-row">
+        <span>📅</span>
+        <span id="ok-mes">Julio 2025</span>
+      </div>
+      <div class="cb-row">
+        <span id="ok-rubro-em">🐄</span>
+        <span id="ok-rubro">Ganadería Bovina</span>
+      </div>
+      <div class="cb-row">
+        <span>📋</span>
+        <span id="ok-concepto">Venta de animales</span>
+      </div>
+      <div class="cb-row" style="margin-top:4px;padding-top:8px;border-top:1px solid rgba(255,255,255,.3)">
+        <span>💵</span>
+        <span id="ok-monto" style="font-size:17px;font-weight:800">$0</span>
+      </div>
+      <div class="cb-row" id="ok-foto-row" style="display:none">
+        <span>📷</span>
+        <span>Foto adjunta correctamente</span>
+      </div>
+    </div>
+
+    <!-- Actualización automática -->
+    <div style="width:100%;background:#F0FFF4;border:2px solid var(--vl);
+      border-radius:14px;padding:14px">
+      <div style="font-size:11px;font-weight:700;color:var(--v);
+        text-transform:uppercase;margin-bottom:8px">
+        📊 Actualizado automáticamente en:
+      </div>
+      <div style="display:flex;flex-direction:column;gap:5px;font-size:13px;color:#555">
+        <div>✅ Hoja <span id="ok-hoja" style="font-weight:700">Ganadería Bovina</span></div>
+        <div>✅ Columna <span id="ok-col" style="font-weight:700">Julio</span></div>
+        <div>✅ Fila <span id="ok-fila" style="font-weight:700">Venta de animales</span></div>
+        <div>✅ Resumen predial recalculado</div>
+        <div id="ok-foto-hoja" style="display:none">✅ Foto vinculada al registro</div>
+      </div>
+    </div>
+
+    <!-- Acciones -->
+    <div style="width:100%;display:flex;flex-direction:column;gap:10px">
+      <button class="btn btn-p" onclick="nuevoRR()">
+        ➕ &nbsp;Registrar otro movimiento
+      </button>
+      <button class="btn btn-s" onclick="irAlRubro()">
+        📋 &nbsp;Ver en el rubro
+      </button>
+      <button class="btn"
+        style="background:var(--gr);color:#666;border:2px solid var(--bo)"
+        onclick="goTo('s-home')">
+        🏠 &nbsp;Volver al inicio
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════
+     HISTORIAL DE REGISTROS
+════════════════════════════════════ -->
+<div class="screen" id="s-historial">
+  <div class="hdr">
+    <span class="back" onclick="goTo('s-home')">←</span>
+    <h2>📋 Historial de Registros</h2>
+    <span onclick="abrirRR()" style="cursor:pointer;font-size:20px">➕</span>
+  </div>
+
+  <div style="overflow-y:auto;padding-bottom:90px">
+
+    <!-- FILTROS -->
+    <div style="padding:12px 16px;background:var(--gr);border-bottom:1px solid var(--bo)">
+      <div style="display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px">
+        <button class="btn btn-p btn-sm" onclick="filtrarHist('todo')">Todos</button>
+        <button class="btn btn-s btn-sm" onclick="filtrarHist('ing')">💰 Ingresos</button>
+        <button class="btn btn-s btn-sm" onclick="filtrarHist('cos')">📉 Costos</button>
+        <button class="btn btn-s btn-sm" onclick="filtrarHist('bov')">🐄 Bovina</button>
+        <button class="btn btn-s btn-sm" onclick="filtrarHist('ov')">🐑 Ovina</button>
+        <button class="btn btn-s btn-sm" onclick="filtrarHist('foto')">📷 Con foto</button>
+      </div>
+    </div>
+
+    <!-- RESUMEN DEL MES -->
+    <div style="padding:14px 20px;background:white;border-bottom:2px solid var(--bo)">
+      <div style="font-size:11px;font-weight:700;color:#888;text-transform:uppercase;margin-bottom:8px">
+        Julio 2025 — Todos los rubros
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;font-size:12px">
+        <div style="text-align:center;background:var(--vp);border-radius:10px;padding:10px">
+          <div style="font-weight:800;color:var(--v);font-size:15px">$4,6M</div>
+          <div style="color:var(--v);font-size:10px">Ingresos</div>
+        </div>
+        <div style="text-align:center;background:#FFF3E0;border-radius:10px;padding:10px">
+          <div style="font-weight:800;color:#E65100;font-size:15px">$1,1M</div>
+          <div style="color:#E65100;font-size:10px">Costos</div>
+        </div>
+        <div style="text-align:center;background:var(--vp);border-radius:10px;padding:10px">
+          <div style="font-weight:800;color:var(--v);font-size:15px">$3,5M</div>
+          <div style="color:var(--v);font-size:10px">GP Julio</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sec">
+      <div class="stit">Julio 2025 · 5 registros</div>
+
+      <!-- REGISTRO 1 -->
+      <div class="hist-item" onclick="showToast('📋 Ver detalle del registro')">
+        <div class="hist-top">
+          <div style="flex:1">
+            <div class="hist-titulo">🐄 Bovina — Venta de animales</div>
+            <div class="hist-sub">
+              <span>📅 10 Jul</span>
+              <span class="hist-foto" title="Foto adjunta">📷</span>
+              <span>12 novillos · Ferial Valdivia</span>
+            </div>
+          </div>
+          <div>
+            <div class="hist-monto ing">+$4.200.000</div>
+            <div style="font-size:9px;color:#aaa;text-align:right">INGRESO</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- REGISTRO 2 -->
+      <div class="hist-item" onclick="showToast('📋 Ver detalle del registro')">
+        <div class="hist-top">
+          <div style="flex:1">
+            <div class="hist-titulo">🐄 Bovina — Forraje conservado
+              <span class="tag-obligatorio">⚠️ WL</span>
+            </div>
+            <div class="hist-sub">
+              <span>📅 15 Jul</span>
+              <span class="hist-foto">📷</span>
+              <span>5 fardos heno</span>
+            </div>
+          </div>
+          <div>
+            <div class="hist-monto cos">-$320.000</div>
+            <div style="font-size:9px;color:#aaa;text-align:right">COSTO</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- REGISTRO 3 -->
+      <div class="hist-item" onclick="showToast('📋 Ver detalle del registro')">
+        <div class="hist-top">
+          <div style="flex:1">
+            <div class="hist-titulo">🐑 Ovina — Veterinaria</div>
+            <div class="hist-sub">
+              <span>📅 08 Jul</span>
+              <span class="hist-foto">📷</span>
+              <span>Vacunación anual majada</span>
+            </div>
+          </div>
+          <div>
+            <div class="hist-monto cos">-$95.000</div>
+            <div style="font-size:9px;color:#aaa;text-align:right">COSTO</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- REGISTRO 4 -->
+      <div class="hist-item" onclick="showToast('📋 Ver detalle del registro')">
+        <div class="hist-top">
+          <div style="flex:1">
+            <div class="hist-titulo">🐄 Bovina — Subsidios / bonos</div>
+            <div class="hist-sub">
+              <span>📅 05 Jul</span>
+              <span style="color:#aaa;font-size:12px">Sin foto</span>
+            </div>
+          </div>
+          <div>
+            <div class="hist-monto ing">+$380.000</div>
+            <div style="font-size:9px;color:#aaa;text-align:right">INGRESO</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- REGISTRO 5 -->
+      <div class="hist-item" onclick="showToast('📋 Ver detalle del registro')">
+        <div class="hist-top">
+          <div style="flex:1">
+            <div class="hist-titulo">🐄 Bovina — Veterinaria</div>
+            <div class="hist-sub">
+              <span>📅 20 Jul</span>
+              <span class="hist-foto">📷</span>
+              <span>Antibiótico terneros</span>
+            </div>
+          </div>
+          <div>
+            <div class="hist-monto cos">-$145.000</div>
+            <div style="font-size:9px;color:#aaa;text-align:right">COSTO</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- JUNIO -->
+      <div class="stit" style="margin-top:16px;color:#888">Junio 2025 · 3 registros</div>
+      <div class="hist-item" onclick="showToast('📋 Ver detalle')">
+        <div class="hist-top">
+          <div style="flex:1">
+            <div class="hist-titulo">🐑 Ovina — Venta de animales</div>
+            <div class="hist-sub"><span>📅 28 Jun</span><span class="hist-foto">📷</span><span>Corderos al gancho</span></div>
+          </div>
+          <div><div class="hist-monto ing">+$1.850.000</div><div style="font-size:9px;color:#aaa;text-align:right">INGRESO</div></div>
+        </div>
+      </div>
+      <div class="hist-item" onclick="showToast('📋 Ver detalle')">
+        <div class="hist-top">
+          <div style="flex:1">
+            <div class="hist-titulo">🐄 Bovina — Manejo praderas</div>
+            <div class="hist-sub"><span>📅 15 Jun</span><span class="hist-foto">📷</span><span>Fertilización</span></div>
+          </div>
+          <div><div class="hist-monto cos">-$190.000</div><div style="font-size:9px;color:#aaa;text-align:right">COSTO</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAB en historial -->
+    <button class="fab" onclick="abrirRR()" style="bottom:80px">➕</button>
+
+  </div>
+
+  <div class="bnav">
+    <div class="ni" onclick="goTo('s-home')"><span class="ni-ic">🏠</span><span class="ni-lb">Inicio</span></div>
+    <div class="ni active"><span class="ni-ic">📋</span><span class="ni-lb">Registros</span></div>
+    <div class="ni" onclick="goTo('s-resumen')"><span class="ni-ic">📊</span><span class="ni-lb">Resumen</span></div>
+    <div class="ni" onclick="showToast('📷 Galería')"><span class="ni-ic">📷</span><span class="ni-lb">Fotos</span></div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════
+     BOVINA (simplificada con tabs)
+════════════════════════════════════ -->
 <div class="screen" id="s-bovina">
   <div class="hdr">
     <span class="back" onclick="goTo('s-home')">←</span>
     <h2>🐄 Ganadería Bovina</h2>
-    <span onclick="goTo('s-fotos')" style="cursor:pointer">📷</span>
+    <span onclick="abrirRRrubro('bovina')" style="cursor:pointer;font-size:12px;font-weight:700;background:var(--na);padding:5px 10px;border-radius:10px">➕ Reg.</span>
   </div>
   <div class="tabs">
-    <div class="tab active" onclick="switchTab(this,'tb-ing')">💰<br>Ingresos</div>
-    <div class="tab" onclick="switchTab(this,'tb-cos')">📉<br>Costos</div>
-    <div class="tab" onclick="switchTab(this,'tb-ua')">🐄<br>Animales</div>
-    <div class="tab" onclick="switchTab(this,'tb-kpi')">📊<br>KPIs</div>
+    <div class="tab active" onclick="switchTab(this,'bv-ing')">💰 Ingresos</div>
+    <div class="tab" onclick="switchTab(this,'bv-cos')">📉 Costos</div>
+    <div class="tab" onclick="switchTab(this,'bv-ua')">🐄 UA</div>
   </div>
-  <div id="tb-mes" style="padding:10px 16px 0;background:white;border-bottom:1px solid var(--bo)">
-    <div style="font-size:11px;color:#888;margin-bottom:5px;font-weight:600">📅 Mes activo:</div>
+  <div style="padding:10px 16px 6px;background:white;border-bottom:1px solid var(--bo)">
     <div class="ms">
-      <div class="mb done" onclick="selMes(this)">ENE</div>
-      <div class="mb done active" onclick="selMes(this)">FEB</div>
-      <div class="mb" onclick="selMes(this)">MAR</div>
-      <div class="mb" onclick="selMes(this)">ABR</div>
-      <div class="mb" onclick="selMes(this)">MAY</div>
-      <div class="mb" onclick="selMes(this)">JUN</div>
-      <div class="mb" onclick="selMes(this)">JUL</div>
-      <div class="mb" onclick="selMes(this)">AGO</div>
-      <div class="mb" onclick="selMes(this)">SEP</div>
-      <div class="mb" onclick="selMes(this)">OCT</div>
-      <div class="mb" onclick="selMes(this)">NOV</div>
-      <div class="mb" onclick="selMes(this)">DIC</div>
-    </div>
-    <div id="mes-lbl" style="font-size:12px;color:var(--v);font-weight:700;padding:4px 0 5px">Mes: FEBRERO 2025</div>
-  </div>
-  <!-- INGRESOS -->
-  <div id="tb-ing" style="overflow-y:auto;padding-bottom:90px;display:block">
-    <div class="sec">
-      <div class="stit">💰 Ingresos Brutos</div>
-      <div class="f"><label>🐄 Venta de animales (kg / cabezas)</label><input type="number" placeholder="$0" value="4200000"></div>
-      <div class="fu" onclick="showToast('📷 Boleta de venta')"><div class="ft">🧾</div><div class="ftx"><strong>📷 Adjuntar boleta</strong>Foto o PDF de la venta</div></div>
-      <div class="f" style="margin-top:10px"><label>🥛 Subproductos (leche, lana, cuero)</label><input type="number" placeholder="$0"></div>
-      <div class="f"><label>🐂 Reproductores / pie de cría</label><input type="number" placeholder="$0"></div>
-      <div class="f"><label>🏛️ Subsidios / bonos</label><input type="number" placeholder="$0" value="380000"></div>
-      <div class="f"><label>🤝 Mediería</label><input type="number" placeholder="$0"></div>
-      <div class="f"><label>📍 Arriendo de parcela (cabeza/día)</label><input type="number" placeholder="$0"></div>
-      <div class="f"><label>🌿 Arriendo de talaje</label><input type="number" placeholder="$0"></div>
-      <div class="f"><label>➕ Otro ingreso</label><input type="text" placeholder="Descripción" style="margin-bottom:6px;font-size:13px"><input type="number" placeholder="$0"></div>
-      <div class="res res-g"><div class="rl">Total Ingresos — Febrero</div><div class="rv">$ 4.580.000</div><div class="rsub">calculado automáticamente</div></div>
-      <button class="btn btn-p" onclick="showToast('✅ Ingresos guardados')">💾 &nbsp;Guardar Febrero</button>
-    </div>
-  </div>
-  <!-- COSTOS -->
-  <div id="tb-cos" style="overflow-y:auto;padding-bottom:90px;display:none">
-    <div class="sec">
-      <div class="stit">📉 Costos Directos</div>
-      <div class="al al-i"><span>ℹ️</span><div class="al-t">Solo costos que <strong>desaparecen</strong> si elimina este rubro.</div></div>
-      <div class="f"><label>🌿 Tipo alimentación principal</label><select><option>Forraje / pradera</option><option>Concentrado / grano</option><option>Suplemento mineral</option><option>Otro (especifique)</option></select></div>
-      <div class="f"><label>🧂 Suplemento mineral / sales</label><input type="number" placeholder="$0" value="85000"></div>
-      <div class="f"><label>🌽 Concentrados / pellets</label><input type="number" placeholder="$0"></div>
-      <div class="f">
-        <label>🌾 Forraje conservado (heno, ensilaje, fardos)</label>
-        <div class="hint-r">⚠️ Obligatorio — clave para Weak Link</div>
-        <input type="number" placeholder="$0" value="320000" style="border-color:var(--ro)">
-      </div>
-      <div class="f"><label>💊 Veterinaria y medicamentos</label><input type="number" placeholder="$0" value="145000"></div>
-      <div class="fu" onclick="showToast('📷 Boleta veterinaria')"><div class="ft">💊</div><div class="ftx"><strong>📷 Boleta veterinaria</strong>Adjuntar comprobante</div></div>
-      <div class="f" style="margin-top:10px"><label>👷 Mano de obra PAGADA</label><select style="margin-bottom:6px"><option>Permanente</option><option>Temporal / temporada</option><option>Contratista externo</option></select><input type="number" placeholder="$0" value="280000"></div>
-      <div class="f"><label>🚛 Transporte / flete</label><input type="number" placeholder="$0"></div>
-      <div class="f"><label>🌱 Manejo de praderas (fertilización)</label><input type="number" placeholder="$0" value="190000"></div>
-      <div class="f"><label>🚜 Maquinaria / arriendo</label><input type="number" placeholder="$0"></div>
-      <div class="f"><label>🐮 Compra animales reposición</label><input type="number" placeholder="$0"></div>
-      <div class="res res-o"><div class="rl">Total Costos — Febrero</div><div class="rv">$ 1.020.000</div></div>
-      <div class="res res-g"><div class="rl">✅ Gross Profit — Febrero</div><div class="rv">$ 3.560.000</div><div class="rsub">GP Margin: 77,7%</div></div>
-      <!-- Costos anuales -->
-      <div style="background:#F3E5F5;border-radius:13px;padding:13px;margin-top:12px;border:1px solid #CE93D8">
-        <div style="font-size:11px;font-weight:700;color:#6A1B9A;text-transform:uppercase;margin-bottom:8px">📅 Costos anuales esporádicos</div>
-        <div class="f"><label style="color:#6A1B9A;font-size:12px">Sub-ítem 1</label><input type="text" placeholder="Ej: Certificación orgánica" style="background:#F9F0FF;border-color:#CE93D8;margin-bottom:5px"><input type="number" placeholder="Monto anual $" style="background:#F9F0FF;border-color:#CE93D8"></div>
-        <div class="f"><label style="color:#6A1B9A;font-size:12px">Sub-ítem 2</label><input type="text" placeholder="Ej: Asesoría técnica" style="background:#F9F0FF;border-color:#CE93D8;margin-bottom:5px"><input type="number" placeholder="Monto anual $" style="background:#F9F0FF;border-color:#CE93D8"></div>
-      </div>
-      <button class="btn btn-p" style="margin-top:12px" onclick="showToast('✅ Costos guardados')">💾 &nbsp;Guardar Costos Febrero</button>
-    </div>
-  </div>
-  <!-- ANIMALES UA -->
-  <div id="tb-ua" style="overflow-y:auto;padding-bottom:90px;display:none">
-    <div class="sec">
-      <div class="stit">🐄 Inventario y UA</div>
-      <div class="al al-i"><span>ℹ️</span><div class="al-t"><strong>UA</strong> = Peso promedio ÷ 450 kg. Calculado automáticamente.</div></div>
-      <div style="overflow-x:auto;margin:10px -20px 0;padding:0 16px">
-        <table class="uat">
-          <thead><tr><th>Categoría</th><th>N°</th><th>Kg</th><th>Factor</th><th>UA</th></tr></thead>
-          <tbody>
-            <tr><td>🐂 Toro</td><td><input type="number" value="2" id="bn0" oninput="calcBUA()"></td><td><input type="number" value="520" id="bp0" oninput="calcBUA()"></td><td><span id="bf0" class="uc">1.16</span></td><td><span id="bu0" class="uc">2.3</span></td></tr>
-            <tr><td>🐄 Vaca</td><td><input type="number" value="42" id="bn1" oninput="calcBUA()"></td><td><input type="number" value="420" id="bp1" oninput="calcBUA()"></td><td><span id="bf1" class="uc">0.93</span></td><td><span id="bu1" class="uc">39.2</span></td></tr>
-            <tr><td>🐃 Novillo</td><td><input type="number" value="18" id="bn2" oninput="calcBUA()"></td><td><input type="number" value="320" id="bp2" oninput="calcBUA()"></td><td><span id="bf2" class="uc">0.71</span></td><td><span id="bu2" class="uc">12.8</span></td></tr>
-            <tr><td>🐄 Novilla</td><td><input type="number" value="10" id="bn3" oninput="calcBUA()"></td><td><input type="number" value="280" id="bp3" oninput="calcBUA()"></td><td><span id="bf3" class="uc">0.62</span></td><td><span id="bu3" class="uc">6.2</span></td></tr>
-            <tr><td>🐮 Ternero</td><td><input type="number" value="24" id="bn4" oninput="calcBUA()"></td><td><input type="number" value="160" id="bp4" oninput="calcBUA()"></td><td><span id="bf4" class="uc">0.36</span></td><td><span id="bu4" class="uc">8.5</span></td></tr>
-            <tr><td>🐮 Ternera</td><td><input type="number" value="20" id="bn5" oninput="calcBUA()"></td><td><input type="number" value="150" id="bp5" oninput="calcBUA()"></td><td><span id="bf5" class="uc">0.33</span></td><td><span id="bu5" class="uc">6.7</span></td></tr>
-            <tr class="uat-tot"><td colspan="3">▶ TOTAL UA Bovina</td><td></td><td id="bu-tot">75.7</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="f" style="margin-top:14px"><label>📐 Superficie pastoreo (ha)</label><input type="number" value="72" id="b-ha" oninput="calcBCarga()"></div>
-      <div class="res res-g"><div class="rl">▶ Carga Animal Efectiva</div><div class="rv" id="b-carga">1.05 UA/ha</div><div class="rsub" id="b-csub">75.7 UA ÷ 72 ha</div></div>
-      <div class="fu" onclick="showToast('📷 Foto del rodeo')"><div class="ft">🐄</div><div class="ftx"><strong>📷 Foto del rodeo</strong>Para verificar inventario</div></div>
-      <button class="btn btn-p" style="margin-top:12px" onclick="showToast('✅ Inventario guardado')">💾 &nbsp;Guardar Inventario y UA</button>
-    </div>
-  </div>
-  <!-- KPIs -->
-  <div id="tb-kpi" style="overflow-y:auto;padding-bottom:90px;display:none">
-    <div class="sec">
-      <div class="stit">📊 Indicadores y KPIs</div>
-      <div class="f"><label>📐 Superficie dedicada (ha)</label><input type="number" value="85" id="b-sup"></div>
-      <div class="ir"><div class="il">GP por hectárea<span class="iu">CLP/ha · auto</span></div><div class="ic">$43.529</div></div>
-      <div class="f" style="margin-top:12px"><label>📦 Unidades producidas (kg/año)</label><input type="number" value="18500"></div>
-      <div class="f"><label>💰 Precio promedio recibido (CLP/kg)</label><input type="number" value="1850"></div>
-      <div class="ir"><div class="il">Ingreso total / ha<span class="iu">productividad · auto</span></div><div class="ic">$108.235</div></div>
-      <div class="div" style="margin:12px -20px"></div>
-      <div class="stit">⚖️ Punto de Equilibrio</div>
-      <div class="f"><label>📦 Unidades vendidas totales</label><input type="number" value="18500"></div>
-      <div style="background:var(--vp);border:2px solid var(--vl);border-radius:14px;padding:13px;margin:8px 0">
-        <div class="ir" style="border-color:rgba(82,183,136,.3)"><div class="il" style="font-size:12px">Costo directo / unidad</div><div style="font-weight:800;color:#1565C0">$ 55 / kg</div></div>
-        <div class="ir" style="border-color:rgba(82,183,136,.3)"><div class="il" style="font-size:12px">Precio recibido</div><input type="number" value="1850" style="width:90px;padding:5px;background:var(--am);border:1.5px solid #E8D44D;border-radius:8px;font-size:13px;font-weight:700;text-align:center"></div>
-        <div class="ir" style="border:none"><div class="il" style="font-size:13px;font-weight:700">▶ Margen por unidad</div><div style="font-weight:800;color:var(--v);font-size:16px">$ 1.795 / kg</div></div>
-      </div>
-      <div class="div" style="margin:12px -20px"></div>
-      <div class="stit">🔄 Compra y Venta Animales</div>
-      <div class="g2">
-        <div class="f"><label style="font-size:12px">Cabezas compradas</label><input type="number" placeholder="0"></div>
-        <div class="f"><label style="font-size:12px">Kg comprados</label><input type="number" placeholder="0"></div>
-      </div>
-      <div class="f"><label>💸 Inversión compra (CLP)</label><input type="number" placeholder="$0"></div>
-      <div class="ir"><div class="il">Precio compra CLP/kg<span class="iu">calculado</span></div><div class="ic">$ ---</div></div>
-      <div class="g2" style="margin-top:10px">
-        <div class="f"><label style="font-size:12px">Cabezas vendidas</label><input type="number" placeholder="0"></div>
-        <div class="f"><label style="font-size:12px">Kg vendidos</label><input type="number" placeholder="0"></div>
-      </div>
-      <div class="ir"><div class="il">Precio venta CLP/kg<span class="iu">calculado</span></div><div class="ic">$ ---</div></div>
-      <div class="ir" style="margin-bottom:12px"><div class="il">Spread ponderado<span class="iu">venta − compra</span></div><div class="ic">$ ---</div></div>
-      <button class="btn btn-p" onclick="showToast('✅ KPIs guardados')">💾 &nbsp;Guardar Indicadores</button>
-    </div>
-  </div>
-</div>
-
-<!-- ═══════════════════════════════════
-     6. OVINA
-═══════════════════════════════════ -->
-<div class="screen" id="s-ovina">
-  <div class="hdr">
-    <span class="back" onclick="goTo('s-home')">←</span>
-    <h2>🐑 Ganadería Ovina</h2>
-    <span onclick="goTo('s-fotos')" style="cursor:pointer">📷</span>
-  </div>
-  <div class="tabs">
-    <div class="tab active" onclick="switchTab(this,'ov-ing')">💰<br>Ingresos</div>
-    <div class="tab" onclick="switchTab(this,'ov-cos')">📉<br>Costos</div>
-    <div class="tab" onclick="switchTab(this,'ov-ua')">🐑<br>Animales</div>
-  </div>
-  <div style="padding:10px 16px 0;background:white;border-bottom:1px solid var(--bo)">
-    <div class="ms">
-      <div class="mb done" onclick="selMes(this)">ENE</div><div class="mb done" onclick="selMes(this)">FEB</div>
-      <div class="mb done active" onclick="selMes(this)">MAR</div><div class="mb" onclick="selMes(this)">ABR</div>
-      <div class="mb done" onclick="selMes(this)">MAY</div><div class="mb" onclick="selMes(this)">JUN</div>
+      <div class="mb done" onclick="selMes(this)">ENE</div><div class="mb done active" onclick="selMes(this)">FEB</div>
+      <div class="mb" onclick="selMes(this)">MAR</div><div class="mb" onclick="selMes(this)">ABR</div>
+      <div class="mb" onclick="selMes(this)">MAY</div><div class="mb" onclick="selMes(this)">JUN</div>
       <div class="mb" onclick="selMes(this)">JUL</div><div class="mb" onclick="selMes(this)">AGO</div>
       <div class="mb" onclick="selMes(this)">SEP</div><div class="mb" onclick="selMes(this)">OCT</div>
       <div class="mb" onclick="selMes(this)">NOV</div><div class="mb" onclick="selMes(this)">DIC</div>
     </div>
-    <div style="font-size:12px;color:var(--v);font-weight:700;padding:4px 0 5px">Mes: MARZO 2025</div>
+    <div style="font-size:12px;color:var(--v);font-weight:700;padding:4px 0 5px">Mes: FEBRERO 2025</div>
   </div>
-  <div id="ov-ing" style="overflow-y:auto;padding-bottom:90px;display:block">
+  <div id="bv-ing" style="overflow-y:auto;padding-bottom:90px;display:block">
     <div class="sec">
-      <div class="stit">💰 Ingresos Brutos</div>
-      <div class="f"><label>🐑 Venta de animales (kg / cabezas)</label><input type="number" placeholder="$0" value="1850000"></div>
-      <div class="fu" onclick="showToast('📷 Boleta venta corderos')"><div class="ft">🧾</div><div class="ftx"><strong>📷 Boleta de venta</strong>Adjuntar comprobante</div></div>
-      <div class="f" style="margin-top:10px"><label>🧶 Subproductos (leche, lana, cuero)</label><input type="number" placeholder="$0" value="320000"></div>
-      <div class="fu" onclick="showToast('📷 Foto de la lana')"><div class="ft">🧶</div><div class="ftx"><strong>📷 Foto lana / producto</strong>Evidencia del subproducto</div></div>
-      <div class="f" style="margin-top:10px"><label>🐏 Reproductores / pie de cría</label><input type="number" placeholder="$0"></div>
-      <div class="f"><label>🏛️ Subsidios / bonos</label><input type="number" placeholder="$0"></div>
-      <div class="f"><label>➕ Otro ingreso</label><input type="number" placeholder="$0"></div>
-      <div class="res res-g"><div class="rl">Total Ingresos — Marzo</div><div class="rv">$ 2.170.000</div><div class="rsub">calculado automáticamente</div></div>
-      <button class="btn btn-p" onclick="showToast('✅ Ingresos Ovina guardados')">💾 &nbsp;Guardar Marzo</button>
+      <!-- Banner registro rápido -->
+      <div style="background:linear-gradient(135deg,#FFF3E0,#FFF8E1);border:2px solid #FFCC80;border-radius:14px;padding:13px;margin-bottom:14px;display:flex;align-items:center;gap:12px">
+        <div style="font-size:28px">⚡</div>
+        <div style="flex:1">
+          <div style="font-size:13px;font-weight:700;color:#E65100;margin-bottom:2px">Registro Rápido</div>
+          <div style="font-size:12px;color:#888">Agregue ingresos con fecha y foto en un solo paso</div>
+        </div>
+        <button class="btn" style="width:auto;background:var(--na);color:white;padding:9px 14px;font-size:13px;border-radius:12px" onclick="abrirRRrubro('bovina','ing')">➕ Agregar</button>
+      </div>
+      <div class="stit">💰 Ingresos Brutos — Febrero</div>
+      <div class="f"><label>Venta de animales</label><input type="number" placeholder="$0" value="4200000"></div>
+      <div class="f"><label>Subproductos (leche, lana)</label><input type="number" placeholder="$0"></div>
+      <div class="f"><label>Subsidios / bonos</label><input type="number" placeholder="$0" value="380000"></div>
+      <div class="f"><label>Mediería</label><input type="number" placeholder="$0"></div>
+      <div class="f"><label>Otro ingreso</label><input type="number" placeholder="$0"></div>
+      <div class="res res-g"><div class="rl">Total Ingresos</div><div class="rv">$4.580.000</div><div class="rsub">calculado automáticamente</div></div>
+      <button class="btn btn-p" onclick="showToast('✅ Ingresos guardados')">💾 &nbsp;Guardar Febrero</button>
     </div>
   </div>
-  <div id="ov-cos" style="overflow-y:auto;padding-bottom:90px;display:none">
+  <div id="bv-cos" style="overflow-y:auto;padding-bottom:90px;display:none">
     <div class="sec">
-      <div class="stit">📉 Costos Directos</div>
-      <div class="f"><label>🌿 Alimentación — ítem principal</label><select><option>Forraje / pradera</option><option>Concentrado / grano</option><option>Heno de alfalfa / fardos</option><option>Suplemento mineral</option><option>Otro (especifique)</option></select></div>
+      <div style="background:linear-gradient(135deg,#FFF3E0,#FFF8E1);border:2px solid #FFCC80;border-radius:14px;padding:13px;margin-bottom:14px;display:flex;align-items:center;gap:12px">
+        <div style="font-size:28px">⚡</div>
+        <div style="flex:1">
+          <div style="font-size:13px;font-weight:700;color:#E65100;margin-bottom:2px">Registro Rápido</div>
+          <div style="font-size:12px;color:#888">Agregue costos con fecha y foto de boleta</div>
+        </div>
+        <button class="btn" style="width:auto;background:var(--na);color:white;padding:9px 14px;font-size:13px;border-radius:12px" onclick="abrirRRrubro('bovina','cos')">➕ Agregar</button>
+      </div>
+      <div class="stit">📉 Costos Directos — Febrero</div>
+      <div class="f"><label>Suplemento mineral / sales</label><input type="number" placeholder="$0" value="85000"></div>
+      <div class="f"><label>Concentrados / pellets</label><input type="number" placeholder="$0"></div>
       <div class="f">
-        <label>🌾 Forraje conservado (heno, fardos)</label>
-        <div class="hint-r">⚠️ Obligatorio — Weak Link</div>
-        <input type="number" placeholder="$0" value="180000" style="border-color:var(--ro)">
+        <label>🌾 Forraje conservado <span class="tag-obligatorio">⚠️ Obligatorio WL</span></label>
+        <input type="number" placeholder="$0" value="320000" style="border-color:var(--ro)">
       </div>
-      <div class="f"><label>💊 Veterinaria y medicamentos</label><input type="number" placeholder="$0" value="95000"></div>
-      <div class="f"><label>👷 Mano de obra PAGADA</label><select style="margin-bottom:6px"><option>Permanente</option><option>Temporal</option><option>Contratista</option></select><input type="number" placeholder="$0" value="120000"></div>
-      <div class="f"><label>🚛 Transporte / flete</label><input type="number" placeholder="$0"></div>
-      <div class="f"><label>🌱 Manejo de praderas</label><input type="number" placeholder="$0" value="80000"></div>
-      <div class="f"><label>🐑 Compra animales reposición</label><input type="number" placeholder="$0"></div>
-      <div class="res res-o"><div class="rl">Total Costos — Marzo</div><div class="rv">$ 475.000</div></div>
-      <div class="res res-g"><div class="rl">✅ Gross Profit — Marzo</div><div class="rv">$ 1.695.000</div><div class="rsub">GP Margin: 78,1%</div></div>
-      <button class="btn btn-p" onclick="showToast('✅ Costos Ovina guardados')">💾 &nbsp;Guardar Costos Marzo</button>
-    </div>
-  </div>
-  <div id="ov-ua" style="overflow-y:auto;padding-bottom:90px;display:none">
-    <div class="sec">
-      <div class="stit">🐑 Inventario y UA</div>
-      <div class="al al-i"><span>ℹ️</span><div class="al-t">Factor UA = Peso promedio ÷ 450 kg (misma referencia que bovinos).</div></div>
-      <div style="overflow-x:auto;margin:10px -20px 0;padding:0 16px">
-        <table class="uat">
-          <thead><tr><th>Categoría</th><th>N°</th><th>Kg</th><th>Factor</th><th>UA</th></tr></thead>
-          <tbody>
-            <tr><td>🐏 Carnero</td><td><input type="number" value="3" oninput="calcGUA('ov',this)"></td><td><input type="number" value="90" oninput="calcGUA('ov',this)"></td><td><span class="uc">0.20</span></td><td><span class="uc">0.6</span></td></tr>
-            <tr><td>🐑 Oveja</td><td><input type="number" value="45" oninput="calcGUA('ov',this)"></td><td><input type="number" value="70" oninput="calcGUA('ov',this)"></td><td><span class="uc">0.16</span></td><td><span class="uc">7.0</span></td></tr>
-            <tr><td>🐑 Borrego</td><td><input type="number" value="20" oninput="calcGUA('ov',this)"></td><td><input type="number" value="55" oninput="calcGUA('ov',this)"></td><td><span class="uc">0.12</span></td><td><span class="uc">2.4</span></td></tr>
-            <tr><td>🐑 Borrega</td><td><input type="number" value="18" oninput="calcGUA('ov',this)"></td><td><input type="number" value="50" oninput="calcGUA('ov',this)"></td><td><span class="uc">0.11</span></td><td><span class="uc">2.0</span></td></tr>
-            <tr><td>🐑 Cordero</td><td><input type="number" value="30" oninput="calcGUA('ov',this)"></td><td><input type="number" value="30" oninput="calcGUA('ov',this)"></td><td><span class="uc">0.07</span></td><td><span class="uc">2.0</span></td></tr>
-            <tr><td>🐑 Cordera</td><td><input type="number" value="25" oninput="calcGUA('ov',this)"></td><td><input type="number" value="28" oninput="calcGUA('ov',this)"></td><td><span class="uc">0.06</span></td><td><span class="uc">1.6</span></td></tr>
-            <tr class="uat-tot"><td colspan="3">▶ TOTAL UA Ovina</td><td></td><td>15.6</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="f" style="margin-top:14px"><label>📐 Superficie pastoreo (ha)</label><input type="number" value="28"></div>
-      <div class="res res-g"><div class="rl">▶ Carga Animal Efectiva</div><div class="rv">0.56 UA/ha</div><div class="rsub">15.6 UA ÷ 28 ha</div></div>
-      <div class="fu" onclick="showToast('📷 Foto majada')"><div class="ft">🐑</div><div class="ftx"><strong>📷 Foto de la majada</strong>Para verificar inventario</div></div>
-      <button class="btn btn-p" style="margin-top:12px" onclick="showToast('✅ Ovina UA guardada')">💾 &nbsp;Guardar Inventario</button>
-    </div>
-  </div>
-</div>
-
-<!-- ═══════════════════════════════════
-     7. PORCINA
-═══════════════════════════════════ -->
-<div class="screen" id="s-porcina">
-  <div class="hdr">
-    <span class="back" onclick="goTo('s-home')">←</span>
-    <h2>🐖 Ganadería Porcina</h2>
-    <span onclick="goTo('s-fotos')" style="cursor:pointer">📷</span>
-  </div>
-  <div class="tabs">
-    <div class="tab active" onclick="switchTab(this,'po-ing')">💰<br>Ingresos</div>
-    <div class="tab" onclick="switchTab(this,'po-cos')">📉<br>Costos</div>
-    <div class="tab" onclick="switchTab(this,'po-ua')">🐖<br>Animales</div>
-  </div>
-  <div style="padding:10px 16px 0;background:white;border-bottom:1px solid var(--bo)">
-    <div class="ms">
-      <div class="mb active" onclick="selMes(this)">ENE</div><div class="mb" onclick="selMes(this)">FEB</div><div class="mb" onclick="selMes(this)">MAR</div><div class="mb" onclick="selMes(this)">ABR</div><div class="mb" onclick="selMes(this)">MAY</div><div class="mb" onclick="selMes(this)">JUN</div><div class="mb" onclick="selMes(this)">JUL</div><div class="mb" onclick="selMes(this)">AGO</div><div class="mb" onclick="selMes(this)">SEP</div><div class="mb" onclick="selMes(this)">OCT</div><div class="mb" onclick="selMes(this)">NOV</div><div class="mb" onclick="selMes(this)">DIC</div>
-    </div>
-    <div style="font-size:12px;color:var(--v);font-weight:700;padding:4px 0 5px">Mes: ENERO 2025</div>
-  </div>
-  <div id="po-ing" style="overflow-y:auto;padding-bottom:90px;display:block">
-    <div class="sec">
-      <div class="stit">💰 Ingresos Brutos</div>
-      <div class="f"><label>🐖 Venta de animales (kg / cabezas)</label><input type="number" placeholder="$0"></div>
-      <div class="fu" onclick="showToast('📷 Boleta venta cerdos')"><div class="ft">🧾</div><div class="ftx"><strong>📷 Boleta de venta</strong>Adjuntar comprobante</div></div>
-      <div class="f" style="margin-top:10px"><label>Venta reproductores / pie de cría</label><input type="number" placeholder="$0"></div>
-      <div class="f"><label>🏛️ Subsidios / bonos</label><input type="number" placeholder="$0"></div>
-      <div class="f"><label>➕ Otro ingreso</label><input type="number" placeholder="$0"></div>
-      <div class="res res-g"><div class="rl">Total Ingresos</div><div class="rv">$ 0</div><div class="rsub">Sin datos aún</div></div>
-      <button class="btn btn-p" onclick="showToast('✅ Ingresos Porcina guardados')">💾 &nbsp;Guardar</button>
-    </div>
-  </div>
-  <div id="po-cos" style="overflow-y:auto;padding-bottom:90px;display:none">
-    <div class="sec">
-      <div class="stit">📉 Costos Directos</div>
-      <div class="al al-w"><span>💡</span><div class="al-t">En porcinos el principal costo es la alimentación. Detalle cada componente.</div></div>
-      <div class="f"><label>🌽 Alimento concentrado comercial</label><input type="number" placeholder="$0"></div>
-      <div class="f"><label>🌽 Maíz</label><input type="number" placeholder="$0"></div>
-      <div class="f"><label>🌿 Afrecho de soya</label><input type="number" placeholder="$0"></div>
-      <div class="f"><label>🥬 Forraje / restos de cosecha</label><input type="number" placeholder="$0"></div>
-      <div class="f"><label>🐷 Lechón destetado (compra / reposición)</label><input type="number" placeholder="$0"></div>
-      <div class="f"><label>👷 Mano de obra PAGADA</label><input type="number" placeholder="$0"></div>
-      <div class="f"><label>🏗️ Instalaciones y mantención</label><input type="number" placeholder="$0"></div>
-      <div class="f"><label>⚡ Energía (luz, calefacción)</label><input type="number" placeholder="$0"></div>
-      <div class="f"><label>💊 Veterinaria (vacunas, tratamientos)</label><input type="number" placeholder="$0"></div>
-      <div class="res res-o"><div class="rl">Total Costos</div><div class="rv">$ 0</div></div>
-      <div class="res res-g"><div class="rl">Gross Profit</div><div class="rv">$ 0</div><div class="rsub">Sin datos aún</div></div>
-      <button class="btn btn-p" onclick="showToast('✅ Costos Porcina guardados')">💾 &nbsp;Guardar</button>
-    </div>
-  </div>
-  <div id="po-ua" style="overflow-y:auto;padding-bottom:90px;display:none">
-    <div class="sec">
-      <div class="stit">🐖 Inventario y UA</div>
-      <div style="overflow-x:auto;margin:10px -20px 0;padding:0 16px">
-        <table class="uat">
-          <thead><tr><th>Categoría</th><th>N°</th><th>Kg</th><th>Factor</th><th>UA</th></tr></thead>
-          <tbody>
-            <tr><td>🐗 Verraco</td><td><input type="number" value="0"></td><td><input type="number" value="200"></td><td><span class="uc">0.44</span></td><td><span class="uc">0.0</span></td></tr>
-            <tr><td>🐷 Cerda reproductora</td><td><input type="number" value="0"></td><td><input type="number" value="180"></td><td><span class="uc">0.40</span></td><td><span class="uc">0.0</span></td></tr>
-            <tr><td>🐖 Cerdo/a engorda</td><td><input type="number" value="0"></td><td><input type="number" value="100"></td><td><span class="uc">0.22</span></td><td><span class="uc">0.0</span></td></tr>
-            <tr><td>🐽 Lechón</td><td><input type="number" value="0"></td><td><input type="number" value="20"></td><td><span class="uc">0.04</span></td><td><span class="uc">0.0</span></td></tr>
-            <tr class="uat-tot"><td colspan="3">▶ TOTAL UA Porcina</td><td></td><td>0.0</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="f" style="margin-top:14px"><label>📐 Superficie dedicada (ha)</label><input type="number" value="0.5"></div>
-      <div class="res res-g"><div class="rl">▶ Carga Animal</div><div class="rv">0.0 UA/ha</div></div>
-      <button class="btn btn-p" style="margin-top:12px" onclick="showToast('✅ Porcina UA guardada')">💾 &nbsp;Guardar</button>
-    </div>
-  </div>
-</div>
-
-<!-- ═══════════════════════════════════
-     8. CAPRINA
-═══════════════════════════════════ -->
-<div class="screen" id="s-caprina">
-  <div class="hdr">
-    <span class="back" onclick="goTo('s-home')">←</span>
-    <h2>🐐 Ganadería Caprina</h2>
-    <span onclick="goTo('s-fotos')" style="cursor:pointer">📷</span>
-  </div>
-  <div class="tabs">
-    <div class="tab active" onclick="switchTab(this,'ca-ing')">💰<br>Ingresos</div>
-    <div class="tab" onclick="switchTab(this,'ca-cos')">📉<br>Costos</div>
-    <div class="tab" onclick="switchTab(this,'ca-ua')">🐐<br>Animales</div>
-  </div>
-  <div style="padding:10px 16px 6px;background:white;border-bottom:1px solid var(--bo)">
-    <div class="ms">
-      <div class="mb active" onclick="selMes(this)">ENE</div><div class="mb" onclick="selMes(this)">FEB</div><div class="mb" onclick="selMes(this)">MAR</div><div class="mb" onclick="selMes(this)">ABR</div><div class="mb" onclick="selMes(this)">MAY</div><div class="mb" onclick="selMes(this)">JUN</div><div class="mb" onclick="selMes(this)">JUL</div><div class="mb" onclick="selMes(this)">AGO</div><div class="mb" onclick="selMes(this)">SEP</div><div class="mb" onclick="selMes(this)">OCT</div><div class="mb" onclick="selMes(this)">NOV</div><div class="mb" onclick="selMes(this)">DIC</div>
-    </div>
-    <div style="font-size:12px;color:var(--v);font-weight:700;padding:4px 0 5px">Mes: ENERO 2025</div>
-  </div>
-  <div id="ca-ing" style="overflow-y:auto;padding-bottom:90px;display:block">
-    <div class="sec">
-      <div class="stit">💰 Ingresos Brutos</div>
-      <div class="f"><label>🐐 Venta de animales (kg / cabezas)</label><input type="number" placeholder="$0"></div>
-      <div class="f"><label>🥛 Subproductos (leche de cabra, queso)</label><input type="number" placeholder="$0"></div>
-      <div class="fu" onclick="showToast('📷 Foto del producto lácteo')"><div class="ft">🥛</div><div class="ftx"><strong>📷 Foto del producto</strong>Leche o queso de cabra</div></div>
-      <div class="f" style="margin-top:10px"><label>🐐 Reproductores / pie de cría</label><input type="number" placeholder="$0"></div>
-      <div class="f"><label>🏛️ Subsidios / bonos</label><input type="number" placeholder="$0"></div>
-      <div class="res res-g"><div class="rl">Total Ingresos</div><div class="rv">$ 0</div><div class="rsub">Sin datos aún</div></div>
-      <button class="btn btn-p" onclick="showToast('✅ Ingresos Caprina guardados')">💾 &nbsp;Guardar</button>
-    </div>
-  </div>
-  <div id="ca-cos" style="overflow-y:auto;padding-bottom:90px;display:none">
-    <div class="sec">
-      <div class="stit">📉 Costos Directos</div>
-      <div class="f"><label>🌿 Forraje fresco (pastizal, arbustos)</label><input type="number" placeholder="$0"></div>
-      <div class="f">
-        <label>🌾 Forraje conservado (heno, chala)</label>
-        <div class="hint-r">⚠️ Obligatorio — Weak Link</div>
-        <input type="number" placeholder="$0" style="border-color:var(--ro)">
-      </div>
-      <div class="f"><label>🌽 Concentrados (maíz, avena, soya)</label><input type="number" placeholder="$0"></div>
-      <div class="f"><label>🧂 Suplemento mineral</label><input type="number" placeholder="$0"></div>
-      <div class="f"><label>🐐 Reposición de ganado</label><input type="number" placeholder="$0"></div>
-      <div class="f"><label>👷 Mano de obra PAGADA</label><input type="number" placeholder="$0"></div>
-      <div class="f"><label>🏗️ Infraestructura y equipamiento</label><input type="number" placeholder="$0"></div>
-      <div class="f"><label>🚛 Logística y transporte</label><input type="number" placeholder="$0"></div>
-      <div class="res res-o"><div class="rl">Total Costos</div><div class="rv">$ 0</div></div>
-      <div class="res res-g"><div class="rl">Gross Profit</div><div class="rv">$ 0</div></div>
-      <button class="btn btn-p" onclick="showToast('✅ Costos Caprina guardados')">💾 &nbsp;Guardar</button>
-    </div>
-  </div>
-  <div id="ca-ua" style="overflow-y:auto;padding-bottom:90px;display:none">
-    <div class="sec">
-      <div class="stit">🐐 Inventario y UA</div>
-      <div style="overflow-x:auto;margin:10px -20px 0;padding:0 16px">
-        <table class="uat">
-          <thead><tr><th>Categoría</th><th>N°</th><th>Kg</th><th>Factor</th><th>UA</th></tr></thead>
-          <tbody>
-            <tr><td>🐐 Macho cabrío</td><td><input type="number" value="0"></td><td><input type="number" value="75"></td><td><span class="uc">0.17</span></td><td><span class="uc">0.0</span></td></tr>
-            <tr><td>🐐 Cabra</td><td><input type="number" value="0"></td><td><input type="number" value="55"></td><td><span class="uc">0.12</span></td><td><span class="uc">0.0</span></td></tr>
-            <tr><td>🐐 Cabrito</td><td><input type="number" value="0"></td><td><input type="number" value="20"></td><td><span class="uc">0.04</span></td><td><span class="uc">0.0</span></td></tr>
-            <tr><td>🐐 Cabrita</td><td><input type="number" value="0"></td><td><input type="number" value="18"></td><td><span class="uc">0.04</span></td><td><span class="uc">0.0</span></td></tr>
-            <tr class="uat-tot"><td colspan="3">▶ TOTAL UA Caprina</td><td></td><td>0.0</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="f" style="margin-top:14px"><label>📐 Superficie pastoreo (ha)</label><input type="number" value="15"></div>
-      <div class="res res-g"><div class="rl">▶ Carga Animal</div><div class="rv">0.0 UA/ha</div></div>
-      <button class="btn btn-p" style="margin-top:12px" onclick="showToast('✅ Caprina UA guardada')">💾 &nbsp;Guardar</button>
-    </div>
-  </div>
-</div>
-
-<!-- ═══════════════════════════════════
-     9. AVICULTURA
-═══════════════════════════════════ -->
-<div class="screen" id="s-avicultura">
-  <div class="hdr">
-    <span class="back" onclick="goTo('s-home')">←</span>
-    <h2>🐔 Avicultura - Huevos</h2>
-    <span onclick="goTo('s-fotos')" style="cursor:pointer">📷</span>
-  </div>
-  <div class="tabs">
-    <div class="tab active" onclick="switchTab(this,'av-ing')">💰<br>Ingresos</div>
-    <div class="tab" onclick="switchTab(this,'av-cos')">📉<br>Costos</div>
-    <div class="tab" onclick="switchTab(this,'av-kpi')">📊<br>KPIs</div>
-  </div>
-  <div style="padding:10px 16px 6px;background:white;border-bottom:1px solid var(--bo)">
-    <div class="ms">
-      <div class="mb active" onclick="selMes(this)">ENE</div><div class="mb" onclick="selMes(this)">FEB</div><div class="mb" onclick="selMes(this)">MAR</div><div class="mb" onclick="selMes(this)">ABR</div><div class="mb" onclick="selMes(this)">MAY</div><div class="mb" onclick="selMes(this)">JUN</div><div class="mb" onclick="selMes(this)">JUL</div><div class="mb" onclick="selMes(this)">AGO</div><div class="mb" onclick="selMes(this)">SEP</div><div class="mb" onclick="selMes(this)">OCT</div><div class="mb" onclick="selMes(this)">NOV</div><div class="mb" onclick="selMes(this)">DIC</div>
-    </div>
-    <div style="font-size:12px;color:var(--v);font-weight:700;padding:4px 0 5px">Mes: ENERO 2025</div>
-  </div>
-  <div id="av-ing" style="overflow-y:auto;padding-bottom:90px;display:block">
-    <div class="sec">
-      <div class="stit">💰 Ingresos Brutos</div>
-      <div class="f"><label>🥚 Venta de huevos</label><input type="number" placeholder="$0"></div>
-      <div class="fu" onclick="showToast('📷 Boleta venta huevos')"><div class="ft">🥚</div><div class="ftx"><strong>📷 Boleta venta</strong>Adjuntar comprobante</div></div>
-      <div class="f" style="margin-top:10px"><label>🐔 Venta de gallinas de descarte</label><input type="number" placeholder="$0"></div>
-      <div class="f"><label>🐣 Venta de pollitas / pollos</label><input type="number" placeholder="$0"></div>
-      <div class="f"><label>🏛️ Subsidios / bonos</label><input type="number" placeholder="$0"></div>
-      <div class="f"><label>➕ Otro ingreso</label><input type="number" placeholder="$0"></div>
-      <div class="res res-g"><div class="rl">Total Ingresos</div><div class="rv">$ 0</div></div>
-      <button class="btn btn-p" onclick="showToast('✅ Ingresos Avicultura guardados')">💾 &nbsp;Guardar</button>
-    </div>
-  </div>
-  <div id="av-cos" style="overflow-y:auto;padding-bottom:90px;display:none">
-    <div class="sec">
-      <div class="stit">📉 Costos Directos</div>
-      <div class="al al-w"><span>💡</span><div class="al-t">En avicultura la alimentación concentra más del 60% de los costos. Detalle cada componente.</div></div>
-      <div class="f"><label>🌽 Alimentación — Maíz</label><input type="number" placeholder="$0"></div>
-      <div class="f"><label>🌿 Alimentación — Afrecho / poroto de soya</label><input type="number" placeholder="$0"></div>
-      <div class="f"><label>💊 Otros insumos del concentrado (vitaminas, sales, conchuelas)</label><input type="number" placeholder="$0"></div>
-      <div class="f"><label>🌾 Aporte de pradera (sistema free-range)</label><input type="number" placeholder="$0"></div>
-      <div class="f"><label>👷 Mano de obra permanente</label><input type="number" placeholder="$0"></div>
-      <div class="f"><label>👷 Mano de obra temporal</label><input type="number" placeholder="$0"></div>
-      <div class="f"><label>🚛 Transporte y distribución</label><input type="number" placeholder="$0"></div>
-      <div class="f"><label>📦 Embalaje (cajas, bandejas)</label><input type="number" placeholder="$0"></div>
-      <div class="f"><label>⚡ Electricidad y agua</label><input type="number" placeholder="$0"></div>
-      <div class="res res-o"><div class="rl">Total Costos</div><div class="rv">$ 0</div></div>
-      <div class="res res-g"><div class="rl">Gross Profit</div><div class="rv">$ 0</div></div>
-      <button class="btn btn-p" onclick="showToast('✅ Costos Avicultura guardados')">💾 &nbsp;Guardar</button>
-    </div>
-  </div>
-  <div id="av-kpi" style="overflow-y:auto;padding-bottom:90px;display:none">
-    <div class="sec">
-      <div class="stit">📊 Indicadores Avicultura</div>
-      <div class="f"><label>🐔 N° de aves en producción</label><input type="number" placeholder="0"></div>
-      <div class="f"><label>🥚 Huevos producidos / mes</label><input type="number" placeholder="0"></div>
-      <div class="ir"><div class="il">Postura promedio<span class="iu">huevos/ave/mes · calculado</span></div><div class="ic">--- u.</div></div>
-      <div class="f" style="margin-top:12px"><label>💰 Precio promedio huevo ($ / unidad)</label><input type="number" placeholder="0"></div>
-      <div class="ir"><div class="il">Ingreso / ave / mes<span class="iu">productividad · calculado</span></div><div class="ic">$ ---</div></div>
-      <div class="f" style="margin-top:12px"><label>📐 Superficie / camas (m²)</label><input type="number" placeholder="0"></div>
-      <div class="ir"><div class="il">Densidad de aves<span class="iu">aves/m² · calculado</span></div><div class="ic">--- av/m²</div></div>
-      <div class="res res-g" style="margin-top:14px"><div class="rl">⚖️ Punto equilibrio</div><div class="rv">--- $ / docena</div><div class="rsub">Precio mínimo para cubrir costos</div></div>
-      <button class="btn btn-p" onclick="showToast('✅ KPIs Avicultura guardados')">💾 &nbsp;Guardar Indicadores</button>
-    </div>
-  </div>
-</div>
-
-<!-- ═══════════════════════════════════
-     10. TURISMO
-═══════════════════════════════════ -->
-<div class="screen" id="s-turismo">
-  <div class="hdr">
-    <span class="back" onclick="goTo('s-home')">←</span>
-    <h2>🏕️ Turismo - Experiencias</h2>
-    <span onclick="goTo('s-fotos')" style="cursor:pointer">📷</span>
-  </div>
-  <div class="tabs">
-    <div class="tab active" onclick="switchTab(this,'tu-ing')">💰<br>Ingresos</div>
-    <div class="tab" onclick="switchTab(this,'tu-cos')">📉<br>Costos</div>
-    <div class="tab" onclick="switchTab(this,'tu-kpi')">📊<br>KPIs</div>
-  </div>
-  <div style="padding:10px 16px 6px;background:white;border-bottom:1px solid var(--bo)">
-    <div class="ms">
-      <div class="mb active" onclick="selMes(this)">ENE</div><div class="mb" onclick="selMes(this)">FEB</div><div class="mb" onclick="selMes(this)">MAR</div><div class="mb" onclick="selMes(this)">ABR</div><div class="mb" onclick="selMes(this)">MAY</div><div class="mb" onclick="selMes(this)">JUN</div><div class="mb" onclick="selMes(this)">JUL</div><div class="mb" onclick="selMes(this)">AGO</div><div class="mb" onclick="selMes(this)">SEP</div><div class="mb" onclick="selMes(this)">OCT</div><div class="mb" onclick="selMes(this)">NOV</div><div class="mb" onclick="selMes(this)">DIC</div>
-    </div>
-    <div style="font-size:12px;color:var(--v);font-weight:700;padding:4px 0 5px">Mes: ENERO 2025</div>
-  </div>
-  <div id="tu-ing" style="overflow-y:auto;padding-bottom:90px;display:block">
-    <div class="sec">
-      <div class="stit">💰 Ingresos por Turismo</div>
-      <div class="f"><label>🎯 Venta de tours / experiencias</label><input type="number" placeholder="$0"></div>
-      <div class="fu" onclick="showToast('📷 Foto de la experiencia')"><div class="ft">🎯</div><div class="ftx"><strong>📷 Foto de la experiencia</strong>Tours, cabalgatas, actividades</div></div>
-      <div class="f" style="margin-top:10px"><label>🛏️ Alojamiento (noches)</label><input type="number" placeholder="$0"></div>
-      <div class="fu" onclick="showToast('📷 Foto del alojamiento')"><div class="ft">🛏️</div><div class="ftx"><strong>📷 Foto del alojamiento</strong>Cabaña, habitación, glamping</div></div>
-      <div class="f" style="margin-top:10px"><label>🍽️ Alimentación / eventos</label><input type="number" placeholder="$0"></div>
-      <div class="f"><label>🛍️ Venta productos locales / merchandising</label><input type="number" placeholder="$0"></div>
-      <div class="f"><label>➕ Otro ingreso turismo</label><input type="number" placeholder="$0"></div>
-      <div class="res res-g"><div class="rl">Total Ingresos Turismo</div><div class="rv">$ 0</div></div>
-      <button class="btn btn-p" onclick="showToast('✅ Ingresos Turismo guardados')">💾 &nbsp;Guardar</button>
-    </div>
-  </div>
-  <div id="tu-cos" style="overflow-y:auto;padding-bottom:90px;display:none">
-    <div class="sec">
-      <div class="stit">📉 Costos Directos Turismo</div>
-      <div class="al al-w"><span>💡</span><div class="al-t">En turismo la mano de obra suele concentrar más del 30% de los costos.</div></div>
-      <div class="f"><label>👷 Mano de obra permanente</label><input type="number" placeholder="$0"></div>
-      <div class="f"><label>👷 Mano de obra temporal (temporada alta)</label><input type="number" placeholder="$0"></div>
-      <div class="f"><label>🧴 Insumos y materiales (alimentos, aseo, amenities)</label><input type="number" placeholder="$0"></div>
-      <div class="f"><label>🔧 Mantención de instalaciones</label><input type="number" placeholder="$0"></div>
-      <div class="f"><label>📣 Marketing y comisiones de venta</label><input type="number" placeholder="$0"></div>
-      <div class="f"><label>💻 Plataformas de reserva (Booking, Airbnb)</label><input type="number" placeholder="$0"></div>
-      <div class="f"><label>🚗 Transporte de visitantes</label><input type="number" placeholder="$0"></div>
-      <div class="res res-o"><div class="rl">Total Costos Turismo</div><div class="rv">$ 0</div></div>
-      <div class="res res-g"><div class="rl">Gross Profit Turismo</div><div class="rv">$ 0</div></div>
-      <button class="btn btn-p" onclick="showToast('✅ Costos Turismo guardados')">💾 &nbsp;Guardar</button>
-    </div>
-  </div>
-  <div id="tu-kpi" style="overflow-y:auto;padding-bottom:90px;display:none">
-    <div class="sec">
-      <div class="stit">📊 Indicadores Turismo</div>
-      <div class="f"><label>🛏️ N° de camas / plazas disponibles</label><input type="number" placeholder="0"></div>
-      <div class="f"><label>🌙 Noches vendidas este mes</label><input type="number" placeholder="0"></div>
-      <div class="ir"><div class="il">Tasa de ocupación<span class="iu">% · calculado</span></div><div class="ic">---%</div></div>
-      <div class="f" style="margin-top:12px"><label>💰 Precio promedio por noche (CLP)</label><input type="number" placeholder="0"></div>
-      <div class="f"><label>🎯 N° de experiencias / tours vendidos</label><input type="number" placeholder="0"></div>
-      <div class="f"><label>💰 Precio promedio tour (CLP)</label><input type="number" placeholder="0"></div>
-      <div class="ir"><div class="il">RevPAR (ingreso/plaza disponible)<span class="iu">calculado</span></div><div class="ic">$ ---</div></div>
-      <div class="res res-g" style="margin-top:14px"><div class="rl">Punto equilibrio turismo</div><div class="rv">--- noches/mes</div><div class="rsub">N° mínimo de noches para cubrir costos</div></div>
-      <button class="btn btn-p" onclick="showToast('✅ KPIs Turismo guardados')">💾 &nbsp;Guardar</button>
-    </div>
-  </div>
-</div>
-
-<!-- ═══════════════════════════════════
-     11-16. AGRICULTURA (Template genérico)
-     Forraje / Cultivos / Hortalizas /
-     Frutales / Flores / Viñedos
-═══════════════════════════════════ -->
-<div class="screen" id="s-forraje">
-  <div class="hdr">
-    <span class="back" onclick="goTo('s-home')">←</span>
-    <h2 id="agro-tit">🌾 Forraje - Agrícola</h2>
-    <span onclick="goTo('s-fotos')" style="cursor:pointer">📷</span>
-  </div>
-  <div class="tabs">
-    <div class="tab active" onclick="switchTab(this,'ag-ing')">💰<br>Ingresos</div>
-    <div class="tab" onclick="switchTab(this,'ag-cos')">📉<br>Costos</div>
-    <div class="tab" onclick="switchTab(this,'ag-kpi')">📊<br>KPIs</div>
-  </div>
-  <div style="padding:10px 16px 6px;background:white;border-bottom:1px solid var(--bo)">
-    <div class="ms">
-      <div class="mb active" onclick="selMes(this)">ENE</div><div class="mb" onclick="selMes(this)">FEB</div><div class="mb" onclick="selMes(this)">MAR</div><div class="mb" onclick="selMes(this)">ABR</div><div class="mb" onclick="selMes(this)">MAY</div><div class="mb" onclick="selMes(this)">JUN</div><div class="mb" onclick="selMes(this)">JUL</div><div class="mb" onclick="selMes(this)">AGO</div><div class="mb" onclick="selMes(this)">SEP</div><div class="mb" onclick="selMes(this)">OCT</div><div class="mb" onclick="selMes(this)">NOV</div><div class="mb" onclick="selMes(this)">DIC</div>
-    </div>
-    <div style="font-size:12px;color:var(--v);font-weight:700;padding:4px 0 5px">Mes: ENERO 2025</div>
-  </div>
-  <div id="ag-ing" style="overflow-y:auto;padding-bottom:90px;display:block">
-    <div class="sec">
-      <div class="stit">💰 Ingresos Brutos</div>
-      <div class="f"><label>🌾 Venta de producto principal</label><input type="number" placeholder="$0"></div>
-      <div class="fu" onclick="showToast('📷 Boleta de venta')"><div class="ft">🧾</div><div class="ftx"><strong>📷 Boleta de venta</strong>Comprobante del producto</div></div>
-      <div class="f" style="margin-top:10px"><label>♻️ Venta de subproducto</label><input type="number" placeholder="$0"></div>
-      <div class="f"><label>🏪 Venta directa (feria, redes)</label><input type="number" placeholder="$0"></div>
-      <div class="f"><label>🏛️ Subsidios / bonos</label><input type="number" placeholder="$0"></div>
-      <div class="f"><label>➕ Otro ingreso</label><input type="number" placeholder="$0"></div>
-      <div class="res res-g"><div class="rl">Total Ingresos</div><div class="rv">$ 0</div></div>
-      <button class="btn btn-p" onclick="showToast('✅ Ingresos guardados')">💾 &nbsp;Guardar</button>
-    </div>
-  </div>
-  <div id="ag-cos" style="overflow-y:auto;padding-bottom:90px;display:none">
-    <div class="sec">
-      <div class="stit">📉 Costos Directos</div>
-      <div class="al al-i"><span>ℹ️</span><div class="al-t">Solo costos que desaparecen si elimina este rubro. No incluya costos fijos.</div></div>
-      <div class="f"><label>🌱 Semillas / plantines</label><input type="number" placeholder="$0"></div>
-      <div class="fu" onclick="showToast('📷 Boleta semillas')"><div class="ft">🌱</div><div class="ftx"><strong>📷 Boleta de semillas</strong>Adjuntar comprobante</div></div>
-      <div class="f" style="margin-top:10px"><label>🧪 Fertilizantes y enmiendas</label><input type="number" placeholder="$0"></div>
-      <div class="f"><label>🌿 Agroquímicos (fitosanitarios, herbicidas)</label><input type="number" placeholder="$0"></div>
-      <div class="f"><label>💧 Riego (agua, energía de bombeo)</label><input type="number" placeholder="$0"></div>
-      <div class="f"><label>👷 Mano de obra PAGADA</label><select style="margin-bottom:6px"><option>Permanente</option><option>Temporal / temporada</option><option>Contratista</option></select><input type="number" placeholder="$0"></div>
-      <div class="f"><label>🚜 Maquinaria / arriendo maquinaria</label><input type="number" placeholder="$0"></div>
-      <div class="f"><label>🚛 Transporte / flete / acopio</label><input type="number" placeholder="$0"></div>
-      <div class="res res-o"><div class="rl">Total Costos</div><div class="rv">$ 0</div></div>
-      <div class="res res-g"><div class="rl">Gross Profit</div><div class="rv">$ 0</div></div>
+      <div class="f"><label>Veterinaria</label><input type="number" placeholder="$0" value="145000"></div>
+      <div class="f"><label>Mano de obra</label><input type="number" placeholder="$0" value="280000"></div>
+      <div class="f"><label>Manejo praderas</label><input type="number" placeholder="$0" value="190000"></div>
+      <div class="res res-o"><div class="rl">Total Costos</div><div class="rv">$1.020.000</div></div>
+      <div class="res res-g"><div class="rl">✅ Gross Profit</div><div class="rv">$3.560.000</div><div class="rsub">GP Margin: 77,7%</div></div>
       <button class="btn btn-p" onclick="showToast('✅ Costos guardados')">💾 &nbsp;Guardar</button>
     </div>
   </div>
-  <div id="ag-kpi" style="overflow-y:auto;padding-bottom:90px;display:none">
+  <div id="bv-ua" style="overflow-y:auto;padding-bottom:90px;display:none">
     <div class="sec">
-      <div class="stit">📊 Indicadores</div>
-      <div class="f"><label>📐 Superficie dedicada (ha)</label><input type="number" placeholder="0"></div>
-      <div class="ir"><div class="il">GP por hectárea<span class="iu">CLP/ha · calculado</span></div><div class="ic">$ ---</div></div>
-      <div class="f" style="margin-top:12px"><label>📦 Unidades producidas</label><div style="display:flex;gap:6px"><input type="number" placeholder="0" style="flex:1"><select style="padding:10px 6px;background:var(--am);border:2px solid #E8D44D;border-radius:12px"><option>kg</option><option>ton</option><option>cajas</option><option>litros</option></select></div></div>
-      <div class="f"><label>💰 Precio promedio venta (CLP/unidad)</label><input type="number" placeholder="0"></div>
-      <div class="ir"><div class="il">Ingreso total / ha<span class="iu">productividad</span></div><div class="ic">$ ---</div></div>
-      <div class="div" style="margin:12px -20px"></div>
-      <div class="stit">⚖️ Punto de Equilibrio</div>
-      <div class="f"><label>📦 Unidades totales vendidas / año</label><input type="number" placeholder="0"></div>
-      <div class="f"><label>💰 Precio promedio recibido</label><input type="number" placeholder="0"></div>
-      <div class="res res-g"><div class="rl">Costo / unidad</div><div class="rv">$ ---</div><div class="rsub">Margen: $ ---</div></div>
-      <button class="btn btn-p" onclick="showToast('✅ Indicadores guardados')">💾 &nbsp;Guardar</button>
+      <div class="stit">🐄 Inventario y UA</div>
+      <div class="al al-i"><span>ℹ️</span><div class="al-t">Factor UA = Peso promedio ÷ 450 kg.</div></div>
+      <div class="f"><label>📐 Superficie pastoreo (ha)</label><input type="number" value="72"></div>
+      <div class="res res-g"><div class="rl">▶ Carga Animal</div><div class="rv">1.05 UA/ha</div></div>
+      <button class="btn btn-p" onclick="showToast('✅ UA guardada')">💾 &nbsp;Guardar UA</button>
     </div>
   </div>
 </div>
 
-<!-- Pantallas que comparten template agricultura -->
-<div class="screen" id="s-cultivos"><div class="hdr"><span class="back" onclick="goTo('s-home')">←</span><h2>🌽 Cultivos Anuales</h2></div><div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:20px"><div style="font-size:60px">🌽</div><div style="font-size:18px;font-weight:700;color:var(--v)">Cultivos Anuales</div><p style="font-size:13px;color:#888;text-align:center">Misma estructura que Forraje-Agrícola con semillas, fertilizantes, agroquímicos, riego, mano de obra y maquinaria.</p><button class="btn btn-p" style="margin-top:10px" onclick="goTo('s-forraje')">📋 Ver estructura del formulario →</button><button class="btn btn-s" onclick="showToast('✅ Módulo Cultivos Anuales — Próximamente completo')">⭐ Agregar a lista de prueba</button></div></div>
-
-<div class="screen" id="s-hortalizas"><div class="hdr"><span class="back" onclick="goTo('s-home')">←</span><h2>🥬 Hortalizas - Huerta</h2></div><div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:20px"><div style="font-size:60px">🥬</div><div style="font-size:18px;font-weight:700;color:var(--v)">Hortalizas - Huerta</div><p style="font-size:13px;color:#888;text-align:center">Ingresos por venta directa en ferias y redes. Costos: semillas, abonos, riego, mano de obra y transporte.</p><button class="btn btn-p" style="margin-top:10px" onclick="goTo('s-forraje')">📋 Ver estructura del formulario →</button></div></div>
-
-<div class="screen" id="s-frutales"><div class="hdr"><span class="back" onclick="goTo('s-home')">←</span><h2>🍎 Frutales</h2></div><div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:20px"><div style="font-size:60px">🍎</div><div style="font-size:18px;font-weight:700;color:var(--v)">Frutales</div><p style="font-size:13px;color:#888;text-align:center">Ingresos por temporada. Costos: poda, fertilización, fitosanitarios, cosecha, mano de obra y packing.</p><button class="btn btn-p" style="margin-top:10px" onclick="goTo('s-forraje')">📋 Ver estructura →</button></div></div>
-
-<div class="screen" id="s-flores"><div class="hdr"><span class="back" onclick="goTo('s-home')">←</span><h2>🌸 Flores</h2></div><div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:20px"><div style="font-size:60px">🌸</div><div style="font-size:18px;font-weight:700;color:var(--v)">Flores</div><p style="font-size:13px;color:#888;text-align:center">Ingresos por venta de flores y arreglos. Costos: bulbos, fertilizantes, riego, mano de obra y distribución.</p><button class="btn btn-p" style="margin-top:10px" onclick="goTo('s-forraje')">📋 Ver estructura →</button></div></div>
-
-<div class="screen" id="s-viñedos"><div class="hdr"><span class="back" onclick="goTo('s-home')">←</span><h2>🍇 Viñedos</h2></div><div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:20px"><div style="font-size:60px">🍇</div><div style="font-size:18px;font-weight:700;color:var(--v)">Viñedos</div><p style="font-size:13px;color:#888;text-align:center">Ingresos por venta de uva o vino. Costos: poda, fitosanitarios, cosecha, vinificación y mano de obra.</p><button class="btn btn-p" style="margin-top:10px" onclick="goTo('s-forraje')">📋 Ver estructura →</button></div></div>
-
-<!-- ═══════════════════════════════════
-     17. APICULTURA
-═══════════════════════════════════ -->
-<div class="screen" id="s-apicultura">
-  <div class="hdr">
-    <span class="back" onclick="goTo('s-home')">←</span>
-    <h2>🍯 Apicultura</h2>
-    <span onclick="goTo('s-fotos')" style="cursor:pointer">📷</span>
-  </div>
-  <div class="tabs">
-    <div class="tab active" onclick="switchTab(this,'ap-ing')">💰<br>Ingresos</div>
-    <div class="tab" onclick="switchTab(this,'ap-cos')">📉<br>Costos</div>
-    <div class="tab" onclick="switchTab(this,'ap-kpi')">🍯<br>Colmenas</div>
-  </div>
-  <div style="padding:10px 16px 6px;background:white;border-bottom:1px solid var(--bo)">
-    <div class="ms">
-      <div class="mb active" onclick="selMes(this)">ENE</div><div class="mb" onclick="selMes(this)">FEB</div><div class="mb" onclick="selMes(this)">MAR</div><div class="mb" onclick="selMes(this)">ABR</div><div class="mb" onclick="selMes(this)">MAY</div><div class="mb" onclick="selMes(this)">JUN</div><div class="mb" onclick="selMes(this)">JUL</div><div class="mb" onclick="selMes(this)">AGO</div><div class="mb" onclick="selMes(this)">SEP</div><div class="mb" onclick="selMes(this)">OCT</div><div class="mb" onclick="selMes(this)">NOV</div><div class="mb" onclick="selMes(this)">DIC</div>
+<!-- OVINA simplificada -->
+<div class="screen" id="s-ovina">
+  <div class="hdr"><span class="back" onclick="goTo('s-home')">←</span><h2>🐑 Ganadería Ovina</h2><span onclick="abrirRRrubro('ovina')" style="cursor:pointer;font-size:12px;font-weight:700;background:var(--na);padding:5px 10px;border-radius:10px">➕ Reg.</span></div>
+  <div class="sec" style="padding-top:20px">
+    <div class="stit">Ganadería Ovina — Acceso rápido</div>
+    <div style="background:linear-gradient(135deg,#FFF3E0,#FFF8E1);border:2px solid #FFCC80;border-radius:14px;padding:13px;margin-bottom:14px">
+      <div style="font-size:13px;font-weight:700;color:#E65100;margin-bottom:6px">⚡ Agregar movimiento rápido</div>
+      <button class="btn" style="background:var(--na);color:white" onclick="abrirRRrubro('ovina')">➕ &nbsp;Registrar gasto o ingreso de Ovina</button>
     </div>
-    <div style="font-size:12px;color:var(--v);font-weight:700;padding:4px 0 5px">Mes: ENERO 2025</div>
-  </div>
-  <div id="ap-ing" style="overflow-y:auto;padding-bottom:90px;display:block">
-    <div class="sec">
-      <div class="stit">💰 Ingresos Brutos</div>
-      <div class="f"><label>🍯 Venta de miel (kg)</label><input type="number" placeholder="$0"></div>
-      <div class="fu" onclick="showToast('📷 Foto del producto miel')"><div class="ft">🍯</div><div class="ftx"><strong>📷 Foto del producto</strong>Frascos, colación o a granel</div></div>
-      <div class="f" style="margin-top:10px"><label>🕯️ Venta de cera</label><input type="number" placeholder="$0"></div>
-      <div class="f"><label>🐝 Venta de núcleos / colmenas</label><input type="number" placeholder="$0"></div>
-      <div class="f"><label>🌸 Servicio de polinización</label><input type="number" placeholder="$0"></div>
-      <div class="f"><label>🏛️ Subsidios / bonos</label><input type="number" placeholder="$0"></div>
-      <div class="res res-g"><div class="rl">Total Ingresos</div><div class="rv">$ 0</div></div>
-      <button class="btn btn-p" onclick="showToast('✅ Ingresos Apicultura guardados')">💾 &nbsp;Guardar</button>
-    </div>
-  </div>
-  <div id="ap-cos" style="overflow-y:auto;padding-bottom:90px;display:none">
-    <div class="sec">
-      <div class="stit">📉 Costos Directos</div>
-      <div class="f"><label>🍬 Alimentación artificial (azúcar, sustitutos)</label><input type="number" placeholder="$0"></div>
-      <div class="f"><label>💊 Tratamientos sanitarios (varroasis, etc.)</label><input type="number" placeholder="$0"></div>
-      <div class="f"><label>🧰 Material de colmena (alzas, cuadros, cera)</label><input type="number" placeholder="$0"></div>
-      <div class="f"><label>👷 Mano de obra (revisiones, cosecha)</label><input type="number" placeholder="$0"></div>
-      <div class="f"><label>🚛 Transporte de colmenas (trashumancia)</label><input type="number" placeholder="$0"></div>
-      <div class="f"><label>🫙 Envases y etiquetado</label><input type="number" placeholder="$0"></div>
-      <div class="res res-o"><div class="rl">Total Costos</div><div class="rv">$ 0</div></div>
-      <div class="res res-g"><div class="rl">Gross Profit</div><div class="rv">$ 0</div></div>
-      <button class="btn btn-p" onclick="showToast('✅ Costos Apicultura guardados')">💾 &nbsp;Guardar</button>
-    </div>
-  </div>
-  <div id="ap-kpi" style="overflow-y:auto;padding-bottom:90px;display:none">
-    <div class="sec">
-      <div class="stit">🍯 Indicadores de Colmenas</div>
-      <div class="f"><label>🐝 N° total de colmenas</label><input type="number" placeholder="0"></div>
-      <div class="f"><label>🍯 Kg de miel producidos / temporada</label><input type="number" placeholder="0"></div>
-      <div class="ir"><div class="il">Producción / colmena<span class="iu">kg/colmena · calculado</span></div><div class="ic">--- kg</div></div>
-      <div class="f" style="margin-top:12px"><label>💰 Precio venta miel (CLP / kg)</label><input type="number" placeholder="0"></div>
-      <div class="ir"><div class="il">Ingreso / colmena<span class="iu">CLP/colmena · calculado</span></div><div class="ic">$ ---</div></div>
-      <div class="f" style="margin-top:12px"><label>📐 N° colmenas para punto equilibrio</label><input type="number" placeholder="0"></div>
-      <div class="res res-g" style="margin-top:10px"><div class="rl">Costo / kg de miel</div><div class="rv">$ ---</div><div class="rsub">Punto de equilibrio</div></div>
-      <button class="btn btn-p" onclick="showToast('✅ KPIs Apicultura guardados')">💾 &nbsp;Guardar</button>
-    </div>
+    <div class="al al-s"><span>✅</span><div class="al-t">5 meses registrados (Ene-May 2025). Faltan 7 meses.</div></div>
   </div>
 </div>
 
-<!-- ═══════════════════════════════════
-     18. LÁCTEOS
-═══════════════════════════════════ -->
-<div class="screen" id="s-lacteos">
-  <div class="hdr">
-    <span class="back" onclick="goTo('s-home')">←</span>
-    <h2>🥛 Agroind. Lácteos</h2>
-    <span onclick="goTo('s-fotos')" style="cursor:pointer">📷</span>
-  </div>
-  <div class="tabs">
-    <div class="tab active" onclick="switchTab(this,'la-ing')">💰<br>Ingresos</div>
-    <div class="tab" onclick="switchTab(this,'la-cos')">📉<br>Costos</div>
-  </div>
-  <div id="la-ing" style="overflow-y:auto;padding-bottom:90px;display:block">
-    <div class="sec">
-      <div class="stit">💰 Ingresos — Lácteos</div>
-      <div class="f"><label>🥛 Venta de leche (litros)</label><input type="number" placeholder="$0"></div>
-      <div class="f"><label>🧈 Venta mantequilla / crema</label><input type="number" placeholder="$0"></div>
-      <div class="f"><label>🍦 Venta yogurt / otros derivados</label><input type="number" placeholder="$0"></div>
-      <div class="f"><label>🏛️ Subsidios / bonos</label><input type="number" placeholder="$0"></div>
-      <div class="res res-g"><div class="rl">Total Ingresos</div><div class="rv">$ 0</div></div>
-      <button class="btn btn-p" onclick="showToast('✅ Ingresos Lácteos guardados')">💾 &nbsp;Guardar</button>
-    </div>
-  </div>
-  <div id="la-cos" style="overflow-y:auto;padding-bottom:90px;display:none">
-    <div class="sec">
-      <div class="stit">📉 Costos Directos</div>
-      <div class="f"><label>🥛 Materia prima (leche para procesar)</label><input type="number" placeholder="$0"></div>
-      <div class="f"><label>🧫 Insumos de proceso (cuajos, fermentos)</label><input type="number" placeholder="$0"></div>
-      <div class="f"><label>⚡ Energía (pasteurización, refrigeración)</label><input type="number" placeholder="$0"></div>
-      <div class="f"><label>🫙 Envases y etiquetado</label><input type="number" placeholder="$0"></div>
-      <div class="f"><label>👷 Mano de obra</label><input type="number" placeholder="$0"></div>
-      <div class="f"><label>🚛 Distribución y transporte frío</label><input type="number" placeholder="$0"></div>
-      <div class="res res-o"><div class="rl">Total Costos</div><div class="rv">$ 0</div></div>
-      <div class="res res-g"><div class="rl">Gross Profit</div><div class="rv">$ 0</div></div>
-      <button class="btn btn-p" onclick="showToast('✅ Costos Lácteos guardados')">💾 &nbsp;Guardar</button>
-    </div>
-  </div>
-</div>
-
-<!-- ═══════════════════════════════════
-     19. QUESOS
-═══════════════════════════════════ -->
-<div class="screen" id="s-quesos">
-  <div class="hdr">
-    <span class="back" onclick="goTo('s-home')">←</span>
-    <h2>🧀 Agroind. Quesos</h2>
-    <span onclick="goTo('s-fotos')" style="cursor:pointer">📷</span>
-  </div>
-  <div class="tabs">
-    <div class="tab active" onclick="switchTab(this,'qu-ing')">💰<br>Ingresos</div>
-    <div class="tab" onclick="switchTab(this,'qu-cos')">📉<br>Costos</div>
-  </div>
-  <div id="qu-ing" style="overflow-y:auto;padding-bottom:90px;display:block">
-    <div class="sec">
-      <div class="stit">💰 Ingresos — Quesos</div>
-      <div class="f"><label>🧀 Venta de queso fresco</label><input type="number" placeholder="$0"></div>
-      <div class="fu" onclick="showToast('📷 Foto del queso')"><div class="ft">🧀</div><div class="ftx"><strong>📷 Foto del producto</strong>Queso terminado o envasado</div></div>
-      <div class="f" style="margin-top:10px"><label>🧀 Venta de queso madurado</label><input type="number" placeholder="$0"></div>
-      <div class="f"><label>♻️ Venta subproductos (suero)</label><input type="number" placeholder="$0"></div>
-      <div class="f"><label>🏛️ Subsidios / certificaciones</label><input type="number" placeholder="$0"></div>
-      <div class="res res-g"><div class="rl">Total Ingresos</div><div class="rv">$ 0</div></div>
-      <button class="btn btn-p" onclick="showToast('✅ Ingresos Quesos guardados')">💾 &nbsp;Guardar</button>
-    </div>
-  </div>
-  <div id="qu-cos" style="overflow-y:auto;padding-bottom:90px;display:none">
-    <div class="sec">
-      <div class="stit">📉 Costos Directos</div>
-      <div class="f"><label>🥛 Leche (materia prima)</label><input type="number" placeholder="$0"></div>
-      <div class="f"><label>🧫 Cuajos y fermentos</label><input type="number" placeholder="$0"></div>
-      <div class="f"><label>🧂 Sal y otros ingredientes</label><input type="number" placeholder="$0"></div>
-      <div class="f"><label>⚡ Energía (pasteurización, maduración)</label><input type="number" placeholder="$0"></div>
-      <div class="f"><label>🫙 Envases y etiquetado</label><input type="number" placeholder="$0"></div>
-      <div class="f"><label>👷 Mano de obra</label><input type="number" placeholder="$0"></div>
-      <div class="res res-o"><div class="rl">Total Costos</div><div class="rv">$ 0</div></div>
-      <div class="res res-g"><div class="rl">Gross Profit</div><div class="rv">$ 0</div></div>
-      <button class="btn btn-p" onclick="showToast('✅ Costos Quesos guardados')">💾 &nbsp;Guardar</button>
-    </div>
-  </div>
-</div>
-
-<!-- ═══════════════════════════════════
-     20. LOMBRICULTURA
-═══════════════════════════════════ -->
-<div class="screen" id="s-lombri">
-  <div class="hdr">
-    <span class="back" onclick="goTo('s-home')">←</span>
-    <h2>🪱 Lombricultura</h2>
-  </div>
-  <div class="tabs">
-    <div class="tab active" onclick="switchTab(this,'lo-ing')">💰<br>Ingresos</div>
-    <div class="tab" onclick="switchTab(this,'lo-cos')">📉<br>Costos</div>
-  </div>
-  <div id="lo-ing" style="overflow-y:auto;padding-bottom:90px;display:block">
-    <div class="sec">
-      <div class="stit">💰 Ingresos — Lombricultura</div>
-      <div class="f"><label>🪱 Venta de lombrices (kg)</label><input type="number" placeholder="$0"></div>
-      <div class="f"><label>🌱 Venta de humus / compost</label><input type="number" placeholder="$0"></div>
-      <div class="f"><label>💧 Venta de lixiviado (biol)</label><input type="number" placeholder="$0"></div>
-      <div class="f"><label>🏛️ Subsidios / bonos</label><input type="number" placeholder="$0"></div>
-      <div class="res res-g"><div class="rl">Total Ingresos</div><div class="rv">$ 0</div></div>
-      <button class="btn btn-p" onclick="showToast('✅ Ingresos Lombricultura guardados')">💾 &nbsp;Guardar</button>
-    </div>
-  </div>
-  <div id="lo-cos" style="overflow-y:auto;padding-bottom:90px;display:none">
-    <div class="sec">
-      <div class="stit">📉 Costos Directos</div>
-      <div class="f"><label>🍂 Materia orgánica (estiércol, restos)</label><input type="number" placeholder="$0"></div>
-      <div class="f"><label>🪱 Pie de cría inicial (lombrices)</label><input type="number" placeholder="$0"></div>
-      <div class="f"><label>💧 Agua (humectación)</label><input type="number" placeholder="$0"></div>
-      <div class="f"><label>👷 Mano de obra</label><input type="number" placeholder="$0"></div>
-      <div class="f"><label>🫙 Envases y embalaje</label><input type="number" placeholder="$0"></div>
-      <div class="res res-o"><div class="rl">Total Costos</div><div class="rv">$ 0</div></div>
-      <div class="res res-g"><div class="rl">Gross Profit</div><div class="rv">$ 0</div></div>
-      <button class="btn btn-p" onclick="showToast('✅ Costos Lombricultura guardados')">💾 &nbsp;Guardar</button>
-    </div>
-  </div>
-</div>
-
-<!-- ═══════════════════════════════════
-     21. COSTOS FIJOS
-═══════════════════════════════════ -->
-<div class="screen" id="s-cf">
-  <div class="hdr"><span class="back" onclick="goTo('s-home')">←</span><h2>🏠 Costos Fijos del Predio</h2></div>
-  <div style="overflow-y:auto;padding-bottom:90px">
-    <div style="padding:14px 20px;background:#FFF8E1">
-      <div class="al al-w" style="margin:0"><span>⚠️</span><div class="al-t"><strong>¡Importante!</strong>NO repita estos costos en las hojas de cada rubro.</div></div>
-    </div>
-    <div class="sec">
-      <div class="stit">💰 Costos Anuales Fijos</div>
-      <div class="f"><label>🏘️ Arriendo de campo</label><input type="number" placeholder="$0 / año"></div>
-      <div class="f"><label>🏦 Crédito / dividendo del predio</label><input type="number" placeholder="$0 / año" value="1800000"></div>
-      <div class="f"><label>🏢 Administración</label><input type="number" placeholder="$0 / año"></div>
-      <div class="f"><label>💡 Luz</label><input type="number" placeholder="$0 / año" value="480000"></div>
-      <div class="f"><label>💧 Agua</label><input type="number" placeholder="$0 / año" value="120000"></div>
-      <div class="f"><label>📊 Contador</label><input type="number" placeholder="$0 / año" value="600000"></div>
-      <div class="f"><label>⛽ Combustible / mantención maquinaria</label><input type="number" placeholder="$0 / año" value="920000"></div>
-      <div class="f"><label>🛡️ Seguros</label><input type="number" placeholder="$0 / año"></div>
-      <div class="f"><label>🏛️ Contribuciones / impuestos</label><input type="number" placeholder="$0 / año" value="240000"></div>
-      <div class="f"><label>👨‍⚕️ Veterinario externo (asesoría)</label><input type="number" placeholder="$0 / año"></div>
-      <div class="f"><label>🌱 Agrónomo (asesoría técnica)</label><input type="number" placeholder="$0 / año"></div>
-      <div class="f"><label>📋 Asesorías / consultorías</label><input type="number" placeholder="$0 / año"></div>
-      <div class="f"><label>➕ Otro costo fijo</label><input type="text" placeholder="Descripción" style="margin-bottom:6px;font-size:13px"><input type="number" placeholder="$0 / año"></div>
-      <div class="res res-b"><div class="rl">Total Costos Fijos (referencial)</div><div class="rv">$ 4.160.000</div><div class="rsub">ℹ️ Se integra al análisis en Taller 2</div></div>
-      <button class="btn btn-p" onclick="showToast('✅ Costos fijos guardados')">💾 &nbsp;Guardar Costos Fijos</button>
-    </div>
-  </div>
-</div>
-
-<!-- ═══════════════════════════════════
-     22. RESUMEN
-═══════════════════════════════════ -->
+<!-- RESUMEN simplificado -->
 <div class="screen" id="s-resumen">
   <div class="hdr"><span class="back" onclick="goTo('s-home')">←</span><h2>📊 Resumen Predial 2025</h2></div>
   <div style="overflow-y:auto;padding-bottom:80px">
     <div style="background:var(--v);padding:18px 20px">
       <div style="color:#B7E4C7;font-size:10px;font-weight:700;margin-bottom:10px">TOTAL PREDIO · EL CANELO</div>
-      <div class="kg">
-        <div class="kc" style="background:rgba(255,255,255,.15);border-color:rgba(255,255,255,.2)"><div class="kv" style="color:white;font-size:16px">$12,4M</div><div class="kl" style="color:#B7E4C7">Ingresos</div></div>
-        <div class="kc" style="background:rgba(255,255,255,.15);border-color:rgba(255,255,255,.2)"><div class="kv" style="color:#FFE082;font-size:16px">$8,1M</div><div class="kl" style="color:#B7E4C7">Costos</div></div>
-        <div class="kc" style="background:rgba(255,255,255,.15);border-color:rgba(255,255,255,.2)"><div class="kv" style="color:#B7E4C7;font-size:16px">34,7%</div><div class="kl" style="color:#B7E4C7">GP Margin</div></div>
-        <div class="kc" style="background:rgba(255,255,255,.15);border-color:rgba(255,255,255,.2)"><div class="kv" style="color:white;font-size:16px">$4,3M</div><div class="kl" style="color:#B7E4C7">Gross Profit</div></div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+        <div style="background:rgba(255,255,255,.15);border-radius:12px;padding:12px;text-align:center"><div style="color:white;font-size:18px;font-weight:800">$12,4M</div><div style="color:#B7E4C7;font-size:11px">Ingresos</div></div>
+        <div style="background:rgba(255,255,255,.15);border-radius:12px;padding:12px;text-align:center"><div style="color:#FFE082;font-size:18px;font-weight:800">$8,1M</div><div style="color:#B7E4C7;font-size:11px">Costos</div></div>
+        <div style="background:rgba(255,255,255,.15);border-radius:12px;padding:12px;text-align:center"><div style="color:white;font-size:18px;font-weight:800">$4,3M</div><div style="color:#B7E4C7;font-size:11px">Gross Profit</div></div>
+        <div style="background:rgba(255,255,255,.15);border-radius:12px;padding:12px;text-align:center"><div style="color:#B7E4C7;font-size:18px;font-weight:800">34,7%</div><div style="color:#B7E4C7;font-size:11px">GP Margin</div></div>
       </div>
     </div>
     <div class="sec">
-      <div class="stit">Por Rubro (Enterprise)</div>
-      <!-- Bovina -->
+      <div class="stit">Por Rubro</div>
       <div style="background:white;border:2px solid #C8E6C9;border-radius:14px;padding:14px;margin-bottom:10px">
         <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px"><div style="font-size:15px;font-weight:700">🐄 Ganadería Bovina</div><span class="bdg bg">34,7% GP</span></div>
-        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;font-size:12px">
-          <div style="text-align:center"><div style="font-weight:700;color:var(--v)">$9,2M</div><div style="color:#888">Ingresos</div></div>
-          <div style="text-align:center"><div style="font-weight:700;color:#E65100">$6,1M</div><div style="color:#888">Costos</div></div>
-          <div style="text-align:center"><div style="font-weight:700;color:var(--v)">$3,1M</div><div style="color:#888">GP</div></div>
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;font-size:12px;text-align:center">
+          <div><div style="font-weight:700;color:var(--v)">$9,2M</div><div style="color:#888">Ingresos</div></div>
+          <div><div style="font-weight:700;color:#E65100">$6,1M</div><div style="color:#888">Costos</div></div>
+          <div><div style="font-weight:700;color:var(--v)">$3,1M</div><div style="color:#888">GP</div></div>
         </div>
-        <div style="margin-top:8px"><div style="height:6px;background:#eee;border-radius:3px;overflow:hidden"><div style="width:74%;height:100%;background:var(--vl)"></div></div><div style="font-size:10px;color:#888;margin-top:2px">74% del ingreso total</div></div>
       </div>
-      <!-- Ovina -->
       <div style="background:white;border:2px solid #C8E6C9;border-radius:14px;padding:14px;margin-bottom:10px">
         <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px"><div style="font-size:15px;font-weight:700">🐑 Ganadería Ovina</div><span class="bdg bg">42,1% GP</span></div>
-        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;font-size:12px">
-          <div style="text-align:center"><div style="font-weight:700;color:var(--v)">$3,2M</div><div style="color:#888">Ingresos</div></div>
-          <div style="text-align:center"><div style="font-weight:700;color:#E65100">$1,8M</div><div style="color:#888">Costos</div></div>
-          <div style="text-align:center"><div style="font-weight:700;color:var(--v)">$1,2M</div><div style="color:#888">GP</div></div>
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;font-size:12px;text-align:center">
+          <div><div style="font-weight:700;color:var(--v)">$3,2M</div><div style="color:#888">Ingresos</div></div>
+          <div><div style="font-weight:700;color:#E65100">$1,8M</div><div style="color:#888">Costos</div></div>
+          <div><div style="font-weight:700;color:var(--v)">$1,2M</div><div style="color:#888">GP</div></div>
         </div>
-        <div style="margin-top:8px"><div style="height:6px;background:#eee;border-radius:3px;overflow:hidden"><div style="width:26%;height:100%;background:var(--vl)"></div></div><div style="font-size:10px;color:#888;margin-top:2px">26% del ingreso total</div></div>
       </div>
-      <!-- Sin datos -->
-      <div style="background:#F5F5F5;border:2px solid #EEE;border-radius:14px;padding:14px;margin-bottom:10px">
-        <div style="display:flex;justify-content:space-between;align-items:center"><div style="font-size:15px;font-weight:700;color:#aaa">🌾 Forraje + 13 rubros más</div><span class="bdg bgr">Sin datos</span></div>
-        <div style="font-size:12px;color:#aaa;margin-top:6px">Pendientes de registro</div>
-      </div>
-      <!-- Diversificación -->
-      <div class="stit" style="margin-top:14px">Diversificación</div>
-      <div class="kg">
-        <div class="kc"><div class="kv">2</div><div class="kl">Rubros con datos</div></div>
-        <div class="kc"><div class="kv" style="color:#F57C00">74%</div><div class="kl">Concentración principal</div></div>
-      </div>
-      <!-- UA -->
-      <div class="stit" style="margin-top:14px">🐄 Unidades Animales</div>
-      <div style="background:var(--vp);border-radius:14px;padding:14px">
-        <div style="display:flex;justify-content:space-between;margin-bottom:6px;font-size:13px"><span style="font-weight:600">🐄 Bovina</span><span style="font-weight:700;color:var(--v)">75.7 UA</span></div>
-        <div style="display:flex;justify-content:space-between;margin-bottom:6px;font-size:13px"><span style="font-weight:600">🐑 Ovina</span><span style="font-weight:700;color:var(--v)">15.6 UA</span></div>
-        <div style="display:flex;justify-content:space-between;padding-top:8px;border-top:1px solid #ccc;font-size:14px"><span style="font-weight:700">TOTAL PREDIO</span><span style="font-weight:800;color:var(--v);font-size:15px">91.3 UA</span></div>
-        <div style="margin-top:8px;padding-top:8px;border-top:1px solid #ccc"><div style="font-size:12px;color:#666;margin-bottom:3px">Sup. pastoreo total: 100 ha</div><div style="font-size:13px;font-weight:700;color:var(--v)">▶ Carga: 0.91 UA/ha</div></div>
-      </div>
-    </div>
-    <div class="sec">
-      <button class="btn btn-p" onclick="showToast('📤 Generando Excel... ElCanelo_2025-07-15.xlsx')">📤 &nbsp;Exportar Excel completo</button>
-      <div style="font-size:11px;color:#888;text-align:center;margin-top:6px">Formato compatible con Piloto v5</div>
+      <button class="btn btn-p" onclick="showToast('📤 Generando Excel...')">📤 &nbsp;Exportar Excel</button>
     </div>
   </div>
   <div class="bnav">
     <div class="ni" onclick="goTo('s-home')"><span class="ni-ic">🏠</span><span class="ni-lb">Inicio</span></div>
+    <div class="ni" onclick="goTo('s-historial')"><span class="ni-ic">📋</span><span class="ni-lb">Registros</span></div>
     <div class="ni active"><span class="ni-ic">📊</span><span class="ni-lb">Resumen</span></div>
-    <div class="ni" onclick="goTo('s-fotos')"><span class="ni-ic">📷</span><span class="ni-lb">Fotos</span></div>
-    <div class="ni" onclick="goTo('s-notif')"><span class="ni-ic">🔔</span><span class="ni-lb">Alertas</span></div>
+    <div class="ni" onclick="showToast('📷 Galería')"><span class="ni-ic">📷</span><span class="ni-lb">Fotos</span></div>
   </div>
 </div>
 
-<!-- ═══════════════════════════════════
-     23. WEAK LINK
-═══════════════════════════════════ -->
-<div class="screen" id="s-wl">
-  <div class="hdr"><span class="back" onclick="goTo('s-home')">←</span><h2>🔗 Eslabones Débiles</h2></div>
-  <div style="overflow-y:auto;padding-bottom:90px">
-    <div style="padding:13px 20px;background:#FFF3E0;font-size:13px;color:#E65100">Solo de registro — identificados en el taller. Sin cálculos automáticos.</div>
-    <div class="sec">
-      <div class="stit">➕ Nuevo Eslabón Débil</div>
-      <div class="f"><label>Rubro</label><select><option>🐄 Ganadería Bovina</option><option>🐑 Ganadería Ovina</option><option>🌾 Forraje-Agrícola</option><option>Otro rubro</option></select></div>
-      <div class="f"><label>Descripción del eslabón débil</label><textarea rows="3" style="background:var(--am);border:2px solid #E8D44D;border-radius:12px;padding:11px;width:100%;font-size:13px;font-family:inherit" placeholder="Ej: Alto costo de forraje en invierno..."></textarea></div>
-      <div class="f"><label>Costo relacionado</label><select><option>Forraje conservado</option><option>Mano de obra</option><option>Veterinaria</option><option>Alimentación</option><option>Maquinaria</option><option>Otro</option></select></div>
-      <div class="f"><label>Prioridad</label>
-        <div style="display:flex;gap:8px;margin-top:4px">
-          <button class="btn" style="background:#FFEBEE;color:#C62828;border:2px solid #FFCDD2;flex:1;padding:9px;font-size:12px" onclick="showToast('🔴 Alta')">🔴 Alta</button>
-          <button class="btn" style="background:#FFF8E1;color:#F57C00;border:2px solid #FFE082;flex:1;padding:9px;font-size:12px" onclick="showToast('🟡 Media')">🟡 Media</button>
-          <button class="btn" style="background:#F1F8E9;color:#558B2F;border:2px solid #C5E1A5;flex:1;padding:9px;font-size:12px" onclick="showToast('🟢 Baja')">🟢 Baja</button>
-        </div>
-      </div>
-      <div class="f"><label>Taller N°</label><select><option>Taller 1</option><option>Taller 2</option><option>Taller 3</option></select></div>
-      <button class="btn btn-p" onclick="showToast('✅ Eslabón registrado')">💾 &nbsp;Guardar Eslabón</button>
-    </div>
-    <div class="div"></div>
-    <div class="sec">
-      <div class="stit">📋 Registrados</div>
-      <div style="background:white;border:2px solid #FFCDD2;border-left:5px solid var(--ro);border-radius:13px;padding:13px;margin-bottom:10px">
-        <div style="display:flex;justify-content:space-between;margin-bottom:5px"><span style="font-weight:700">🐄 Bovina</span><span class="bdg br">🔴 Alta</span></div>
-        <div style="font-size:12px;color:#555;margin-bottom:5px">Costo de forraje conservado muy alto en meses de invierno (jun-ago)</div>
-        <div style="font-size:11px;color:#888">📎 Forraje conservado · Taller 1</div>
-      </div>
-      <div style="background:white;border:2px solid #FFE082;border-left:5px solid #F57C00;border-radius:13px;padding:13px">
-        <div style="display:flex;justify-content:space-between;margin-bottom:5px"><span style="font-weight:700">🐑 Ovina</span><span class="bdg by">🟡 Media</span></div>
-        <div style="font-size:12px;color:#555;margin-bottom:5px">Mortalidad de corderos alta en primavera — falta protocolo sanitario</div>
-        <div style="font-size:11px;color:#888">📎 Veterinaria · Taller 1</div>
-      </div>
-    </div>
+<!-- COSTOS FIJOS simplificado -->
+<div class="screen" id="s-cf">
+  <div class="hdr"><span class="back" onclick="goTo('s-home')">←</span><h2>🏠 Costos Fijos</h2></div>
+  <div class="sec">
+    <div class="al al-w"><span>⚠️</span><div class="al-t"><strong>Importante:</strong> NO repita en las hojas de cada rubro.</div></div>
+    <div class="f"><label>🏦 Crédito / dividendo</label><input type="number" placeholder="$0 / año" value="1800000"></div>
+    <div class="f"><label>💡 Luz</label><input type="number" placeholder="$0 / año" value="480000"></div>
+    <div class="f"><label>💧 Agua</label><input type="number" placeholder="$0 / año" value="120000"></div>
+    <div class="f"><label>📊 Contador</label><input type="number" placeholder="$0 / año" value="600000"></div>
+    <div class="f"><label>⛽ Combustible / maquinaria</label><input type="number" placeholder="$0 / año" value="920000"></div>
+    <div class="res res-b"><div class="rl">Total Costos Fijos (referencial)</div><div class="rv">$4.160.000</div></div>
+    <button class="btn btn-p" onclick="showToast('✅ Costos fijos guardados')">💾 &nbsp;Guardar</button>
   </div>
 </div>
 
-<!-- ═══════════════════════════════════
-     24. GALERÍA / FOTOS
-═══════════════════════════════════ -->
-<div class="screen" id="s-fotos">
-  <div class="hdr"><span class="back" onclick="goTo('s-home')">←</span><h2>📷 Fotos y Evidencias</h2><span onclick="showToast('📷 Nueva foto')">➕</span></div>
-  <div style="overflow-y:auto;padding-bottom:90px">
-    <div style="padding:12px 16px;background:var(--gr);border-bottom:1px solid var(--bo)">
-      <div style="display:flex;gap:8px;overflow-x:auto">
-        <button class="btn btn-p btn-sm" onclick="showToast('Todos')">Todos</button>
-        <button class="btn btn-s btn-sm" onclick="showToast('Boletas')">🧾 Boletas</button>
-        <button class="btn btn-s btn-sm" onclick="showToast('Animales')">🐄 Animales</button>
-        <button class="btn btn-s btn-sm" onclick="showToast('Praderas')">🌾 Praderas</button>
-        <button class="btn btn-s btn-sm" onclick="showToast('Productos')">📦 Productos</button>
-      </div>
-    </div>
-    <div class="sec">
-      <div class="stit">🐄 Ganadería Bovina · Febrero 2025</div>
-      <div class="fg">
-        <div class="fi filled" onclick="showToast('📷 Ver imagen')"><span style="font-size:28px">🧾</span><span>Boleta vet</span></div>
-        <div class="fi filled" onclick="showToast('📷 Ver imagen')"><span style="font-size:28px">🌾</span><span>Fardos</span></div>
-        <div class="fi filled" onclick="showToast('📷 Ver imagen')"><span style="font-size:28px">🐄</span><span>Rodeo</span></div>
-        <div class="fi" onclick="showToast('📷 Agregar foto')">➕<span>Agregar</span></div>
-      </div>
-      <div class="stit" style="margin-top:12px">🐑 Ganadería Ovina · Marzo 2025</div>
-      <div class="fg">
-        <div class="fi filled" onclick="showToast('📷 Ver imagen')"><span style="font-size:28px">🧶</span><span>Lana</span></div>
-        <div class="fi filled" onclick="showToast('📷 Ver imagen')"><span style="font-size:28px">🐑</span><span>Majada</span></div>
-        <div class="fi" onclick="showToast('📷 Agregar foto')">➕<span>Agregar</span></div>
-        <div class="fi" onclick="showToast('📷 Agregar foto')">➕<span>Agregar</span></div>
-      </div>
-      <div class="stit" style="margin-top:12px">📂 Subir nueva evidencia</div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
-        <button class="btn btn-s" style="padding:14px;font-size:13px" onclick="showToast('📷 Abrir cámara')">📷 Cámara</button>
-        <button class="btn btn-s" style="padding:14px;font-size:13px" onclick="showToast('🖼️ Galería del celular')">🖼️ Galería</button>
-      </div>
-      <div class="al al-i" style="margin-top:12px">
-        <span>ℹ️</span>
-        <div class="al-t">Las fotos se guardan vinculadas al mes y rubro seleccionado. Se suben cuando hay wifi.</div>
-      </div>
-    </div>
-  </div>
-  <div class="bnav">
-    <div class="ni" onclick="goTo('s-home')"><span class="ni-ic">🏠</span><span class="ni-lb">Inicio</span></div>
-    <div class="ni" onclick="goTo('s-resumen')"><span class="ni-ic">📊</span><span class="ni-lb">Resumen</span></div>
-    <div class="ni active"><span class="ni-ic">📷</span><span class="ni-lb">Fotos</span></div>
-    <div class="ni" onclick="goTo('s-notif')"><span class="ni-ic">🔔</span><span class="ni-lb">Alertas</span></div>
+<!-- PERFIL simplificado -->
+<div class="screen" id="s-perfil">
+  <div class="hdr"><span class="back" onclick="goTo('s-home')">←</span><h2>Datos del Productor</h2></div>
+  <div class="sec">
+    <div class="f"><label>👤 Nombre completo</label><input type="text" value="María González Rojas"></div>
+    <div class="f"><label>🏡 Nombre predio</label><input type="text" value="El Canelo"></div>
+    <div class="f"><label>📍 Región</label><select><option>Los Ríos</option><option>Los Lagos</option><option>La Araucanía</option></select></div>
+    <div class="f"><label>📐 Tamaño (ha)</label><input type="number" value="85"></div>
+    <button class="btn btn-p" onclick="showToast('✅ Perfil guardado')">💾 &nbsp;Guardar</button>
   </div>
 </div>
 
-<!-- ═══════════════════════════════════
-     25. NOTIFICACIONES
-═══════════════════════════════════ -->
+<!-- NOTIF simplificado -->
 <div class="screen" id="s-notif">
-  <div class="hdr"><span class="back" onclick="goTo('s-home')">←</span><h2>🔔 Alertas y Recordatorios</h2></div>
-  <div style="overflow-y:auto;padding-bottom:90px">
-    <!-- Progreso -->
-    <div style="background:var(--v);padding:16px 20px">
-      <div style="color:#B7E4C7;font-size:11px;font-weight:700;margin-bottom:8px">PROGRESO GENERAL 2025</div>
-      <div style="background:rgba(255,255,255,.2);border-radius:20px;overflow:hidden;height:12px;margin-bottom:6px">
-        <div style="width:38%;height:100%;background:white;border-radius:20px"></div>
-      </div>
-      <div style="color:white;font-size:13px;font-weight:700">38% completado · 2 de 15 rubros con datos</div>
+  <div class="hdr"><span class="back" onclick="goTo('s-home')">←</span><h2>🔔 Alertas</h2></div>
+  <div class="sec">
+    <div class="stit">Pendientes</div>
+    <div style="background:white;border:2px solid #FFCDD2;border-left:5px solid var(--ro);border-radius:13px;padding:13px;margin-bottom:10px">
+      <div style="font-weight:700;margin-bottom:4px">🌾 Forraje conservado = $0 en Junio</div>
+      <div style="font-size:12px;color:#888">Campo obligatorio para Weak Link</div>
+      <button class="btn btn-s btn-sm" style="margin-top:8px" onclick="goTo('s-bovina')">→ Ir a completar</button>
     </div>
-    <div class="sec">
-      <!-- URGENTE -->
-      <div class="stit">🔴 Urgente</div>
-      <div class="ntf ntf-r">
-        <div class="ntf-top"><span class="ntf-tit">🌾 Forraje conservado = $0</span><span class="ntf-time">Bovina · Jun</span></div>
-        <div class="ntf-sub">Campo obligatorio para análisis Weak Link. Completar antes del próximo taller.</div>
-        <button class="btn btn-s btn-sm" style="margin-top:8px;font-size:12px" onclick="goTo('s-bovina')">→ Ir a completar</button>
-      </div>
-      <div class="ntf ntf-r">
-        <div class="ntf-top"><span class="ntf-tit">📋 13 rubros sin ningún dato</span><span class="ntf-time">Hoy</span></div>
-        <div class="ntf-sub">Forraje, Avicultura, Turismo y 10 rubros más no tienen registros.</div>
-        <button class="btn btn-s btn-sm" style="margin-top:8px;font-size:12px" onclick="goTo('s-home')">→ Ver rubros</button>
-      </div>
-      <!-- PENDIENTE -->
-      <div class="stit" style="margin-top:14px">🟡 Pendiente</div>
-      <div class="ntf ntf-y">
-        <div class="ntf-top"><span class="ntf-tit">🐑 Ovina incompleta</span><span class="ntf-time">Abr-Dic</span></div>
-        <div class="ntf-sub">Solo 5 meses registrados. Faltan 7 meses para completar el año.</div>
-        <button class="btn btn-s btn-sm" style="margin-top:8px;font-size:12px" onclick="goTo('s-ovina')">→ Completar</button>
-      </div>
-      <div class="ntf ntf-y">
-        <div class="ntf-top"><span class="ntf-tit">🏠 Costos Fijos sin actualizar</span><span class="ntf-time">2025</span></div>
-        <div class="ntf-sub">Los costos fijos no se han revisado desde el año anterior.</div>
-        <button class="btn btn-s btn-sm" style="margin-top:8px;font-size:12px" onclick="goTo('s-cf')">→ Revisar</button>
-      </div>
-      <!-- INFORMATIVO -->
-      <div class="stit" style="margin-top:14px">🔵 Información</div>
-      <div class="ntf ntf-b">
-        <div class="ntf-top"><span class="ntf-tit">⚖️ Comparador disponible</span><span class="ntf-time">Nuevo</span></div>
-        <div class="ntf-sub">Compare su sistema actual vs sistema regenerativo en la nueva pantalla Comparador.</div>
-        <button class="btn btn-s btn-sm" style="margin-top:8px;font-size:12px" onclick="goTo('s-comparador')">→ Ver comparador</button>
-      </div>
-      <!-- OK -->
-      <div class="stit" style="margin-top:14px">🟢 Completado</div>
-      <div class="ntf ntf-g">
-        <div class="ntf-top"><span class="ntf-tit">✅ Bovina Ene-Feb completo</span><span class="ntf-time">Hace 2 días</span></div>
-        <div class="ntf-sub">Ingresos, costos e inventario UA registrados correctamente.</div>
-      </div>
-      <div class="ntf ntf-g">
-        <div class="ntf-top"><span class="ntf-tit">✅ Ovina registrada (5 meses)</span><span class="ntf-time">Ayer</span></div>
-        <div class="ntf-sub">Datos de enero a mayo guardados y sincronizados.</div>
-      </div>
-      <!-- Sync -->
-      <div style="background:var(--gr);border-radius:13px;padding:13px;margin-top:14px;text-align:center">
-        <div style="font-size:22px;margin-bottom:5px">☁️</div>
-        <div style="font-size:13px;font-weight:700;color:var(--v)">Última sincronización</div>
-        <div style="font-size:12px;color:#888;margin-top:2px">Hoy 09:30 · 3 registros enviados</div>
-        <button class="btn btn-s btn-sm" style="margin-top:8px" onclick="showToast('🔄 Sincronizando...')">🔄 Sincronizar ahora</button>
-      </div>
-    </div>
-  </div>
-  <div class="bnav">
-    <div class="ni" onclick="goTo('s-home')"><span class="ni-ic">🏠</span><span class="ni-lb">Inicio</span></div>
-    <div class="ni" onclick="goTo('s-resumen')"><span class="ni-ic">📊</span><span class="ni-lb">Resumen</span></div>
-    <div class="ni" onclick="goTo('s-fotos')"><span class="ni-ic">📷</span><span class="ni-lb">Fotos</span></div>
-    <div class="ni active"><span class="ni-ic">🔔</span><span class="ni-lb">Alertas</span></div>
-  </div>
-</div>
-
-<!-- ═══════════════════════════════════
-     26. COMPARADOR CONV. vs REGENERATIVO
-═══════════════════════════════════ -->
-<div class="screen" id="s-comparador">
-  <div class="hdr"><span class="back" onclick="goTo('s-home')">←</span><h2>⚖️ Comparador de Sistemas</h2></div>
-  <div style="overflow-y:auto;padding-bottom:90px">
-    <div style="padding:13px 20px;background:#E8F5E9;font-size:12px;color:var(--v);font-weight:600">
-      Balance de viabilidad — Ganadería Bovina de Carne · Inspirado en ODEPA Larraín et al. 2024
-    </div>
-    <div class="sec">
-      <!-- TABS SISTEMAS -->
-      <div class="comp-tab">
-        <div class="comp-t active" id="ct-conv" onclick="switchComp('conv')">🏭 Convencional</div>
-        <div class="comp-t" id="ct-regen" onclick="switchComp('regen')">🌿 Regenerativo</div>
-        <div class="comp-t" id="ct-comp" onclick="switchComp('comp')">📊 Comparación</div>
-      </div>
-
-      <!-- CONVENCIONAL -->
-      <div id="cp-conv" style="display:block">
-        <div class="stit">🏭 Sistema Convencional — Datos</div>
-        <div class="g2">
-          <div class="f"><label style="font-size:12px">Superficie (ha)</label><input type="number" class="comp-in" value="100" id="cc-sup"></div>
-          <div class="f"><label style="font-size:12px">Vacas adultas</label><input type="number" class="comp-in" value="80" id="cc-vac"></div>
-        </div>
-        <div class="g2">
-          <div class="f"><label style="font-size:12px">Toros</label><input type="number" class="comp-in" value="4"></div>
-          <div class="f"><label style="font-size:12px">Terneros dest.</label><input type="number" class="comp-in" value="60" id="cc-tern"></div>
-        </div>
-        <div class="stit">💰 Ingresos Convencional</div>
-        <div class="f"><label style="font-size:12px">Venta de terneros ($)</label><input type="number" class="comp-in" value="9600000" id="cc-ing1" oninput="calcComp()"></div>
-        <div class="f"><label style="font-size:12px">Venta animales descarte ($)</label><input type="number" class="comp-in" value="1200000" id="cc-ing2" oninput="calcComp()"></div>
-        <div class="f"><label style="font-size:12px">Subsidios / otros ($)</label><input type="number" class="comp-in" value="800000" id="cc-ing3" oninput="calcComp()"></div>
-        <div class="res res-g"><div class="rl">Total Ingresos Conv.</div><div class="rv" id="cc-ing-tot">$11.600.000</div></div>
-        <div class="stit">📉 Costos Directos Convencional</div>
-        <div class="f"><label style="font-size:12px">Mano de obra ($)</label><input type="number" class="comp-in" value="3200000" id="cc-cos1" oninput="calcComp()"></div>
-        <div class="f"><label style="font-size:12px">Maquinaria y servicios ($)</label><input type="number" class="comp-in" value="1800000" id="cc-cos2" oninput="calcComp()"></div>
-        <div class="f"><label style="font-size:12px">Insumos sanitarios ($)</label><input type="number" class="comp-in" value="900000" id="cc-cos3" oninput="calcComp()"></div>
-        <div class="f"><label style="font-size:12px">Alimentación ($)</label><input type="number" class="comp-in" value="2100000" id="cc-cos4" oninput="calcComp()"></div>
-        <div class="f"><label style="font-size:12px">Manejo de praderas ($)</label><input type="number" class="comp-in" value="1500000" id="cc-cos5" oninput="calcComp()"></div>
-        <div class="res res-o"><div class="rl">Total Costos Directos Conv.</div><div class="rv" id="cc-cos-tot">$9.500.000</div></div>
-        <div class="res res-g"><div class="rl">Gross Profit Convencional</div><div class="rv" id="cc-gp">$2.100.000</div><div class="rsub" id="cc-gpm">GP Margin: 18,1%</div></div>
-        <button class="btn btn-p" onclick="showToast('✅ Datos Conv. guardados')">💾 &nbsp;Guardar Sistema Convencional</button>
-      </div>
-
-      <!-- REGENERATIVO -->
-      <div id="cp-regen" style="display:none">
-        <div class="stit">🌿 Sistema Regenerativo — Datos</div>
-        <div class="g2">
-          <div class="f"><label style="font-size:12px">Superficie (ha)</label><input type="number" class="comp-in2" value="100" id="cr-sup"></div>
-          <div class="f"><label style="font-size:12px">Vacas adultas</label><input type="number" class="comp-in2" value="95" id="cr-vac"></div>
-        </div>
-        <div class="g2">
-          <div class="f"><label style="font-size:12px">Toros</label><input type="number" class="comp-in2" value="4"></div>
-          <div class="f"><label style="font-size:12px">Terneros dest.</label><input type="number" class="comp-in2" value="72" id="cr-tern"></div>
-        </div>
-        <div class="stit">💰 Ingresos Regenerativo</div>
-        <div class="f"><label style="font-size:12px">Venta de terneros ($)</label><input type="number" class="comp-in2" value="11520000" id="cr-ing1" oninput="calcComp()"></div>
-        <div class="f"><label style="font-size:12px">Venta animales descarte ($)</label><input type="number" class="comp-in2" value="1400000" id="cr-ing2" oninput="calcComp()"></div>
-        <div class="f"><label style="font-size:12px">Subsidios / otros ($)</label><input type="number" class="comp-in2" value="800000" id="cr-ing3" oninput="calcComp()"></div>
-        <div class="res res-g"><div class="rl">Total Ingresos Regen.</div><div class="rv" id="cr-ing-tot">$13.720.000</div></div>
-        <div class="stit">📉 Costos Directos Regenerativo</div>
-        <div class="f"><label style="font-size:12px">Mano de obra ($)</label><input type="number" class="comp-in2" value="3400000" id="cr-cos1" oninput="calcComp()"></div>
-        <div class="f"><label style="font-size:12px">Maquinaria y servicios ($)</label><input type="number" class="comp-in2" value="1200000" id="cr-cos2" oninput="calcComp()"></div>
-        <div class="f"><label style="font-size:12px">Insumos sanitarios ($)</label><input type="number" class="comp-in2" value="600000" id="cr-cos3" oninput="calcComp()"></div>
-        <div class="f"><label style="font-size:12px">Alimentación ($)</label><input type="number" class="comp-in2" value="800000" id="cr-cos4" oninput="calcComp()"></div>
-        <div class="f"><label style="font-size:12px">Manejo de praderas ($)</label><input type="number" class="comp-in2" value="600000" id="cr-cos5" oninput="calcComp()"></div>
-        <div class="res res-o"><div class="rl">Total Costos Directos Regen.</div><div class="rv" id="cr-cos-tot">$6.600.000</div></div>
-        <div class="res res-g"><div class="rl">Gross Profit Regenerativo</div><div class="rv" id="cr-gp">$7.120.000</div><div class="rsub" id="cr-gpm">GP Margin: 51,9%</div></div>
-        <button class="btn btn-p" onclick="showToast('✅ Datos Regen. guardados')">💾 &nbsp;Guardar Sistema Regenerativo</button>
-      </div>
-
-      <!-- COMPARACIÓN -->
-      <div id="cp-comp" style="display:none">
-        <div class="stit">📊 Resumen Comparativo</div>
-        <div style="overflow-x:auto">
-          <table style="width:100%;border-collapse:collapse;font-size:12px">
-            <thead><tr><th style="background:var(--v);color:white;padding:8px 6px;text-align:left">Indicador</th><th style="background:#555;color:white;padding:8px 6px;text-align:center">Conv.</th><th style="background:var(--vl);color:white;padding:8px 6px;text-align:center">Regen.</th><th style="background:#1565C0;color:white;padding:8px 6px;text-align:center">Δ</th></tr></thead>
-            <tbody>
-              <tr><td style="padding:8px 6px;border-bottom:1px solid var(--bo);font-weight:600">Sup. (ha)</td><td id="tc-sup1" style="text-align:center;padding:8px 6px;border-bottom:1px solid var(--bo)">100</td><td id="tc-sup2" style="text-align:center;background:#F0FFF4;padding:8px 6px;border-bottom:1px solid var(--bo)">100</td><td style="text-align:center;padding:8px 6px;border-bottom:1px solid var(--bo);color:#888">—</td></tr>
-              <tr><td style="padding:8px 6px;border-bottom:1px solid var(--bo);font-weight:600">Vacas</td><td style="text-align:center;padding:8px 6px;border-bottom:1px solid var(--bo)">80</td><td style="text-align:center;background:#F0FFF4;padding:8px 6px;border-bottom:1px solid var(--bo)">95</td><td style="text-align:center;padding:8px 6px;border-bottom:1px solid var(--bo);color:var(--v);font-weight:700">+15</td></tr>
-              <tr><td style="padding:8px 6px;border-bottom:1px solid var(--bo);font-weight:600">Terneros</td><td style="text-align:center;padding:8px 6px;border-bottom:1px solid var(--bo)">60</td><td style="text-align:center;background:#F0FFF4;padding:8px 6px;border-bottom:1px solid var(--bo)">72</td><td style="text-align:center;padding:8px 6px;border-bottom:1px solid var(--bo);color:var(--v);font-weight:700">+12</td></tr>
-              <tr><td style="padding:8px 6px;border-bottom:1px solid var(--bo);font-weight:600">Ingresos $</td><td style="text-align:center;padding:8px 6px;border-bottom:1px solid var(--bo)" id="tc-ing1">$11,6M</td><td style="text-align:center;background:#F0FFF4;padding:8px 6px;border-bottom:1px solid var(--bo)" id="tc-ing2">$13,7M</td><td style="text-align:center;padding:8px 6px;border-bottom:1px solid var(--bo);color:var(--v);font-weight:700">+18%</td></tr>
-              <tr><td style="padding:8px 6px;border-bottom:1px solid var(--bo);font-weight:600">Costos Dir. $</td><td style="text-align:center;padding:8px 6px;border-bottom:1px solid var(--bo)" id="tc-cos1">$9,5M</td><td style="text-align:center;background:#F0FFF4;padding:8px 6px;border-bottom:1px solid var(--bo)" id="tc-cos2">$6,6M</td><td style="text-align:center;padding:8px 6px;border-bottom:1px solid var(--bo);color:var(--v);font-weight:700">-31%</td></tr>
-              <tr><td style="padding:8px 6px;border-bottom:1px solid var(--bo);font-weight:700;color:var(--v)">GP $</td><td style="text-align:center;padding:8px 6px;border-bottom:1px solid var(--bo);font-weight:700" id="tc-gp1">$2,1M</td><td style="text-align:center;background:#F0FFF4;padding:8px 6px;border-bottom:1px solid var(--bo);font-weight:700;color:var(--v)" id="tc-gp2">$7,1M</td><td style="text-align:center;padding:8px 6px;border-bottom:1px solid var(--bo);color:var(--v);font-weight:800">+238%</td></tr>
-              <tr><td style="padding:8px 6px;font-weight:700;color:var(--v)">GP Margin</td><td style="text-align:center;padding:8px 6px;font-weight:700" id="tc-gpm1">18,1%</td><td style="text-align:center;background:#F0FFF4;padding:8px 6px;font-weight:700;color:var(--v)" id="tc-gpm2">51,9%</td><td style="text-align:center;padding:8px 6px;color:var(--v);font-weight:800">+33,8pp</td></tr>
-            </tbody>
-          </table>
-        </div>
-        <div class="res res-g" style="margin-top:14px">
-          <div class="rl">💡 Conclusión del comparador</div>
-          <div style="font-size:13px;color:var(--v);margin-top:4px;font-weight:600">El sistema regenerativo genera 3,4x más Gross Profit con 31% menos costos directos.</div>
-        </div>
-        <button class="btn btn-p" onclick="showToast('📤 Exportando comparador...')">📤 &nbsp;Exportar comparación</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ═══════════════════════════════════
-     27. ESTUDIO DE MERCADO
-═══════════════════════════════════ -->
-<div class="screen" id="s-mercado">
-  <div class="hdr"><span class="back" onclick="goTo('s-home')">←</span><h2>📈 Estudio de Mercado</h2></div>
-  <div style="overflow-y:auto;padding-bottom:90px">
-    <div style="padding:13px 20px;background:#E3F2FD;font-size:12px;color:#1565C0;font-weight:600">
-      Compare su precio actual con el mercado y canales de venta alternativos
-    </div>
-    <div class="sec">
-      <div class="stit">💰 Mis Precios Actuales</div>
-      <!-- Bovina -->
-      <div class="mrc-card">
-        <div class="mrc-top">
-          <span class="mrc-name">🐄 Ternero al destete</span>
-          <span class="bdg bg">Activo</span>
-        </div>
-        <div class="g2" style="font-size:12px">
-          <div class="f"><label style="font-size:11px">Precio actual (CLP/kg)</label><input type="number" placeholder="0" value="2100"></div>
-          <div class="f"><label style="font-size:11px">Canal de venta</label><select style="font-size:12px;padding:10px"><option>Ferial local</option><option>Directo</option><option>Exportación</option></select></div>
-        </div>
-      </div>
-      <!-- Ovina -->
-      <div class="mrc-card">
-        <div class="mrc-top">
-          <span class="mrc-name">🐑 Cordero al gancho</span>
-          <span class="bdg bg">Activo</span>
-        </div>
-        <div class="g2" style="font-size:12px">
-          <div class="f"><label style="font-size:11px">Precio actual (CLP/kg)</label><input type="number" placeholder="0" value="3800"></div>
-          <div class="f"><label style="font-size:11px">Canal de venta</label><select style="font-size:12px;padding:10px"><option>Directo</option><option>Ferial local</option><option>Restaurant</option></select></div>
-        </div>
-      </div>
-      <div class="stit" style="margin-top:6px">📊 Precios de Referencia Mercado</div>
-      <div class="al al-i"><span>ℹ️</span><div class="al-t">Ingrese precios de referencia que obtuvo de otros compradores o canales.</div></div>
-      <div class="mrc-card">
-        <div class="mrc-top"><span class="mrc-name">Canal alternativo 1</span></div>
-        <div class="f"><label style="font-size:12px">Nombre del canal / comprador</label><input type="text" placeholder="Ej: Frigorífico Regional"></div>
-        <div class="g2">
-          <div class="f"><label style="font-size:12px">Rubro</label><select style="font-size:12px"><option>🐄 Bovina</option><option>🐑 Ovina</option></select></div>
-          <div class="f"><label style="font-size:12px">Precio (CLP/kg)</label><input type="number" placeholder="0"></div>
-        </div>
-      </div>
-      <button class="btn btn-s" style="margin-bottom:14px" onclick="showToast('➕ Agregar canal')">➕ &nbsp;Agregar canal alternativo</button>
-      <div class="stit">🏆 Mejor oportunidad detectada</div>
-      <div style="background:var(--vp);border:2px solid var(--vl);border-radius:14px;padding:14px">
-        <div style="font-size:14px;font-weight:700;color:var(--v);margin-bottom:6px">🐑 Cordero: venta directa a restaurant</div>
-        <div style="font-size:13px;color:#555">Precio actual: $3.800/kg &nbsp;→&nbsp; Restaurant: $5.200/kg</div>
-        <div style="font-size:14px;font-weight:800;color:var(--v);margin-top:6px">Diferencia potencial: +$1.400/kg (+36,8%)</div>
-      </div>
-      <button class="btn btn-p" style="margin-top:14px" onclick="showToast('✅ Estudio de mercado guardado')">💾 &nbsp;Guardar Estudio de Mercado</button>
-    </div>
+    <div class="al al-s"><span>✅</span><div class="al-t">Bovina Ene-Feb guardados correctamente.</div></div>
   </div>
 </div>
 
 <!-- TOAST -->
 <div class="toast" id="toast"></div>
-</div>
+
+</div><!-- /phone -->
 
 <script>
+// ══════════════════════════════════════
+// DATOS DE CONCEPTOS POR RUBRO Y TIPO
+// ══════════════════════════════════════
+const CONCEPTOS = {
+  bovina: {
+    ing: [
+      { v:'venta_animales',    l:'🐄 Venta de animales (kg / cabezas)' },
+      { v:'subproductos',      l:'🥛 Subproductos (leche, lana, cuero)' },
+      { v:'reproductores',     l:'🐂 Venta reproductores / pie de cría' },
+      { v:'subsidios',         l:'🏛️ Subsidios / bonos (INDAP, SAG)' },
+      { v:'medieria',          l:'🤝 Mediería (sistema de medias)' },
+      { v:'arriendo_parcela',  l:'📍 Arriendo de parcela (cab/día)' },
+      { v:'arriendo_talaje',   l:'🌿 Arriendo de talaje' },
+      { v:'otro',              l:'➕ Otro ingreso' },
+    ],
+    cos: [
+      { v:'forraje_conservado',l:'🌾 Forraje conservado (heno, fardos) ⚠️', wl:true },
+      { v:'suplemento',        l:'🧂 Suplemento mineral / sales' },
+      { v:'concentrado',       l:'🌽 Concentrados / pellets' },
+      { v:'veterinaria',       l:'💊 Veterinaria y medicamentos' },
+      { v:'mano_obra',         l:'👷 Mano de obra PAGADA' },
+      { v:'transporte',        l:'🚛 Transporte / flete / acopio' },
+      { v:'praderas',          l:'🌱 Manejo de praderas (fertilización)' },
+      { v:'maquinaria',        l:'🚜 Maquinaria / arriendo maquinaria' },
+      { v:'compra_animales',   l:'🐮 Compra animales para reposición' },
+      { v:'otro',              l:'➕ Otro costo' },
+    ]
+  },
+  ovina: {
+    ing: [
+      { v:'venta_animales',    l:'🐑 Venta de animales (kg / cabezas)' },
+      { v:'subproductos',      l:'🧶 Subproductos (leche, lana, cuero)' },
+      { v:'reproductores',     l:'🐏 Venta reproductores / pie de cría' },
+      { v:'subsidios',         l:'🏛️ Subsidios / bonos' },
+      { v:'otro',              l:'➕ Otro ingreso' },
+    ],
+    cos: [
+      { v:'forraje_conservado',l:'🌾 Forraje conservado (heno, fardos) ⚠️', wl:true },
+      { v:'alimentacion',      l:'🌿 Alimentación principal' },
+      { v:'veterinaria',       l:'💊 Veterinaria y medicamentos' },
+      { v:'mano_obra',         l:'👷 Mano de obra PAGADA' },
+      { v:'transporte',        l:'🚛 Transporte / flete' },
+      { v:'praderas',          l:'🌱 Manejo de praderas' },
+      { v:'compra_animales',   l:'🐑 Compra animales reposición' },
+      { v:'otro',              l:'➕ Otro costo' },
+    ]
+  },
+  porcina: {
+    ing: [
+      { v:'venta_animales',    l:'🐖 Venta de animales (kg / cabezas)' },
+      { v:'reproductores',     l:'🐷 Venta reproductores' },
+      { v:'subsidios',         l:'🏛️ Subsidios / bonos' },
+      { v:'otro',              l:'➕ Otro ingreso' },
+    ],
+    cos: [
+      { v:'concentrado',       l:'🌽 Alimento concentrado comercial' },
+      { v:'maiz',              l:'🌽 Maíz' },
+      { v:'afrecho',           l:'🌿 Afrecho de soya' },
+      { v:'forraje',           l:'🥬 Forraje / restos de cosecha' },
+      { v:'lechones',          l:'🐽 Lechón destetado (compra/reposición)' },
+      { v:'mano_obra',         l:'👷 Mano de obra PAGADA' },
+      { v:'instalaciones',     l:'🏗️ Instalaciones y mantención' },
+      { v:'energia',           l:'⚡ Energía' },
+      { v:'veterinaria',       l:'💊 Veterinaria (vacunas, tratamientos)' },
+      { v:'otro',              l:'➕ Otro costo' },
+    ]
+  },
+  caprina: {
+    ing: [
+      { v:'venta_animales',    l:'🐐 Venta de animales (kg / cabezas)' },
+      { v:'subproductos',      l:'🥛 Subproductos (leche de cabra, queso)' },
+      { v:'reproductores',     l:'🐐 Venta reproductores' },
+      { v:'subsidios',         l:'🏛️ Subsidios / bonos' },
+      { v:'otro',              l:'➕ Otro ingreso' },
+    ],
+    cos: [
+      { v:'forraje_fresco',    l:'🌿 Forraje fresco (pastizal, arbustos)' },
+      { v:'forraje_conservado',l:'🌾 Forraje conservado (heno, chala) ⚠️', wl:true },
+      { v:'concentrado',       l:'🌽 Concentrados (maíz, avena, soya)' },
+      { v:'suplemento',        l:'🧂 Suplemento mineral' },
+      { v:'reposicion',        l:'🐐 Reposición de ganado' },
+      { v:'mano_obra',         l:'👷 Mano de obra PAGADA' },
+      { v:'infraestructura',   l:'🏗️ Infraestructura y equipamiento' },
+      { v:'transporte',        l:'🚛 Logística y transporte' },
+      { v:'otro',              l:'➕ Otro costo' },
+    ]
+  },
+  avicultura: {
+    ing: [
+      { v:'huevos',            l:'🥚 Venta de huevos' },
+      { v:'gallinas_descarte', l:'🐔 Venta gallinas de descarte' },
+      { v:'pollos',            l:'🐣 Venta pollitas / pollos' },
+      { v:'subsidios',         l:'🏛️ Subsidios / bonos' },
+      { v:'otro',              l:'➕ Otro ingreso' },
+    ],
+    cos: [
+      { v:'maiz',              l:'🌽 Alimentación — Maíz' },
+      { v:'afrecho',           l:'🌿 Alimentación — Afrecho / soya' },
+      { v:'otros_insumos',     l:'💊 Otros insumos (vitaminas, sales)' },
+      { v:'pradera',           l:'🌾 Aporte de pradera (free-range)' },
+      { v:'mano_obra_perm',    l:'👷 Mano de obra permanente' },
+      { v:'mano_obra_temp',    l:'👷 Mano de obra temporal' },
+      { v:'transporte',        l:'🚛 Transporte y distribución' },
+      { v:'embalaje',          l:'📦 Embalaje (cajas, bandejas)' },
+      { v:'energia',           l:'⚡ Electricidad y agua' },
+      { v:'otro',              l:'➕ Otro costo' },
+    ]
+  },
+  turismo: {
+    ing: [
+      { v:'tours',             l:'🎯 Venta de tours / experiencias' },
+      { v:'alojamiento',       l:'🛏️ Alojamiento (noches)' },
+      { v:'alimentacion',      l:'🍽️ Alimentación / eventos' },
+      { v:'merchandising',     l:'🛍️ Productos locales / merchandising' },
+      { v:'otro',              l:'➕ Otro ingreso' },
+    ],
+    cos: [
+      { v:'mano_obra_perm',    l:'👷 Mano de obra permanente' },
+      { v:'mano_obra_temp',    l:'👷 Mano de obra temporal' },
+      { v:'insumos',           l:'🧴 Insumos y materiales' },
+      { v:'mantencion',        l:'🔧 Mantención instalaciones' },
+      { v:'marketing',         l:'📣 Marketing y comisiones' },
+      { v:'plataformas',       l:'💻 Plataformas (Booking, Airbnb)' },
+      { v:'transporte',        l:'🚗 Transporte de visitantes' },
+      { v:'otro',              l:'➕ Otro costo' },
+    ]
+  },
+  forraje: {
+    ing: [
+      { v:'producto_principal',l:'🌾 Venta de producto principal' },
+      { v:'subproducto',       l:'♻️ Venta de subproducto' },
+      { v:'venta_directa',     l:'🏪 Venta directa (feria, redes)' },
+      { v:'subsidios',         l:'🏛️ Subsidios / bonos' },
+      { v:'otro',              l:'➕ Otro ingreso' },
+    ],
+    cos: [
+      { v:'semillas',          l:'🌱 Semillas / plantines' },
+      { v:'fertilizantes',     l:'🧪 Fertilizantes y enmiendas' },
+      { v:'agroquimicos',      l:'🌿 Agroquímicos (herbicidas, fitosanit.)' },
+      { v:'riego',             l:'💧 Riego (agua, energía bombeo)' },
+      { v:'mano_obra',         l:'👷 Mano de obra PAGADA' },
+      { v:'maquinaria',        l:'🚜 Maquinaria / arriendo' },
+      { v:'transporte',        l:'🚛 Transporte / flete / acopio' },
+      { v:'otro',              l:'➕ Otro costo' },
+    ]
+  },
+  apicultura: {
+    ing: [
+      { v:'miel',              l:'🍯 Venta de miel (kg)' },
+      { v:'cera',              l:'🕯️ Venta de cera' },
+      { v:'nucleos',           l:'🐝 Venta de núcleos / colmenas' },
+      { v:'polinizacion',      l:'🌸 Servicio de polinización' },
+      { v:'subsidios',         l:'🏛️ Subsidios / bonos' },
+      { v:'otro',              l:'➕ Otro ingreso' },
+    ],
+    cos: [
+      { v:'alimentacion',      l:'🍬 Alimentación artificial (azúcar)' },
+      { v:'sanitario',         l:'💊 Tratamientos sanitarios (varroasis)' },
+      { v:'material',          l:'🧰 Material de colmena (alzas, cuadros)' },
+      { v:'mano_obra',         l:'👷 Mano de obra (revisiones, cosecha)' },
+      { v:'transporte',        l:'🚛 Transporte colmenas (trashumancia)' },
+      { v:'envases',           l:'🫙 Envases y etiquetado' },
+      { v:'otro',              l:'➕ Otro costo' },
+    ]
+  },
+  hortalizas: {
+    ing: [
+      { v:'producto_principal',l:'🥬 Venta de hortalizas' },
+      { v:'venta_directa',     l:'🏪 Venta directa (feria, redes)' },
+      { v:'subsidios',         l:'🏛️ Subsidios / bonos' },
+      { v:'otro',              l:'➕ Otro ingreso' },
+    ],
+    cos: [
+      { v:'semillas',          l:'🌱 Semillas / plantines' },
+      { v:'abonos',            l:'🌿 Abonos y fertilizantes' },
+      { v:'agroquimicos',      l:'🧪 Agroquímicos' },
+      { v:'riego',             l:'💧 Riego' },
+      { v:'mano_obra',         l:'👷 Mano de obra' },
+      { v:'transporte',        l:'🚛 Transporte / distribución' },
+      { v:'otro',              l:'➕ Otro costo' },
+    ]
+  },
+  frutales: {
+    ing: [
+      { v:'fruta',             l:'🍎 Venta de fruta' },
+      { v:'venta_directa',     l:'🏪 Venta directa' },
+      { v:'subsidios',         l:'🏛️ Subsidios / bonos' },
+      { v:'otro',              l:'➕ Otro ingreso' },
+    ],
+    cos: [
+      { v:'poda',              l:'✂️ Poda y manejo' },
+      { v:'fitosanitarios',    l:'🌿 Fitosanitarios' },
+      { v:'fertilizacion',     l:'🧪 Fertilización' },
+      { v:'cosecha',           l:'🧺 Cosecha' },
+      { v:'packing',           l:'📦 Packing y embalaje' },
+      { v:'mano_obra',         l:'👷 Mano de obra' },
+      { v:'otro',              l:'➕ Otro costo' },
+    ]
+  },
+  lacteos: {
+    ing: [
+      { v:'leche',             l:'🥛 Venta de leche (litros)' },
+      { v:'mantequilla',       l:'🧈 Venta mantequilla / crema' },
+      { v:'yogurt',            l:'🍦 Venta yogurt / derivados' },
+      { v:'otro',              l:'➕ Otro ingreso' },
+    ],
+    cos: [
+      { v:'materia_prima',     l:'🥛 Materia prima (leche)' },
+      { v:'insumos_proceso',   l:'🧫 Insumos de proceso' },
+      { v:'energia',           l:'⚡ Energía' },
+      { v:'envases',           l:'🫙 Envases y etiquetado' },
+      { v:'mano_obra',         l:'👷 Mano de obra' },
+      { v:'transporte',        l:'🚛 Distribución y transporte' },
+      { v:'otro',              l:'➕ Otro costo' },
+    ]
+  },
+  quesos: {
+    ing: [
+      { v:'queso_fresco',      l:'🧀 Venta queso fresco' },
+      { v:'queso_madurado',    l:'🧀 Venta queso madurado' },
+      { v:'subproductos',      l:'♻️ Subproductos (suero)' },
+      { v:'otro',              l:'➕ Otro ingreso' },
+    ],
+    cos: [
+      { v:'leche',             l:'🥛 Leche (materia prima)' },
+      { v:'cuajos',            l:'🧫 Cuajos y fermentos' },
+      { v:'sal',               l:'🧂 Sal y otros ingredientes' },
+      { v:'energia',           l:'⚡ Energía' },
+      { v:'envases',           l:'🫙 Envases y etiquetado' },
+      { v:'mano_obra',         l:'👷 Mano de obra' },
+      { v:'otro',              l:'➕ Otro costo' },
+    ]
+  }
+};
+
+const RUBROS_NOMBRES = {
+  bovina:'🐄 Ganadería Bovina',
+  ovina:'🐑 Ganadería Ovina',
+  porcina:'🐖 Ganadería Porcina',
+  caprina:'🐐 Ganadería Caprina',
+  avicultura:'🐔 Avicultura - Huevos',
+  turismo:'🏕️ Turismo - Experiencias',
+  forraje:'🌾 Forraje - Agrícola',
+  apicultura:'🍯 Apicultura',
+  hortalizas:'🥬 Hortalizas - Huerta',
+  frutales:'🍎 Frutales',
+  lacteos:'🥛 Agroind. Lácteos',
+  quesos:'🧀 Agroind. Quesos',
+};
+
+const MESES = ['Enero','Febrero','Marzo','Abril','Mayo','Junio',
+               'Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
+
+// Estado del RR
+let rrState = {
+  tipo: 'ing',
+  rubro: 'bovina',
+  foto: false,
+};
+
+// ══════════════════════════════════════
 // NAVEGACIÓN
+// ══════════════════════════════════════
 function goTo(id){
   document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
   const t=document.getElementById(id);
   if(t){t.classList.add('active');t.scrollTop=0}
 }
 
-// TABS GENÉRICO
-function switchTab(el,tabId){
-  const tabs=el.closest('.tabs');
-  if(tabs)tabs.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+function abrirRR(){
+  rrState.tipo='ing';
+  rrState.rubro='bovina';
+  rrState.foto=false;
+  resetFoto();
+  actualizarConceptos();
+  actualizarPreview();
+  goTo('s-rr');
+  document.getElementById('s-rr').scrollTop=0;
+}
+
+function abrirRRrubro(rubro, tipo){
+  rrState.rubro = rubro || 'bovina';
+  rrState.tipo  = tipo  || 'ing';
+  rrState.foto  = false;
+  resetFoto();
+  // Actualizar visual del tipo
+  setTipo(rrState.tipo);
+  // Seleccionar rubro visualmente
+  document.querySelectorAll('.rubro-opt').forEach(el=>{
+    el.classList.remove('active');
+    if(el.getAttribute('onclick').includes("'"+rubro+"'")){
+      el.classList.add('active');
+    }
+  });
+  actualizarConceptos();
+  actualizarPreview();
+  goTo('s-rr');
+  document.getElementById('s-rr').scrollTop=0;
+}
+
+// ══════════════════════════════════════
+// TIPO (INGRESO / COSTO)
+// ══════════════════════════════════════
+function setTipo(tipo){
+  rrState.tipo=tipo;
+  const bI=document.getElementById('btn-ing');
+  const bC=document.getElementById('btn-cos');
+  const hint=document.getElementById('tipo-hint');
+  const lbl=document.getElementById('lbl-monto');
+  const lblC=document.getElementById('lbl-concepto');
+
+  bI.classList.toggle('active',tipo==='ing');
+  bC.classList.toggle('active',tipo==='cos');
+
+  if(tipo==='ing'){
+    hint.textContent='Dinero que RECIBIÓ por su producción';
+    hint.style.color='var(--v)';
+    lbl.textContent='Monto recibido (CLP)';
+    lblC.textContent='Tipo de ingreso:';
+    document.querySelector('.monto-input').style.color='var(--v)';
+  } else {
+    hint.textContent='Dinero que GASTÓ en su producción';
+    hint.style.color='#E65100';
+    lbl.textContent='Monto del gasto (CLP)';
+    lblC.textContent='Tipo de costo / gasto:';
+    document.querySelector('.monto-input').style.color='#E65100';
+  }
+  actualizarConceptos();
+  actualizarPreview();
+}
+
+// ══════════════════════════════════════
+// RUBRO
+// ══════════════════════════════════════
+function selRubro(el, rubro){
+  document.querySelectorAll('.rubro-opt').forEach(r=>r.classList.remove('active'));
   el.classList.add('active');
-  // Encontrar todos los hermanos tab-content del screen
+  rrState.rubro=rubro;
+  actualizarConceptos();
+  actualizarPreview();
+}
+
+// ══════════════════════════════════════
+// CONCEPTOS DINÁMICOS
+// ══════════════════════════════════════
+function actualizarConceptos(){
+  const sel   = document.getElementById('rr-concepto');
+  const datos = CONCEPTOS[rrState.rubro]?.[rrState.tipo] || [];
+  sel.innerHTML='';
+  datos.forEach((c,i)=>{
+    const opt=document.createElement('option');
+    opt.value=c.v;
+    opt.textContent=c.l;
+    if(i===0)opt.selected=true;
+    sel.appendChild(opt);
+  });
+  verificarObligatorio();
+  actualizarPreview();
+}
+
+function verificarObligatorio(){
+  const sel    = document.getElementById('rr-concepto');
+  const oblig  = document.getElementById('concepto-oblig');
+  const selVal = sel.value;
+  const datos  = CONCEPTOS[rrState.rubro]?.[rrState.tipo] || [];
+  const item   = datos.find(c=>c.v===selVal);
+  oblig.style.display = item?.wl ? 'flex' : 'none';
+  actualizarPreview();
+}
+
+// ══════════════════════════════════════
+// FECHA → MES
+// ══════════════════════════════════════
+function actualizarMes(){
+  const fechaStr = document.getElementById('rr-fecha').value;
+  if(!fechaStr)return;
+  const d  = new Date(fechaStr+'T12:00:00');
+  const mes= MESES[d.getMonth()];
+  const año= d.getFullYear();
+  document.getElementById('mes-ind').textContent = '📅 Mes asignado: '+mes.toUpperCase()+' '+año;
+  actualizarPreview();
+}
+
+function getMesActual(){
+  const fechaStr = document.getElementById('rr-fecha')?.value;
+  if(!fechaStr) return {mes:'Julio',año:2025};
+  const d=new Date(fechaStr+'T12:00:00');
+  return {mes:MESES[d.getMonth()], año:d.getFullYear()};
+}
+
+// ══════════════════════════════════════
+// MONTO
+// ══════════════════════════════════════
+function formatMonto(){
+  const inp = document.getElementById('rr-monto');
+  const div = document.getElementById('monto-formateado');
+  const val = parseFloat(inp.value||0);
+  if(val>0){
+    div.textContent = '$ '+val.toLocaleString('es-CL');
+    div.style.color = rrState.tipo==='ing'?'var(--v)':'#E65100';
+  } else {
+    div.textContent = 'Ingrese el monto';
+    div.style.color = '#888';
+  }
+  actualizarPreview();
+}
+
+// ══════════════════════════════════════
+// FOTO (SIMULADA)
+// ══════════════════════════════════════
+function mostrarOpcionesFoto(){
+  const ops = document.getElementById('foto-opciones');
+  ops.style.display = ops.style.display==='none'?'grid':'none';
+}
+
+function simularFoto(fuente){
+  rrState.foto=true;
+  const box     = document.getElementById('foto-rr-box');
+  const icono   = document.getElementById('foto-thumb-icono');
+  const titulo  = document.getElementById('foto-rr-titulo');
+  const sub     = document.getElementById('foto-rr-sub');
+  const preview = document.getElementById('foto-preview-area');
+  const confirm = document.getElementById('foto-confirmada');
+  const fotoInd = document.getElementById('pv-foto-ind');
+  const nombre  = document.getElementById('foto-nombre');
+
+  box.classList.add('has-foto');
+  icono.textContent  = fuente==='camara'?'📷':'🖼️';
+  titulo.textContent = '✅ Foto adjunta';
+  sub.textContent    = fuente==='camara'?'Tomada con cámara':'Seleccionada de galería';
+  preview.style.display='flex';
+  preview.style.background='#E8F5E9';
+  preview.textContent='🧾';
+
+  document.getElementById('foto-opciones').style.display='none';
+  confirm.style.display='block';
+  nombre.textContent=fuente==='camara'?'foto_boleta_'+Date.now()+'.jpg':'imagen_galeria.jpg';
+  fotoInd.style.display='flex';
+
+  showToast(fuente==='camara'?'📷 Foto tomada y adjunta':'🖼️ Imagen seleccionada');
+  actualizarPreview();
+}
+
+function resetFoto(){
+  rrState.foto=false;
+  const box     = document.getElementById('foto-rr-box');
+  const icono   = document.getElementById('foto-thumb-icono');
+  const titulo  = document.getElementById('foto-rr-titulo');
+  const sub     = document.getElementById('foto-rr-sub');
+  const preview = document.getElementById('foto-preview-area');
+  const confirm = document.getElementById('foto-confirmada');
+  const fotoInd = document.getElementById('pv-foto-ind');
+  if(!box)return;
+  box.classList.remove('has-foto');
+  icono.textContent  = '📷';
+  titulo.textContent = 'Adjuntar boleta o foto';
+  sub.textContent    = 'Toca para abrir cámara o galería';
+  preview.style.display='none';
+  confirm.style.display='none';
+  document.getElementById('foto-opciones').style.display='none';
+  fotoInd.style.display='none';
+}
+
+// ══════════════════════════════════════
+// PREVIEW EN TIEMPO REAL
+// ══════════════════════════════════════
+function actualizarPreview(){
+  const {mes,año} = getMesActual();
+  const sel       = document.getElementById('rr-concepto');
+  const monto     = parseFloat(document.getElementById('rr-monto')?.value||0);
+  const concepto  = sel?.options[sel?.selectedIndex]?.text || '—';
+
+  const pvTipo  = document.getElementById('pv-tipo');
+  const pvMes   = document.getElementById('pv-mes');
+  const pvRubro = document.getElementById('pv-rubro');
+  const pvConc  = document.getElementById('pv-concepto');
+  const pvMonto = document.getElementById('pv-monto');
+
+  if(pvTipo)  pvTipo.textContent  = rrState.tipo==='ing'?'💰 Ingreso':'📉 Costo';
+  if(pvMes)   pvMes.textContent   = mes+' '+año;
+  if(pvRubro) pvRubro.textContent = RUBROS_NOMBRES[rrState.rubro]||rrState.rubro;
+  if(pvConc)  pvConc.textContent  = concepto;
+  if(pvMonto) {
+    pvMonto.textContent = '$ '+monto.toLocaleString('es-CL');
+    pvMonto.style.color = rrState.tipo==='ing'?'var(--v)':'#E65100';
+  }
+  if(pvTipo)pvTipo.style.color=rrState.tipo==='ing'?'var(--v)':'#E65100';
+}
+
+// ══════════════════════════════════════
+// GUARDAR REGISTRO
+// ══════════════════════════════════════
+function guardarRR(){
+  const monto = parseFloat(document.getElementById('rr-monto')?.value||0);
+  if(monto<=0){
+    showToast('⚠️ Ingrese un monto mayor a $0');
+    return;
+  }
+
+  const {mes,año} = getMesActual();
+  const sel       = document.getElementById('rr-concepto');
+  const concepto  = sel?.options[sel?.selectedIndex]?.text||'—';
+  const rubroNom  = RUBROS_NOMBRES[rrState.rubro]||rrState.rubro;
+
+  // Llenar pantalla de confirmación
+  document.getElementById('ok-titulo').textContent =
+    rrState.tipo==='ing'?'💰 Ingreso registrado':'📉 Costo registrado';
+  document.getElementById('ok-mes').textContent     = mes+' '+año;
+  document.getElementById('ok-rubro-em').textContent= rubroNom.split(' ')[0];
+  document.getElementById('ok-rubro').textContent   = rubroNom;
+  document.getElementById('ok-concepto').textContent= concepto;
+  document.getElementById('ok-monto').textContent   =
+    (rrState.tipo==='ing'?'+':'-')+'$'+monto.toLocaleString('es-CL');
+  document.getElementById('ok-monto').style.color   =
+    rrState.tipo==='ing'?'white':'#FFE082';
+
+  document.getElementById('ok-hoja').textContent  = rubroNom;
+  document.getElementById('ok-col').textContent   = mes;
+  document.getElementById('ok-fila').textContent  = concepto;
+
+  const fotoRows=document.querySelectorAll('#ok-foto-row,#ok-foto-hoja');
+  fotoRows.forEach(r=>r.style.display=rrState.foto?'flex':'none');
+
+  goTo('s-rr-ok');
+}
+
+// ══════════════════════════════════════
+// POST GUARDADO
+// ══════════════════════════════════════
+function nuevoRR(){
+  document.getElementById('rr-monto').value='';
+  document.getElementById('rr-nota').value='';
+  document.getElementById('monto-formateado').textContent='Ingrese el monto';
+  resetFoto();
+  actualizarPreview();
+  goTo('s-rr');
+  document.getElementById('s-rr').scrollTop=0;
+}
+
+function irAlRubro(){
+  const rubroScreen='s-'+rrState.rubro;
+  const existe=document.getElementById(rubroScreen);
+  goTo(existe?rubroScreen:'s-bovina');
+}
+
+function limpiarRR(){
+  document.getElementById('rr-monto').value='';
+  document.getElementById('rr-nota').value='';
+  document.getElementById('monto-formateado').textContent='Ingrese el monto';
+  resetFoto();
+  actualizarPreview();
+  showToast('🔄 Listo para nuevo registro');
+}
+
+// ══════════════════════════════════════
+// UTILIDADES
+// ══════════════════════════════════════
+function switchTab(el,tabId){
+  el.closest('.tabs').querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  el.classList.add('active');
   const screen=el.closest('.screen');
   if(screen){
-    screen.querySelectorAll('[id^="tb-"],[id^="ov-"],[id^="po-"],[id^="ca-"],[id^="av-"],[id^="tu-"],[id^="ag-"],[id^="ap-"],[id^="la-"],[id^="qu-"],[id^="lo-"],[id^="cp-"]').forEach(d=>{
-      if(d.id!=='tb-mes')d.style.display='none';
-    });
+    screen.querySelectorAll('[id^="bv-"],[id^="ov-"]').forEach(d=>d.style.display='none');
   }
   const c=document.getElementById(tabId);
   if(c)c.style.display='block';
 }
 
-// SELECTOR MES
 function selMes(el){
   el.closest('.ms').querySelectorAll('.mb').forEach(b=>b.classList.remove('active'));
   el.classList.add('active');
 }
 
-// CHECKBOX
-function toggleCheck(el){
-  el.classList.toggle('sel');
-  const b=el.querySelector('.cbx');
-  b.textContent=el.classList.contains('sel')?'✓':'';
+function filtrarHist(tipo){
+  showToast('Filtro: '+tipo);
 }
 
-// COMPARADOR TABS
-function switchComp(which){
-  ['conv','regen','comp'].forEach(t=>{
-    document.getElementById('cp-'+t).style.display=t===which?'block':'none';
-    document.getElementById('ct-'+t).className='comp-t'+(t===which?' active':'');
-  });
-}
-
-// UA BOVINA
-function calcBUA(){
-  const REF=450;let tot=0;
-  for(let i=0;i<=5;i++){
-    const n=parseFloat(document.getElementById('bn'+i)?.value||0);
-    const p=parseFloat(document.getElementById('bp'+i)?.value||0);
-    const f=p>0?p/REF:0;
-    const ua=n*f;tot+=ua;
-    const fe=document.getElementById('bf'+i);
-    const ue=document.getElementById('bu'+i);
-    if(fe)fe.textContent=f.toFixed(2);
-    if(ue)ue.textContent=ua.toFixed(1);
-  }
-  const te=document.getElementById('bu-tot');
-  if(te)te.textContent=tot.toFixed(1);
-  calcBCarga(tot);
-}
-
-function calcBCarga(ua){
-  const ha=parseFloat(document.getElementById('b-ha')?.value||1);
-  const u=ua!==undefined?ua:parseFloat(document.getElementById('bu-tot')?.textContent||0);
-  const el=document.getElementById('b-carga');
-  const sl=document.getElementById('b-csub');
-  if(el)el.textContent=(ha>0?(u/ha).toFixed(2):0)+' UA/ha';
-  if(sl)sl.textContent=u.toFixed(1)+' UA ÷ '+ha+' ha';
-}
-
-// UA GENÉRICA (Ovina, Porcina, Caprina)
-function calcGUA(prefix,input){}
-
-// COMPARADOR
-function calcComp(){
-  const ccI=[1,2,3].reduce((s,i)=>{const e=document.getElementById('cc-ing'+i);return s+(e?parseFloat(e.value||0):0)},0);
-  const crI=[1,2,3].reduce((s,i)=>{const e=document.getElementById('cr-ing'+i);return s+(e?parseFloat(e.value||0):0)},0);
-  const ccC=[1,2,3,4,5].reduce((s,i)=>{const e=document.getElementById('cc-cos'+i);return s+(e?parseFloat(e.value||0):0)},0);
-  const crC=[1,2,3,4,5].reduce((s,i)=>{const e=document.getElementById('cr-cos'+i);return s+(e?parseFloat(e.value||0):0)},0);
-  const ccGP=ccI-ccC;const crGP=crI-crC;
-  const ccGPM=ccI>0?((ccGP/ccI)*100).toFixed(1):0;
-  const crGPM=crI>0?((crGP/crI)*100).toFixed(1):0;
-  const fmt=n=>'$'+Math.abs(n).toLocaleString('es-CL');
-  const s=id=>document.getElementById(id);
-  if(s('cc-ing-tot'))s('cc-ing-tot').textContent=fmt(ccI);
-  if(s('cc-cos-tot'))s('cc-cos-tot').textContent=fmt(ccC);
-  if(s('cc-gp'))s('cc-gp').textContent=fmt(ccGP);
-  if(s('cc-gpm'))s('cc-gpm').textContent='GP Margin: '+ccGPM+'%';
-  if(s('cr-ing-tot'))s('cr-ing-tot').textContent=fmt(crI);
-  if(s('cr-cos-tot'))s('cr-cos-tot').textContent=fmt(crC);
-  if(s('cr-gp'))s('cr-gp').textContent=fmt(crGP);
-  if(s('cr-gpm'))s('cr-gpm').textContent='GP Margin: '+crGPM+'%';
-  // Tabla comparativa
-  const m=n=>'$'+(n/1000000).toFixed(1)+'M';
-  if(s('tc-ing1'))s('tc-ing1').textContent=m(ccI);
-  if(s('tc-ing2'))s('tc-ing2').textContent=m(crI);
-  if(s('tc-cos1'))s('tc-cos1').textContent=m(ccC);
-  if(s('tc-cos2'))s('tc-cos2').textContent=m(crC);
-  if(s('tc-gp1'))s('tc-gp1').textContent=m(ccGP);
-  if(s('tc-gp2'))s('tc-gp2').textContent=m(crGP);
-  if(s('tc-gpm1'))s('tc-gpm1').textContent=ccGPM+'%';
-  if(s('tc-gpm2'))s('tc-gpm2').textContent=crGPM+'%';
-}
-
-// TOAST
 function showToast(msg){
   const t=document.getElementById('toast');
   t.textContent=msg;t.classList.add('show');
   setTimeout(()=>t.classList.remove('show'),2500);
 }
 
+// ══════════════════════════════════════
 // INIT
+// ══════════════════════════════════════
 document.addEventListener('DOMContentLoaded',()=>{
-  calcBUA();
-  calcComp();
-  // Alias pantallas que comparten template
-  ['s-cultivos','s-hortalizas','s-frutales','s-flores','s-viñedos'].forEach(id=>{
-    // Already have back buttons pointing to s-home
-  });
+  actualizarConceptos();
+  actualizarMes();
+  actualizarPreview();
 });
 </script>
 </body>
