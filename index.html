@@ -25,13 +25,11 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
 .screen{display:none;flex-direction:column;background:#fff;
   overflow-y:auto;max-height:800px;min-height:800px;}
 .screen.active{display:flex;}
-/* HEADER */
 .hdr{background:var(--vp);color:#fff;padding:13px 18px;display:flex;
   align-items:center;gap:11px;position:sticky;top:0;z-index:10;flex-shrink:0;}
 .hdr-bk{font-size:22px;cursor:pointer;padding:3px;}
 .hdr h2{font-size:16px;font-weight:700;flex:1;}
 .hdr-ic{font-size:19px;cursor:pointer;}
-/* TABS */
 .tabs{display:flex;background:var(--gc);border-bottom:2px solid var(--gb);
   overflow-x:auto;scrollbar-width:none;flex-shrink:0;}
 .tabs::-webkit-scrollbar{display:none;}
@@ -39,12 +37,10 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
   color:#888;cursor:pointer;border-bottom:3px solid transparent;
   white-space:nowrap;transition:all .2s;}
 .tab.active{color:var(--vp);border-bottom-color:var(--vp);background:#fff;}
-/* SECTION */
 .sec{padding:13px 18px;}
 .sec-t{font-size:11px;font-weight:700;color:var(--vp);text-transform:uppercase;
   letter-spacing:.8px;margin-bottom:9px;padding-bottom:5px;
   border-bottom:2px solid var(--vpa);}
-/* FIELD */
 .f{margin-bottom:12px;}
 .f label{display:block;font-size:13px;font-weight:600;color:var(--gt);margin-bottom:4px;}
 .hint{font-size:11px;color:#888;margin-bottom:3px;}
@@ -57,7 +53,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
   color:#1565C0!important;font-weight:700;}
 .cv{padding:10px 12px;background:var(--azul);border:2px solid #90CAF9;
   border-radius:10px;font-size:16px;font-weight:700;color:#1565C0;}
-/* RESULT */
 .res{background:var(--vto);border:2px solid var(--vl);border-radius:12px;
   padding:12px 14px;margin:9px 0;}
 .res .rl{font-size:11px;font-weight:700;color:var(--vp);text-transform:uppercase;}
@@ -67,7 +62,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
 .rw .rl{color:#E65100!important;}.rw .rv{color:#E65100!important;}
 .rb{background:#E8EAF6!important;border-color:#9FA8DA!important;}
 .rb .rl{color:#283593!important;}.rb .rv{color:#283593!important;}.rb .rs{color:#5C6BC0!important;}
-/* BUTTONS */
 .btn{width:100%;padding:14px;border:none;border-radius:13px;
   font-size:14px;font-weight:700;cursor:pointer;transition:all .2s;
   display:flex;align-items:center;justify-content:center;gap:7px;font-family:inherit;}
@@ -75,7 +69,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
 .bs{background:var(--vpa);color:var(--vp);border:2px solid var(--vl);}
 .bo{background:transparent;color:var(--vp);border:2px solid var(--vp);}
 .bsm{padding:8px 13px;font-size:12px;border-radius:10px;width:auto;}
-/* ALERT */
 .al{border-radius:10px;padding:10px 12px;margin:6px 0;display:flex;gap:8px;align-items:flex-start;}
 .alw{background:#FFF8E1;border:1px solid #FFE082;}
 .ali{background:#E3F2FD;border:1px solid #90CAF9;}
@@ -84,7 +77,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
 .al-ic{font-size:18px;flex-shrink:0;}
 .al-tx{font-size:12px;line-height:1.5;}
 .al-tx strong{display:block;margin-bottom:1px;}
-/* RUBRO CARD */
 .rc{background:#fff;border:2px solid var(--gb);border-radius:13px;padding:13px;
   margin-bottom:9px;cursor:pointer;transition:all .2s;display:flex;align-items:center;gap:12px;}
 .rc:active{border-color:var(--vl);background:var(--vpa);transform:scale(.99);}
@@ -95,7 +87,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
 .prog{height:5px;background:var(--gb);border-radius:3px;margin-top:5px;overflow:hidden;}
 .prog-f{height:100%;background:var(--vl);border-radius:3px;}
 .rc-ar{font-size:18px;color:#ccc;}
-/* CHECKBOX */
 .chk{display:flex;align-items:center;gap:10px;padding:12px 14px;
   background:var(--gc);border-radius:10px;margin-bottom:6px;cursor:pointer;
   border:2px solid transparent;transition:all .2s;}
@@ -106,7 +97,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
 .chk.sel .chk-box{background:var(--vp);border-color:var(--vp);color:#fff;}
 .chk-lb{font-size:14px;font-weight:600;flex:1;}
 .chk-em{font-size:20px;}
-/* MES */
 .mes-w{padding:8px 14px 0;background:#fff;border-bottom:1px solid #eee;flex-shrink:0;}
 .mes-lbl{font-size:11px;color:#888;font-weight:600;margin-bottom:4px;}
 .mes-s{display:flex;gap:4px;overflow-x:auto;padding:2px 0 8px;scrollbar-width:none;}
@@ -117,8 +107,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
 .mb.active{background:var(--vp);border-color:var(--vp);color:#fff;}
 .mb .dot{width:5px;height:5px;border-radius:50%;background:var(--vl);margin-top:2px;}
 .mb.active .dot{background:#90EE90;}
-.mes-cur{font-size:12px;color:var(--vp);font-weight:700;padding:4px 0 3px;}
-/* FOTO */
 .foto{border:2px dashed var(--gb);border-radius:11px;padding:11px;
   display:flex;align-items:center;gap:10px;cursor:pointer;
   background:var(--gc);transition:all .2s;margin-top:5px;}
@@ -127,20 +115,17 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
   display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}
 .foto-tx{font-size:12px;color:#666;}
 .foto-tx strong{display:block;color:var(--vp);font-size:13px;}
-/* BOTTOM NAV */
 .bnav{display:flex;background:#fff;border-top:1px solid var(--gb);
   padding:6px 0 10px;position:sticky;bottom:0;flex-shrink:0;}
 .ni{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;
   padding:3px;cursor:pointer;color:#aaa;}
 .ni.active{color:var(--vp);}
 .ni-ic{font-size:20px;}.ni-lb{font-size:10px;font-weight:600;}
-/* TOAST */
 .toast{position:fixed;bottom:90px;left:50%;transform:translateX(-50%);
   background:#333;color:#fff;padding:10px 20px;border-radius:20px;
   font-size:13px;font-weight:600;opacity:0;transition:opacity .3s;
   z-index:999;white-space:nowrap;max-width:340px;text-align:center;}
 .toast.show{opacity:1;}
-/* UA TABLE */
 .uat{width:100%;border-collapse:collapse;font-size:12px;}
 .uat th{background:var(--vp);color:#fff;padding:8px 6px;text-align:center;font-size:11px;}
 .uat th:first-child{text-align:left;}
@@ -150,45 +135,183 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
   border-radius:6px;text-align:center;background:var(--ami);
   font-size:12px;font-weight:700;font-family:inherit;}
 .uat-tot{background:var(--vto);font-weight:800;color:var(--vp);}
-/* KPI */
 .kg{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:3px 0;}
 .kc{background:#fff;border:1px solid var(--gb);border-radius:12px;padding:12px;text-align:center;}
 .kv{font-size:17px;font-weight:800;color:var(--gt);}
 .kl{font-size:11px;color:#888;margin-top:2px;line-height:1.3;}
 .kc.pos .kv{color:var(--vp);}.kc.wrn .kv{color:#F57C00;}.kc.neg .kv{color:var(--rojo);}
-/* BADGE */
 .bdg{display:inline-block;padding:2px 8px;border-radius:16px;font-size:11px;font-weight:700;}
 .bg{background:var(--vpa);color:var(--vp);}
 .by{background:#FFF8E1;color:#F57C00;}
 .br{background:#FFEBEE;color:var(--rojo);}
 .bx{background:var(--gc);color:#888;}
-/* DIV */
 .div{height:7px;background:var(--gc);margin:0 -18px;}
-/* PURP BOX */
 .purp{padding:12px;background:#F3E5F5;border-radius:12px;border:1px solid #CE93D8;margin-top:13px;}
 .purp-t{font-size:12px;font-weight:700;color:#6A1B9A;margin-bottom:8px;}
-/* STICKY BOTTOM */
 .stk{position:sticky;bottom:0;background:#fff;padding:10px 18px;border-top:1px solid #eee;}
-/* RESUMEN TABLE */
 .rt{width:100%;border-collapse:collapse;font-size:12px;}
 .rt th{background:var(--vp);color:#fff;padding:8px;text-align:left;font-size:11px;}
 .rt td{padding:8px;border-bottom:1px solid var(--gb);}
 .rt tr:nth-child(even){background:var(--gc);}
 .rt .tot-r{background:var(--vpa);font-weight:800;}
-/* COMPARE */
 .cmp{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
 .cmp-h{text-align:center;font-size:11px;font-weight:700;padding:6px;border-radius:7px;}
-/* GENERIC COST ITEM */
 .ci{display:flex;justify-content:space-between;align-items:center;
   padding:9px 0;border-bottom:1px solid var(--gb);}
 .ci-lbl{font-size:13px;font-weight:600;color:var(--gt);flex:1;}
 .ci-pct{font-size:12px;color:var(--vl);font-weight:700;margin-left:8px;}
+
+/* ══════════════════════════════════════
+   REGISTRO RÁPIDO — NEW STYLES
+══════════════════════════════════════ */
+.rq-fab-section{
+  padding:14px 18px 20px;
+  background:linear-gradient(180deg,#fff 0%,#F0FFF4 100%);
+  border-top:1px solid var(--gb);
+}
+.rq-fab-btn{
+  width:100%;
+  padding:18px;
+  background:linear-gradient(135deg,#1B4332,#2D6A4F 50%,#52B788);
+  color:#fff;
+  border:none;
+  border-radius:16px;
+  font-size:16px;
+  font-weight:800;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  font-family:inherit;
+  box-shadow:0 4px 20px rgba(45,106,79,.35);
+  transition:all .2s;
+}
+.rq-fab-btn:active{transform:scale(.98);box-shadow:0 2px 8px rgba(45,106,79,.2);}
+.rq-flow-strip{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:4px;
+  margin-top:10px;
+  font-size:11px;
+  color:#888;
+}
+.rq-flow-step{
+  background:#E8F5E9;
+  color:var(--vp);
+  padding:3px 8px;
+  border-radius:6px;
+  font-weight:700;
+  font-size:10px;
+}
+.rq-flow-arrow{color:#ccc;font-size:10px;}
+
+/* Stepper bar */
+.rq-step-bar{
+  display:flex;
+  align-items:center;
+  padding:11px 20px;
+  background:#fff;
+  border-bottom:1px solid #eee;
+  flex-shrink:0;
+}
+.rq-line{flex:1;height:2px;background:var(--gb);}
+.rq-line.done{background:var(--vl);}
+.rq-dot{
+  width:28px;height:28px;border-radius:14px;
+  background:var(--gb);color:#888;
+  font-size:11px;font-weight:700;
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;transition:all .3s;
+}
+.rq-dot.active{background:var(--vp);color:#fff;box-shadow:0 2px 8px rgba(45,106,79,.4);}
+.rq-dot.done{background:var(--vl);color:#fff;}
+
+/* Type buttons */
+.rq-type-btn{
+  padding:20px 10px;
+  border:2px solid var(--gb);
+  border-radius:14px;
+  background:#fff;
+  cursor:pointer;
+  transition:all .2s;
+  font-family:inherit;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:4px;
+}
+.rq-type-btn.rq-type-sel{
+  border-color:var(--vp);
+  background:var(--vpa);
+}
+.rq-type-btn.rq-type-sel .rq-type-label{color:var(--vp)!important;}
+
+/* Rubro mini cards */
+.rq-mini-card{
+  padding:14px 8px;
+  border:2px solid var(--gb);
+  border-radius:12px;
+  background:#fff;
+  cursor:pointer;
+  text-align:center;
+  transition:all .2s;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:4px;
+  min-height:80px;
+}
+.rq-mini-card:active{transform:scale(.97);}
+.rq-mini-sel{border-color:var(--vp);background:var(--vpa);}
+.rq-mini-sel .rq-mini-label{color:var(--vp)!important;}
+
+/* Concepto items */
+.rq-concepto-item{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:12px 14px;
+  border:2px solid var(--gb);
+  border-radius:11px;
+  margin-bottom:7px;
+  cursor:pointer;
+  background:#fff;
+  transition:all .2s;
+}
+.rq-concepto-item:active{transform:scale(.99);}
+.rq-concepto-sel{border-color:var(--vp);background:var(--vpa);}
+.rq-concepto-warn{border-color:#FFCDD2;background:#FFEBEE;}
+.rq-concepto-warn.rq-concepto-sel{border-color:var(--rojo);background:#FFD7D9;}
+
+/* Success */
+.rq-success-icon{
+  width:80px;height:80px;
+  background:linear-gradient(135deg,#1B4332,#52B788);
+  border-radius:40px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:38px;
+  margin:0 auto 12px;
+  box-shadow:0 8px 24px rgba(45,106,79,.35);
+}
+.rq-log-entry{
+  background:#fff;
+  border:1px solid var(--gb);
+  border-radius:10px;
+  padding:10px 12px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-bottom:6px;
+}
+.rq-log-entry.latest{border-color:var(--vl);}
 </style>
 </head>
 <body>
 <div class="phone">
 
-<!-- NOTCH -->
 <div class="notch">
   <span>📶 9:41</span>
   <div class="notch-pill"></div>
@@ -344,6 +467,31 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
     </div>
   </div>
   <div style="overflow-y:auto;padding-bottom:72px;">
+
+    <!-- ══ REGISTRO RÁPIDO — NUEVA SECCIÓN ══ -->
+    <div class="rq-fab-section">
+      <button class="rq-fab-btn" onclick="openRQ()">
+        <span style="font-size:22px;">⚡</span>
+        <div style="text-align:left;">
+          <div style="font-size:16px;font-weight:800;">Registro Rápido</div>
+          <div style="font-size:11px;opacity:.8;font-weight:400;">Registra un dato en 4 pasos</div>
+        </div>
+        <span style="margin-left:auto;font-size:20px;">→</span>
+      </button>
+      <div class="rq-flow-strip">
+        <span class="rq-flow-step">📅 Fecha</span>
+        <span class="rq-flow-arrow">→</span>
+        <span class="rq-flow-step">🌿 Rubro</span>
+        <span class="rq-flow-arrow">→</span>
+        <span class="rq-flow-step">📋 Concepto</span>
+        <span class="rq-flow-arrow">→</span>
+        <span class="rq-flow-step">💰 Monto</span>
+        <span class="rq-flow-arrow">→</span>
+        <span class="rq-flow-step">✅ ¡Listo!</span>
+      </div>
+    </div>
+    <!-- ══ FIN REGISTRO RÁPIDO HOME ══ -->
+
     <div class="sec">
       <div class="sec-t">Mis Rubros</div>
       <div id="h-rubros"></div>
@@ -352,7 +500,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
     <div class="div"></div>
     <div class="sec">
       <div class="sec-t">⚠️ Alertas</div>
-      <div class="al ald"><span class="al-ic">🔴</span><div class="al-tx"><strong>Forraje conservado = $0</strong>Bovina: campo clave para análisis Weak Link.</div></div>
+      <div class="al ald"><span class="al-ic">🔴</span><div class="al-tx"><strong>Forraje conservado = \$0</strong>Bovina: campo clave para análisis Weak Link.</div></div>
       <div class="al alw"><span class="al-ic">⚠️</span><div class="al-tx"><strong>Forraje-Agrícola sin datos</strong>No ha registrado ningún mes.</div></div>
       <div class="al als"><span class="al-ic">✅</span><div class="al-tx">Enero y Febrero guardados correctamente en Bovina.</div></div>
     </div>
@@ -372,6 +520,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
   <div class="bnav">
     <div class="ni active" onclick="goTo('s-home')"><span class="ni-ic">🏠</span><span class="ni-lb">Inicio</span></div>
     <div class="ni" onclick="goTo('s-resumen')"><span class="ni-ic">📊</span><span class="ni-lb">Resumen</span></div>
+    <div class="ni" onclick="openRQ()"><span class="ni-ic">⚡</span><span class="ni-lb">Registrar</span></div>
     <div class="ni" onclick="showT('📷 Galería')"><span class="ni-ic">📷</span><span class="ni-lb">Fotos</span></div>
     <div class="ni" onclick="showT('🔔 Alertas')"><span class="ni-ic">🔔</span><span class="ni-lb">Alertas</span></div>
   </div>
@@ -395,51 +544,49 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
     <div class="mes-s" id="bov-mes-s"></div>
     <div class="mes-cur" id="bov-mes-cur">Mes: ENERO 2025</div>
   </div>
-  <!-- INGRESOS -->
   <div id="bov-ing" style="overflow-y:auto;padding-bottom:70px;display:block;">
     <div class="sec">
       <div class="sec-t">💰 Ingresos Brutos</div>
       <div class="f"><label>Venta de animales (kg / cabezas)</label>
-        <input type="number" id="bi1" oninput="cBov()" value="4200000" placeholder="$0">
+        <input type="number" id="bi1" oninput="cBov()" value="4200000" placeholder="\$0">
         <div class="foto" onclick="showT('📷 Boleta venta')"><div class="foto-th">🧾</div><div class="foto-tx"><strong>📷 Adjuntar boleta</strong>Foto o archivo</div></div>
       </div>
-      <div class="f"><label>Venta subproductos (leche, lana, cuero)</label><input type="number" id="bi2" oninput="cBov()" placeholder="$0"></div>
-      <div class="f"><label>Venta reproductores / pie de cría</label><input type="number" id="bi3" oninput="cBov()" placeholder="$0"></div>
-      <div class="f"><label>Subsidios / bonos</label><input type="number" id="bi4" oninput="cBov()" value="380000" placeholder="$0"></div>
-      <div class="f"><label>Mediería (sistema de medias)</label><input type="number" id="bi5" oninput="cBov()" placeholder="$0"></div>
-      <div class="f"><label>Arriendo de parcela ($/cabeza/día)</label><input type="number" id="bi6" oninput="cBov()" placeholder="$0"></div>
-      <div class="f"><label>Arriendo de talaje (pastoreo externo)</label><input type="number" id="bi7" oninput="cBov()" placeholder="$0"></div>
-      <div class="f"><label>Otro ingreso 1</label><input type="number" id="bi8" oninput="cBov()" placeholder="$0"></div>
-      <div class="f"><label>Otro ingreso 2</label><input type="number" id="bi9" oninput="cBov()" placeholder="$0"></div>
+      <div class="f"><label>Venta subproductos (leche, lana, cuero)</label><input type="number" id="bi2" oninput="cBov()" placeholder="\$0"></div>
+      <div class="f"><label>Venta reproductores / pie de cría</label><input type="number" id="bi3" oninput="cBov()" placeholder="\$0"></div>
+      <div class="f"><label>Subsidios / bonos</label><input type="number" id="bi4" oninput="cBov()" value="380000" placeholder="\$0"></div>
+      <div class="f"><label>Mediería (sistema de medias)</label><input type="number" id="bi5" oninput="cBov()" placeholder="\$0"></div>
+      <div class="f"><label>Arriendo de parcela ($/cabeza/día)</label><input type="number" id="bi6" oninput="cBov()" placeholder="\$0"></div>
+      <div class="f"><label>Arriendo de talaje (pastoreo externo)</label><input type="number" id="bi7" oninput="cBov()" placeholder="\$0"></div>
+      <div class="f"><label>Otro ingreso 1</label><input type="number" id="bi8" oninput="cBov()" placeholder="\$0"></div>
+      <div class="f"><label>Otro ingreso 2</label><input type="number" id="bi9" oninput="cBov()" placeholder="\$0"></div>
       <div class="res"><div class="rl">📊 Total Ingresos</div><div class="rv" id="b-ti">$ 4.580.000</div><div class="rs">calculado automáticamente</div></div>
       <button class="btn bp" onclick="showT('✅ Ingresos guardados')">💾 &nbsp;Guardar Ingresos</button>
     </div>
   </div>
-  <!-- COSTOS -->
   <div id="bov-cos" style="overflow-y:auto;padding-bottom:70px;display:none;">
     <div class="sec">
       <div class="sec-t">📉 Costos Directos</div>
       <div class="al ali"><span class="al-ic">ℹ️</span><div class="al-tx">Solo costos que <strong>desaparecen</strong> si elimina este rubro del predio.</div></div>
       <div class="f"><label>Tipo de alimentación principal</label>
         <select><option>Forraje / pradera</option><option>Concentrado / grano (maíz, afrecho)</option><option>Suplemento mineral / sales</option><option>Otro (especifique)</option></select></div>
-      <div class="f"><label>Suplemento mineral / sales</label><input type="number" id="bc1" oninput="cBov()" value="85000" placeholder="$0"></div>
-      <div class="f"><label>Concentrados / pellets</label><input type="number" id="bc2" oninput="cBov()" placeholder="$0"></div>
+      <div class="f"><label>Suplemento mineral / sales</label><input type="number" id="bc1" oninput="cBov()" value="85000" placeholder="\$0"></div>
+      <div class="f"><label>Concentrados / pellets</label><input type="number" id="bc2" oninput="cBov()" placeholder="\$0"></div>
       <div class="f">
         <label>⚠️ Forraje conservado (heno, ensilaje, fardos)</label>
         <div class="hint" style="color:var(--rojo);font-weight:700;">🔴 Campo obligatorio — análisis Weak Link</div>
-        <input type="number" id="bc3" oninput="cBov()" value="320000" style="border-color:var(--rojo);" placeholder="$0">
+        <input type="number" id="bc3" oninput="cBov()" value="320000" style="border-color:var(--rojo);" placeholder="\$0">
       </div>
       <div class="f"><label>Veterinaria y medicamentos</label>
-        <input type="number" id="bc4" oninput="cBov()" value="145000" placeholder="$0">
+        <input type="number" id="bc4" oninput="cBov()" value="145000" placeholder="\$0">
         <div class="foto" onclick="showT('📷 Boleta veterinaria')"><div class="foto-th">💊</div><div class="foto-tx"><strong>📷 Boleta veterinaria</strong>Adjuntar foto</div></div>
       </div>
       <div class="f"><label>Mano de obra PAGADA</label>
         <select style="margin-bottom:6px;"><option>Permanente</option><option>Temporal / temporada</option><option>Contratista externo</option></select>
-        <input type="number" id="bc5" oninput="cBov()" value="280000" placeholder="$0"></div>
-      <div class="f"><label>Transporte / flete / acopio</label><input type="number" id="bc6" oninput="cBov()" placeholder="$0"></div>
-      <div class="f"><label>Manejo de praderas (fertilización, encalado, agroquímicos)</label><input type="number" id="bc7" oninput="cBov()" value="190000" placeholder="$0"></div>
-      <div class="f"><label>Maquinaria / arriendo maquinaria / fletes forraje</label><input type="number" id="bc8" oninput="cBov()" placeholder="$0"></div>
-      <div class="f"><label>Compra de animales para reposición</label><input type="number" id="bc9" oninput="cBov()" placeholder="$0"></div>
+        <input type="number" id="bc5" oninput="cBov()" value="280000" placeholder="\$0"></div>
+      <div class="f"><label>Transporte / flete / acopio</label><input type="number" id="bc6" oninput="cBov()" placeholder="\$0"></div>
+      <div class="f"><label>Manejo de praderas (fertilización, encalado, agroquímicos)</label><input type="number" id="bc7" oninput="cBov()" value="190000" placeholder="\$0"></div>
+      <div class="f"><label>Maquinaria / arriendo maquinaria / fletes forraje</label><input type="number" id="bc8" oninput="cBov()" placeholder="\$0"></div>
+      <div class="f"><label>Compra de animales para reposición</label><input type="number" id="bc9" oninput="cBov()" placeholder="\$0"></div>
       <div class="purp">
         <div class="purp-t">📅 Costos esporádicos (una vez al año — no van mes a mes)</div>
         <div class="f"><input type="text" placeholder="Sub-ítem 1 descripción" style="background:#F9F0FF;border-color:#CE93D8;margin-bottom:5px;"><input type="number" placeholder="Monto anual $" style="background:#F9F0FF;border-color:#CE93D8;"></div>
@@ -451,7 +598,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
       <button class="btn bp" style="margin-top:12px;" onclick="showT('✅ Costos guardados')">💾 &nbsp;Guardar Costos</button>
     </div>
   </div>
-  <!-- UA -->
   <div id="bov-ua" style="overflow-y:auto;padding-bottom:70px;display:none;">
     <div class="sec">
       <div class="sec-t">🐄 Unidades Animales (UA)</div>
@@ -474,7 +620,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
       <button class="btn bp" onclick="showT('✅ UA guardadas')">💾 &nbsp;Guardar UA</button>
     </div>
   </div>
-  <!-- KPIs -->
   <div id="bov-kpi" style="overflow-y:auto;padding-bottom:70px;display:none;">
     <div class="sec">
       <div class="sec-t">📐 Indicadores Adicionales</div>
@@ -523,7 +668,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
       <div class="sec-t">💰 Capital y Retorno</div>
       <div class="f"><label>Capital invertido excl. tierra (CLP)</label>
         <div class="hint">Animales + infraestructura + maquinaria. NO incluya el valor de la tierra.</div>
-        <input type="number" id="bcap" oninput="cBovCV()" placeholder="$0"></div>
+        <input type="number" id="bcap" oninput="cBovCV()" placeholder="\$0"></div>
       <div class="f"><label>Cabezas en mediería</label><input type="number" id="bmed" placeholder="0"></div>
       <div class="f"><label>ROIC sobre capital invertido (%)</label><div class="cv" id="broic">—</div></div>
       <button class="btn bp" onclick="showT('✅ KPIs guardados')">💾 &nbsp;Guardar KPIs</button>
@@ -533,72 +678,47 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
 
 <!-- ═══ OVINA ═══ -->
 <div class="screen" id="s-ovina">
-  <div class="hdr">
-    <span class="hdr-bk" onclick="goTo('s-home')">←</span>
-    <h2>🐑 Ganadería Ovina</h2>
-    <span class="hdr-ic" onclick="showT('📷 Foto')">📷</span>
-  </div>
+  <div class="hdr"><span class="hdr-bk" onclick="goTo('s-home')">←</span><h2>🐑 Ganadería Ovina</h2><span class="hdr-ic">📷</span></div>
   <div class="tabs" id="ovi-tabs">
     <div class="tab active" onclick="swTab(this,'ovi-ing','ovi-tabs')">💰 Ingresos</div>
     <div class="tab" onclick="swTab(this,'ovi-cos','ovi-tabs')">📉 Costos</div>
     <div class="tab" onclick="swTab(this,'ovi-ua','ovi-tabs')">🐑 UA</div>
   </div>
-  <div class="mes-w"><div class="mes-lbl">📅 Mes a registrar:</div><div class="mes-s" id="ovi-mes-s"></div><div class="mes-cur" id="ovi-mes-cur">Mes: ENERO 2025</div></div>
-  <!-- INGRESOS OVINA -->
+  <div class="mes-w"><div class="mes-lbl">📅 Mes:</div><div class="mes-s" id="ovi-mes-s"></div><div class="mes-cur" id="ovi-mes-cur">Mes: ENERO 2025</div></div>
   <div id="ovi-ing" style="overflow-y:auto;padding-bottom:70px;display:block;">
     <div class="sec">
       <div class="sec-t">💰 Ingresos Brutos</div>
-      <div class="f"><label>Venta de animales (kg / cabezas)</label><input type="number" id="oi1" oninput="cOvi()" placeholder="$0"></div>
-      <div class="f"><label>Venta subproductos (leche, lana, cuero)</label><input type="number" id="oi2" oninput="cOvi()" placeholder="$0"></div>
-      <div class="f"><label>Venta reproductores / pie de cría</label><input type="number" id="oi3" oninput="cOvi()" placeholder="$0"></div>
-      <div class="f"><label>Subsidios / bonos</label><input type="number" id="oi4" oninput="cOvi()" placeholder="$0"></div>
-      <div class="f"><label>Otro ingreso</label><input type="number" id="oi5" oninput="cOvi()" placeholder="$0"></div>
+      <div class="f"><label>Venta de animales (kg / cabezas)</label><input type="number" id="oi1" oninput="cOvi()" placeholder="\$0"></div>
+      <div class="f"><label>Venta subproductos (leche, lana, cuero)</label><input type="number" id="oi2" oninput="cOvi()" placeholder="\$0"></div>
+      <div class="f"><label>Venta reproductores / pie de cría</label><input type="number" id="oi3" oninput="cOvi()" placeholder="\$0"></div>
+      <div class="f"><label>Subsidios / bonos</label><input type="number" id="oi4" oninput="cOvi()" placeholder="\$0"></div>
+      <div class="f"><label>Otro ingreso</label><input type="number" id="oi5" oninput="cOvi()" placeholder="\$0"></div>
       <div class="res"><div class="rl">📊 Total Ingresos</div><div class="rv" id="ov-ti">$ 0</div><div class="rs">automático</div></div>
       <button class="btn bp" onclick="showT('✅ Guardado')">💾 &nbsp;Guardar Ingresos</button>
     </div>
   </div>
-  <!-- COSTOS OVINA -->
   <div id="ovi-cos" style="overflow-y:auto;padding-bottom:70px;display:none;">
     <div class="sec">
       <div class="sec-t">📉 Costos Directos</div>
       <div class="f"><label>Alimentación – Ítem principal</label>
-        <select><option>Forraje / pradera</option><option>Concentrado / grano (maíz, afrecho)</option><option>Heno de alfalfa / fardos</option><option>Suplemento mineral / sales</option><option>Otro (especifique)</option></select></div>
-      <div class="f">
-        <label>⚠️ Forraje conservado (heno, ensilaje, fardos)</label>
-        <div class="hint" style="color:var(--rojo);font-weight:700;">🔴 Campo obligatorio — Weak Link</div>
-        <input type="number" id="oc1" oninput="cOvi()" style="border-color:var(--rojo);" placeholder="$0"></div>
-      <div class="f"><label>Veterinaria y medicamentos</label><input type="number" id="oc2" oninput="cOvi()" placeholder="$0"></div>
-      <div class="f"><label>Mano de obra PAGADA</label>
-        <select style="margin-bottom:6px;"><option>Permanente</option><option>Temporal</option><option>Contratista</option></select>
-        <input type="number" id="oc3" oninput="cOvi()" placeholder="$0"></div>
-      <div class="f"><label>Transporte / flete / acopio</label><input type="number" id="oc4" oninput="cOvi()" placeholder="$0"></div>
-      <div class="f"><label>Manejo de praderas (fertilización, encalado)</label><input type="number" id="oc5" oninput="cOvi()" placeholder="$0"></div>
-      <div class="f"><label>Compra animales reposición (corderas/carneros)</label><input type="number" id="oc6" oninput="cOvi()" placeholder="$0"></div>
-      <div class="purp">
-        <div class="purp-t">📅 Costos esporádicos anuales</div>
-        <div class="f"><input type="text" placeholder="Sub-ítem 1" style="background:#F9F0FF;border-color:#CE93D8;margin-bottom:5px;"><input type="number" placeholder="Monto anual $" style="background:#F9F0FF;border-color:#CE93D8;"></div>
-        <div class="f"><input type="text" placeholder="Sub-ítem 2" style="background:#F9F0FF;border-color:#CE93D8;margin-bottom:5px;"><input type="number" placeholder="Monto anual $" style="background:#F9F0FF;border-color:#CE93D8;"></div>
-      </div>
-      <div class="res rw" style="margin-top:12px;"><div class="rl">📉 Total Costos Directos</div><div class="rv" id="ov-tc">$ 0</div><div class="rs">automático</div></div>
+        <select><option>Forraje / pradera</option><option>Concentrado / grano</option><option>Heno de alfalfa / fardos</option><option>Suplemento mineral / sales</option><option>Otro</option></select></div>
+      <div class="f"><label>⚠️ Forraje conservado</label><div class="hint" style="color:var(--rojo);font-weight:700;">🔴 Obligatorio — Weak Link</div><input type="number" id="oc1" oninput="cOvi()" style="border-color:var(--rojo);" placeholder="\$0"></div>
+      <div class="f"><label>Veterinaria y medicamentos</label><input type="number" id="oc2" oninput="cOvi()" placeholder="\$0"></div>
+      <div class="f"><label>Mano de obra PAGADA</label><select style="margin-bottom:6px;"><option>Permanente</option><option>Temporal</option><option>Contratista</option></select><input type="number" id="oc3" oninput="cOvi()" placeholder="\$0"></div>
+      <div class="f"><label>Transporte / flete</label><input type="number" id="oc4" oninput="cOvi()" placeholder="\$0"></div>
+      <div class="f"><label>Manejo de praderas</label><input type="number" id="oc5" oninput="cOvi()" placeholder="\$0"></div>
+      <div class="f"><label>Compra animales reposición</label><input type="number" id="oc6" oninput="cOvi()" placeholder="\$0"></div>
+      <div class="res rw" style="margin-top:12px;"><div class="rl">📉 Total Costos</div><div class="rv" id="ov-tc">$ 0</div></div>
       <div class="res"><div class="rl">✅ Gross Profit</div><div class="rv" id="ov-gp">$ 0</div><div class="rs" id="ov-gpm">GP Margin: —</div></div>
       <button class="btn bp" style="margin-top:12px;" onclick="showT('✅ Guardado')">💾 &nbsp;Guardar Costos</button>
     </div>
   </div>
-  <!-- UA OVINA -->
   <div id="ovi-ua" style="overflow-y:auto;padding-bottom:70px;display:none;">
     <div class="sec">
-      <div class="sec-t">🐑 Unidades Animales (UA)</div>
-      <div class="al ali"><span class="al-ic">ℹ️</span><div class="al-tx">Factor UA = Peso promedio ÷ 450 kg</div></div>
-      <div style="overflow-x:auto;margin:0 -18px;padding:0 18px;">
-        <table class="uat">
-          <thead><tr><th>Categoría</th><th>N°</th><th>Kg prom</th><th>UA</th></tr></thead>
-          <tbody id="ovi-ua-body"></tbody>
-        </table>
-      </div>
-      <div style="margin-top:12px;">
-        <div class="f"><label>📐 Superficie pastoreo (ha)</label><input type="number" id="ovi-ha" value="" oninput="cUAOvi()" placeholder="0"></div>
-        <div class="res"><div class="rl">▶ Carga Animal</div><div class="rv" id="ovi-ca">— UA/ha</div><div class="rs" id="ovi-cas">ingrese datos arriba</div></div>
-      </div>
+      <div class="sec-t">🐑 UA</div>
+      <div style="overflow-x:auto;margin:0 -18px;padding:0 18px;"><table class="uat"><thead><tr><th>Categoría</th><th>N°</th><th>Kg prom</th><th>UA</th></tr></thead><tbody id="ovi-ua-body"></tbody></table></div>
+      <div style="margin-top:12px;"><div class="f"><label>📐 Superficie pastoreo (ha)</label><input type="number" id="ovi-ha" oninput="cUAOvi()" placeholder="0"></div>
+      <div class="res"><div class="rl">▶ Carga Animal</div><div class="rv" id="ovi-ca">— UA/ha</div><div class="rs" id="ovi-cas">ingrese datos arriba</div></div></div>
       <button class="btn bp" onclick="showT('✅ UA guardadas')">💾 &nbsp;Guardar UA</button>
     </div>
   </div>
@@ -606,11 +726,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
 
 <!-- ═══ PORCINA ═══ -->
 <div class="screen" id="s-porcina">
-  <div class="hdr">
-    <span class="hdr-bk" onclick="goTo('s-home')">←</span>
-    <h2>🐖 Ganadería Porcina</h2>
-    <span class="hdr-ic">📷</span>
-  </div>
+  <div class="hdr"><span class="hdr-bk" onclick="goTo('s-home')">←</span><h2>🐖 Ganadería Porcina</h2><span class="hdr-ic">📷</span></div>
   <div class="tabs" id="por-tabs">
     <div class="tab active" onclick="swTab(this,'por-ing','por-tabs')">💰 Ingresos</div>
     <div class="tab" onclick="swTab(this,'por-cos','por-tabs')">📉 Costos</div>
@@ -620,48 +736,34 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
   <div id="por-ing" style="overflow-y:auto;padding-bottom:70px;display:block;">
     <div class="sec">
       <div class="sec-t">💰 Ingresos Brutos</div>
-      <div class="f"><label>Venta de animales (kg / cabezas)</label><input type="number" id="poi1" oninput="cPor()" placeholder="$0"></div>
-      <div class="f"><label>Venta subproductos (leche, cuero)</label><input type="number" id="poi2" oninput="cPor()" placeholder="$0"></div>
-      <div class="f"><label>Venta reproductores / pie de cría</label><input type="number" id="poi3" oninput="cPor()" placeholder="$0"></div>
-      <div class="f"><label>Subsidios / bonos</label><input type="number" id="poi4" oninput="cPor()" placeholder="$0"></div>
-      <div class="f"><label>Otro ingreso</label><input type="number" id="poi5" oninput="cPor()" placeholder="$0"></div>
-      <div class="res"><div class="rl">📊 Total Ingresos</div><div class="rv" id="po-ti">$ 0</div><div class="rs">automático</div></div>
+      <div class="f"><label>Venta de animales</label><input type="number" id="poi1" oninput="cPor()" placeholder="\$0"></div>
+      <div class="f"><label>Venta subproductos</label><input type="number" id="poi2" oninput="cPor()" placeholder="\$0"></div>
+      <div class="f"><label>Venta reproductores</label><input type="number" id="poi3" oninput="cPor()" placeholder="\$0"></div>
+      <div class="f"><label>Subsidios / bonos</label><input type="number" id="poi4" oninput="cPor()" placeholder="\$0"></div>
+      <div class="f"><label>Otro ingreso</label><input type="number" id="poi5" oninput="cPor()" placeholder="\$0"></div>
+      <div class="res"><div class="rl">📊 Total Ingresos</div><div class="rv" id="po-ti">$ 0</div></div>
       <button class="btn bp" onclick="showT('✅ Guardado')">💾 &nbsp;Guardar Ingresos</button>
     </div>
   </div>
   <div id="por-cos" style="overflow-y:auto;padding-bottom:70px;display:none;">
     <div class="sec">
       <div class="sec-t">📉 Costos Directos</div>
-      <div class="f"><label>Tipo de alimentación</label>
-        <select><option>Alimento concentrado comercial</option><option>Maíz</option><option>Afrecho de soya</option><option>Forraje / restos de cosecha</option><option>Otro (especifique)</option></select></div>
-      <div class="f"><label>Forraje / restos de cosecha</label><input type="number" id="poc1" oninput="cPor()" placeholder="$0"></div>
-      <div class="f"><label>Otro alimento (especifique)</label><input type="number" id="poc2" oninput="cPor()" placeholder="$0"></div>
-      <div class="f"><label>Lechón destetado (compra / reposición)</label><input type="number" id="poc3" oninput="cPor()" placeholder="$0"></div>
-      <div class="f"><label>Mano de obra PAGADA</label><input type="number" id="poc4" oninput="cPor()" placeholder="$0"></div>
-      <div class="f"><label>Instalaciones y mantención</label><input type="number" id="poc5" oninput="cPor()" placeholder="$0"></div>
-      <div class="f"><label>Energía</label><input type="number" id="poc6" oninput="cPor()" placeholder="$0"></div>
-      <div class="f"><label>Veterinaria y medicamentos (vacunas, tratamientos)</label><input type="number" id="poc7" oninput="cPor()" placeholder="$0"></div>
-      <div class="purp">
-        <div class="purp-t">📅 Costos esporádicos anuales</div>
-        <div class="f"><input type="text" placeholder="Sub-ítem 1" style="background:#F9F0FF;border-color:#CE93D8;margin-bottom:5px;"><input type="number" placeholder="Monto anual $" style="background:#F9F0FF;border-color:#CE93D8;"></div>
-        <div class="f"><input type="text" placeholder="Sub-ítem 2" style="background:#F9F0FF;border-color:#CE93D8;margin-bottom:5px;"><input type="number" placeholder="Monto anual $" style="background:#F9F0FF;border-color:#CE93D8;"></div>
-      </div>
+      <div class="f"><label>Forraje / restos de cosecha</label><input type="number" id="poc1" oninput="cPor()" placeholder="\$0"></div>
+      <div class="f"><label>Otro alimento</label><input type="number" id="poc2" oninput="cPor()" placeholder="\$0"></div>
+      <div class="f"><label>Lechón destetado (compra / reposición)</label><input type="number" id="poc3" oninput="cPor()" placeholder="\$0"></div>
+      <div class="f"><label>Mano de obra PAGADA</label><input type="number" id="poc4" oninput="cPor()" placeholder="\$0"></div>
+      <div class="f"><label>Instalaciones y mantención</label><input type="number" id="poc5" oninput="cPor()" placeholder="\$0"></div>
+      <div class="f"><label>Energía</label><input type="number" id="poc6" oninput="cPor()" placeholder="\$0"></div>
+      <div class="f"><label>Veterinaria y medicamentos</label><input type="number" id="poc7" oninput="cPor()" placeholder="\$0"></div>
       <div class="res rw" style="margin-top:12px;"><div class="rl">📉 Total Costos</div><div class="rv" id="po-tc">$ 0</div></div>
       <div class="res"><div class="rl">✅ Gross Profit</div><div class="rv" id="po-gp">$ 0</div><div class="rs" id="po-gpm">GP Margin: —</div></div>
       <button class="btn bp" style="margin-top:12px;" onclick="showT('✅ Guardado')">💾 &nbsp;Guardar Costos</button>
     </div>
   </div>
   <div id="por-ua" style="overflow-y:auto;padding-bottom:70px;display:none;">
-    <div class="sec">
-      <div class="sec-t">🐖 Unidades Animales (UA)</div>
-      <div class="al ali"><span class="al-ic">ℹ️</span><div class="al-tx">Factor UA = Peso promedio ÷ 450 kg</div></div>
-      <div style="overflow-x:auto;margin:0 -18px;padding:0 18px;">
-        <table class="uat"><thead><tr><th>Categoría</th><th>N°</th><th>Kg prom</th><th>UA</th></tr></thead>
-          <tbody id="por-ua-body"></tbody></table>
-      </div>
-      <div style="margin-top:12px;" id="por-ua-tot-box">
-        <div class="res"><div class="rl">▶ TOTAL UA Porcina</div><div class="rv" id="por-ua-tot">0.0</div></div>
-      </div>
+    <div class="sec"><div class="sec-t">🐖 UA</div>
+      <div style="overflow-x:auto;margin:0 -18px;padding:0 18px;"><table class="uat"><thead><tr><th>Categoría</th><th>N°</th><th>Kg prom</th><th>UA</th></tr></thead><tbody id="por-ua-body"></tbody></table></div>
+      <div class="res" style="margin-top:12px;"><div class="rl">▶ TOTAL UA Porcina</div><div class="rv" id="por-ua-tot">0.0</div></div>
       <button class="btn bp" onclick="showT('✅ UA guardadas')">💾 &nbsp;Guardar UA</button>
     </div>
   </div>
@@ -669,11 +771,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
 
 <!-- ═══ CAPRINA ═══ -->
 <div class="screen" id="s-caprina">
-  <div class="hdr">
-    <span class="hdr-bk" onclick="goTo('s-home')">←</span>
-    <h2>🐐 Ganadería Caprina</h2>
-    <span class="hdr-ic">📷</span>
-  </div>
+  <div class="hdr"><span class="hdr-bk" onclick="goTo('s-home')">←</span><h2>🐐 Ganadería Caprina</h2><span class="hdr-ic">📷</span></div>
   <div class="tabs" id="cap-tabs">
     <div class="tab active" onclick="swTab(this,'cap-ing','cap-tabs')">💰 Ingresos</div>
     <div class="tab" onclick="swTab(this,'cap-cos','cap-tabs')">📉 Costos</div>
@@ -683,11 +781,11 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
   <div id="cap-ing" style="overflow-y:auto;padding-bottom:70px;display:block;">
     <div class="sec">
       <div class="sec-t">💰 Ingresos Brutos</div>
-      <div class="f"><label>Venta de animales (kg / cabezas)</label><input type="number" id="cai1" oninput="cCap()" placeholder="$0"></div>
-      <div class="f"><label>Venta subproductos (leche, lana, cuero)</label><input type="number" id="cai2" oninput="cCap()" placeholder="$0"></div>
-      <div class="f"><label>Venta reproductores / pie de cría</label><input type="number" id="cai3" oninput="cCap()" placeholder="$0"></div>
-      <div class="f"><label>Subsidios / bonos</label><input type="number" id="cai4" oninput="cCap()" placeholder="$0"></div>
-      <div class="f"><label>Otro ingreso</label><input type="number" id="cai5" oninput="cCap()" placeholder="$0"></div>
+      <div class="f"><label>Venta de animales</label><input type="number" id="cai1" oninput="cCap()" placeholder="\$0"></div>
+      <div class="f"><label>Venta subproductos (leche, lana, cuero)</label><input type="number" id="cai2" oninput="cCap()" placeholder="\$0"></div>
+      <div class="f"><label>Venta reproductores</label><input type="number" id="cai3" oninput="cCap()" placeholder="\$0"></div>
+      <div class="f"><label>Subsidios / bonos</label><input type="number" id="cai4" oninput="cCap()" placeholder="\$0"></div>
+      <div class="f"><label>Otro ingreso</label><input type="number" id="cai5" oninput="cCap()" placeholder="\$0"></div>
       <div class="res"><div class="rl">📊 Total Ingresos</div><div class="rv" id="ca-ti">$ 0</div></div>
       <button class="btn bp" onclick="showT('✅ Guardado')">💾 &nbsp;Guardar Ingresos</button>
     </div>
@@ -695,39 +793,24 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
   <div id="cap-cos" style="overflow-y:auto;padding-bottom:70px;display:none;">
     <div class="sec">
       <div class="sec-t">📉 Costos Directos</div>
-      <div class="f"><label>Forraje fresco (pastizal, praderas, arbustos forrajeros)</label><input type="number" id="cac1" oninput="cCap()" placeholder="$0"></div>
-      <div class="f">
-        <label>⚠️ Forraje conservado (heno de alfalfa, chala de maíz, fardos)</label>
-        <div class="hint" style="color:var(--rojo);font-weight:700;">🔴 Obligatorio — Weak Link</div>
-        <input type="number" id="cac2" oninput="cCap()" style="border-color:var(--rojo);" placeholder="$0"></div>
-      <div class="f"><label>Concentrados (maíz, avena, soya)</label><input type="number" id="cac3" oninput="cCap()" placeholder="$0"></div>
-      <div class="f"><label>Suplemento mineral / sales</label><input type="number" id="cac4" oninput="cCap()" placeholder="$0"></div>
-      <div class="f"><label>Reposición de ganado y cría</label><input type="number" id="cac5" oninput="cCap()" placeholder="$0"></div>
-      <div class="f"><label>Mano de obra PAGADA</label><input type="number" id="cac6" oninput="cCap()" placeholder="$0"></div>
-      <div class="f"><label>Infraestructura y equipamiento</label><input type="number" id="cac7" oninput="cCap()" placeholder="$0"></div>
-      <div class="f"><label>Logística y transporte (fletes)</label><input type="number" id="cac8" oninput="cCap()" placeholder="$0"></div>
-      <div class="purp">
-        <div class="purp-t">📅 Costos esporádicos anuales</div>
-        <div class="f"><input type="text" placeholder="Sub-ítem 1" style="background:#F9F0FF;border-color:#CE93D8;margin-bottom:5px;"><input type="number" placeholder="Monto anual $" style="background:#F9F0FF;border-color:#CE93D8;"></div>
-        <div class="f"><input type="text" placeholder="Sub-ítem 2" style="background:#F9F0FF;border-color:#CE93D8;margin-bottom:5px;"><input type="number" placeholder="Monto anual $" style="background:#F9F0FF;border-color:#CE93D8;"></div>
-      </div>
+      <div class="f"><label>Forraje fresco (pastizal, praderas)</label><input type="number" id="cac1" oninput="cCap()" placeholder="\$0"></div>
+      <div class="f"><label>⚠️ Forraje conservado (heno, chala, fardos)</label><div class="hint" style="color:var(--rojo);font-weight:700;">🔴 Obligatorio — Weak Link</div><input type="number" id="cac2" oninput="cCap()" style="border-color:var(--rojo);" placeholder="\$0"></div>
+      <div class="f"><label>Concentrados (maíz, avena, soya)</label><input type="number" id="cac3" oninput="cCap()" placeholder="\$0"></div>
+      <div class="f"><label>Suplemento mineral / sales</label><input type="number" id="cac4" oninput="cCap()" placeholder="\$0"></div>
+      <div class="f"><label>Reposición de ganado y cría</label><input type="number" id="cac5" oninput="cCap()" placeholder="\$0"></div>
+      <div class="f"><label>Mano de obra PAGADA</label><input type="number" id="cac6" oninput="cCap()" placeholder="\$0"></div>
+      <div class="f"><label>Infraestructura y equipamiento</label><input type="number" id="cac7" oninput="cCap()" placeholder="\$0"></div>
+      <div class="f"><label>Logística y transporte</label><input type="number" id="cac8" oninput="cCap()" placeholder="\$0"></div>
       <div class="res rw" style="margin-top:12px;"><div class="rl">📉 Total Costos</div><div class="rv" id="ca-tc">$ 0</div></div>
       <div class="res"><div class="rl">✅ Gross Profit</div><div class="rv" id="ca-gp">$ 0</div><div class="rs" id="ca-gpm">GP Margin: —</div></div>
       <button class="btn bp" style="margin-top:12px;" onclick="showT('✅ Guardado')">💾 &nbsp;Guardar Costos</button>
     </div>
   </div>
   <div id="cap-ua" style="overflow-y:auto;padding-bottom:70px;display:none;">
-    <div class="sec">
-      <div class="sec-t">🐐 Unidades Animales (UA)</div>
-      <div class="al ali"><span class="al-ic">ℹ️</span><div class="al-tx">Factor UA = Peso promedio ÷ 450 kg</div></div>
-      <div style="overflow-x:auto;margin:0 -18px;padding:0 18px;">
-        <table class="uat"><thead><tr><th>Categoría</th><th>N°</th><th>Kg prom</th><th>UA</th></tr></thead>
-          <tbody id="cap-ua-body"></tbody></table>
-      </div>
-      <div style="margin-top:12px;">
-        <div class="f"><label>📐 Superficie pastoreo (ha)</label><input type="number" id="cap-ha" oninput="cUACap()" placeholder="0"></div>
-        <div class="res"><div class="rl">▶ Carga Animal</div><div class="rv" id="cap-ca">— UA/ha</div><div class="rs" id="cap-cas">ingrese datos arriba</div></div>
-      </div>
+    <div class="sec"><div class="sec-t">🐐 UA</div>
+      <div style="overflow-x:auto;margin:0 -18px;padding:0 18px;"><table class="uat"><thead><tr><th>Categoría</th><th>N°</th><th>Kg prom</th><th>UA</th></tr></thead><tbody id="cap-ua-body"></tbody></table></div>
+      <div style="margin-top:12px;"><div class="f"><label>📐 Superficie pastoreo (ha)</label><input type="number" id="cap-ha" oninput="cUACap()" placeholder="0"></div>
+      <div class="res"><div class="rl">▶ Carga Animal</div><div class="rv" id="cap-ca">— UA/ha</div><div class="rs" id="cap-cas">ingrese datos arriba</div></div></div>
       <button class="btn bp" onclick="showT('✅ UA guardadas')">💾 &nbsp;Guardar UA</button>
     </div>
   </div>
@@ -735,11 +818,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
 
 <!-- ═══ AVICULTURA ═══ -->
 <div class="screen" id="s-avicultura">
-  <div class="hdr">
-    <span class="hdr-bk" onclick="goTo('s-home')">←</span>
-    <h2>🐔 Avicultura - Huevos</h2>
-    <span class="hdr-ic">📷</span>
-  </div>
+  <div class="hdr"><span class="hdr-bk" onclick="goTo('s-home')">←</span><h2>🐔 Avicultura - Huevos</h2><span class="hdr-ic">📷</span></div>
   <div class="tabs" id="avi-tabs">
     <div class="tab active" onclick="swTab(this,'avi-ing','avi-tabs')">💰 Ingresos</div>
     <div class="tab" onclick="swTab(this,'avi-cos','avi-tabs')">📉 Costos</div>
@@ -749,12 +828,11 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
   <div id="avi-ing" style="overflow-y:auto;padding-bottom:70px;display:block;">
     <div class="sec">
       <div class="sec-t">💰 Ingresos Brutos</div>
-      <div class="al ali"><span class="al-ic">💡</span><div class="al-tx">Avicultura no tiene Unidades Animales (UA) — los indicadores son por unidad productiva.</div></div>
-      <div class="f"><label>Venta de huevos</label><input type="number" id="avi1" oninput="cAvi()" placeholder="$0"></div>
-      <div class="f"><label>Venta de gallinas de descarte</label><input type="number" id="avi2" oninput="cAvi()" placeholder="$0"></div>
-      <div class="f"><label>Venta de pollitas / pollos</label><input type="number" id="avi3" oninput="cAvi()" placeholder="$0"></div>
-      <div class="f"><label>Subsidios / bonos</label><input type="number" id="avi4" oninput="cAvi()" placeholder="$0"></div>
-      <div class="f"><label>Otro ingreso</label><input type="number" id="avi5" oninput="cAvi()" placeholder="$0"></div>
+      <div class="f"><label>Venta de huevos</label><input type="number" id="avi1" oninput="cAvi()" placeholder="\$0"></div>
+      <div class="f"><label>Venta de gallinas de descarte</label><input type="number" id="avi2" oninput="cAvi()" placeholder="\$0"></div>
+      <div class="f"><label>Venta de pollitas / pollos</label><input type="number" id="avi3" oninput="cAvi()" placeholder="\$0"></div>
+      <div class="f"><label>Subsidios / bonos</label><input type="number" id="avi4" oninput="cAvi()" placeholder="\$0"></div>
+      <div class="f"><label>Otro ingreso</label><input type="number" id="avi5" oninput="cAvi()" placeholder="\$0"></div>
       <div class="res"><div class="rl">📊 Total Ingresos</div><div class="rv" id="av-ti">$ 0</div></div>
       <button class="btn bp" onclick="showT('✅ Guardado')">💾 &nbsp;Guardar Ingresos</button>
     </div>
@@ -762,19 +840,14 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
   <div id="avi-cos" style="overflow-y:auto;padding-bottom:70px;display:none;">
     <div class="sec">
       <div class="sec-t">📉 Costos Directos</div>
-      <div class="f"><label>Alimentación – Maíz</label><input type="number" id="avc1" oninput="cAvi()" placeholder="$0"></div>
-      <div class="f"><label>Alimentación – Afrecho / poroto de soya</label><input type="number" id="avc2" oninput="cAvi()" placeholder="$0"></div>
-      <div class="f"><label>Alimentación – Otros insumos (maravilla, vitaminas, sales, conchuelas)</label><input type="number" id="avc3" oninput="cAvi()" placeholder="$0"></div>
-      <div class="f"><label>Mano de obra – Permanente (PAGADA)</label><input type="number" id="avc4" oninput="cAvi()" placeholder="$0"></div>
-      <div class="f"><label>Mano de obra – Temporal (PAGADA)</label><input type="number" id="avc5" oninput="cAvi()" placeholder="$0"></div>
-      <div class="f"><label>Transporte y distribución</label><input type="number" id="avc6" oninput="cAvi()" placeholder="$0"></div>
-      <div class="f"><label>Embalaje (cajas, bandejas)</label><input type="number" id="avc7" oninput="cAvi()" placeholder="$0"></div>
-      <div class="f"><label>Electricidad y agua</label><input type="number" id="avc8" oninput="cAvi()" placeholder="$0"></div>
-      <div class="purp">
-        <div class="purp-t">📅 Costos esporádicos anuales</div>
-        <div class="f"><input type="text" placeholder="Sub-ítem 1" style="background:#F9F0FF;border-color:#CE93D8;margin-bottom:5px;"><input type="number" placeholder="Monto anual $" style="background:#F9F0FF;border-color:#CE93D8;"></div>
-        <div class="f"><input type="text" placeholder="Sub-ítem 2" style="background:#F9F0FF;border-color:#CE93D8;margin-bottom:5px;"><input type="number" placeholder="Monto anual $" style="background:#F9F0FF;border-color:#CE93D8;"></div>
-      </div>
+      <div class="f"><label>Alimentación – Maíz</label><input type="number" id="avc1" oninput="cAvi()" placeholder="\$0"></div>
+      <div class="f"><label>Alimentación – Afrecho / soya</label><input type="number" id="avc2" oninput="cAvi()" placeholder="\$0"></div>
+      <div class="f"><label>Alimentación – Otros insumos</label><input type="number" id="avc3" oninput="cAvi()" placeholder="\$0"></div>
+      <div class="f"><label>Mano de obra – Permanente</label><input type="number" id="avc4" oninput="cAvi()" placeholder="\$0"></div>
+      <div class="f"><label>Mano de obra – Temporal</label><input type="number" id="avc5" oninput="cAvi()" placeholder="\$0"></div>
+      <div class="f"><label>Transporte y distribución</label><input type="number" id="avc6" oninput="cAvi()" placeholder="\$0"></div>
+      <div class="f"><label>Embalaje (cajas, bandejas)</label><input type="number" id="avc7" oninput="cAvi()" placeholder="\$0"></div>
+      <div class="f"><label>Electricidad y agua</label><input type="number" id="avc8" oninput="cAvi()" placeholder="\$0"></div>
       <div class="res rw" style="margin-top:12px;"><div class="rl">📉 Total Costos</div><div class="rv" id="av-tc">$ 0</div></div>
       <div class="res"><div class="rl">✅ Gross Profit</div><div class="rv" id="av-gp">$ 0</div><div class="rs" id="av-gpm">GP Margin: —</div></div>
       <button class="btn bp" style="margin-top:12px;" onclick="showT('✅ Guardado')">💾 &nbsp;Guardar Costos</button>
@@ -782,19 +855,17 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
   </div>
   <div id="avi-ind" style="overflow-y:auto;padding-bottom:70px;display:none;">
     <div class="sec">
-      <div class="sec-t">📈 Indicadores Adicionales</div>
-      <div class="f"><label>Base productiva (ha, camas, jaulas, m²)</label><input type="number" placeholder="0" id="avi-base"></div>
-      <div class="f"><label>Unidades producidas (docenas de huevos / año)</label><input type="number" placeholder="0" id="avi-docenas" oninput="cAviInd()"></div>
-      <div class="f"><label>Precio promedio venta (CLP/docena)</label><input type="number" placeholder="0" id="avi-precio" oninput="cAviInd()"></div>
-      <div class="f"><label>Gross Profit por unidad productiva</label><div class="cv" id="avi-gpup">—</div></div>
-    </div>
-    <div class="div"></div>
-    <div class="sec">
+      <div class="sec-t">📈 Indicadores</div>
+      <div class="f"><label>Base productiva</label><input type="number" placeholder="0" id="avi-base"></div>
+      <div class="f"><label>Unidades producidas (docenas/año)</label><input type="number" placeholder="0" id="avi-docenas" oninput="cAviInd()"></div>
+      <div class="f"><label>Precio promedio (CLP/docena)</label><input type="number" placeholder="0" id="avi-precio" oninput="cAviInd()"></div>
+      <div class="f"><label>GP por unidad productiva</label><div class="cv" id="avi-gpup">—</div></div>
+      <div class="div" style="margin:12px -18px;"></div>
       <div class="sec-t">⚖️ Punto de Equilibrio</div>
-      <div class="f"><label>Unidades totales vendidas (docenas)</label><input type="number" id="ave-u" oninput="cAviEq()" placeholder="0"></div>
-      <div class="f"><label>Costo directo / unidad</label><div class="cv" id="ave-cu">— CLP/u</div></div>
-      <div class="f"><label>Precio promedio recibido (CLP/docena)</label><input type="number" id="ave-p" oninput="cAviEq()" placeholder="0"></div>
-      <div class="f"><label>▶ Margen por unidad</label><div class="cv" id="ave-m">— CLP/u</div></div>
+      <div class="f"><label>Unidades vendidas</label><input type="number" id="ave-u" oninput="cAviEq()" placeholder="0"></div>
+      <div class="f"><label>Costo/unidad</label><div class="cv" id="ave-cu">—</div></div>
+      <div class="f"><label>Precio recibido (CLP/docena)</label><input type="number" id="ave-p" oninput="cAviEq()" placeholder="0"></div>
+      <div class="f"><label>▶ Margen/unidad</label><div class="cv" id="ave-m">—</div></div>
       <button class="btn bp" onclick="showT('✅ Guardado')">💾 &nbsp;Guardar Indicadores</button>
     </div>
   </div>
@@ -802,11 +873,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
 
 <!-- ═══ TURISMO ═══ -->
 <div class="screen" id="s-turismo">
-  <div class="hdr">
-    <span class="hdr-bk" onclick="goTo('s-home')">←</span>
-    <h2>🏕️ Turismo - Experiencias</h2>
-    <span class="hdr-ic">📷</span>
-  </div>
+  <div class="hdr"><span class="hdr-bk" onclick="goTo('s-home')">←</span><h2>🏕️ Turismo - Experiencias</h2><span class="hdr-ic">📷</span></div>
   <div class="tabs" id="tur-tabs">
     <div class="tab active" onclick="swTab(this,'tur-ing','tur-tabs')">💰 Ingresos</div>
     <div class="tab" onclick="swTab(this,'tur-cos','tur-tabs')">📉 Costos</div>
@@ -816,11 +883,11 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
   <div id="tur-ing" style="overflow-y:auto;padding-bottom:70px;display:block;">
     <div class="sec">
       <div class="sec-t">💰 Ingresos Brutos</div>
-      <div class="f"><label>Venta de tours / experiencias</label><input type="number" id="ti1" oninput="cTur()" placeholder="$0"></div>
-      <div class="f"><label>Alojamiento</label><input type="number" id="ti2" oninput="cTur()" placeholder="$0"></div>
-      <div class="f"><label>Alimentación / eventos</label><input type="number" id="ti3" oninput="cTur()" placeholder="$0"></div>
-      <div class="f"><label>Venta de productos locales / merchandising</label><input type="number" id="ti4" oninput="cTur()" placeholder="$0"></div>
-      <div class="f"><label>Otro ingreso</label><input type="number" id="ti5" oninput="cTur()" placeholder="$0"></div>
+      <div class="f"><label>Venta de tours / experiencias</label><input type="number" id="ti1" oninput="cTur()" placeholder="\$0"></div>
+      <div class="f"><label>Alojamiento</label><input type="number" id="ti2" oninput="cTur()" placeholder="\$0"></div>
+      <div class="f"><label>Alimentación / eventos</label><input type="number" id="ti3" oninput="cTur()" placeholder="\$0"></div>
+      <div class="f"><label>Venta productos locales / merchandising</label><input type="number" id="ti4" oninput="cTur()" placeholder="\$0"></div>
+      <div class="f"><label>Otro ingreso</label><input type="number" id="ti5" oninput="cTur()" placeholder="\$0"></div>
       <div class="res"><div class="rl">📊 Total Ingresos</div><div class="rv" id="tu-ti">$ 0</div></div>
       <button class="btn bp" onclick="showT('✅ Guardado')">💾 &nbsp;Guardar Ingresos</button>
     </div>
@@ -828,18 +895,12 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
   <div id="tur-cos" style="overflow-y:auto;padding-bottom:70px;display:none;">
     <div class="sec">
       <div class="sec-t">📉 Costos Directos</div>
-      <div class="al ali"><span class="al-ic">ℹ️</span><div class="al-tx">Si mano de obra > 30% del total, subdivida en Permanente y Temporal para análisis Weak Link.</div></div>
-      <div class="f"><label>Mano de obra – Permanente (PAGADA)</label><input type="number" id="tc1" oninput="cTur()" placeholder="$0"></div>
-      <div class="f"><label>Mano de obra – Temporal (PAGADA)</label><input type="number" id="tc2" oninput="cTur()" placeholder="$0"></div>
-      <div class="f"><label>Insumos y materiales (alimentos, aseo, amenities)</label><input type="number" id="tc3" oninput="cTur()" placeholder="$0"></div>
-      <div class="f"><label>Mantención de instalaciones</label><input type="number" id="tc4" oninput="cTur()" placeholder="$0"></div>
-      <div class="f"><label>Marketing y comisiones de venta</label><input type="number" id="tc5" oninput="cTur()" placeholder="$0"></div>
-      <div class="f"><label>Plataformas de reserva (Booking, Airbnb, comisiones online)</label><input type="number" id="tc6" oninput="cTur()" placeholder="$0"></div>
-      <div class="purp">
-        <div class="purp-t">📅 Costos esporádicos anuales</div>
-        <div class="f"><input type="text" placeholder="Sub-ítem 1" style="background:#F9F0FF;border-color:#CE93D8;margin-bottom:5px;"><input type="number" placeholder="Monto anual $" style="background:#F9F0FF;border-color:#CE93D8;"></div>
-        <div class="f"><input type="text" placeholder="Sub-ítem 2" style="background:#F9F0FF;border-color:#CE93D8;margin-bottom:5px;"><input type="number" placeholder="Monto anual $" style="background:#F9F0FF;border-color:#CE93D8;"></div>
-      </div>
+      <div class="f"><label>Mano de obra – Permanente</label><input type="number" id="tc1" oninput="cTur()" placeholder="\$0"></div>
+      <div class="f"><label>Mano de obra – Temporal</label><input type="number" id="tc2" oninput="cTur()" placeholder="\$0"></div>
+      <div class="f"><label>Insumos y materiales</label><input type="number" id="tc3" oninput="cTur()" placeholder="\$0"></div>
+      <div class="f"><label>Mantención de instalaciones</label><input type="number" id="tc4" oninput="cTur()" placeholder="\$0"></div>
+      <div class="f"><label>Marketing y comisiones</label><input type="number" id="tc5" oninput="cTur()" placeholder="\$0"></div>
+      <div class="f"><label>Plataformas de reserva (Booking, Airbnb)</label><input type="number" id="tc6" oninput="cTur()" placeholder="\$0"></div>
       <div class="res rw" style="margin-top:12px;"><div class="rl">📉 Total Costos</div><div class="rv" id="tu-tc">$ 0</div></div>
       <div class="res"><div class="rl">✅ Gross Profit</div><div class="rv" id="tu-gp">$ 0</div><div class="rs" id="tu-gpm">GP Margin: —</div></div>
       <button class="btn bp" style="margin-top:12px;" onclick="showT('✅ Guardado')">💾 &nbsp;Guardar Costos</button>
@@ -847,71 +908,52 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
   </div>
   <div id="tur-ind" style="overflow-y:auto;padding-bottom:70px;display:none;">
     <div class="sec">
-      <div class="sec-t">📈 Indicadores Adicionales</div>
-      <div class="f"><label>Base productiva (N° de camas / cabañas / visitantes)</label><input type="number" placeholder="0" id="tu-base"></div>
-      <div class="f"><label>Unidades vendidas (noches, visitas, experiencias)</label><input type="number" placeholder="0" id="tu-uni" oninput="cTurEq()"></div>
-      <div class="f"><label>Precio promedio por unidad (CLP)</label><input type="number" placeholder="0" id="tu-pvu" oninput="cTurEq()"></div>
-      <div class="f"><label>Costo directo / unidad</label><div class="cv" id="tu-cdu">—</div></div>
-      <div class="f"><label>▶ Margen por unidad</label><div class="cv" id="tu-mpu">—</div></div>
+      <div class="sec-t">📈 Indicadores</div>
+      <div class="f"><label>Base productiva (camas / cabañas)</label><input type="number" placeholder="0" id="tu-base"></div>
+      <div class="f"><label>Unidades vendidas (noches, visitas)</label><input type="number" placeholder="0" id="tu-uni" oninput="cTurEq()"></div>
+      <div class="f"><label>Precio promedio (CLP)</label><input type="number" placeholder="0" id="tu-pvu" oninput="cTurEq()"></div>
+      <div class="f"><label>Costo/unidad</label><div class="cv" id="tu-cdu">—</div></div>
+      <div class="f"><label>▶ Margen/unidad</label><div class="cv" id="tu-mpu">—</div></div>
       <button class="btn bp" onclick="showT('✅ Guardado')">💾 &nbsp;Guardar Indicadores</button>
     </div>
   </div>
 </div>
 
-<!-- ═══ GENÉRICO (Forraje, Cultivos, Hortalizas, Frutales, Flores, Viñedos, Apicultura, Quesos, Lácteos, Lombricultura) ═══ -->
+<!-- ═══ GENÉRICO ═══ -->
 <div class="screen" id="s-generic">
-  <div class="hdr">
-    <span class="hdr-bk" onclick="goTo('s-home')">←</span>
-    <h2 id="gen-title">🌾 Rubro</h2>
-    <span class="hdr-ic">📷</span>
-  </div>
+  <div class="hdr"><span class="hdr-bk" onclick="goTo('s-home')">←</span><h2 id="gen-title">🌾 Rubro</h2><span class="hdr-ic">📷</span></div>
   <div class="tabs" id="gen-tabs">
     <div class="tab active" onclick="swTab(this,'gen-ing','gen-tabs')">💰 Ingresos</div>
     <div class="tab" onclick="swTab(this,'gen-cos','gen-tabs')">📉 Costos</div>
     <div class="tab" onclick="swTab(this,'gen-ind','gen-tabs')">📈 Indicadores</div>
   </div>
   <div class="mes-w"><div class="mes-lbl">📅 Mes:</div><div class="mes-s" id="gen-mes-s"></div><div class="mes-cur" id="gen-mes-cur">Mes: ENERO 2025</div></div>
-  <!-- INGRESOS GENÉRICO -->
   <div id="gen-ing" style="overflow-y:auto;padding-bottom:70px;display:block;">
-    <div class="sec">
-      <div class="sec-t">💰 Ingresos Brutos</div>
-      <div id="gen-ing-fields"></div>
+    <div class="sec"><div class="sec-t">💰 Ingresos Brutos</div><div id="gen-ing-fields"></div>
       <div class="res"><div class="rl">📊 Total Ingresos</div><div class="rv" id="gen-ti">$ 0</div><div class="rs">automático</div></div>
       <button class="btn bp" onclick="showT('✅ Guardado')">💾 &nbsp;Guardar Ingresos</button>
     </div>
   </div>
-  <!-- COSTOS GENÉRICO -->
   <div id="gen-cos" style="overflow-y:auto;padding-bottom:70px;display:none;">
-    <div class="sec">
-      <div class="sec-t">📉 Costos Directos</div>
-      <div class="al ali"><span class="al-ic">ℹ️</span><div class="al-tx">Solo costos que desaparecen si elimina este enterprise del predio.</div></div>
-      <div id="gen-cos-fields"></div>
-      <div class="purp">
-        <div class="purp-t">📅 Costos esporádicos anuales</div>
-        <div class="f"><input type="text" placeholder="Sub-ítem 1" style="background:#F9F0FF;border-color:#CE93D8;margin-bottom:5px;"><input type="number" placeholder="Monto anual $" style="background:#F9F0FF;border-color:#CE93D8;"></div>
-        <div class="f"><input type="text" placeholder="Sub-ítem 2" style="background:#F9F0FF;border-color:#CE93D8;margin-bottom:5px;"><input type="number" placeholder="Monto anual $" style="background:#F9F0FF;border-color:#CE93D8;"></div>
-      </div>
+    <div class="sec"><div class="sec-t">📉 Costos Directos</div><div id="gen-cos-fields"></div>
       <div class="res rw" style="margin-top:12px;"><div class="rl">📉 Total Costos</div><div class="rv" id="gen-tc">$ 0</div></div>
       <div class="res"><div class="rl">✅ Gross Profit</div><div class="rv" id="gen-gp">$ 0</div><div class="rs" id="gen-gpm">GP Margin: —</div></div>
       <button class="btn bp" style="margin-top:12px;" onclick="showT('✅ Guardado')">💾 &nbsp;Guardar Costos</button>
     </div>
   </div>
-  <!-- INDICADORES GENÉRICO -->
   <div id="gen-ind" style="overflow-y:auto;padding-bottom:70px;display:none;">
     <div class="sec">
-      <div class="sec-t">📈 Indicadores Adicionales</div>
+      <div class="sec-t">📈 Indicadores</div>
       <div class="f"><label>Superficie dedicada (ha)</label><input type="number" placeholder="0" id="gen-ha" oninput="cGenInd()"></div>
-      <div class="f"><label>Gross Profit por ha (CLP/ha)</label><div class="cv" id="gen-gpha">—</div></div>
-      <div class="f"><label>Unidades producidas (kg, litros, cab., etc.)</label><input type="number" placeholder="0" id="gen-u"></div>
-      <div class="f"><label>Precio promedio venta (CLP/unidad)</label><input type="number" placeholder="0" id="gen-pvu"></div>
-    </div>
-    <div class="div"></div>
-    <div class="sec">
+      <div class="f"><label>Gross Profit por ha</label><div class="cv" id="gen-gpha">—</div></div>
+      <div class="f"><label>Unidades producidas</label><input type="number" placeholder="0" id="gen-u"></div>
+      <div class="f"><label>Precio promedio venta</label><input type="number" placeholder="0" id="gen-pvu"></div>
+      <div class="div" style="margin:12px -18px;"></div>
       <div class="sec-t">⚖️ Punto de Equilibrio</div>
-      <div class="f"><label>Unidades totales vendidas</label><input type="number" id="gen-eu" oninput="cGenEq()" placeholder="0"></div>
-      <div class="f"><label>Costo directo / unidad</label><div class="cv" id="gen-ecu">—</div></div>
+      <div class="f"><label>Unidades vendidas</label><input type="number" id="gen-eu" oninput="cGenEq()" placeholder="0"></div>
+      <div class="f"><label>Costo/unidad</label><div class="cv" id="gen-ecu">—</div></div>
       <div class="f"><label>Precio promedio recibido</label><input type="number" id="gen-ep" oninput="cGenEq()" placeholder="0"></div>
-      <div class="f"><label>▶ Margen por unidad</label><div class="cv" id="gen-em">—</div></div>
+      <div class="f"><label>▶ Margen/unidad</label><div class="cv" id="gen-em">—</div></div>
       <button class="btn bp" onclick="showT('✅ Guardado')">💾 &nbsp;Guardar Indicadores</button>
     </div>
   </div>
@@ -921,32 +963,23 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
 <div class="screen" id="s-costos-fijos">
   <div class="hdr"><span class="hdr-bk" onclick="goTo('s-home')">←</span><h2>🏠 Costos Fijos del Predio</h2></div>
   <div style="overflow-y:auto;padding-bottom:85px;">
-    <div style="padding:12px 18px;background:#FFF8E1;">
-      <div class="al alw" style="margin:0;"><span class="al-ic">⚠️</span>
-        <div class="al-tx"><strong>¡Importante!</strong>NO repita aquí costos ya registrados en cada rubro. Estos costos existen aunque elimine cualquier enterprise. No se incluyen en el Gross Profit de cada rubro.</div></div>
-    </div>
+    <div style="padding:12px 18px;background:#FFF8E1;"><div class="al alw" style="margin:0;"><span class="al-ic">⚠️</span><div class="al-tx"><strong>¡Importante!</strong>NO repita aquí costos ya registrados en cada rubro.</div></div></div>
     <div class="sec">
       <div class="sec-t">💰 Costos Anuales Fijos</div>
-      <div class="f"><label>🏘️ Arriendo de campo</label><input type="number" placeholder="$0 / año" id="cf1" oninput="cCF()"></div>
-      <div class="f"><label>🏦 Crédito / dividendo del predio</label><input type="number" id="cf2" oninput="cCF()" value="1800000"></div>
+      <div class="f"><label>🏘️ Arriendo de campo</label><input type="number" placeholder="\$0 / año" id="cf1" oninput="cCF()"></div>
+      <div class="f"><label>🏦 Crédito / dividendo</label><input type="number" id="cf2" oninput="cCF()" value="1800000"></div>
       <div class="f"><label>🗂️ Administración</label><input type="number" id="cf3" oninput="cCF()" value="600000"></div>
       <div class="f"><label>💡 Luz</label><input type="number" id="cf4" oninput="cCF()" value="480000"></div>
       <div class="f"><label>💧 Agua</label><input type="number" id="cf5" oninput="cCF()" value="120000"></div>
       <div class="f"><label>📊 Contador</label><input type="number" id="cf6" oninput="cCF()" value="600000"></div>
-      <div class="f"><label>⛽ Combustible y mantención maquinaria / vehículos</label><input type="number" id="cf7" oninput="cCF()" value="920000"></div>
+      <div class="f"><label>⛽ Combustible y mantención</label><input type="number" id="cf7" oninput="cCF()" value="920000"></div>
       <div class="f"><label>🛡️ Seguros</label><input type="number" id="cf8" oninput="cCF()"></div>
-      <div class="f"><label>🏛️ Contribuciones / impuestos del predio</label><input type="number" id="cf9" oninput="cCF()" value="240000"></div>
-      <div class="f"><label>👨‍⚕️ Veterinario externo (asesoría)</label><input type="number" id="cf10" oninput="cCF()"></div>
-      <div class="f"><label>🌱 Agrónomo (asesoría técnica)</label><input type="number" id="cf11" oninput="cCF()"></div>
-      <div class="f"><label>🤝 Asesorías / consultorías generales</label><input type="number" id="cf12" oninput="cCF()"></div>
-      <div class="f"><label>Otro costo fijo</label>
-        <input type="text" placeholder="Descripción" style="margin-bottom:6px;">
-        <input type="number" id="cf13" oninput="cCF()" placeholder="$0 / año"></div>
-      <div class="res rb">
-        <div class="rl">TOTAL COSTOS FIJOS (referencial)</div>
-        <div class="rv" id="cf-tot">$ 4.760.000</div>
-        <div class="rs">ℹ️ Se integrará al análisis en Taller 2</div>
-      </div>
+      <div class="f"><label>🏛️ Contribuciones / impuestos</label><input type="number" id="cf9" oninput="cCF()" value="240000"></div>
+      <div class="f"><label>👨‍⚕️ Veterinario externo</label><input type="number" id="cf10" oninput="cCF()"></div>
+      <div class="f"><label>🌱 Agrónomo</label><input type="number" id="cf11" oninput="cCF()"></div>
+      <div class="f"><label>🤝 Asesorías generales</label><input type="number" id="cf12" oninput="cCF()"></div>
+      <div class="f"><label>Otro costo fijo</label><input type="text" placeholder="Descripción" style="margin-bottom:6px;"><input type="number" id="cf13" oninput="cCF()" placeholder="\$0 / año"></div>
+      <div class="res rb"><div class="rl">TOTAL COSTOS FIJOS (referencial)</div><div class="rv" id="cf-tot">$ 4.760.000</div><div class="rs">ℹ️ Se integrará en Taller 2</div></div>
       <button class="btn bp" style="margin-top:14px;" onclick="showT('✅ Costos fijos guardados')">💾 &nbsp;Guardar Costos Fijos</button>
     </div>
   </div>
@@ -959,14 +992,10 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
     <div style="background:var(--vp);padding:16px 18px;flex-shrink:0;">
       <div style="color:#B7E4C7;font-size:10px;font-weight:700;margin-bottom:10px;">TOTAL PREDIO · EL CANELO</div>
       <div class="kg">
-        <div class="kc pos" style="background:rgba(255,255,255,.15);border-color:rgba(255,255,255,.2);">
-          <div class="kv" style="color:#fff;font-size:16px;" id="res-ing-tot">$12,4M</div><div class="kl" style="color:#B7E4C7;">Ingresos</div></div>
-        <div class="kc" style="background:rgba(255,255,255,.15);border-color:rgba(255,255,255,.2);">
-          <div class="kv" style="color:#FFE082;font-size:16px;" id="res-cos-tot">$8,1M</div><div class="kl" style="color:#B7E4C7;">Costos Dir.</div></div>
-        <div class="kc" style="background:rgba(255,255,255,.15);border-color:rgba(255,255,255,.2);">
-          <div class="kv" style="color:#B7E4C7;font-size:16px;" id="res-gpm-tot">34,7%</div><div class="kl" style="color:#B7E4C7;">GP Margin</div></div>
-        <div class="kc" style="background:rgba(255,255,255,.15);border-color:rgba(255,255,255,.2);">
-          <div class="kv" style="color:#fff;font-size:16px;" id="res-gp-tot">$4,3M</div><div class="kl" style="color:#B7E4C7;">Gross Profit</div></div>
+        <div class="kc pos" style="background:rgba(255,255,255,.15);border-color:rgba(255,255,255,.2);"><div class="kv" style="color:#fff;font-size:16px;" id="res-ing-tot">\$12,4M</div><div class="kl" style="color:#B7E4C7;">Ingresos</div></div>
+        <div class="kc" style="background:rgba(255,255,255,.15);border-color:rgba(255,255,255,.2);"><div class="kv" style="color:#FFE082;font-size:16px;" id="res-cos-tot">\$8,1M</div><div class="kl" style="color:#B7E4C7;">Costos Dir.</div></div>
+        <div class="kc" style="background:rgba(255,255,255,.15);border-color:rgba(255,255,255,.2);"><div class="kv" style="color:#B7E4C7;font-size:16px;" id="res-gpm-tot">34,7%</div><div class="kl" style="color:#B7E4C7;">GP Margin</div></div>
+        <div class="kc" style="background:rgba(255,255,255,.15);border-color:rgba(255,255,255,.2);"><div class="kv" style="color:#fff;font-size:16px;" id="res-gp-tot">\$4,3M</div><div class="kl" style="color:#B7E4C7;">Gross Profit</div></div>
       </div>
     </div>
     <div class="sec">
@@ -975,9 +1004,9 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
         <table class="rt" style="min-width:360px;">
           <thead><tr><th>Rubro</th><th>Ingresos</th><th>GP</th><th>GP%</th><th>Estado</th></tr></thead>
           <tbody id="res-tbody">
-            <tr><td>🐄 Bovina</td><td>$9,2M</td><td>$3,1M</td><td>33,7%</td><td><span class="bdg bg">✅ Ok</span></td></tr>
+            <tr><td>🐄 Bovina</td><td>\$9,2M</td><td>\$3,1M</td><td>33,7%</td><td><span class="bdg bg">✅ Ok</span></td></tr>
             <tr><td>🌾 Forraje</td><td>—</td><td>—</td><td>—</td><td><span class="bdg bx">Sin datos</span></td></tr>
-            <tr class="tot-r"><td><strong>TOTAL</strong></td><td>$9,2M</td><td>$3,1M</td><td>33,7%</td><td>—</td></tr>
+            <tr class="tot-r"><td><strong>TOTAL</strong></td><td>\$9,2M</td><td>\$3,1M</td><td>33,7%</td><td>—</td></tr>
           </tbody>
         </table>
       </div>
@@ -987,7 +1016,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
       <div class="sec-t">📊 Indicadores de Diversificación</div>
       <div class="kg">
         <div class="kc"><div class="kv" id="res-n-rubros">1</div><div class="kl">Rubros con ingresos > 0</div></div>
-        <div class="kc wrn"><div class="kv" id="res-concentracion">74%</div><div class="kl">Concentración rubro principal</div></div>
+        <div class="kc wrn"><div class="kv" id="res-concentracion">74%</div><div class="kl">Concentración principal</div></div>
         <div class="kc"><div class="kv" id="res-errors">0</div><div class="kl">Errores detectados</div></div>
         <div class="kc"><div class="kv" id="res-total-rubros">2</div><div class="kl">Rubros registrados</div></div>
       </div>
@@ -997,22 +1026,19 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
       <div class="sec-t">🐄 Unidades Animales — Predio</div>
       <div style="background:var(--vpa);border-radius:13px;padding:13px;">
         <div style="display:flex;justify-content:space-between;margin-bottom:6px;"><span style="font-size:13px;font-weight:600;">Bovina</span><span style="font-weight:700;color:var(--vp);" id="res-ua-bov">75.7 UA</span></div>
-        <div style="display:flex;justify-content:space-between;padding-top:6px;border-top:1px solid #ccc;">
-          <span style="font-size:13px;font-weight:700;">TOTAL PREDIO</span><span style="font-weight:800;color:var(--vp);font-size:14px;" id="res-ua-tot">75.7 UA</span></div>
-        <div style="margin-top:8px;padding-top:6px;border-top:1px solid #ccc;">
-          <div style="font-size:11px;color:#666;margin-bottom:2px;">Superficie pastoreo: 72 ha</div>
-          <div style="font-size:13px;font-weight:700;color:var(--vp);" id="res-ca">▶ Carga Animal: 1.05 UA/ha</div>
-        </div>
+        <div style="display:flex;justify-content:space-between;padding-top:6px;border-top:1px solid #ccc;"><span style="font-size:13px;font-weight:700;">TOTAL PREDIO</span><span style="font-weight:800;color:var(--vp);font-size:14px;" id="res-ua-tot">75.7 UA</span></div>
+        <div style="margin-top:8px;padding-top:6px;border-top:1px solid #ccc;"><div style="font-size:11px;color:#666;margin-bottom:2px;">Superficie pastoreo: 72 ha</div><div style="font-size:13px;font-weight:700;color:var(--vp);" id="res-ca">▶ Carga Animal: 1.05 UA/ha</div></div>
       </div>
     </div>
     <div class="sec">
       <button class="btn bp" onclick="showT('📤 ElCanelo_ProcesamientoInfo_2025-07-15.xlsx generado')">📤 &nbsp;Exportar Excel</button>
-      <div style="font-size:11px;color:#888;text-align:center;margin-top:6px;">Formato: NombrePredio_ProcesamientoInfo_YYYY-MM-DD · Compatible Piloto v5</div>
+      <div style="font-size:11px;color:#888;text-align:center;margin-top:6px;">NombrePredio_ProcesamientoInfo_YYYY-MM-DD · Piloto v5</div>
     </div>
   </div>
   <div class="bnav">
     <div class="ni" onclick="goTo('s-home')"><span class="ni-ic">🏠</span><span class="ni-lb">Inicio</span></div>
     <div class="ni active" onclick="goTo('s-resumen')"><span class="ni-ic">📊</span><span class="ni-lb">Resumen</span></div>
+    <div class="ni" onclick="openRQ()"><span class="ni-ic">⚡</span><span class="ni-lb">Registrar</span></div>
     <div class="ni" onclick="showT('📷 Galería')"><span class="ni-ic">📷</span><span class="ni-lb">Fotos</span></div>
     <div class="ni" onclick="showT('🔔 Alertas')"><span class="ni-ic">🔔</span><span class="ni-lb">Alertas</span></div>
   </div>
@@ -1022,65 +1048,32 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
 <div class="screen" id="s-weak-link">
   <div class="hdr"><span class="hdr-bk" onclick="goTo('s-home')">←</span><h2>🔗 Eslabones Débiles</h2></div>
   <div style="overflow-y:auto;padding-bottom:85px;">
-    <div style="padding:12px 18px;background:#FFF3E0;">
-      <div style="font-size:12px;color:#E65100;line-height:1.5;">
-        Registre los eslabones débiles identificados en el taller. Solo de registro — no tiene cálculos automáticos.</div>
-    </div>
+    <div style="padding:12px 18px;background:#FFF3E0;font-size:12px;color:#E65100;line-height:1.5;">Registre los eslabones débiles identificados en el taller.</div>
     <div class="sec">
       <div class="sec-t">➕ Nuevo Eslabón Débil</div>
-      <div class="f"><label>Rubro</label>
-        <select id="wl-rubro">
-          <option>🐄 Ganadería Bovina</option><option>🐑 Ganadería Ovina</option>
-          <option>🐖 Ganadería Porcina</option><option>🐐 Ganadería Caprina</option>
-          <option>🐔 Avicultura-Huevos</option><option>🌾 Forraje-Agrícola</option>
-          <option>🌽 Cultivos Anuales</option><option>🥬 Hortalizas</option>
-          <option>🍎 Frutales</option><option>🏕️ Turismo</option>
-          <option>🍯 Apicultura</option><option>Otro</option>
-        </select></div>
-      <div class="f"><label>Descripción del eslabón débil</label>
-        <textarea rows="3" id="wl-desc" placeholder="Ej: Alto costo de forraje conservado en invierno..."
-          style="background:var(--ami);border:2px solid #E8D44D;border-radius:10px;padding:10px;width:100%;font-size:13px;font-family:inherit;"></textarea></div>
-      <div class="f"><label>Costo relacionado</label>
-        <select id="wl-costo">
-          <option>Forraje conservado (heno, fardos)</option><option>Mano de obra</option>
-          <option>Veterinaria</option><option>Alimentación</option>
-          <option>Maquinaria</option><option>Transporte</option>
-          <option>Manejo de praderas</option><option>Otro</option>
-        </select></div>
+      <div class="f"><label>Rubro</label><select id="wl-rubro"><option>🐄 Ganadería Bovina</option><option>🐑 Ganadería Ovina</option><option>🐖 Ganadería Porcina</option><option>🐐 Ganadería Caprina</option><option>🐔 Avicultura-Huevos</option><option>🌾 Forraje-Agrícola</option><option>🌽 Cultivos Anuales</option><option>🥬 Hortalizas</option><option>🍎 Frutales</option><option>🏕️ Turismo</option><option>🍯 Apicultura</option><option>Otro</option></select></div>
+      <div class="f"><label>Descripción del eslabón débil</label><textarea rows="3" id="wl-desc" placeholder="Ej: Alto costo de forraje conservado en invierno..." style="background:var(--ami);border:2px solid #E8D44D;border-radius:10px;padding:10px;width:100%;font-size:13px;font-family:inherit;"></textarea></div>
+      <div class="f"><label>Costo relacionado</label><select id="wl-costo"><option>Forraje conservado (heno, fardos)</option><option>Mano de obra</option><option>Veterinaria</option><option>Alimentación</option><option>Maquinaria</option><option>Transporte</option><option>Manejo de praderas</option><option>Otro</option></select></div>
       <div class="f"><label>Prioridad</label>
         <div style="display:flex;gap:7px;margin-top:3px;">
-          <button class="btn bsm" id="wl-alta" onclick="setPrio('Alta')"
-            style="background:#FFEBEE;color:#C62828;border:2px solid #FFCDD2;flex:1;">🔴 Alta</button>
-          <button class="btn bsm" id="wl-media" onclick="setPrio('Media')"
-            style="background:#FFF8E1;color:#F57C00;border:2px solid #FFE082;flex:1;">🟡 Media</button>
-          <button class="btn bsm" id="wl-baja" onclick="setPrio('Baja')"
-            style="background:#F1F8E9;color:#558B2F;border:2px solid #C5E1A5;flex:1;">🟢 Baja</button>
+          <button class="btn bsm" id="wl-alta" onclick="setPrio('Alta')" style="background:#FFEBEE;color:#C62828;border:2px solid #FFCDD2;flex:1;">🔴 Alta</button>
+          <button class="btn bsm" id="wl-media" onclick="setPrio('Media')" style="background:#FFF8E1;color:#F57C00;border:2px solid #FFE082;flex:1;">🟡 Media</button>
+          <button class="btn bsm" id="wl-baja" onclick="setPrio('Baja')" style="background:#F1F8E9;color:#558B2F;border:2px solid #C5E1A5;flex:1;">🟢 Baja</button>
         </div></div>
-      <div class="f"><label>Taller N°</label>
-        <select><option>Taller 1</option><option>Taller 2</option><option>Taller 3</option></select></div>
-      <div class="f"><label>Notas adicionales</label>
-        <textarea rows="2" placeholder="Observaciones, montos de referencia, acuerdos del taller..."
-          style="background:var(--ami);border:2px solid #E8D44D;border-radius:10px;padding:10px;width:100%;font-size:13px;font-family:inherit;"></textarea></div>
+      <div class="f"><label>Taller N°</label><select><option>Taller 1</option><option>Taller 2</option><option>Taller 3</option></select></div>
       <button class="btn bp" onclick="addWL()">💾 &nbsp;Guardar Eslabón</button>
     </div>
     <div class="div"></div>
     <div class="sec">
       <div class="sec-t">📋 Eslabones Registrados</div>
       <div id="wl-list">
-        <!-- ejemplo estático -->
-        <div style="background:#fff;border:2px solid #FFCDD2;border-left:5px solid var(--rojo);
-          border-radius:13px;padding:13px;margin-bottom:9px;">
-          <div style="display:flex;justify-content:space-between;margin-bottom:5px;">
-            <span style="font-weight:700;font-size:13px;">🐄 Bovina</span>
-            <span class="bdg br">🔴 Alta</span>
-          </div>
-          <div style="font-size:12px;color:#555;margin-bottom:5px;">
-            Costo de forraje conservado muy alto en meses de invierno (jun-ago)</div>
-          <div style="font-size:11px;color:#888;">📎 Costo: Forraje conservado · Taller 1</div>
+        <div style="background:#fff;border:2px solid #FFCDD2;border-left:5px solid var(--rojo);border-radius:13px;padding:13px;margin-bottom:9px;">
+          <div style="display:flex;justify-content:space-between;margin-bottom:5px;"><span style="font-weight:700;font-size:13px;">🐄 Bovina</span><span class="bdg br">🔴 Alta</span></div>
+          <div style="font-size:12px;color:#555;margin-bottom:5px;">Costo de forraje conservado muy alto en meses de invierno</div>
+          <div style="font-size:11px;color:#888;">📎 Forraje conservado · Taller 1</div>
           <div style="display:flex;gap:7px;margin-top:8px;">
-            <button class="btn bo bsm" style="flex:1;font-size:11px;" onclick="showT('✏️ Editar eslabón')">✏️ Editar</button>
-            <button class="btn bsm" style="background:#FFEBEE;color:var(--rojo);border:2px solid #FFCDD2;flex:1;font-size:11px;"
-              onclick="showT('🗑️ Eslabón eliminado')">🗑️ Eliminar</button>
+            <button class="btn bo bsm" style="flex:1;font-size:11px;" onclick="showT('✏️ Editar')">✏️ Editar</button>
+            <button class="btn bsm" style="background:#FFEBEE;color:var(--rojo);border:2px solid #FFCDD2;flex:1;font-size:11px;" onclick="showT('🗑️ Eliminado')">🗑️ Eliminar</button>
           </div>
         </div>
       </div>
@@ -1088,126 +1081,63 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
   </div>
 </div>
 
-<!-- ═══ COMPARATIVO (Costos_Bovino_Simplificado) ═══ -->
+<!-- ═══ COMPARATIVO ═══ -->
 <div class="screen" id="s-comparativo">
   <div class="hdr"><span class="hdr-bk" onclick="goTo('s-home')">←</span><h2>⚖️ Comparativo de Sistemas</h2></div>
   <div style="overflow-y:auto;padding-bottom:85px;">
-    <div style="padding:12px 18px;background:#E8EAF6;">
-      <div style="font-size:12px;color:#283593;line-height:1.5;">
-        <strong>Balance de Viabilidad – Ganadería Bovina de Carne</strong><br>
-        Compare el sistema convencional vs. regenerativo. Fuente: Larraín et al. (2024), ODEPA.</div>
-    </div>
+    <div style="padding:12px 18px;background:#E8EAF6;font-size:12px;color:#283593;line-height:1.5;"><strong>Balance de Viabilidad – Ganadería Bovina</strong><br>Conv. vs. Regenerativo · ODEPA 2024</div>
     <div class="sec">
-      <div class="cmp" style="margin-bottom:10px;">
-        <div class="cmp-h" style="background:#E3F2FD;color:#1565C0;">🔵 Convencional</div>
-        <div class="cmp-h" style="background:var(--vpa);color:var(--vp);">🌿 Regenerativo</div>
-      </div>
+      <div class="cmp" style="margin-bottom:10px;"><div class="cmp-h" style="background:#E3F2FD;color:#1565C0;">🔵 Convencional</div><div class="cmp-h" style="background:var(--vpa);color:var(--vp);">🌿 Regenerativo</div></div>
       <div class="sec-t">1. Superficie y Rebaño</div>
-      <div class="f"><label>Superficie ganadera (ha)</label>
-        <div class="cmp">
-          <input type="number" id="cmp-ha-c" oninput="cCmp()" placeholder="ha Conv.">
-          <input type="number" id="cmp-ha-r" oninput="cCmp()" placeholder="ha Regen.">
-        </div></div>
-      <div class="f"><label>Vacas adultas (N°)</label>
-        <div class="cmp">
-          <input type="number" id="cmp-vc" oninput="cCmp()" placeholder="Vacas Conv.">
-          <input type="number" id="cmp-vr" oninput="cCmp()" placeholder="Vacas Regen.">
-        </div></div>
-      <div class="f"><label>Terneros destetados (cab./año)</label>
-        <div class="cmp">
-          <input type="number" id="cmp-tc" oninput="cCmp()" placeholder="Terneros Conv.">
-          <input type="number" id="cmp-tr" oninput="cCmp()" placeholder="Terneros Regen.">
-        </div></div>
-      <div class="f"><label>Kg totales vendidos (kg/año)</label>
-        <div class="cmp">
-          <input type="number" id="cmp-kgc" oninput="cCmp()" placeholder="Kg Conv.">
-          <input type="number" id="cmp-kgr" oninput="cCmp()" placeholder="Kg Regen.">
-        </div></div>
+      <div class="f"><label>Superficie ganadera (ha)</label><div class="cmp"><input type="number" id="cmp-ha-c" oninput="cCmp()" placeholder="ha Conv."><input type="number" id="cmp-ha-r" oninput="cCmp()" placeholder="ha Regen."></div></div>
+      <div class="f"><label>Vacas adultas (N°)</label><div class="cmp"><input type="number" id="cmp-vc" oninput="cCmp()" placeholder="Conv."><input type="number" id="cmp-vr" oninput="cCmp()" placeholder="Regen."></div></div>
+      <div class="f"><label>Terneros destetados</label><div class="cmp"><input type="number" id="cmp-tc" oninput="cCmp()" placeholder="Conv."><input type="number" id="cmp-tr" oninput="cCmp()" placeholder="Regen."></div></div>
+      <div class="f"><label>Kg vendidos / año</label><div class="cmp"><input type="number" id="cmp-kgc" oninput="cCmp()" placeholder="Conv."><input type="number" id="cmp-kgr" oninput="cCmp()" placeholder="Regen."></div></div>
     </div>
     <div class="div"></div>
     <div class="sec">
-      <div class="sec-t">2. Ingresos Brutos ($)</div>
-      <div class="f"><label>Venta de terneros al destete</label>
-        <div class="cmp">
-          <input type="number" id="cmp-ic" oninput="cCmp()" placeholder="$ Conv.">
-          <input type="number" id="cmp-ir" oninput="cCmp()" placeholder="$ Regen.">
-        </div></div>
-      <div class="f"><label>Venta de animales de descarte</label>
-        <div class="cmp">
-          <input type="number" id="cmp-dc" oninput="cCmp()" placeholder="$ Conv.">
-          <input type="number" id="cmp-dr" oninput="cCmp()" placeholder="$ Regen.">
-        </div></div>
-      <div class="f"><label>Subsidios / bonos / otros</label>
-        <div class="cmp">
-          <input type="number" id="cmp-sc" oninput="cCmp()" placeholder="$ Conv.">
-          <input type="number" id="cmp-sr" oninput="cCmp()" placeholder="$ Regen.">
-        </div></div>
+      <div class="sec-t">2. Ingresos</div>
+      <div class="f"><label>Venta terneros al destete</label><div class="cmp"><input type="number" id="cmp-ic" oninput="cCmp()" placeholder="$$"><input type="number" id="cmp-ir" oninput="cCmp()" placeholder="$$"></div></div>
+      <div class="f"><label>Venta descarte</label><div class="cmp"><input type="number" id="cmp-dc" oninput="cCmp()" placeholder="$$"><input type="number" id="cmp-dr" oninput="cCmp()" placeholder="$$"></div></div>
+      <div class="f"><label>Subsidios / bonos</label><div class="cmp"><input type="number" id="cmp-sc" oninput="cCmp()" placeholder="$$"><input type="number" id="cmp-sr" oninput="cCmp()" placeholder="$$"></div></div>
     </div>
     <div class="div"></div>
     <div class="sec">
-      <div class="sec-t">3. Costos Directos ($)</div>
-      <div class="f"><label>Mano de obra (manejo rebaño, partos, praderas)</label>
-        <div class="cmp">
-          <input type="number" id="cmp-moc" oninput="cCmp()" placeholder="$ Conv.">
-          <input type="number" id="cmp-mor" oninput="cCmp()" placeholder="$ Regen.">
-        </div></div>
-      <div class="f"><label>Maquinaria y servicios (forraje, fletes)</label>
-        <div class="cmp">
-          <input type="number" id="cmp-mac" oninput="cCmp()" placeholder="$ Conv.">
-          <input type="number" id="cmp-mar" oninput="cCmp()" placeholder="$ Regen.">
-        </div></div>
-      <div class="f"><label>Insumos sanitarios y reproductivos</label>
-        <div class="cmp">
-          <input type="number" id="cmp-sacc" oninput="cCmp()" placeholder="$ Conv.">
-          <input type="number" id="cmp-sacr" oninput="cCmp()" placeholder="$ Regen.">
-        </div></div>
-      <div class="f"><label>Alimentación (pradera, fardos, concentrados)</label>
-        <div class="cmp">
-          <input type="number" id="cmp-alc" oninput="cCmp()" placeholder="$ Conv.">
-          <input type="number" id="cmp-alr" oninput="cCmp()" placeholder="$ Regen.">
-        </div></div>
-      <div class="f"><label>Manejo de praderas (fertilización, encalado)</label>
-        <div class="cmp">
-          <input type="number" id="cmp-prc" oninput="cCmp()" placeholder="$ Conv.">
-          <input type="number" id="cmp-prr" oninput="cCmp()" placeholder="$ Regen.">
-        </div></div>
+      <div class="sec-t">3. Costos Directos</div>
+      <div class="f"><label>Mano de obra</label><div class="cmp"><input type="number" id="cmp-moc" oninput="cCmp()" placeholder="$$"><input type="number" id="cmp-mor" oninput="cCmp()" placeholder="$$"></div></div>
+      <div class="f"><label>Maquinaria</label><div class="cmp"><input type="number" id="cmp-mac" oninput="cCmp()" placeholder="$$"><input type="number" id="cmp-mar" oninput="cCmp()" placeholder="$$"></div></div>
+      <div class="f"><label>Insumos sanitarios</label><div class="cmp"><input type="number" id="cmp-sacc" oninput="cCmp()" placeholder="$$"><input type="number" id="cmp-sacr" oninput="cCmp()" placeholder="$$"></div></div>
+      <div class="f"><label>Alimentación</label><div class="cmp"><input type="number" id="cmp-alc" oninput="cCmp()" placeholder="$$"><input type="number" id="cmp-alr" oninput="cCmp()" placeholder="$$"></div></div>
+      <div class="f"><label>Manejo de praderas</label><div class="cmp"><input type="number" id="cmp-prc" oninput="cCmp()" placeholder="$$"><input type="number" id="cmp-prr" oninput="cCmp()" placeholder="$$"></div></div>
     </div>
     <div class="div"></div>
     <div class="sec">
-      <div class="sec-t">4. Costos Indirectos ($)</div>
-      <div class="al ali"><span class="al-ic">ℹ️</span><div class="al-tx">En Manejo Holístico (Savory), los costos indirectos no se asignan a enterprises individuales.</div></div>
-      <div class="f"><label>Administración y gastos generales</label>
-        <div class="cmp">
-          <input type="number" id="cmp-adc" oninput="cCmp()" placeholder="$ Conv.">
-          <input type="number" id="cmp-adr" oninput="cCmp()" placeholder="$ Regen.">
-        </div></div>
-      <div class="f"><label>Compra de animales para reposición</label>
-        <div class="cmp">
-          <input type="number" id="cmp-repc" oninput="cCmp()" placeholder="$ Conv.">
-          <input type="number" id="cmp-repr" oninput="cCmp()" placeholder="$ Regen.">
-        </div></div>
+      <div class="sec-t">4. Costos Indirectos</div>
+      <div class="al ali"><span class="al-ic">ℹ️</span><div class="al-tx">En Manejo Holístico no se asignan a enterprises individuales.</div></div>
+      <div class="f"><label>Administración</label><div class="cmp"><input type="number" id="cmp-adc" oninput="cCmp()" placeholder="$$"><input type="number" id="cmp-adr" oninput="cCmp()" placeholder="$$"></div></div>
+      <div class="f"><label>Compra animales reposición</label><div class="cmp"><input type="number" id="cmp-repc" oninput="cCmp()" placeholder="$$"><input type="number" id="cmp-repr" oninput="cCmp()" placeholder="$$"></div></div>
     </div>
     <div class="div"></div>
     <div class="sec">
-      <div class="sec-t">📊 Resumen Comparativo — 14 Indicadores</div>
+      <div class="sec-t">📊 14 Indicadores</div>
       <div style="overflow-x:auto;margin:0 -18px;">
-        <table class="rt" style="min-width:340px;" id="cmp-table">
+        <table class="rt" style="min-width:340px;">
           <thead><tr><th>Indicador</th><th>Conv.</th><th>Regen.</th></tr></thead>
           <tbody>
             <tr><td>Superficie (ha)</td><td id="cr-ha-c">—</td><td id="cr-ha-r">—</td></tr>
             <tr><td>Vacas totales</td><td id="cr-vac-c">—</td><td id="cr-vac-r">—</td></tr>
             <tr><td>UA totales</td><td id="cr-ua-c">—</td><td id="cr-ua-r">—</td></tr>
-            <tr><td>Carga animal (UA/ha)</td><td id="cr-ca-c">—</td><td id="cr-ca-r">—</td></tr>
+            <tr><td>Carga (UA/ha)</td><td id="cr-ca-c">—</td><td id="cr-ca-r">—</td></tr>
             <tr><td>Terneros destetados</td><td id="cr-ter-c">—</td><td id="cr-ter-r">—</td></tr>
-            <tr><td>Kg vendidos / ha</td><td id="cr-kgha-c">—</td><td id="cr-kgha-r">—</td></tr>
-            <tr><td>Ingresos totales ($)</td><td id="cr-ing-c">—</td><td id="cr-ing-r">—</td></tr>
+            <tr><td>Kg/ha</td><td id="cr-kgha-c">—</td><td id="cr-kgha-r">—</td></tr>
+            <tr><td>Ingresos ($)</td><td id="cr-ing-c">—</td><td id="cr-ing-r">—</td></tr>
             <tr><td>Costos directos ($)</td><td id="cr-cd-c">—</td><td id="cr-cd-r">—</td></tr>
             <tr><td>Costos indirectos ($)</td><td id="cr-ci-c">—</td><td id="cr-ci-r">—</td></tr>
             <tr><td>Costo total ($)</td><td id="cr-ct-c">—</td><td id="cr-ct-r">—</td></tr>
-            <tr><td>Costo unitario ($/kg)</td><td id="cr-cu-c">—</td><td id="cr-cu-r">—</td></tr>
-            <tr><td>Margen bruto ($/kg)</td><td id="cr-mb-c">—</td><td id="cr-mb-r">—</td></tr>
-            <tr><td>Margen neto total ($)</td><td id="cr-mn-c">—</td><td id="cr-mn-r">—</td></tr>
-            <tr class="tot-r"><td>Margen neto / ha ($/ha)</td><td id="cr-mnh-c">—</td><td id="cr-mnh-r">—</td></tr>
+            <tr><td>Costo/kg</td><td id="cr-cu-c">—</td><td id="cr-cu-r">—</td></tr>
+            <tr><td>Margen bruto/kg</td><td id="cr-mb-c">—</td><td id="cr-mb-r">—</td></tr>
+            <tr><td>Margen neto ($)</td><td id="cr-mn-c">—</td><td id="cr-mn-r">—</td></tr>
+            <tr class="tot-r"><td>Margen/ha</td><td id="cr-mnh-c">—</td><td id="cr-mnh-r">—</td></tr>
           </tbody>
         </table>
       </div>
@@ -1216,15 +1146,13 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
   </div>
 </div>
 
-<!-- ═══ ESTUDIO DE MERCADO ═══ -->
+<!-- ═══ MERCADO ═══ -->
 <div class="screen" id="s-mercado">
   <div class="hdr"><span class="hdr-bk" onclick="goTo('s-home')">←</span><h2>🛒 Estudio de Mercado</h2></div>
   <div style="overflow-y:auto;padding-bottom:85px;">
-    <div style="padding:12px 18px;background:#E8F5E9;">
-      <div style="font-size:12px;color:var(--vp);line-height:1.5;">Registre los precios de referencia del mercado para comparar con sus precios de venta actuales.</div>
-    </div>
+    <div style="padding:12px 18px;background:#E8F5E9;font-size:12px;color:var(--vp);line-height:1.5;">Compare sus precios con referencias de mercado.</div>
     <div class="sec">
-      <div class="sec-t">💰 Precios de Referencia por Rubro</div>
+      <div class="sec-t">💰 Precios de Referencia</div>
       <div id="merc-rubro-sel" style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px;">
         <button class="btn bs bsm" onclick="showMercado('bovina')" style="font-size:11px;">🐄 Bovina</button>
         <button class="btn bs bsm" onclick="showMercado('ovina')" style="font-size:11px;">🐑 Ovina</button>
@@ -1232,39 +1160,206 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
         <button class="btn bs bsm" onclick="showMercado('forraje')" style="font-size:11px;">🌾 Forraje</button>
         <button class="btn bs bsm" onclick="showMercado('otros')" style="font-size:11px;">🌿 Otros</button>
       </div>
-      <div id="merc-content">
-        <div class="al ali"><span class="al-ic">💡</span><div class="al-tx">Seleccione un rubro arriba para ver y registrar precios de mercado.</div></div>
-      </div>
+      <div id="merc-content"><div class="al ali"><span class="al-ic">💡</span><div class="al-tx">Seleccione un rubro para ver precios de referencia.</div></div></div>
     </div>
     <div class="div"></div>
     <div class="sec">
       <div class="sec-t">📋 Mis Precios vs. Mercado</div>
-      <div class="f"><label>Rubro / Producto</label>
-        <select id="merc-rubro"><option>🐄 Bovina – Novillos ($/kg)</option><option>🐑 Ovina – Corderos ($/kg)</option><option>🐔 Huevos ($/docena)</option><option>🌾 Trigo ($/ qq)</option><option>Otro</option></select></div>
+      <div class="f"><label>Rubro / Producto</label><select id="merc-rubro"><option>🐄 Bovina – Novillos ($$/kg)</option><option>🐑 Ovina – Corderos ($$/kg)</option><option>🐔 Huevos ($$/docena)</option><option>🌾 Trigo ($$/ qq)</option><option>Otro</option></select></div>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
-        <div class="f"><label>Mi precio venta</label><input type="number" id="merc-mio" placeholder="CLP"></div>
-        <div class="f"><label>Precio mercado ref.</label><input type="number" id="merc-ref" placeholder="CLP"></div>
+        <div class="f"><label>Mi precio</label><input type="number" id="merc-mio" placeholder="CLP"></div>
+        <div class="f"><label>Precio mercado</label><input type="number" id="merc-ref" placeholder="CLP"></div>
       </div>
-      <div class="f"><label>Diferencia (mi precio − mercado)</label><div class="cv" id="merc-dif">—</div></div>
-      <div class="f"><label>Notas / Fuente de información</label>
-        <textarea rows="2" placeholder="Ej: Precio ODEPA semana 28, ferias locales..."
-          style="background:var(--ami);border:2px solid #E8D44D;border-radius:10px;padding:10px;width:100%;font-size:13px;font-family:inherit;"></textarea></div>
+      <div class="f"><label>Diferencia</label><div class="cv" id="merc-dif">—</div></div>
       <button class="btn bp" onclick="cMercDif()">💾 &nbsp;Registrar Precio</button>
     </div>
     <div class="div"></div>
     <div class="sec">
       <div class="sec-t">📊 Registros de Precios</div>
       <div style="background:#fff;border:2px solid var(--gb);border-radius:12px;padding:12px;margin-bottom:8px;">
-        <div style="display:flex;justify-content:space-between;margin-bottom:4px;">
-          <span style="font-weight:700;font-size:13px;">🐄 Bovina – Novillos</span>
-          <span class="bdg bg">+8,3%</span>
-        </div>
-        <div style="font-size:12px;color:#555;">Mi precio: $2.100/kg · Mercado: $1.940/kg</div>
+        <div style="display:flex;justify-content:space-between;margin-bottom:4px;"><span style="font-weight:700;font-size:13px;">🐄 Bovina – Novillos</span><span class="bdg bg">+8,3%</span></div>
+        <div style="font-size:12px;color:#555;">Mi precio: \$2.100/kg · Mercado: \$1.940/kg</div>
         <div style="font-size:11px;color:#888;margin-top:2px;">Fuente: ODEPA Jul 2025</div>
       </div>
     </div>
   </div>
 </div>
+
+<!-- ══════════════════════════════════════════════
+     ═══ REGISTRO RÁPIDO — NUEVA PANTALLA ═══
+══════════════════════════════════════════════ -->
+<div class="screen" id="s-rq">
+  <!-- Header -->
+  <div class="hdr">
+    <span class="hdr-bk" onclick="rqBack()">←</span>
+    <h2>⚡ Registro Rápido</h2>
+    <span style="font-size:11px;color:#B7E4C7;font-weight:600;" id="rq-step-lbl">Paso 1 de 4</span>
+  </div>
+
+  <!-- Step indicator bar -->
+  <div class="rq-step-bar">
+    <div class="rq-dot active" id="rq-d1">1</div>
+    <div class="rq-line" id="rq-l1"></div>
+    <div class="rq-dot" id="rq-d2">2</div>
+    <div class="rq-line" id="rq-l2"></div>
+    <div class="rq-dot" id="rq-d3">3</div>
+    <div class="rq-line" id="rq-l3"></div>
+    <div class="rq-dot" id="rq-d4">4</div>
+  </div>
+
+  <!-- ── PASO 1: Fecha + Tipo ── -->
+  <div id="rq-s1" style="overflow-y:auto;padding-bottom:80px;display:block;">
+    <div class="sec">
+      <div class="sec-t">📅 Fecha del registro</div>
+      <div class="al ali" style="margin-bottom:12px;">
+        <span class="al-ic">💡</span>
+        <div class="al-tx">La fecha determina en qué <strong>mes</strong> se guarda el dato automáticamente.</div>
+      </div>
+      <div class="f">
+        <label>Fecha</label>
+        <input type="date" id="rq-fecha" style="font-size:16px;font-weight:700;background:var(--ami);border:2px solid #E8D44D;border-radius:10px;padding:12px;width:100%;font-family:inherit;">
+      </div>
+      <div id="rq-fecha-preview" style="font-size:13px;color:var(--vp);font-weight:700;padding:6px 0;"></div>
+    </div>
+
+    <div class="div"></div>
+
+    <div class="sec">
+      <div class="sec-t">📂 Tipo de registro</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:8px;">
+        <button class="rq-type-btn" id="rq-t-ing" onclick="rqTipo('ing')">
+          <div style="font-size:32px;margin-bottom:6px;">💰</div>
+          <div class="rq-type-label" style="font-size:15px;font-weight:800;color:var(--gt);">Ingreso</div>
+          <div style="font-size:11px;color:#888;margin-top:3px;">Venta, subsidio, arriendo</div>
+        </button>
+        <button class="rq-type-btn" id="rq-t-cos" onclick="rqTipo('cos')">
+          <div style="font-size:32px;margin-bottom:6px;">📉</div>
+          <div class="rq-type-label" style="font-size:15px;font-weight:800;color:var(--gt);">Costo</div>
+          <div style="font-size:11px;color:#888;margin-top:3px;">Gasto, insumo, servicio</div>
+        </button>
+      </div>
+    </div>
+
+    <div style="position:sticky;bottom:0;background:#fff;padding:12px 18px;border-top:1px solid #eee;">
+      <button class="btn bp" onclick="rqNext()">Siguiente: Elegir rubro →</button>
+    </div>
+  </div>
+
+  <!-- ── PASO 2: Rubro ── -->
+  <div id="rq-s2" style="overflow-y:auto;padding-bottom:80px;display:none;">
+    <div class="sec">
+      <div class="sec-t">🌿 Seleccione el rubro</div>
+      <!-- Breadcrumb del paso 1 -->
+      <div id="rq-bc1" style="font-size:12px;color:#888;background:var(--gc);padding:8px 12px;border-radius:8px;margin-bottom:12px;"></div>
+      <div id="rq-rubro-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:8px;"></div>
+    </div>
+    <div style="position:sticky;bottom:0;background:#fff;padding:12px 18px;border-top:1px solid #eee;display:flex;gap:8px;">
+      <button class="btn bo" onclick="rqPrev()" style="flex:1;padding:13px;">← Atrás</button>
+      <button class="btn bp" onclick="rqNext()" style="flex:2;">Siguiente: Concepto →</button>
+    </div>
+  </div>
+
+  <!-- ── PASO 3: Concepto ── -->
+  <div id="rq-s3" style="overflow-y:auto;padding-bottom:80px;display:none;">
+    <div class="sec">
+      <div class="sec-t" id="rq-concepto-title">📋 Seleccione el concepto</div>
+      <div id="rq-bc2" style="font-size:12px;color:#888;background:var(--gc);padding:8px 12px;border-radius:8px;margin-bottom:12px;"></div>
+      <div id="rq-concepto-list"></div>
+    </div>
+    <div style="position:sticky;bottom:0;background:#fff;padding:12px 18px;border-top:1px solid #eee;display:flex;gap:8px;">
+      <button class="btn bo" onclick="rqPrev()" style="flex:1;padding:13px;">← Atrás</button>
+      <button class="btn bp" onclick="rqNext()" style="flex:2;">Siguiente: Monto →</button>
+    </div>
+  </div>
+
+  <!-- ── PASO 4: Monto + Foto + Nota ── -->
+  <div id="rq-s4" style="overflow-y:auto;padding-bottom:80px;display:none;">
+    <!-- Summary card -->
+    <div id="rq-summary" style="background:linear-gradient(135deg,#1B4332,#52B788);color:white;padding:16px 18px;">
+      <div style="font-size:10px;font-weight:600;opacity:.7;text-transform:uppercase;letter-spacing:.8px;margin-bottom:6px;">📍 Guardando en:</div>
+      <div style="font-size:15px;font-weight:800;" id="rq-sum-rubro">—</div>
+      <div style="font-size:12px;opacity:.8;margin-top:2px;" id="rq-sum-tipo">—</div>
+      <div style="font-size:11px;opacity:.7;margin-top:2px;" id="rq-sum-concepto">—</div>
+    </div>
+
+    <div class="sec">
+      <div class="sec-t">💰 Monto</div>
+      <div class="f">
+        <label>Ingrese el monto (CLP)</label>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span style="font-size:20px;font-weight:800;color:var(--gt);">$</span>
+          <input type="number" id="rq-monto"
+            style="flex:1;padding:14px;background:var(--ami);border:2px solid #E8D44D;border-radius:12px;font-size:26px;font-weight:800;color:var(--gt);font-family:inherit;"
+            placeholder="0" oninput="rqUpdateMonto()" min="0">
+        </div>
+        <div id="rq-monto-fmt" style="font-size:14px;color:var(--vp);font-weight:700;margin-top:5px;text-align:right;">—</div>
+      </div>
+    </div>
+
+    <div class="div"></div>
+
+    <div class="sec">
+      <div class="sec-t">📷 Evidencia (opcional)</div>
+      <div class="foto" onclick="rqFoto()" id="rq-foto-btn">
+        <div class="foto-th" id="rq-foto-th">📷</div>
+        <div class="foto-tx">
+          <strong id="rq-foto-lbl">Adjuntar boleta o comprobante</strong>
+          <span id="rq-foto-sub">Toca para tomar foto o subir archivo</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="div"></div>
+
+    <div class="sec">
+      <div class="sec-t">📝 Nota (opcional)</div>
+      <div class="f">
+        <textarea id="rq-nota" rows="3"
+          placeholder="Ej: Fardos x5, proveedor Agrícola del Sur, factura 1234..."
+          style="background:var(--ami);border:2px solid #E8D44D;border-radius:10px;padding:10px 12px;width:100%;font-size:13px;font-family:inherit;"></textarea>
+      </div>
+    </div>
+
+    <div style="position:sticky;bottom:0;background:#fff;padding:12px 18px;border-top:1px solid #eee;display:flex;gap:8px;">
+      <button class="btn bo" onclick="rqPrev()" style="flex:1;padding:13px;">← Atrás</button>
+      <button class="btn" onclick="rqSave()" style="flex:2;background:linear-gradient(135deg,#1B4332,#52B788);color:#fff;font-size:15px;font-weight:800;border-radius:13px;padding:14px;border:none;cursor:pointer;font-family:inherit;">
+        ✅ &nbsp;Guardar Registro
+      </button>
+    </div>
+  </div>
+
+  <!-- ── PASO 5: Confirmación ── -->
+  <div id="rq-s5" style="overflow-y:auto;padding-bottom:80px;display:none;">
+    <div style="padding:28px 20px;text-align:center;">
+      <div class="rq-success-icon">✅</div>
+      <div style="font-size:22px;font-weight:900;color:var(--vp);">¡Guardado con éxito!</div>
+      <div style="font-size:13px;color:#888;margin-top:4px;">El resumen mensual y anual se actualizó automáticamente</div>
+    </div>
+
+    <!-- Detalle del registro guardado -->
+    <div class="sec" style="padding-top:0;">
+      <div id="rq-success-card" style="background:var(--vto);border:2px solid var(--vl);border-radius:14px;padding:16px;"></div>
+    </div>
+
+    <!-- Flujo visual de adónde fue -->
+    <div class="sec">
+      <div class="sec-t">🗂️ Ruta del dato guardado</div>
+      <div id="rq-ruta" style="display:flex;align-items:center;gap:4px;flex-wrap:wrap;padding:12px;background:var(--gc);border-radius:10px;font-size:12px;font-weight:600;"></div>
+    </div>
+
+    <!-- Log de registros del día -->
+    <div class="sec" id="rq-log-section" style="display:none;">
+      <div class="sec-t">📋 Registros de hoy (<span id="rq-log-count">0</span>)</div>
+      <div id="rq-log-list"></div>
+    </div>
+
+    <div style="position:sticky;bottom:0;background:#fff;padding:12px 18px;border-top:1px solid #eee;display:flex;gap:8px;">
+      <button class="btn bo" onclick="openRQ()" style="flex:1;font-size:13px;">⚡ Otro registro</button>
+      <button class="btn bp" onclick="goTo('s-home')" style="flex:2;">🏠 &nbsp;Volver al inicio</button>
+    </div>
+  </div>
+</div>
+<!-- ══ FIN REGISTRO RÁPIDO SCREEN ══ -->
 
 <!-- TOAST -->
 <div class="toast" id="toast"></div>
@@ -1276,97 +1371,56 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
 // DATOS
 // ══════════════════════
 const MESES = ['ENE','FEB','MAR','ABR','MAY','JUN','JUL','AGO','SEP','OCT','NOV','DIC'];
+const MESES_FULL = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
 const UA_BOV = [
-  {cat:'🐂 Toro',   n:2,  kg:520},
-  {cat:'🐄 Vaca',   n:42, kg:420},
-  {cat:'🐃 Novillo',n:18, kg:320},
-  {cat:'🐄 Novilla',n:10, kg:280},
-  {cat:'🐮 Ternero',n:24, kg:160},
-  {cat:'🐮 Ternera',n:20, kg:150}
+  {cat:'🐂 Toro',n:2,kg:520},{cat:'🐄 Vaca',n:42,kg:420},
+  {cat:'🐃 Novillo',n:18,kg:320},{cat:'🐄 Novilla',n:10,kg:280},
+  {cat:'🐮 Ternero',n:24,kg:160},{cat:'🐮 Ternera',n:20,kg:150}
 ];
 const UA_OVI = [
-  {cat:'🐏 Carnero', n:0,kg:70},
-  {cat:'🐑 Oveja',   n:0,kg:55},
-  {cat:'🐑 Borrego', n:0,kg:40},
-  {cat:'🐑 Borrega', n:0,kg:38},
-  {cat:'🐑 Cordero', n:0,kg:22},
-  {cat:'🐑 Cordera', n:0,kg:20}
+  {cat:'🐏 Carnero',n:0,kg:70},{cat:'🐑 Oveja',n:0,kg:55},
+  {cat:'🐑 Borrego',n:0,kg:40},{cat:'🐑 Borrega',n:0,kg:38},
+  {cat:'🐑 Cordero',n:0,kg:22},{cat:'🐑 Cordera',n:0,kg:20}
 ];
 const UA_POR = [
-  {cat:'🐗 Verraco',         n:0,kg:180},
-  {cat:'🐷 Cerda reproductora',n:0,kg:150},
-  {cat:'🐷 Cerdo(a) engorda', n:0,kg:90},
-  {cat:'🐽 Lechón',          n:0,kg:12}
+  {cat:'🐗 Verraco',n:0,kg:180},{cat:'🐷 Cerda reproductora',n:0,kg:150},
+  {cat:'🐷 Cerdo(a) engorda',n:0,kg:90},{cat:'🐽 Lechón',n:0,kg:12}
 ];
 const UA_CAP = [
-  {cat:'🐐 Macho cabrío', n:0,kg:65},
-  {cat:'🐐 Cabra',        n:0,kg:45},
-  {cat:'🐐 Cabrito',      n:0,kg:20},
-  {cat:'🐐 Cabrita',      n:0,kg:18}
+  {cat:'🐐 Macho cabrío',n:0,kg:65},{cat:'🐐 Cabra',n:0,kg:45},
+  {cat:'🐐 Cabrito',n:0,kg:20},{cat:'🐐 Cabrita',n:0,kg:18}
 ];
 
-// Rubros seleccionados
 let rubrosSel = ['bovina','forraje'];
 const RUBRO_DEF = {
-  bovina:    {n:'Ganadería Bovina',     em:'🐄', s:'s-bovina'},
-  ovina:     {n:'Ganadería Ovina',      em:'🐑', s:'s-ovina'},
-  porcina:   {n:'Ganadería Porcina',    em:'🐖', s:'s-porcina'},
-  caprina:   {n:'Ganadería Caprina',    em:'🐐', s:'s-caprina'},
-  avicultura:{n:'Avicultura-Huevos',    em:'🐔', s:'s-avicultura'},
-  turismo:   {n:'Turismo',              em:'🏕️', s:'s-turismo'},
-  forraje:   {n:'Forraje-Agrícola',     em:'🌾', s:'s-generic', gk:'forraje'},
-  cultivos:  {n:'Cultivos Anuales',     em:'🌽', s:'s-generic', gk:'cultivos'},
-  hortalizas:{n:'Hortalizas-Huerta',    em:'🥬', s:'s-generic', gk:'hortalizas'},
-  frutales:  {n:'Frutales',             em:'🍎', s:'s-generic', gk:'frutales'},
-  flores:    {n:'Flores',               em:'🌸', s:'s-generic', gk:'flores'},
-  vinedos:   {n:'Viñedos',              em:'🍇', s:'s-generic', gk:'vinedos'},
-  apicultura:{n:'Apicultura',           em:'🍯', s:'s-generic', gk:'apicultura'},
-  quesos:    {n:'Agroind. Quesos',      em:'🧀', s:'s-generic', gk:'quesos'},
-  lacteos:   {n:'Agroind. Lácteos',     em:'🥛', s:'s-generic', gk:'lacteos'},
-  lombricultura:{n:'Lombricultura',     em:'🪱', s:'s-generic', gk:'lombricultura'}
+  bovina:    {n:'Ganadería Bovina',  em:'🐄',s:'s-bovina'},
+  ovina:     {n:'Ganadería Ovina',   em:'🐑',s:'s-ovina'},
+  porcina:   {n:'Ganadería Porcina', em:'🐖',s:'s-porcina'},
+  caprina:   {n:'Ganadería Caprina', em:'🐐',s:'s-caprina'},
+  avicultura:{n:'Avicultura-Huevos', em:'🐔',s:'s-avicultura'},
+  turismo:   {n:'Turismo',           em:'🏕️',s:'s-turismo'},
+  forraje:   {n:'Forraje-Agrícola',  em:'🌾',s:'s-generic',gk:'forraje'},
+  cultivos:  {n:'Cultivos Anuales',  em:'🌽',s:'s-generic',gk:'cultivos'},
+  hortalizas:{n:'Hortalizas-Huerta', em:'🥬',s:'s-generic',gk:'hortalizas'},
+  frutales:  {n:'Frutales',          em:'🍎',s:'s-generic',gk:'frutales'},
+  flores:    {n:'Flores',            em:'🌸',s:'s-generic',gk:'flores'},
+  vinedos:   {n:'Viñedos',           em:'🍇',s:'s-generic',gk:'vinedos'},
+  apicultura:{n:'Apicultura',        em:'🍯',s:'s-generic',gk:'apicultura'},
+  quesos:    {n:'Agroind. Quesos',   em:'🧀',s:'s-generic',gk:'quesos'},
+  lacteos:   {n:'Agroind. Lácteos',  em:'🥛',s:'s-generic',gk:'lacteos'},
+  lombricultura:{n:'Lombricultura',  em:'🪱',s:'s-generic',gk:'lombricultura'}
 };
-
 const GENERIC_CFG = {
-  forraje:   {
-    i:['Venta de producto principal','Venta de subproducto','Venta directa (feria, redes)','Subsidios / bonos','Otro ingreso'],
-    c:['Semillas / plantines','Fertilizantes y enmiendas','Agroquímicos (fitosanitarios, control plagas)','Riego (agua, energía de bombeo)','Mano de Obra PAGADA','Maquinaria / arriendo de maquinaria','Transporte / flete / acopio','Otros costos operacionales']
-  },
-  cultivos:  {
-    i:['Venta de producto principal','Venta de subproducto','Venta directa','Subsidios / bonos','Otro ingreso'],
-    c:['Semillas / plantines','Fertilizantes y enmiendas','Agroquímicos','Riego','Mano de Obra PAGADA','Maquinaria / arriendo','Transporte / flete','Otros costos operacionales']
-  },
-  hortalizas:{
-    i:['Venta producto principal','Venta directa (feria, huerta)','Subsidios / bonos','Otro ingreso'],
-    c:['Semillas / plantines','Fertilizantes y enmiendas','Agroquímicos','Riego','Mano de Obra PAGADA','Embalaje y envases','Transporte / distribución','Otros costos operacionales']
-  },
-  frutales:  {
-    i:['Venta fruta fresca','Venta fruta proceso','Venta directa','Subsidios / bonos','Otro ingreso'],
-    c:['Fertilizantes y enmiendas','Agroquímicos (fitosanitarios, fungicidas)','Riego','Mano de Obra PAGADA','Maquinaria / contratistas cosecha','Embalaje','Transporte / flete','Otros costos operacionales']
-  },
-  flores:    {
-    i:['Venta flores frescas','Venta bouquets / arreglos','Venta directa (ferias, online)','Subsidios / bonos','Otro ingreso'],
-    c:['Semillas / bulbos / plantines','Fertilizantes','Agroquímicos','Riego','Mano de Obra PAGADA','Embalaje y materiales','Transporte / distribución','Otros costos operacionales']
-  },
-  vinedos:   {
-    i:['Venta de uva','Venta de vino','Venta directa (enoturismo)','Subsidios / bonos','Otro ingreso'],
-    c:['Insumos enológicos (levaduras, sulfitos)','Fertilizantes y enmiendas','Agroquímicos','Mano de Obra PAGADA','Maquinaria / arriendo vendimia','Embalaje (botellas, etiquetas)','Transporte / distribución','Otros costos operacionales']
-  },
-  apicultura:{
-    i:['Venta de miel','Venta de cera / propóleo / polen','Venta de núcleos / reinas','Subsidios / bonos','Otro ingreso'],
-    c:['Alimentación artificial (azúcar, sustitutos)','Insumos sanitarios (ácidos, medicamentos)','Materiales de colmenas (marcos, alzas)','Mano de Obra PAGADA','Embalaje (envases miel)','Transporte / traslado colmenas','Arriendo de sitios de apiario','Otros costos operacionales']
-  },
-  quesos:    {
-    i:['Venta de quesos (kg)','Venta de suero / subproductos','Venta directa (feria, local)','Subsidios / bonos','Otro ingreso'],
-    c:['Leche (materia prima) / costo oportunidad','Fermentos y cuajo','Sal, envases, embalaje','Energía (refrigeración, pasteurización)','Mano de Obra PAGADA','Materiales de limpieza y sanitización','Transporte / distribución','Otros costos operacionales']
-  },
-  lacteos:   {
-    i:['Venta de leche fluida','Venta de productos procesados (yogur, crema)','Venta directa','Subsidios / bonos','Otro ingreso'],
-    c:['Insumos de procesamiento (fermentos, envases)','Energía (refrigeración)','Mano de Obra PAGADA','Materiales de limpieza','Transporte / distribución','Certificaciones / habilitaciones','Otros costos operacionales']
-  },
-  lombricultura:{
-    i:['Venta de humus / lombricomposta (kg)','Venta de lombrices','Venta de lixiviado','Subsidios / bonos','Otro ingreso'],
-    c:['Materiales orgánicos (estiércol, restos)','Envases y embalaje','Mano de Obra PAGADA','Transporte / distribución','Otros costos operacionales']
-  }
+  forraje:{i:['Venta de producto principal','Venta de subproducto','Venta directa (feria, redes)','Subsidios / bonos','Otro ingreso'],c:['Semillas / plantines','Fertilizantes y enmiendas','Agroquímicos (fitosanitarios, control plagas)','Riego (agua, energía de bombeo)','Mano de Obra PAGADA','Maquinaria / arriendo de maquinaria','Transporte / flete / acopio','Otros costos operacionales']},
+  cultivos:{i:['Venta de producto principal','Venta de subproducto','Venta directa','Subsidios / bonos','Otro ingreso'],c:['Semillas / plantines','Fertilizantes y enmiendas','Agroquímicos','Riego','Mano de Obra PAGADA','Maquinaria / arriendo','Transporte / flete','Otros costos operacionales']},
+  hortalizas:{i:['Venta producto principal','Venta directa (feria, huerta)','Subsidios / bonos','Otro ingreso'],c:['Semillas / plantines','Fertilizantes y enmiendas','Agroquímicos','Riego','Mano de Obra PAGADA','Embalaje y envases','Transporte / distribución','Otros costos operacionales']},
+  frutales:{i:['Venta fruta fresca','Venta fruta proceso','Venta directa','Subsidios / bonos','Otro ingreso'],c:['Fertilizantes y enmiendas','Agroquímicos (fitosanitarios, fungicidas)','Riego','Mano de Obra PAGADA','Maquinaria / contratistas cosecha','Embalaje','Transporte / flete','Otros costos operacionales']},
+  flores:{i:['Venta flores frescas','Venta bouquets / arreglos','Venta directa (ferias, online)','Subsidios / bonos','Otro ingreso'],c:['Semillas / bulbos / plantines','Fertilizantes','Agroquímicos','Riego','Mano de Obra PAGADA','Embalaje y materiales','Transporte / distribución','Otros costos operacionales']},
+  vinedos:{i:['Venta de uva','Venta de vino','Venta directa (enoturismo)','Subsidios / bonos','Otro ingreso'],c:['Insumos enológicos (levaduras, sulfitos)','Fertilizantes y enmiendas','Agroquímicos','Mano de Obra PAGADA','Maquinaria / arriendo vendimia','Embalaje (botellas, etiquetas)','Transporte / distribución','Otros costos operacionales']},
+  apicultura:{i:['Venta de miel','Venta de cera / propóleo / polen','Venta de núcleos / reinas','Subsidios / bonos','Otro ingreso'],c:['Alimentación artificial (azúcar, sustitutos)','Insumos sanitarios (ácidos, medicamentos)','Materiales de colmenas (marcos, alzas)','Mano de Obra PAGADA','Embalaje (envases miel)','Transporte / traslado colmenas','Arriendo de sitios de apiario','Otros costos operacionales']},
+  quesos:{i:['Venta de quesos (kg)','Venta de suero / subproductos','Venta directa (feria, local)','Subsidios / bonos','Otro ingreso'],c:['Leche (materia prima) / costo oportunidad','Fermentos y cuajo','Sal, envases, embalaje','Energía (refrigeración, pasteurización)','Mano de Obra PAGADA','Materiales de limpieza y sanitización','Transporte / distribución','Otros costos operacionales']},
+  lacteos:{i:['Venta de leche fluida','Venta de productos procesados (yogur, crema)','Venta directa','Subsidios / bonos','Otro ingreso'],c:['Insumos de procesamiento (fermentos, envases)','Energía (refrigeración)','Mano de Obra PAGADA','Materiales de limpieza','Transporte / distribución','Certificaciones / habilitaciones','Otros costos operacionales']},
+  lombricultura:{i:['Venta de humus / lombricomposta (kg)','Venta de lombrices','Venta de lixiviado','Subsidios / bonos','Otro ingreso'],c:['Materiales orgánicos (estiércol, restos)','Envases y embalaje','Mano de Obra PAGADA','Transporte / distribución','Otros costos operacionales']}
 };
 
 let wlPrio = 'Media';
@@ -1376,98 +1430,83 @@ let currentGenKey = 'forraje';
 // NAVEGACIÓN
 // ══════════════════════
 function goTo(id) {
-  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
-  const t = document.getElementById(id);
-  if (t) { t.classList.add('active'); t.scrollTop = 0; }
-  if (id === 's-home') updateHome();
+  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+  const t=document.getElementById(id);
+  if(t){t.classList.add('active');t.scrollTop=0;}
+  if(id==='s-home') updateHome();
 }
 
 // ══════════════════════
 // TABS
 // ══════════════════════
-function swTab(el, contentId, navId) {
-  document.getElementById(navId).querySelectorAll('.tab')
-    .forEach(t => t.classList.remove('active'));
+function swTab(el,contentId,navId) {
+  document.getElementById(navId).querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
   el.classList.add('active');
-  const screen = el.closest('.screen');
-  screen.querySelectorAll('.tc, [id^="bov-"],[id^="ovi-"],[id^="por-"],[id^="cap-"],[id^="avi-"],[id^="tur-"],[id^="gen-"]')
-    .forEach(c => {
-      if (c.classList && c.style.display !== undefined &&
-          !c.classList.contains('tabs') &&
-          !c.classList.contains('tab') &&
-          !c.classList.contains('mes-w')) {
-        c.style.display = 'none';
-      }
-    });
-  // hide all tab contents in current screen
-  const allDivs = screen.querySelectorAll(':scope > div[id]');
-  allDivs.forEach(d => {
-    if (d.id !== 'bov-mes-w' && d.id !== 'ovi-mes-w' && d.id !== 'por-mes-w' &&
-        d.id !== 'cap-mes-w' && d.id !== 'avi-mes-w' && d.id !== 'tur-mes-w' &&
-        d.id !== 'gen-mes-w' && !d.classList.contains('tabs') &&
-        !d.classList.contains('mes-w') && !d.classList.contains('hdr') &&
-        !d.classList.contains('bnav') && !d.classList.contains('stk')) {
-      d.style.display = 'none';
+  const screen=el.closest('.screen');
+  const allDivs=screen.querySelectorAll(':scope > div[id]');
+  allDivs.forEach(d=>{
+    if(d.id!=='bov-mes-w'&&d.id!=='ovi-mes-w'&&d.id!=='por-mes-w'&&
+       d.id!=='cap-mes-w'&&d.id!=='avi-mes-w'&&d.id!=='tur-mes-w'&&
+       d.id!=='gen-mes-w'&&!d.classList.contains('tabs')&&
+       !d.classList.contains('mes-w')&&!d.classList.contains('hdr')&&
+       !d.classList.contains('bnav')&&!d.classList.contains('stk')){
+      d.style.display='none';
     }
   });
-  const c = document.getElementById(contentId);
-  if (c) c.style.display = 'block';
+  const c=document.getElementById(contentId);
+  if(c) c.style.display='block';
 }
 
 // ══════════════════════
 // MES SELECTOR
 // ══════════════════════
-function buildMes(selId, lblId) {
-  const sel = document.getElementById(selId);
-  if (!sel) return;
-  sel.innerHTML = MESES.map((m, i) =>
-    `<div class="mb${i===0?' active':''}" onclick="selMes(this,'${lblId}')">${m}<span class="dot"></span></div>`
+function buildMes(selId,lblId) {
+  const sel=document.getElementById(selId);
+  if(!sel) return;
+  sel.innerHTML=MESES.map((m,i)=>
+    `<div class="mb$${i===0?' active':''}" onclick="selMes(this,'$${lblId}')">${m}<span class="dot"></span></div>`
   ).join('');
 }
-
-function selMes(el, lblId) {
-  el.closest('.mes-s').querySelectorAll('.mb').forEach(b => b.classList.remove('active'));
+function selMes(el,lblId) {
+  el.closest('.mes-s').querySelectorAll('.mb').forEach(b=>b.classList.remove('active'));
   el.classList.add('active');
-  const idx = Array.from(el.closest('.mes-s').children).indexOf(el);
-  const lbl = document.getElementById(lblId);
-  if (lbl) lbl.textContent = `Mes: ${MESES[idx]} 2025`;
+  const idx=Array.from(el.closest('.mes-s').children).indexOf(el);
+  const lbl=document.getElementById(lblId);
+  if(lbl) lbl.textContent=`Mes: ${MESES[idx]} 2025`;
 }
 
 // ══════════════════════
 // UA TABLE
 // ══════════════════════
-function buildUATable(tbodyId, cats, prefix) {
-  const tbody = document.getElementById(tbodyId);
-  if (!tbody) return;
-  tbody.innerHTML = cats.map(c =>
+function buildUATable(tbodyId,cats,prefix) {
+  const tbody=document.getElementById(tbodyId);
+  if(!tbody) return;
+  tbody.innerHTML=cats.map(c=>
     `<tr>
       <td>${c.cat}</td>
-      <td><input type="number" value="${c.n||''}" min="0" oninput="calcUAGeneric('${tbodyId}','${prefix}')"></td>
-      <td><input type="number" value="${c.kg||''}" min="0" oninput="calcUAGeneric('${tbodyId}','${prefix}')"></td>
-      <td id="${tbodyId}-${c.cat.replace(/[^a-z]/gi,'').toLowerCase()}" style="font-weight:700;color:#1565C0;">${c.n&&c.kg?(c.n*c.kg/450).toFixed(1):'0.0'}</td>
+      <td><input type="number" value="$${c.n||''}" min="0" oninput="calcUAGeneric('$${tbodyId}','${prefix}')"></td>
+      <td><input type="number" value="$${c.kg||''}" min="0" oninput="calcUAGeneric('$${tbodyId}','${prefix}')"></td>
+      <td style="font-weight:700;color:#1565C0;">${c.n&&c.kg?(c.n*c.kg/450).toFixed(1):'0.0'}</td>
     </tr>`
-  ).join('') +
+  ).join('')+
   `<tr class="uat-tot"><td colspan="3">▶ TOTAL UA</td><td id="${prefix}-ua-tot">0.0</td></tr>`;
-  calcUAGeneric(tbodyId, prefix);
+  calcUAGeneric(tbodyId,prefix);
 }
-
-function calcUAGeneric(tbodyId, prefix) {
-  const tbody = document.getElementById(tbodyId);
-  if (!tbody) return;
-  let tot = 0;
-  tbody.querySelectorAll('tr:not(.uat-tot)').forEach(row => {
-    const ins = row.querySelectorAll('input');
-    if (ins.length >= 2) {
-      const n = parseFloat(ins[0].value||0);
-      const kg = parseFloat(ins[1].value||0);
-      const ua = n * kg / 450;
-      tot += ua;
-      const td = row.querySelector('td:last-child');
-      if (td) td.textContent = ua.toFixed(1);
+function calcUAGeneric(tbodyId,prefix) {
+  const tbody=document.getElementById(tbodyId);
+  if(!tbody) return;
+  let tot=0;
+  tbody.querySelectorAll('tr:not(.uat-tot)').forEach(row=>{
+    const ins=row.querySelectorAll('input');
+    if(ins.length>=2){
+      const n=parseFloat(ins[0].value||0),kg=parseFloat(ins[1].value||0);
+      const ua=n*kg/450; tot+=ua;
+      const td=row.querySelector('td:last-child');
+      if(td) td.textContent=ua.toFixed(1);
     }
   });
-  const totEl = document.getElementById(prefix+'-ua-tot');
-  if (totEl) totEl.textContent = tot.toFixed(1);
+  const totEl=document.getElementById(prefix+'-ua-tot');
+  if(totEl) totEl.textContent=tot.toFixed(1);
   return tot;
 }
 
@@ -1476,21 +1515,16 @@ function calcUAGeneric(tbodyId, prefix) {
 // ══════════════════════
 function tChk(el) {
   el.classList.toggle('sel');
-  const box = el.querySelector('.chk-box');
-  box.textContent = el.classList.contains('sel') ? '✓' : '';
+  el.querySelector('.chk-box').textContent=el.classList.contains('sel')?'✓':'';
   updateRubrosCount();
 }
-
 function updateRubrosCount() {
-  rubrosSel = Array.from(document.querySelectorAll('.chk.sel'))
-    .map(el => el.getAttribute('data-r'));
-  const btn = document.getElementById('btn-confirmar');
-  if (btn) btn.textContent = `✅  Confirmar rubros (${rubrosSel.length})`;
+  rubrosSel=Array.from(document.querySelectorAll('.chk.sel')).map(el=>el.getAttribute('data-r'));
+  const btn=document.getElementById('btn-confirmar');
+  if(btn) btn.textContent=`✅  Confirmar rubros (${rubrosSel.length})`;
 }
-
 function confirmarRubros() {
-  rubrosSel = Array.from(document.querySelectorAll('.chk.sel'))
-    .map(el => el.getAttribute('data-r'));
+  rubrosSel=Array.from(document.querySelectorAll('.chk.sel')).map(el=>el.getAttribute('data-r'));
   updateHome();
   goTo('s-home');
 }
@@ -1499,437 +1533,322 @@ function confirmarRubros() {
 // HOME
 // ══════════════════════
 function updateHome() {
-  const nom = document.getElementById('p-predio');
-  const hNom = document.getElementById('h-nom');
-  if (nom && hNom) hNom.textContent = nom.value || 'Mi Predio';
-
-  const list = document.getElementById('h-rubros');
-  if (!list) return;
-  list.innerHTML = rubrosSel.map(key => {
-    const d = RUBRO_DEF[key];
-    if (!d) return '';
-    const hasData = key === 'bovina';
-    return `<div class="rc${hasData?' ok':''}" onclick="openRubro('${key}')">
+  const nom=document.getElementById('p-predio');
+  const hNom=document.getElementById('h-nom');
+  if(nom&&hNom) hNom.textContent=nom.value||'Mi Predio';
+  const list=document.getElementById('h-rubros');
+  if(!list) return;
+  list.innerHTML=rubrosSel.map(key=>{
+    const d=RUBRO_DEF[key];
+    if(!d) return '';
+    const hasData=key==='bovina';
+    return `<div class="rc$${hasData?' ok':''}" onclick="openRubro('$${key}')">
       <div class="rc-em">${d.em}</div>
       <div class="rc-inf">
         <div class="rc-nm">${d.n}</div>
-        <div class="rc-st">
-          <span class="bdg ${hasData?'bg':'bx'}">${hasData?'Con datos':'Sin datos'}</span>
-          &nbsp;${hasData?'8':'0'} de 12 meses
-        </div>
+        <div class="rc-st"><span class="bdg $${hasData?'bg':'bx'}">$${hasData?'Con datos':'Sin datos'}</span>&nbsp;${hasData?'8':'0'} de 12 meses</div>
         <div class="prog"><div class="prog-f" style="width:${hasData?'67':'0'}%"></div></div>
       </div>
       <div class="rc-ar">›</div>
     </div>`;
   }).join('');
-  document.getElementById('res-total-rubros').textContent = rubrosSel.length;
+  document.getElementById('res-total-rubros').textContent=rubrosSel.length;
 }
-
 function openRubro(key) {
-  const d = RUBRO_DEF[key];
-  if (!d) return;
-  if (d.s === 's-generic') {
-    openGeneric(d.gk);
-  } else {
-    goTo(d.s);
-  }
+  const d=RUBRO_DEF[key];
+  if(!d) return;
+  if(d.s==='s-generic') openGeneric(d.gk);
+  else goTo(d.s);
 }
 
 // ══════════════════════
 // GENERIC ENTERPRISE
 // ══════════════════════
 function openGeneric(key) {
-  currentGenKey = key;
-  const cfg = GENERIC_CFG[key];
-  const d = RUBRO_DEF[key];
-  if (!cfg || !d) return;
-
-  document.getElementById('gen-title').textContent = d.em + ' ' + d.n;
-
-  // Build income fields
-  const ingF = document.getElementById('gen-ing-fields');
-  ingF.innerHTML = cfg.i.map((lbl, i) =>
-    `<div class="f"><label>${lbl}</label><input type="number" id="gen-i${i+1}" oninput="cGen()" placeholder="$0"></div>`
+  currentGenKey=key;
+  const cfg=GENERIC_CFG[key];
+  const d=RUBRO_DEF[key];
+  if(!cfg||!d) return;
+  document.getElementById('gen-title').textContent=d.em+' '+d.n;
+  document.getElementById('gen-ing-fields').innerHTML=cfg.i.map((lbl,i)=>
+    `<div class="f"><label>$${lbl}</label><input type="number" id="gen-i$${i+1}" oninput="cGen()" placeholder="\$0"></div>`
   ).join('');
-
-  // Build cost fields
-  const cosF = document.getElementById('gen-cos-fields');
-  cosF.innerHTML = cfg.c.map((lbl, i) =>
-    `<div class="f"><label>${lbl}</label><input type="number" id="gen-c${i+1}" oninput="cGen()" placeholder="$0"></div>`
+  document.getElementById('gen-cos-fields').innerHTML=cfg.c.map((lbl,i)=>
+    `<div class="f"><label>$${lbl}</label><input type="number" id="gen-c$${i+1}" oninput="cGen()" placeholder="\$0"></div>`
   ).join('');
-
   goTo('s-generic');
+}
+
+// ══════════════════════
+// HELPERS
+// ══════════════════════
+function getNum(id){const el=document.getElementById(id);return el?parseFloat(el.value||0):0;}
+function setTxt(id,val){const el=document.getElementById(id);if(el) el.textContent=val;}
+function fmt(n){return '$ '+Math.round(n).toLocaleString('es-CL');}
+function fmtN(n){return Math.round(n).toLocaleString('es-CL');}
+function fmtK(n){
+  if(Math.abs(n)>=1e9) return '$'+(n/1e9).toFixed(2)+'B';
+  if(Math.abs(n)>=1e6) return '$'+(n/1e6).toFixed(1)+'M';
+  if(Math.abs(n)>=1e3) return '$'+(n/1e3).toFixed(0)+'K';
+  return '$'+n;
 }
 
 // ══════════════════════
 // CÁLCULOS BOVINA
 // ══════════════════════
-function getNum(id) {
-  const el = document.getElementById(id);
-  return el ? parseFloat(el.value||0) : 0;
-}
-function setTxt(id, val) {
-  const el = document.getElementById(id);
-  if (el) el.textContent = val;
-}
-function fmt(n) { return '$ ' + Math.round(n).toLocaleString('es-CL'); }
-function fmtN(n) { return Math.round(n).toLocaleString('es-CL'); }
-
 function cBov() {
-  const ing = [1,2,3,4,5,6,7,8,9].reduce((a,i) => a + getNum('bi'+i), 0);
-  const cos = [1,2,3,4,5,6,7,8,9].reduce((a,i) => a + getNum('bc'+i), 0);
-  const gp = ing - cos;
-  const gpm = ing > 0 ? (gp/ing*100).toFixed(1) : 0;
-  setTxt('b-ti', fmt(ing));
-  setTxt('b-tc', fmt(cos));
-  setTxt('b-gp', fmt(gp));
-  setTxt('b-gpm', `GP Margin: ${gpm}%`);
-  document.getElementById('h-ing').textContent = ing > 0 ? '$'+fmtK(ing) : '—';
-  document.getElementById('h-gp').textContent = ing > 0 ? gpm+'%' : '—';
-  document.getElementById('h-cos').textContent = cos > 0 ? '$'+fmtK(cos) : '—';
+  const ing=[1,2,3,4,5,6,7,8,9].reduce((a,i)=>a+getNum('bi'+i),0);
+  const cos=[1,2,3,4,5,6,7,8,9].reduce((a,i)=>a+getNum('bc'+i),0);
+  const gp=ing-cos;const gpm=ing>0?(gp/ing*100).toFixed(1):0;
+  setTxt('b-ti',fmt(ing));setTxt('b-tc',fmt(cos));
+  setTxt('b-gp',fmt(gp));setTxt('b-gpm',`GP Margin: ${gpm}%`);
+  document.getElementById('h-ing').textContent=ing>0?fmtK(ing):'—';
+  document.getElementById('h-gp').textContent=ing>0?gpm+'%':'—';
+  document.getElementById('h-cos').textContent=cos>0?fmtK(cos):'—';
 }
-
-function fmtK(n) {
-  if (n >= 1e6) return (n/1e6).toFixed(1)+'M';
-  if (n >= 1e3) return (n/1e3).toFixed(0)+'K';
-  return n.toString();
-}
-
 function cBovKPI() {
-  const ha = getNum('bk-ha');
-  const ing = [1,2,3,4,5,6,7,8,9].reduce((a,i) => a + getNum('bi'+i), 0);
-  const gp = ing - [1,2,3,4,5,6,7,8,9].reduce((a,i) => a + getNum('bc'+i), 0);
-  setTxt('bk-gpha', ha > 0 ? fmt(gp/ha)+' CLP/ha' : '—');
-  setTxt('bk-itha', ha > 0 ? fmt(ing/ha)+' CLP/ha' : '—');
+  const ha=getNum('bk-ha');
+  const ing=[1,2,3,4,5,6,7,8,9].reduce((a,i)=>a+getNum('bi'+i),0);
+  const gp=ing-[1,2,3,4,5,6,7,8,9].reduce((a,i)=>a+getNum('bc'+i),0);
+  setTxt('bk-gpha',ha>0?fmt(gp/ha)+' CLP/ha':'—');
+  setTxt('bk-itha',ha>0?fmt(ing/ha)+' CLP/ha':'—');
 }
-
 function cBovEq() {
-  const u = getNum('be-u');
-  const p = getNum('be-p');
-  const cos = [1,2,3,4,5,6,7,8,9].reduce((a,i) => a + getNum('bc'+i), 0);
-  const cu = u > 0 ? cos/u : 0;
-  setTxt('be-cu', u > 0 ? fmtN(cu)+' CLP/u' : '—');
-  setTxt('be-m', u > 0 && p > 0 ? fmtN(p-cu)+' CLP/u' : '—');
+  const u=getNum('be-u'),p=getNum('be-p');
+  const cos=[1,2,3,4,5,6,7,8,9].reduce((a,i)=>a+getNum('bc'+i),0);
+  const cu=u>0?cos/u:0;
+  setTxt('be-cu',u>0?fmtN(cu)+' CLP/u':'—');
+  setTxt('be-m',u>0&&p>0?fmtN(p-cu)+' CLP/u':'—');
 }
-
 function cBovMort() {
-  const n = getNum('bm-n');
-  const t = getNum('bm-t');
-  const cos = [1,2,3,4,5,6,7,8,9].reduce((a,i) => a + getNum('bc'+i), 0);
-  const ef = Math.round(n * (1 - t/100));
-  const muertos = n - ef;
-  const cosUnit = n > 0 ? cos/n : 0;
-  setTxt('bm-ef', n > 0 ? ef+' cab.' : '—');
-  setTxt('bm-co', n > 0 ? fmt(muertos * cosUnit) : '—');
+  const n=getNum('bm-n'),t=getNum('bm-t');
+  const cos=[1,2,3,4,5,6,7,8,9].reduce((a,i)=>a+getNum('bc'+i),0);
+  const ef=Math.round(n*(1-t/100));
+  const cosUnit=n>0?cos/n:0;
+  setTxt('bm-ef',n>0?ef+' cab.':'—');
+  setTxt('bm-co',n>0?fmt((n-ef)*cosUnit):'—');
 }
-
 function cBovCV() {
-  const ck = getNum('bcv-ck');
-  const cc = getNum('bcv-cc');
-  const vk = getNum('bcv-vk');
-  const vc = getNum('bcv-vc');
-  const dias = getNum('bcv-d');
-  const ingCom = [1,2,3,4,5,6,7,8,9].reduce((a,i) => a + getNum('bc'+i), 0);
-  const ingVen = [1,2,3,4,5,6,7,8,9].reduce((a,i) => a + getNum('bi'+i), 0);
-  const cap = getNum('bcap');
-  const gp = ingVen - ingCom;
-  const ppco = cc > 0 && ck > 0 ? ck/cc : 0;
-  const ppve = vc > 0 && vk > 0 ? ingVen/vk : 0;
-  const spr = ppve - ppco;
-  const gdp = cc > 0 && dias > 0 && ck > 0 && vk > 0 ? (vk/vc - ck/cc)/dias : 0;
-  const ha = getNum('bk-ha');
-  setTxt('bcv-ic', ingCom > 0 ? fmt(ingCom) : '—');
-  setTxt('bcv-pc', ppco > 0 ? fmtN(ppco)+' CLP/kg' : '—');
-  setTxt('bcv-pv', ppve > 0 ? fmtN(ppve)+' CLP/kg' : '—');
-  setTxt('bcv-sp', ppco > 0 && ppve > 0 ? fmtN(spr)+' CLP/kg' : '—');
-  setTxt('bcv-gdp', gdp > 0 ? gdp.toFixed(3)+' kg/día' : '—');
-  setTxt('bcv-ppco', cc > 0 && ck > 0 ? fmtN(ck/cc)+' kg/cab.' : '—');
-  setTxt('bcv-ppve', vc > 0 && vk > 0 ? fmtN(vk/vc)+' kg/cab.' : '—');
-  setTxt('broic', cap > 0 ? (gp/cap*100).toFixed(1)+'%' : '—');
-  const bkKgha = document.getElementById('bcv-kgha');
-  if (bkKgha) bkKgha.textContent = ha > 0 && vk > 0 ? fmtN(vk/ha)+' kg/ha' : '—';
+  const ck=getNum('bcv-ck'),cc=getNum('bcv-cc');
+  const vk=getNum('bcv-vk'),vc=getNum('bcv-vc');
+  const dias=getNum('bcv-d');
+  const ingCom=[1,2,3,4,5,6,7,8,9].reduce((a,i)=>a+getNum('bc'+i),0);
+  const ingVen=[1,2,3,4,5,6,7,8,9].reduce((a,i)=>a+getNum('bi'+i),0);
+  const cap=getNum('bcap');const gp=ingVen-ingCom;
+  const ppco=cc>0&&ck>0?ck/cc:0;
+  const ppve=vc>0&&vk>0?ingVen/vk:0;
+  const spr=ppve-ppco;
+  const gdp=cc>0&&dias>0&&ck>0&&vk>0?(vk/vc-ck/cc)/dias:0;
+  setTxt('bcv-ic',ingCom>0?fmt(ingCom):'—');
+  setTxt('bcv-pc',ppco>0?fmtN(ppco)+' CLP/kg':'—');
+  setTxt('bcv-pv',ppve>0?fmtN(ppve)+' CLP/kg':'—');
+  setTxt('bcv-sp',ppco>0&&ppve>0?fmtN(spr)+' CLP/kg':'—');
+  setTxt('bcv-gdp',gdp>0?gdp.toFixed(3)+' kg/día':'—');
+  setTxt('broic',cap>0?(gp/cap*100).toFixed(1)+'%':'—');
 }
-
 function cUABov() {
-  const tot = calcUAGeneric('bov-ua-body', 'bov');
-  const ha = parseFloat(document.getElementById('bov-ha')?.value||1);
-  const carga = ha > 0 ? (tot/ha).toFixed(2) : 0;
-  setTxt('bov-ca', carga+' UA/ha');
-  setTxt('bov-cas', tot.toFixed(1)+' UA ÷ '+ha+' ha');
-  document.getElementById('res-ua-bov').textContent = tot.toFixed(1)+' UA';
-  document.getElementById('res-ua-tot').textContent = tot.toFixed(1)+' UA';
-  document.getElementById('res-ca').textContent = '▶ Carga Animal: '+carga+' UA/ha';
+  const tot=calcUAGeneric('bov-ua-body','bov');
+  const ha=parseFloat(document.getElementById('bov-ha')?.value||1);
+  const carga=ha>0?(tot/ha).toFixed(2):0;
+  setTxt('bov-ca',carga+' UA/ha');
+  setTxt('bov-cas',tot.toFixed(1)+' UA ÷ '+ha+' ha');
+  setTxt('res-ua-bov',tot.toFixed(1)+' UA');
+  setTxt('res-ua-tot',tot.toFixed(1)+' UA');
+  setTxt('res-ca','▶ Carga Animal: '+carga+' UA/ha');
 }
 
 // ══════════════════════
-// CÁLCULOS OVINA
+// CÁLCULOS OTROS RUBROS
 // ══════════════════════
 function cOvi() {
-  const ing = [1,2,3,4,5].reduce((a,i) => a+getNum('oi'+i), 0);
-  const cos = [1,2,3,4,5,6].reduce((a,i) => a+getNum('oc'+i), 0);
-  const gp = ing - cos; const gpm = ing>0?(gp/ing*100).toFixed(1):0;
-  setTxt('ov-ti',fmt(ing)); setTxt('ov-tc',fmt(cos));
-  setTxt('ov-gp',fmt(gp)); setTxt('ov-gpm','GP Margin: '+gpm+'%');
+  const ing=[1,2,3,4,5].reduce((a,i)=>a+getNum('oi'+i),0);
+  const cos=[1,2,3,4,5,6].reduce((a,i)=>a+getNum('oc'+i),0);
+  const gp=ing-cos;const gpm=ing>0?(gp/ing*100).toFixed(1):0;
+  setTxt('ov-ti',fmt(ing));setTxt('ov-tc',fmt(cos));
+  setTxt('ov-gp',fmt(gp));setTxt('ov-gpm','GP Margin: '+gpm+'%');
 }
 function cUAOvi() {
-  const tot = calcUAGeneric('ovi-ua-body','ovi');
-  const ha = parseFloat(document.getElementById('ovi-ha')?.value||0);
-  setTxt('ovi-ca', ha>0?(tot/ha).toFixed(2)+' UA/ha':'— UA/ha');
-  setTxt('ovi-cas', ha>0?tot.toFixed(1)+' UA ÷ '+ha+' ha':'ingrese ha arriba');
+  const tot=calcUAGeneric('ovi-ua-body','ovi');
+  const ha=parseFloat(document.getElementById('ovi-ha')?.value||0);
+  setTxt('ovi-ca',ha>0?(tot/ha).toFixed(2)+' UA/ha':'— UA/ha');
+  setTxt('ovi-cas',ha>0?tot.toFixed(1)+' UA ÷ '+ha+' ha':'ingrese ha arriba');
 }
-
-// ══════════════════════
-// CÁLCULOS PORCINA
-// ══════════════════════
 function cPor() {
-  const ing = [1,2,3,4,5].reduce((a,i) => a+getNum('poi'+i), 0);
-  const cos = [1,2,3,4,5,6,7].reduce((a,i) => a+getNum('poc'+i), 0);
-  const gp = ing-cos; const gpm = ing>0?(gp/ing*100).toFixed(1):0;
-  setTxt('po-ti',fmt(ing)); setTxt('po-tc',fmt(cos));
-  setTxt('po-gp',fmt(gp)); setTxt('po-gpm','GP Margin: '+gpm+'%');
+  const ing=[1,2,3,4,5].reduce((a,i)=>a+getNum('poi'+i),0);
+  const cos=[1,2,3,4,5,6,7].reduce((a,i)=>a+getNum('poc'+i),0);
+  const gp=ing-cos;const gpm=ing>0?(gp/ing*100).toFixed(1):0;
+  setTxt('po-ti',fmt(ing));setTxt('po-tc',fmt(cos));
+  setTxt('po-gp',fmt(gp));setTxt('po-gpm','GP Margin: '+gpm+'%');
 }
-
-// ══════════════════════
-// CÁLCULOS CAPRINA
-// ══════════════════════
 function cCap() {
-  const ing = [1,2,3,4,5].reduce((a,i) => a+getNum('cai'+i), 0);
-  const cos = [1,2,3,4,5,6,7,8].reduce((a,i) => a+getNum('cac'+i), 0);
-  const gp = ing-cos; const gpm = ing>0?(gp/ing*100).toFixed(1):0;
-  setTxt('ca-ti',fmt(ing)); setTxt('ca-tc',fmt(cos));
-  setTxt('ca-gp',fmt(gp)); setTxt('ca-gpm','GP Margin: '+gpm+'%');
+  const ing=[1,2,3,4,5].reduce((a,i)=>a+getNum('cai'+i),0);
+  const cos=[1,2,3,4,5,6,7,8].reduce((a,i)=>a+getNum('cac'+i),0);
+  const gp=ing-cos;const gpm=ing>0?(gp/ing*100).toFixed(1):0;
+  setTxt('ca-ti',fmt(ing));setTxt('ca-tc',fmt(cos));
+  setTxt('ca-gp',fmt(gp));setTxt('ca-gpm','GP Margin: '+gpm+'%');
 }
 function cUACap() {
-  const tot = calcUAGeneric('cap-ua-body','cap');
-  const ha = parseFloat(document.getElementById('cap-ha')?.value||0);
-  setTxt('cap-ca', ha>0?(tot/ha).toFixed(2)+' UA/ha':'— UA/ha');
-  setTxt('cap-cas', ha>0?tot.toFixed(1)+' UA ÷ '+ha+' ha':'ingrese ha');
+  const tot=calcUAGeneric('cap-ua-body','cap');
+  const ha=parseFloat(document.getElementById('cap-ha')?.value||0);
+  setTxt('cap-ca',ha>0?(tot/ha).toFixed(2)+' UA/ha':'— UA/ha');
+  setTxt('cap-cas',ha>0?tot.toFixed(1)+' UA ÷ '+ha+' ha':'ingrese ha');
 }
-
-// ══════════════════════
-// CÁLCULOS AVICULTURA
-// ══════════════════════
 function cAvi() {
-  const ing = [1,2,3,4,5].reduce((a,i) => a+getNum('avi'+i), 0);
-  const cos = [1,2,3,4,5,6,7,8].reduce((a,i) => a+getNum('avc'+i), 0);
-  const gp = ing-cos; const gpm = ing>0?(gp/ing*100).toFixed(1):0;
-  setTxt('av-ti',fmt(ing)); setTxt('av-tc',fmt(cos));
-  setTxt('av-gp',fmt(gp)); setTxt('av-gpm','GP Margin: '+gpm+'%');
+  const ing=[1,2,3,4,5].reduce((a,i)=>a+getNum('avi'+i),0);
+  const cos=[1,2,3,4,5,6,7,8].reduce((a,i)=>a+getNum('avc'+i),0);
+  const gp=ing-cos;const gpm=ing>0?(gp/ing*100).toFixed(1):0;
+  setTxt('av-ti',fmt(ing));setTxt('av-tc',fmt(cos));
+  setTxt('av-gp',fmt(gp));setTxt('av-gpm','GP Margin: '+gpm+'%');
 }
 function cAviInd() {
-  const u = getNum('avi-docenas'); const p = getNum('avi-precio');
-  const cos = [1,2,3,4,5,6,7,8].reduce((a,i) => a+getNum('avc'+i), 0);
-  setTxt('avi-gpup', u>0?fmt((getNum('avi1')-cos)/Math.max(getNum('avi-base'),1))+'/up':'—');
+  const cos=[1,2,3,4,5,6,7,8].reduce((a,i)=>a+getNum('avc'+i),0);
+  const base=Math.max(getNum('avi-base'),1);
+  setTxt('avi-gpup',(getNum('avi1')-cos)>0?fmt((getNum('avi1')-cos)/base)+'/up':'—');
 }
 function cAviEq() {
-  const u = getNum('ave-u'); const p = getNum('ave-p');
-  const cos = [1,2,3,4,5,6,7,8].reduce((a,i) => a+getNum('avc'+i), 0);
-  const cu = u>0?cos/u:0;
-  setTxt('ave-cu', u>0?fmtN(cu)+' CLP/u':'—');
-  setTxt('ave-m', u>0&&p>0?fmtN(p-cu)+' CLP/u':'—');
+  const u=getNum('ave-u'),p=getNum('ave-p');
+  const cos=[1,2,3,4,5,6,7,8].reduce((a,i)=>a+getNum('avc'+i),0);
+  const cu=u>0?cos/u:0;
+  setTxt('ave-cu',u>0?fmtN(cu)+' CLP/u':'—');
+  setTxt('ave-m',u>0&&p>0?fmtN(p-cu)+' CLP/u':'—');
 }
-
-// ══════════════════════
-// CÁLCULOS TURISMO
-// ══════════════════════
 function cTur() {
-  const ing = [1,2,3,4,5].reduce((a,i) => a+getNum('ti'+i), 0);
-  const cos = [1,2,3,4,5,6].reduce((a,i) => a+getNum('tc'+i), 0);
-  const gp = ing-cos; const gpm = ing>0?(gp/ing*100).toFixed(1):0;
-  setTxt('tu-ti',fmt(ing)); setTxt('tu-tc',fmt(cos));
-  setTxt('tu-gp',fmt(gp)); setTxt('tu-gpm','GP Margin: '+gpm+'%');
+  const ing=[1,2,3,4,5].reduce((a,i)=>a+getNum('ti'+i),0);
+  const cos=[1,2,3,4,5,6].reduce((a,i)=>a+getNum('tc'+i),0);
+  const gp=ing-cos;const gpm=ing>0?(gp/ing*100).toFixed(1):0;
+  setTxt('tu-ti',fmt(ing));setTxt('tu-tc',fmt(cos));
+  setTxt('tu-gp',fmt(gp));setTxt('tu-gpm','GP Margin: '+gpm+'%');
 }
 function cTurEq() {
-  const u = getNum('tu-uni'); const p = getNum('tu-pvu');
-  const cos = [1,2,3,4,5,6].reduce((a,i) => a+getNum('tc'+i), 0);
-  const cu = u>0?cos/u:0;
-  setTxt('tu-cdu', u>0?fmtN(cu)+' CLP/u':'—');
-  setTxt('tu-mpu', u>0&&p>0?fmtN(p-cu)+' CLP/u':'—');
+  const u=getNum('tu-uni'),p=getNum('tu-pvu');const cos=[1,2,3,4,5,6].reduce((a,i)=>a+getNum('tc'+i),0);
+  const cu=u>0?cos/u:0;
+  setTxt('tu-cdu',u>0?fmtN(cu)+' CLP/u':'—');
+  setTxt('tu-mpu',u>0&&p>0?fmtN(p-cu)+' CLP/u':'—');
 }
-
-// ══════════════════════
-// CÁLCULOS GENÉRICO
-// ══════════════════════
 function cGen() {
-  const cfg = GENERIC_CFG[currentGenKey];
-  if (!cfg) return;
-  let ing = 0; for(let i=1;i<=cfg.i.length;i++) ing += getNum('gen-i'+i);
-  let cos = 0; for(let i=1;i<=cfg.c.length;i++) cos += getNum('gen-c'+i);
-  const gp = ing-cos; const gpm = ing>0?(gp/ing*100).toFixed(1):0;
-  setTxt('gen-ti',fmt(ing)); setTxt('gen-tc',fmt(cos));
-  setTxt('gen-gp',fmt(gp)); setTxt('gen-gpm','GP Margin: '+gpm+'%');
+  const cfg=GENERIC_CFG[currentGenKey];
+  if(!cfg) return;
+  let ing=0;for(let i=1;i<=cfg.i.length;i++) ing+=getNum('gen-i'+i);
+  let cos=0;for(let i=1;i<=cfg.c.length;i++) cos+=getNum('gen-c'+i);
+  const gp=ing-cos;const gpm=ing>0?(gp/ing*100).toFixed(1):0;
+  setTxt('gen-ti',fmt(ing));setTxt('gen-tc',fmt(cos));
+  setTxt('gen-gp',fmt(gp));setTxt('gen-gpm','GP Margin: '+gpm+'%');
 }
 function cGenInd() {
-  const ha = getNum('gen-ha');
-  const cfg = GENERIC_CFG[currentGenKey];
-  let gp = 0;
-  if (cfg) {
-    let ing = 0; for(let i=1;i<=cfg.i.length;i++) ing += getNum('gen-i'+i);
-    let cos = 0; for(let i=1;i<=cfg.c.length;i++) cos += getNum('gen-c'+i);
-    gp = ing - cos;
+  const ha=getNum('gen-ha');
+  const cfg=GENERIC_CFG[currentGenKey];
+  let gp=0;
+  if(cfg){
+    let ing=0;for(let i=1;i<=cfg.i.length;i++) ing+=getNum('gen-i'+i);
+    let cos=0;for(let i=1;i<=cfg.c.length;i++) cos+=getNum('gen-c'+i);
+    gp=ing-cos;
   }
-  setTxt('gen-gpha', ha>0?fmt(gp/ha)+' CLP/ha':'—');
+  setTxt('gen-gpha',ha>0?fmt(gp/ha)+' CLP/ha':'—');
 }
 function cGenEq() {
-  const u = getNum('gen-eu'); const p = getNum('gen-ep');
-  const cfg = GENERIC_CFG[currentGenKey];
-  let cos = 0;
-  if (cfg) for(let i=1;i<=cfg.c.length;i++) cos += getNum('gen-c'+i);
-  const cu = u>0?cos/u:0;
-  setTxt('gen-ecu', u>0?fmtN(cu)+' CLP/u':'—');
-  setTxt('gen-em', u>0&&p>0?fmtN(p-cu)+' CLP/u':'—');
+  const u=getNum('gen-eu'),p=getNum('gen-ep');
+  const cfg=GENERIC_CFG[currentGenKey];
+  let cos=0;
+  if(cfg) for(let i=1;i<=cfg.c.length;i++) cos+=getNum('gen-c'+i);
+  const cu=u>0?cos/u:0;
+  setTxt('gen-ecu',u>0?fmtN(cu)+' CLP/u':'—');
+  setTxt('gen-em',u>0&&p>0?fmtN(p-cu)+' CLP/u':'—');
 }
-
-// ══════════════════════
-// COSTOS FIJOS
-// ══════════════════════
 function cCF() {
-  let tot = 0;
-  for(let i=1;i<=13;i++) tot += getNum('cf'+i);
-  setTxt('cf-tot', fmt(tot));
+  let tot=0;
+  for(let i=1;i<=13;i++) tot+=getNum('cf'+i);
+  setTxt('cf-tot',fmt(tot));
 }
-
-// ══════════════════════
-// COMPARATIVO
-// ══════════════════════
 function cCmp() {
-  const f = (ids) => ids.reduce((a,id) => a+getNum(id), 0);
-  // Conv
-  const haC = getNum('cmp-ha-c');
-  const ingC = f(['cmp-ic','cmp-dc','cmp-sc']);
-  const cdC  = f(['cmp-moc','cmp-mac','cmp-sacc','cmp-alc','cmp-prc']);
-  const ciC  = f(['cmp-adc','cmp-repc']);
-  const kgC  = getNum('cmp-kgc');
-  const vcC  = getNum('cmp-vc');
-  // Regen
-  const haR = getNum('cmp-ha-r');
-  const ingR = f(['cmp-ir','cmp-dr','cmp-sr']);
-  const cdR  = f(['cmp-mor','cmp-mar','cmp-sacr','cmp-alr','cmp-prr']);
-  const ciR  = f(['cmp-adr','cmp-repr']);
-  const kgR  = getNum('cmp-kgr');
-  const vcR  = getNum('cmp-vr');
-
-  const calc = (ing,cd,ci,ha,kg,vc,kgT) => {
-    const ct = cd+ci;
-    const cukg = kgT>0?ct/kgT:0;
-    const mbkg = kgT>0?(ing-cd)/kgT:0;
-    const mn = ing-ct;
-    const mnha = ha>0?mn/ha:0;
-    // UA approx: vacas*1 + vaquillas*0.7 + terneros*0.5
-    const ua = vc * 1.15;
-    const ca = ha>0?ua/ha:0;
-    const kgha = ha>0?kgT/ha:0;
-    return {ha,vc,ua,ca,vc:vc,kgha,ing,cd,ci,ct,cukg,mbkg,mn,mnha};
+  const f=(ids)=>ids.reduce((a,id)=>a+getNum(id),0);
+  const haC=getNum('cmp-ha-c'),ingC=f(['cmp-ic','cmp-dc','cmp-sc']);
+  const cdC=f(['cmp-moc','cmp-mac','cmp-sacc','cmp-alc','cmp-prc']);
+  const ciC=f(['cmp-adc','cmp-repc']),kgC=getNum('cmp-kgc'),vcC=getNum('cmp-vc');
+  const haR=getNum('cmp-ha-r'),ingR=f(['cmp-ir','cmp-dr','cmp-sr']);
+  const cdR=f(['cmp-mor','cmp-mar','cmp-sacr','cmp-alr','cmp-prr']);
+  const ciR=f(['cmp-adr','cmp-repr']),kgR=getNum('cmp-kgr'),vcR=getNum('cmp-vr');
+  const calc=(ing,cd,ci,ha,kg,vc,kgT)=>{
+    const ct=cd+ci,cukg=kgT>0?ct/kgT:0,mbkg=kgT>0?(ing-cd)/kgT:0;
+    const mn=ing-ct,mnha=ha>0?mn/ha:0,ua=vc*1.15,ca=ha>0?ua/ha:0,kgha=ha>0?kgT/ha:0;
+    return{ha,vc,ua,ca,kgha,ing,cd,ci,ct,cukg,mbkg,mn,mnha};
   };
-  const rc = calc(ingC,cdC,ciC,haC,kgC,getNum('cmp-tc'),kgC);
-  const rr = calc(ingR,cdR,ciR,haR,kgR,getNum('cmp-tr'),kgR);
-
-  const setR = (idC,idR,valC,valR,isCLP) => {
-    const fv = (v) => v>0?(isCLP?fmt(v):v.toFixed(2)):'—';
-    setTxt(idC, fv(valC)); setTxt(idR, fv(valR));
+  const rc=calc(ingC,cdC,ciC,haC,kgC,vcC,kgC);
+  const rr=calc(ingR,cdR,ciR,haR,kgR,vcR,kgR);
+  const setR=(idC,idR,valC,valR,isCLP)=>{
+    const fv=(v)=>v>0?(isCLP?fmt(v):v.toFixed(2)):'—';
+    setTxt(idC,fv(valC));setTxt(idR,fv(valR));
   };
-  setR('cr-ha-c','cr-ha-r', rc.ha, rr.ha, false);
-  setR('cr-vac-c','cr-vac-r', rc.vc, rr.vc, false);
-  setTxt('cr-ua-c', rc.ua>0?rc.ua.toFixed(1):'—');
-  setTxt('cr-ua-r', rr.ua>0?rr.ua.toFixed(1):'—');
-  setTxt('cr-ca-c', rc.ca>0?rc.ca.toFixed(2)+' UA/ha':'—');
-  setTxt('cr-ca-r', rr.ca>0?rr.ca.toFixed(2)+' UA/ha':'—');
-  setR('cr-ter-c','cr-ter-r', getNum('cmp-tc'), getNum('cmp-tr'), false);
-  setTxt('cr-kgha-c', rc.kgha>0?fmtN(rc.kgha)+' kg':'—');
-  setTxt('cr-kgha-r', rr.kgha>0?fmtN(rr.kgha)+' kg':'—');
-  setR('cr-ing-c','cr-ing-r', rc.ing, rr.ing, true);
-  setR('cr-cd-c','cr-cd-r', rc.cd, rr.cd, true);
-  setR('cr-ci-c','cr-ci-r', rc.ci, rr.ci, true);
-  setR('cr-ct-c','cr-ct-r', rc.ct, rr.ct, true);
-  setTxt('cr-cu-c', rc.cukg>0?fmtN(rc.cukg)+' $/kg':'—');
-  setTxt('cr-cu-r', rr.cukg>0?fmtN(rr.cukg)+' $/kg':'—');
-  setTxt('cr-mb-c', rc.mbkg!==0?fmtN(rc.mbkg)+' $/kg':'—');
-  setTxt('cr-mb-r', rr.mbkg!==0?fmtN(rr.mbkg)+' $/kg':'—');
-  setR('cr-mn-c','cr-mn-r', rc.mn, rr.mn, true);
-  setTxt('cr-mnh-c', rc.mnha!==0?fmt(rc.mnha)+'/ha':'—');
-  setTxt('cr-mnh-r', rr.mnha!==0?fmt(rr.mnha)+'/ha':'—');
+  setR('cr-ha-c','cr-ha-r',rc.ha,rr.ha,false);
+  setR('cr-vac-c','cr-vac-r',rc.vc,rr.vc,false);
+  setTxt('cr-ua-c',rc.ua>0?rc.ua.toFixed(1):'—');
+  setTxt('cr-ua-r',rr.ua>0?rr.ua.toFixed(1):'—');
+  setTxt('cr-ca-c',rc.ca>0?rc.ca.toFixed(2)+' UA/ha':'—');
+  setTxt('cr-ca-r',rr.ca>0?rr.ca.toFixed(2)+' UA/ha':'—');
+  setR('cr-ter-c','cr-ter-r',getNum('cmp-tc'),getNum('cmp-tr'),false);
+  setTxt('cr-kgha-c',rc.kgha>0?fmtN(rc.kgha)+' kg':'—');
+  setTxt('cr-kgha-r',rr.kgha>0?fmtN(rr.kgha)+' kg':'—');
+  setR('cr-ing-c','cr-ing-r',rc.ing,rr.ing,true);
+  setR('cr-cd-c','cr-cd-r',rc.cd,rr.cd,true);
+  setR('cr-ci-c','cr-ci-r',rc.ci,rr.ci,true);
+  setR('cr-ct-c','cr-ct-r',rc.ct,rr.ct,true);
+  setTxt('cr-cu-c',rc.cukg>0?fmtN(rc.cukg)+' $/kg':'—');
+  setTxt('cr-cu-r',rr.cukg>0?fmtN(rr.cukg)+' $/kg':'—');
+  setTxt('cr-mb-c',rc.mbkg!==0?fmtN(rc.mbkg)+' $/kg':'—');
+  setTxt('cr-mb-r',rr.mbkg!==0?fmtN(rr.mbkg)+' $/kg':'—');
+  setR('cr-mn-c','cr-mn-r',rc.mn,rr.mn,true);
+  setTxt('cr-mnh-c',rc.mnha!==0?fmt(rc.mnha)+'/ha':'—');
+  setTxt('cr-mnh-r',rr.mnha!==0?fmt(rr.mnha)+'/ha':'—');
 }
-
-// ══════════════════════
-// MERCADO
-// ══════════════════════
 function showMercado(tipo) {
-  const data = {
-    bovina: [
-      {p:'Novillos ($/kg vivo)', ref:'$1.900 – $2.100'},
-      {p:'Vacas descarte ($/kg)', ref:'$1.400 – $1.600'},
-      {p:'Terneros al destete ($/kg)', ref:'$2.200 – $2.600'}
-    ],
-    ovina: [
-      {p:'Corderos ($/kg vivo)', ref:'$2.800 – $3.200'},
-      {p:'Ovinos descarte ($/cab.)', ref:'$40.000 – $55.000'}
-    ],
-    avicultura: [
-      {p:'Huevos categoría A ($/docena)', ref:'$2.800 – $3.200'},
-      {p:'Huevos campo libre ($/docena)', ref:'$3.500 – $4.200'},
-      {p:'Gallinas descarte ($/cab.)', ref:'$3.000 – $4.500'}
-    ],
-    forraje: [
-      {p:'Heno de ballica ($/fardo 15 kg)', ref:'$3.500 – $4.500'},
-      {p:'Ensilaje maíz ($/ton)', ref:'$55.000 – $75.000'},
-      {p:'Trigo ($/ qq)', ref:'$14.000 – $16.000'}
-    ],
-    otros: [
-      {p:'Miel ($/kg)', ref:'$5.000 – $8.000'},
-      {p:'Queso artesanal ($/kg)', ref:'$8.000 – $12.000'},
-      {p:'Humus lombriz ($/saco 40 kg)', ref:'$4.000 – $6.000'}
-    ]
+  const data={
+    bovina:[{p:'Novillos ($/kg vivo)',ref:'$1.900–$2.100'},{p:'Vacas descarte ($/kg)',ref:'$1.400–$1.600'},{p:'Terneros al destete ($/kg)',ref:'$2.200–$2.600'}],
+    ovina:[{p:'Corderos ($/kg vivo)',ref:'$2.800–$3.200'},{p:'Ovinos descarte ($/cab.)',ref:'$40.000–$55.000'}],
+    avicultura:[{p:'Huevos cat. A ($/docena)',ref:'$2.800–$3.200'},{p:'Huevos campo libre',ref:'$3.500–$4.200'},{p:'Gallinas descarte ($/cab.)',ref:'$3.000–$4.500'}],
+    forraje:[{p:'Heno ballica ($/fardo 15 kg)',ref:'$3.500–$4.500'},{p:'Ensilaje maíz ($/ton)',ref:'$55.000–$75.000'},{p:'Trigo ($/ qq)',ref:'$14.000–$16.000'}],
+    otros:[{p:'Miel ($/kg)',ref:'$5.000–$8.000'},{p:'Queso artesanal ($/kg)',ref:'$8.000–$12.000'},{p:'Humus lombriz ($/saco 40 kg)',ref:'$4.000–$6.000'}]
   };
-  const rows = (data[tipo]||[]).map(r =>
+  const rows=(data[tipo]||[]).map(r=>
     `<div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--gb);">
       <span style="font-size:12px;font-weight:600;">${r.p}</span>
       <span class="bdg bg" style="font-size:11px;">${r.ref}</span>
     </div>`
   ).join('');
-  document.getElementById('merc-content').innerHTML =
+  document.getElementById('merc-content').innerHTML=
     `<div style="background:#fff;border:2px solid var(--gb);border-radius:12px;padding:12px;">
-      <div style="font-size:11px;color:#888;margin-bottom:8px;">Precios de referencia ODEPA / ferias locales</div>
+      <div style="font-size:11px;color:#888;margin-bottom:8px;">Precios ODEPA / ferias locales · Jul 2025</div>
       ${rows}
-      <div style="font-size:10px;color:#aaa;margin-top:8px;">Fuente: ODEPA 2025 · Solo referencial</div>
+      <div style="font-size:10px;color:#aaa;margin-top:8px;">Solo referencial</div>
     </div>`;
 }
-
 function cMercDif() {
-  const mio = getNum('merc-mio');
-  const ref = getNum('merc-ref');
-  if (mio > 0 && ref > 0) {
-    const dif = mio - ref;
-    const pct = (dif/ref*100).toFixed(1);
-    setTxt('merc-dif', fmtN(dif)+' CLP ('+pct+'%)');
-    showT(dif >= 0 ? '✅ Su precio está '+pct+'% sobre el mercado' : '⚠️ Su precio está '+Math.abs(pct)+'% bajo el mercado');
+  const mio=getNum('merc-mio'),ref=getNum('merc-ref');
+  if(mio>0&&ref>0){
+    const dif=mio-ref,pct=(dif/ref*100).toFixed(1);
+    setTxt('merc-dif',fmtN(dif)+' CLP ('+pct+'%)');
+    showT(dif>=0?'✅ Su precio está '+pct+'% sobre el mercado':'⚠️ Su precio está '+Math.abs(pct)+'% bajo el mercado');
   } else {
     showT('⚠️ Ingrese ambos precios para comparar');
   }
 }
-
-// ══════════════════════
-// WEAK LINK
-// ══════════════════════
 function setPrio(nivel) {
-  wlPrio = nivel;
-  ['Alta','Media','Baja'].forEach(n => {
-    const btn = document.getElementById('wl-'+n.toLowerCase());
-    if (btn) btn.style.fontWeight = n === nivel ? '800' : 'normal';
+  wlPrio=nivel;
+  ['Alta','Media','Baja'].forEach(n=>{
+    const btn=document.getElementById('wl-'+n.toLowerCase());
+    if(btn) btn.style.fontWeight=n===nivel?'800':'normal';
   });
   showT('Prioridad: '+nivel);
 }
-
 function addWL() {
-  const rubro = document.getElementById('wl-rubro')?.value;
-  const desc = document.getElementById('wl-desc')?.value;
-  const costo = document.getElementById('wl-costo')?.value;
-  if (!desc || desc.trim() === '') { showT('⚠️ Escriba una descripción'); return; }
-  const colors = {Alta:'var(--rojo)',Media:'#F57C00',Baja:'#558B2F'};
-  const borders = {Alta:'#FFCDD2',Media:'#FFE082',Baja:'#C5E1A5'};
-  const emojis = {Alta:'🔴',Media:'🟡',Baja:'🟢'};
-  const item = document.createElement('div');
-  item.style.cssText = `background:#fff;border:2px solid ${borders[wlPrio]};border-left:5px solid ${colors[wlPrio]};border-radius:13px;padding:13px;margin-bottom:9px;`;
-  item.innerHTML = `
+  const rubro=document.getElementById('wl-rubro')?.value;
+  const desc=document.getElementById('wl-desc')?.value;
+  const costo=document.getElementById('wl-costo')?.value;
+  if(!desc||desc.trim()===''){showT('⚠️ Escriba una descripción');return;}
+  const colors={Alta:'var(--rojo)',Media:'#F57C00',Baja:'#558B2F'};
+  const borders={Alta:'#FFCDD2',Media:'#FFE082',Baja:'#C5E1A5'};
+  const emojis={Alta:'🔴',Media:'🟡',Baja:'🟢'};
+  const item=document.createElement('div');
+  item.style.cssText=`background:#fff;border:2px solid ${borders[wlPrio]};border-left:5px solid ${colors[wlPrio]};border-radius:13px;padding:13px;margin-bottom:9px;`;
+  item.innerHTML=`
     <div style="display:flex;justify-content:space-between;margin-bottom:5px;">
       <span style="font-weight:700;font-size:13px;">${rubro}</span>
       <span class="bdg" style="background:${borders[wlPrio]};color:${colors[wlPrio]};">${emojis[wlPrio]} ${wlPrio}</span>
@@ -1941,24 +1860,451 @@ function addWL() {
       <button class="btn bsm" style="background:#FFEBEE;color:var(--rojo);border:2px solid #FFCDD2;flex:1;font-size:11px;" onclick="this.closest('div[style]').remove();showT('🗑️ Eliminado')">🗑️ Eliminar</button>
     </div>`;
   document.getElementById('wl-list').prepend(item);
-  if (document.getElementById('wl-desc')) document.getElementById('wl-desc').value = '';
+  if(document.getElementById('wl-desc')) document.getElementById('wl-desc').value='';
   showT('✅ Eslabón débil registrado');
 }
-
-// ══════════════════════
-// TOAST
-// ══════════════════════
 function showT(msg) {
-  const t = document.getElementById('toast');
-  t.textContent = msg; t.classList.add('show');
-  setTimeout(() => t.classList.remove('show'), 2500);
+  const t=document.getElementById('toast');
+  t.textContent=msg;t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'),2500);
+}
+
+// ══════════════════════════════════════
+// REGISTRO RÁPIDO — ESTADO
+// ══════════════════════════════════════
+const RQ = {
+  step: 1,
+  tipo: '',        // 'ing' | 'cos'
+  rubro: '',       // key de RUBRO_DEF
+  concepto: '',    // texto del concepto
+  conceptoId: '',  // id del input destino
+  mes: 0,          // 0-11
+  monto: 0,
+  nota: '',
+  fotoOk: false,
+  log: []          // registros del día
+};
+
+// Conceptos por rubro y tipo
+const RQ_CONCEPTOS = {
+  bovina: {
+    ing: [
+      {l:'Venta de animales (kg / cabezas)', id:'bi1', warn:false},
+      {l:'Venta subproductos (leche, lana, cuero)', id:'bi2', warn:false},
+      {l:'Venta reproductores / pie de cría', id:'bi3', warn:false},
+      {l:'Subsidios / bonos', id:'bi4', warn:false},
+      {l:'Mediería (sistema de medias)', id:'bi5', warn:false},
+      {l:'Arriendo de parcela', id:'bi6', warn:false},
+      {l:'Arriendo de talaje', id:'bi7', warn:false},
+      {l:'Otro ingreso 1', id:'bi8', warn:false},
+      {l:'Otro ingreso 2', id:'bi9', warn:false}
+    ],
+    cos: [
+      {l:'Suplemento mineral / sales', id:'bc1', warn:false},
+      {l:'Concentrados / pellets', id:'bc2', warn:false},
+      {l:'⚠️ Forraje conservado (heno, ensilaje, fardos)', id:'bc3', warn:true},
+      {l:'Veterinaria y medicamentos', id:'bc4', warn:false},
+      {l:'Mano de obra PAGADA', id:'bc5', warn:false},
+      {l:'Transporte / flete / acopio', id:'bc6', warn:false},
+      {l:'Manejo de praderas (fertilización, encalado)', id:'bc7', warn:false},
+      {l:'Maquinaria / arriendo maquinaria', id:'bc8', warn:false},
+      {l:'Compra animales para reposición', id:'bc9', warn:false}
+    ]
+  },
+  ovina: {
+    ing: [
+      {l:'Venta de animales',id:'oi1',warn:false},{l:'Venta subproductos',id:'oi2',warn:false},
+      {l:'Venta reproductores',id:'oi3',warn:false},{l:'Subsidios / bonos',id:'oi4',warn:false},
+      {l:'Otro ingreso',id:'oi5',warn:false}
+    ],
+    cos: [
+      {l:'⚠️ Forraje conservado',id:'oc1',warn:true},{l:'Veterinaria',id:'oc2',warn:false},
+      {l:'Mano de obra',id:'oc3',warn:false},{l:'Transporte',id:'oc4',warn:false},
+      {l:'Manejo de praderas',id:'oc5',warn:false},{l:'Compra animales reposición',id:'oc6',warn:false}
+    ]
+  },
+  porcina: {
+    ing: [
+      {l:'Venta de animales',id:'poi1',warn:false},{l:'Venta subproductos',id:'poi2',warn:false},
+      {l:'Venta reproductores',id:'poi3',warn:false},{l:'Subsidios / bonos',id:'poi4',warn:false},
+      {l:'Otro ingreso',id:'poi5',warn:false}
+    ],
+    cos: [
+      {l:'Forraje / restos cosecha',id:'poc1',warn:false},{l:'Otro alimento',id:'poc2',warn:false},
+      {l:'Lechón destetado (compra)',id:'poc3',warn:false},{l:'Mano de obra',id:'poc4',warn:false},
+      {l:'Instalaciones y mantención',id:'poc5',warn:false},{l:'Energía',id:'poc6',warn:false},
+      {l:'Veterinaria',id:'poc7',warn:false}
+    ]
+  },
+  caprina: {
+    ing: [
+      {l:'Venta de animales',id:'cai1',warn:false},{l:'Venta subproductos',id:'cai2',warn:false},
+      {l:'Venta reproductores',id:'cai3',warn:false},{l:'Subsidios / bonos',id:'cai4',warn:false},
+      {l:'Otro ingreso',id:'cai5',warn:false}
+    ],
+    cos: [
+      {l:'Forraje fresco (pastizal, praderas)',id:'cac1',warn:false},
+      {l:'⚠️ Forraje conservado (heno, chala)',id:'cac2',warn:true},
+      {l:'Concentrados (maíz, avena, soya)',id:'cac3',warn:false},
+      {l:'Suplemento mineral / sales',id:'cac4',warn:false},
+      {l:'Reposición de ganado',id:'cac5',warn:false},{l:'Mano de obra',id:'cac6',warn:false},
+      {l:'Infraestructura y equipamiento',id:'cac7',warn:false},{l:'Transporte',id:'cac8',warn:false}
+    ]
+  },
+  avicultura: {
+    ing: [
+      {l:'Venta de huevos',id:'avi1',warn:false},{l:'Gallinas de descarte',id:'avi2',warn:false},
+      {l:'Pollitas / pollos',id:'avi3',warn:false},{l:'Subsidios / bonos',id:'avi4',warn:false},
+      {l:'Otro ingreso',id:'avi5',warn:false}
+    ],
+    cos: [
+      {l:'Alimentación – Maíz',id:'avc1',warn:false},{l:'Alimentación – Afrecho / soya',id:'avc2',warn:false},
+      {l:'Alimentación – Otros insumos',id:'avc3',warn:false},{l:'Mano de obra Permanente',id:'avc4',warn:false},
+      {l:'Mano de obra Temporal',id:'avc5',warn:false},{l:'Transporte y distribución',id:'avc6',warn:false},
+      {l:'Embalaje (cajas, bandejas)',id:'avc7',warn:false},{l:'Electricidad y agua',id:'avc8',warn:false}
+    ]
+  },
+  turismo: {
+    ing: [
+      {l:'Venta de tours / experiencias',id:'ti1',warn:false},{l:'Alojamiento',id:'ti2',warn:false},
+      {l:'Alimentación / eventos',id:'ti3',warn:false},{l:'Productos locales / merchandising',id:'ti4',warn:false},
+      {l:'Otro ingreso',id:'ti5',warn:false}
+    ],
+    cos: [
+      {l:'Mano de obra Permanente',id:'tc1',warn:false},{l:'Mano de obra Temporal',id:'tc2',warn:false},
+      {l:'Insumos y materiales',id:'tc3',warn:false},{l:'Mantención instalaciones',id:'tc4',warn:false},
+      {l:'Marketing y comisiones',id:'tc5',warn:false},{l:'Plataformas de reserva',id:'tc6',warn:false}
+    ]
+  }
+};
+
+// Genera conceptos genéricos
+function rqGetConceptos(key, tipo) {
+  if(RQ_CONCEPTOS[key]) return RQ_CONCEPTOS[key][tipo]||[];
+  const cfg=GENERIC_CFG[key];
+  if(!cfg) return [];
+  if(tipo==='ing') return cfg.i.map((l,i)=>({l,id:`gen-i${i+1}`,warn:false}));
+  return cfg.c.map((l,i)=>({l,id:`gen-c${i+1}`,warn:false}));
+}
+
+// ── Abrir Registro Rápido ──
+function openRQ() {
+  RQ.step=1; RQ.tipo=''; RQ.rubro=''; RQ.concepto=''; RQ.conceptoId='';
+  RQ.monto=0; RQ.nota=''; RQ.fotoOk=false;
+
+  // Fecha por defecto = hoy
+  const hoy=new Date();
+  const fechaEl=document.getElementById('rq-fecha');
+  if(fechaEl) fechaEl.value=hoy.toISOString().split('T')[0];
+  rqFechaPreview();
+
+  // Resetear selecciones de tipo
+  document.querySelectorAll('.rq-type-btn').forEach(b=>b.classList.remove('rq-type-sel'));
+
+  rqShowStep(1);
+  goTo('s-rq');
+}
+
+// ── Mostrar paso ──
+function rqShowStep(n) {
+  RQ.step=n;
+  [1,2,3,4,5].forEach(i=>{
+    const el=document.getElementById('rq-s'+i);
+    if(el) el.style.display=i===n?'block':'none';
+  });
+  // Step label
+  const labels=['Paso 1 de 4','Paso 2 de 4','Paso 3 de 4','Paso 4 de 4','¡Guardado!'];
+  setTxt('rq-step-lbl', labels[n-1]||'');
+  // Dots
+  [1,2,3,4].forEach(i=>{
+    const d=document.getElementById('rq-d'+i);
+    if(!d) return;
+    d.className='rq-dot';
+    if(i<n) d.classList.add('done');
+    else if(i===n) d.classList.add('active');
+  });
+  [1,2,3].forEach(i=>{
+    const l=document.getElementById('rq-l'+i);
+    if(l) l.className='rq-line'+(i<n?' done':'');
+  });
+}
+
+// ── Siguiente ──
+function rqNext() {
+  if(RQ.step===1) {
+    if(!RQ.tipo){showT('⚠️ Seleccione Ingreso o Costo');return;}
+    rqBuildRubroGrid();
+    rqShowStep(2);
+    return;
+  }
+  if(RQ.step===2) {
+    if(!RQ.rubro){showT('⚠️ Seleccione un rubro');return;}
+    rqBuildConceptoList();
+    rqShowStep(3);
+    return;
+  }
+  if(RQ.step===3) {
+    if(!RQ.concepto){showT('⚠️ Seleccione un concepto');return;}
+    rqBuildStep4();
+    rqShowStep(4);
+    return;
+  }
+  if(RQ.step===4) {
+    rqSave();
+    return;
+  }
+}
+
+// ── Anterior ──
+function rqPrev() {
+  if(RQ.step>1) rqShowStep(RQ.step-1);
+  else goTo('s-home');
+}
+function rqBack() {
+  if(RQ.step>1) rqPrev();
+  else goTo('s-home');
+}
+
+// ── Paso 1: tipo ──
+function rqTipo(t) {
+  RQ.tipo=t;
+  document.querySelectorAll('.rq-type-btn').forEach(b=>b.classList.remove('rq-type-sel'));
+  document.getElementById('rq-t-'+t).classList.add('rq-type-sel');
+}
+
+// ── Paso 1: fecha preview ──
+function rqFechaPreview() {
+  const val=document.getElementById('rq-fecha')?.value;
+  if(!val){setTxt('rq-fecha-preview','');return;}
+  const d=new Date(val+'T12:00:00');
+  RQ.mes=d.getMonth();
+  const prev=document.getElementById('rq-fecha-preview');
+  if(prev) prev.textContent=`→ Se guardará en: ${MESES_FULL[d.getMonth()]} ${d.getFullYear()}`;
+}
+
+// ── Paso 2: grid de rubros ──
+function rqBuildRubroGrid() {
+  const grid=document.getElementById('rq-rubro-grid');
+  if(!grid) return;
+  const lista=rubrosSel.length>0?rubrosSel:['bovina','forraje'];
+  grid.innerHTML=lista.map(key=>{
+    const d=RUBRO_DEF[key];
+    if(!d) return '';
+    return `<div class="rq-mini-card" id="rq-rc-${key}" onclick="rqSelRubro('${key}')">
+      <div style="font-size:28px;">${d.em}</div>
+      <div class="rq-mini-label" style="font-size:12px;font-weight:700;color:var(--gt);text-align:center;line-height:1.3;">${d.n}</div>
+    </div>`;
+  }).join('');
+
+  // Breadcrumb paso 1
+  const tipoLabel=RQ.tipo==='ing'?'💰 Ingreso':'📉 Costo';
+  const fechaEl=document.getElementById('rq-fecha');
+  const fechaVal=fechaEl?fechaEl.value:'';
+  const bc=document.getElementById('rq-bc1');
+  if(bc) bc.textContent=`${tipoLabel} · ${fechaVal?MESES_FULL[RQ.mes]+' 2025':'fecha sin seleccionar'}`;
+}
+
+function rqSelRubro(key) {
+  RQ.rubro=key;
+  document.querySelectorAll('.rq-mini-card').forEach(c=>c.classList.remove('rq-mini-sel'));
+  const card=document.getElementById('rq-rc-'+key);
+  if(card) card.classList.add('rq-mini-sel');
+}
+
+// ── Paso 3: lista de conceptos ──
+function rqBuildConceptoList() {
+  const d=RUBRO_DEF[RQ.rubro];
+  const title=document.getElementById('rq-concepto-title');
+  if(title) title.textContent=`📋 Concepto — ${d?d.em+' '+d.n:''}`;
+
+  const bc=document.getElementById('rq-bc2');
+  const tipoLabel=RQ.tipo==='ing'?'💰 Ingreso':'📉 Costo';
+  if(bc) bc.textContent=`${tipoLabel} · ${MESES_FULL[RQ.mes]} 2025 · ${d?d.em+' '+d.n:''}`;
+
+  const gk=d?.gk||RQ.rubro;
+  const conceptos=rqGetConceptos(gk,RQ.tipo);
+  const list=document.getElementById('rq-concepto-list');
+  if(!list) return;
+
+  if(conceptos.length===0){
+    list.innerHTML='<div class="al ali"><span class="al-ic">ℹ️</span><div class="al-tx">No hay conceptos configurados para este rubro y tipo.</div></div>';
+    return;
+  }
+
+  list.innerHTML=conceptos.map((c,i)=>`
+    <div class="rq-concepto-item${c.warn?' rq-concepto-warn':''}"
+      id="rq-ci-${i}" onclick="rqSelConcepto(${i},'${c.l.replace(/'/g,"\\'")}','${c.id}')">
+      <div style="font-size:16px;flex-shrink:0;">${c.warn?'⚠️':'📋'}</div>
+      <div style="font-size:13px;font-weight:600;flex:1;line-height:1.4;">${c.l.replace('⚠️ ','')}</div>
+      <div style="font-size:16px;color:#ccc;">›</div>
+    </div>`
+  ).join('');
+}
+
+function rqSelConcepto(i,label,inputId) {
+  RQ.concepto=label;
+  RQ.conceptoId=inputId;
+  document.querySelectorAll('.rq-concepto-item').forEach(el=>{
+    el.classList.remove('rq-concepto-sel');
+  });
+  const sel=document.getElementById('rq-ci-'+i);
+  if(sel) sel.classList.add('rq-concepto-sel');
+}
+
+// ── Paso 4: monto + foto + nota ──
+function rqBuildStep4() {
+  const d=RUBRO_DEF[RQ.rubro];
+  const tipoLabel=RQ.tipo==='ing'?'💰 Ingreso':'📉 Costo';
+  setTxt('rq-sum-rubro',(d?d.em+' '+d.n:'—'));
+  setTxt('rq-sum-tipo',tipoLabel+' · '+MESES_FULL[RQ.mes]+' 2025');
+  setTxt('rq-sum-concepto','📋 '+RQ.concepto);
+
+  // Reset monto
+  const montoEl=document.getElementById('rq-monto');
+  if(montoEl) montoEl.value='';
+  setTxt('rq-monto-fmt','—');
+
+  // Reset nota
+  const notaEl=document.getElementById('rq-nota');
+  if(notaEl) notaEl.value='';
+
+  // Reset foto
+  RQ.fotoOk=false;
+  const th=document.getElementById('rq-foto-th');
+  const lbl=document.getElementById('rq-foto-lbl');
+  const sub=document.getElementById('rq-foto-sub');
+  if(th) th.textContent='📷';
+  if(lbl) lbl.textContent='Adjuntar boleta o comprobante';
+  if(sub) sub.textContent='Toca para tomar foto o subir archivo';
+}
+
+function rqUpdateMonto() {
+  const v=getNum('rq-monto');
+  RQ.monto=v;
+  const fmtEl=document.getElementById('rq-monto-fmt');
+  if(fmtEl) fmtEl.textContent=v>0?fmt(v):'—';
+}
+
+function rqFoto() {
+  RQ.fotoOk=true;
+  const th=document.getElementById('rq-foto-th');
+  const lbl=document.getElementById('rq-foto-lbl');
+  const sub=document.getElementById('rq-foto-sub');
+  if(th) th.textContent='✅';
+  if(lbl) lbl.textContent='Foto adjunta correctamente';
+  if(sub) sub.textContent='Toca para cambiar';
+  showT('📷 Foto adjuntada');
+}
+
+// ── Guardar ──
+function rqSave() {
+  const monto=getNum('rq-monto');
+  if(monto<=0){showT('⚠️ Ingrese un monto mayor a 0');return;}
+
+  // 1. Escribir el valor en el campo de destino
+  const targetEl=document.getElementById(RQ.conceptoId);
+  if(targetEl){
+    const valorActual=parseFloat(targetEl.value||0);
+    targetEl.value=valorActual+monto;
+  }
+
+  // 2. Disparar recálculos del rubro
+  const gk=RUBRO_DEF[RQ.rubro]?.gk||RQ.rubro;
+  switch(RQ.rubro){
+    case 'bovina': cBov(); break;
+    case 'ovina': cOvi(); break;
+    case 'porcina': cPor(); break;
+    case 'caprina': cCap(); break;
+    case 'avicultura': cAvi(); break;
+    case 'turismo': cTur(); break;
+    default:
+      // Para rubros genéricos: set currentGenKey y recalcular
+      currentGenKey=gk;
+      cGen();
+  }
+
+  // 3. Guardar nota
+  RQ.nota=document.getElementById('rq-nota')?.value||'';
+
+  // 4. Agregar al log del día
+  const entrada={
+    emoji: RUBRO_DEF[RQ.rubro]?.em||'📋',
+    rubro: RUBRO_DEF[RQ.rubro]?.n||RQ.rubro,
+    tipo: RQ.tipo==='ing'?'💰 Ingreso':'📉 Costo',
+    concepto: RQ.concepto,
+    monto: monto,
+    mes: MESES_FULL[RQ.mes],
+    foto: RQ.fotoOk,
+    nota: RQ.nota,
+    hora: new Date().toLocaleTimeString('es-CL',{hour:'2-digit',minute:'2-digit'})
+  };
+  RQ.log.unshift(entrada);
+
+  // 5. Construir pantalla de éxito
+  rqBuildSuccess(entrada);
+  rqShowStep(5);
+}
+
+function rqBuildSuccess(e) {
+  // Card principal
+  const card=document.getElementById('rq-success-card');
+  if(card) card.innerHTML=`
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
+      <div style="font-size:16px;font-weight:800;color:var(--vp);">${e.emoji} ${e.rubro}</div>
+      <span class="bdg ${e.tipo.includes('💰')?'bg':'br'}">${e.tipo}</span>
+    </div>
+    <div style="font-size:13px;color:var(--gt);margin-bottom:4px;">📋 ${e.concepto.replace('⚠️ ','')}</div>
+    <div style="font-size:24px;font-weight:900;color:var(--vp);margin:8px 0;">${fmt(e.monto)}</div>
+    <div style="display:flex;gap:12px;font-size:12px;color:#888;">
+      <span>📅 ${e.mes} 2025</span>
+      <span>${e.foto?'📷 Con foto':'📷 Sin foto'}</span>
+      <span>🕐 ${e.hora}</span>
+    </div>
+    ${e.nota?`<div style="font-size:12px;color:#555;margin-top:8px;padding-top:8px;border-top:1px solid #eee;">📝 ${e.nota}</div>`:''}
+  `;
+
+  // Ruta del dato
+  const ruta=document.getElementById('rq-ruta');
+  if(ruta){
+    const arrow='<span style="color:#ccc;margin:0 2px;">→</span>';
+    ruta.innerHTML=[
+      `<span style="background:var(--vp);color:#fff;padding:4px 8px;border-radius:6px;font-size:11px;">📅 ${e.mes}</span>`,
+      arrow,
+      `<span style="background:var(--vpa);color:var(--vp);padding:4px 8px;border-radius:6px;font-size:11px;">${e.emoji} ${e.rubro}</span>`,
+      arrow,
+      `<span style="background:${e.tipo.includes('💰')?'#E8F5E9':'#FFF3E0'};color:${e.tipo.includes('💰')?'var(--vp)':'#E65100'};padding:4px 8px;border-radius:6px;font-size:11px;">${e.tipo}</span>`,
+      arrow,
+      `<span style="background:#E3F2FD;color:#1565C0;padding:4px 8px;border-radius:6px;font-size:11px;">📋 ${e.concepto.replace('⚠️ ','').substring(0,20)}${e.concepto.length>20?'…':''}</span>`,
+      arrow,
+      `<span style="background:var(--vp);color:#fff;padding:4px 8px;border-radius:6px;font-size:11px;font-weight:800;">${fmt(e.monto)}</span>`
+    ].join('');
+  }
+
+  // Log del día
+  const logSec=document.getElementById('rq-log-section');
+  const logList=document.getElementById('rq-log-list');
+  const logCount=document.getElementById('rq-log-count');
+  if(RQ.log.length>0&&logSec&&logList){
+    logSec.style.display='block';
+    if(logCount) logCount.textContent=RQ.log.length;
+    logList.innerHTML=RQ.log.slice(0,5).map((l,i)=>`
+      <div class="rq-log-entry${i===0?' latest':''}">
+        <div style="font-size:20px;flex-shrink:0;">${l.emoji}</div>
+        <div style="flex:1;">
+          <div style="font-size:12px;font-weight:700;">${l.concepto.replace('⚠️ ','').substring(0,30)}${l.concepto.length>30?'…':''}</div>
+          <div style="font-size:11px;color:#888;">${l.rubro} · ${l.hora}</div>
+        </div>
+        <div style="font-size:13px;font-weight:800;color:${l.tipo.includes('💰')?'var(--vp)':'var(--rojo)'};">${fmt(l.monto)}</div>
+      </div>
+    `).join('');
+  }
 }
 
 // ══════════════════════
 // INIT
 // ══════════════════════
-document.addEventListener('DOMContentLoaded', () => {
-  // Build month selectors
+document.addEventListener('DOMContentLoaded',()=>{
+  // Month selectors
   buildMes('bov-mes-s','bov-mes-cur');
   buildMes('ovi-mes-s','ovi-mes-cur');
   buildMes('por-mes-s','por-mes-cur');
@@ -1967,36 +2313,40 @@ document.addEventListener('DOMContentLoaded', () => {
   buildMes('tur-mes-s','tur-mes-cur');
   buildMes('gen-mes-s','gen-mes-cur');
 
-  // Build UA tables
-  buildUATable('bov-ua-body', UA_BOV, 'bov');
-  buildUATable('ovi-ua-body', UA_OVI, 'ovi');
-  buildUATable('por-ua-body', UA_POR, 'por');
-  buildUATable('cap-ua-body', UA_CAP, 'cap');
+  // UA tables
+  buildUATable('bov-ua-body',UA_BOV,'bov');
+  buildUATable('ovi-ua-body',UA_OVI,'ovi');
+  buildUATable('por-ua-body',UA_POR,'por');
+  buildUATable('cap-ua-body',UA_CAP,'cap');
 
-  // Initial calculations
+  // Initial calcs
   cBov(); cCF(); updateHome();
 
-  // Wire tab-contents for each screen: show first, hide rest
+  // Hide non-first tabs
   ['bov-cos','bov-ua','bov-kpi',
    'ovi-cos','ovi-ua',
    'por-cos','por-ua',
    'cap-cos','cap-ua',
    'avi-cos','avi-ind',
    'tur-cos','tur-ind',
-   'gen-cos','gen-ind'].forEach(id => {
-    const el = document.getElementById(id);
-    if (el) el.style.display = 'none';
+   'gen-cos','gen-ind'].forEach(id=>{
+    const el=document.getElementById(id);
+    if(el) el.style.display='none';
   });
 
-  // UA calc listener
-  document.addEventListener('input', e => {
-    if (e.target.closest('#bov-ua-body')) cUABov();
-    if (e.target.closest('#ovi-ua-body')) cUAOvi();
-    if (e.target.closest('#por-ua-body')) calcUAGeneric('por-ua-body','por');
-    if (e.target.closest('#cap-ua-body')) cUACap();
-    if (e.target.id === 'merc-mio' || e.target.id === 'merc-ref') {
-      const dif = getNum('merc-mio') - getNum('merc-ref');
-      setTxt('merc-dif', getNum('merc-mio')>0 && getNum('merc-ref')>0 ? fmtN(dif)+' CLP' : '—');
+  // RQ fecha listener
+  const fechaEl=document.getElementById('rq-fecha');
+  if(fechaEl) fechaEl.addEventListener('change',rqFechaPreview);
+
+  // UA + mercado listeners
+  document.addEventListener('input',e=>{
+    if(e.target.closest('#bov-ua-body')) cUABov();
+    if(e.target.closest('#ovi-ua-body')) cUAOvi();
+    if(e.target.closest('#por-ua-body')) calcUAGeneric('por-ua-body','por');
+    if(e.target.closest('#cap-ua-body')) cUACap();
+    if(e.target.id==='merc-mio'||e.target.id==='merc-ref'){
+      const dif=getNum('merc-mio')-getNum('merc-ref');
+      setTxt('merc-dif',getNum('merc-mio')>0&&getNum('merc-ref')>0?fmtN(dif)+' CLP':'—');
     }
   });
 });
