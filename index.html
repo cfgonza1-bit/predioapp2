@@ -160,52 +160,49 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
   padding:9px 0;border-bottom:1px solid var(--gb);}
 .ci-lbl{font-size:13px;font-weight:600;color:var(--gt);flex:1;}
 .ci-pct{font-size:12px;color:var(--vl);font-weight:700;margin-left:8px;}
-
-/* ══ REGISTRO RÁPIDO STYLES ══ */
-.rq-fab-section{
-  padding:14px 18px 20px;
-  background:linear-gradient(180deg,#fff 0%,#F0FFF4 100%);
-  border-top:1px solid var(--gb);
-}
-.rq-fab-btn{
-  width:100%;padding:18px;
-  background:linear-gradient(135deg,#1B4332,#2D6A4F 50%,#52B788);
-  color:#fff;border:none;border-radius:16px;font-size:16px;font-weight:800;
-  cursor:pointer;display:flex;align-items:center;justify-content:center;
-  gap:10px;font-family:inherit;box-shadow:0 4px 20px rgba(45,106,79,.35);transition:all .2s;
-}
+.rq-fab-section{padding:14px 18px 20px;background:linear-gradient(180deg,#fff 0%,#F0FFF4 100%);border-top:1px solid var(--gb);}
+.rq-fab-btn{width:100%;padding:18px;background:linear-gradient(135deg,#1B4332,#2D6A4F 50%,#52B788);color:#fff;border:none;border-radius:16px;font-size:16px;font-weight:800;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;font-family:inherit;box-shadow:0 4px 20px rgba(45,106,79,.35);transition:all .2s;}
 .rq-fab-btn:active{transform:scale(.98);box-shadow:0 2px 8px rgba(45,106,79,.2);}
 .rq-step-bar{display:flex;align-items:center;padding:11px 20px;background:#fff;border-bottom:1px solid #eee;flex-shrink:0;}
 .rq-line{flex:1;height:2px;background:var(--gb);}
 .rq-line.done{background:var(--vl);}
-.rq-dot{width:28px;height:28px;border-radius:14px;background:var(--gb);color:#888;
-  font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .3s;}
+.rq-dot{width:28px;height:28px;border-radius:14px;background:var(--gb);color:#888;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .3s;}
 .rq-dot.active{background:var(--vp);color:#fff;box-shadow:0 2px 8px rgba(45,106,79,.4);}
 .rq-dot.done{background:var(--vl);color:#fff;}
-.rq-type-btn{padding:20px 10px;border:2px solid var(--gb);border-radius:14px;background:#fff;cursor:pointer;
-  transition:all .2s;font-family:inherit;display:flex;flex-direction:column;align-items:center;gap:4px;}
+.rq-type-btn{padding:20px 10px;border:2px solid var(--gb);border-radius:14px;background:#fff;cursor:pointer;transition:all .2s;font-family:inherit;display:flex;flex-direction:column;align-items:center;gap:4px;}
 .rq-type-btn.rq-type-sel{border-color:var(--vp);background:var(--vpa);}
 .rq-type-btn.rq-type-sel .rq-type-label{color:var(--vp)!important;}
-.rq-mini-card{padding:14px 8px;border:2px solid var(--gb);border-radius:12px;background:#fff;cursor:pointer;
-  text-align:center;transition:all .2s;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;min-height:80px;}
+.rq-mini-card{padding:14px 8px;border:2px solid var(--gb);border-radius:12px;background:#fff;cursor:pointer;text-align:center;transition:all .2s;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;min-height:80px;}
 .rq-mini-card:active{transform:scale(.97);}
 .rq-mini-sel{border-color:var(--vp);background:var(--vpa);}
 .rq-mini-sel .rq-mini-label{color:var(--vp)!important;}
-.rq-concepto-item{display:flex;align-items:center;gap:10px;padding:12px 14px;
-  border:2px solid var(--gb);border-radius:11px;margin-bottom:7px;cursor:pointer;background:#fff;transition:all .2s;}
+.rq-concepto-item{display:flex;align-items:center;gap:10px;padding:12px 14px;border:2px solid var(--gb);border-radius:11px;margin-bottom:7px;cursor:pointer;background:#fff;transition:all .2s;}
 .rq-concepto-item:active{transform:scale(.99);}
 .rq-concepto-sel{border-color:var(--vp);background:var(--vpa);}
 .rq-concepto-warn{border-color:#FFCDD2;background:#FFEBEE;}
 .rq-concepto-warn.rq-concepto-sel{border-color:var(--rojo);background:#FFD7D9;}
-.rq-success-icon{width:80px;height:80px;background:linear-gradient(135deg,#1B4332,#52B788);border-radius:40px;
-  display:flex;align-items:center;justify-content:center;font-size:38px;margin:0 auto 12px;box-shadow:0 8px 24px rgba(45,106,79,.35);}
+.rq-success-icon{width:80px;height:80px;background:linear-gradient(135deg,#1B4332,#52B788);border-radius:40px;display:flex;align-items:center;justify-content:center;font-size:38px;margin:0 auto 12px;box-shadow:0 8px 24px rgba(45,106,79,.35);}
 .rq-log-entry{background:#fff;border:1px solid var(--gb);border-radius:10px;padding:10px 12px;display:flex;align-items:center;gap:10px;margin-bottom:6px;}
 .rq-log-entry.latest{border-color:var(--vl);}
-/* Total display */
-.rq-total-box{padding:16px;background:var(--vto);border:2px solid var(--vl);border-radius:12px;
-  font-size:28px;font-weight:900;text-align:center;min-height:62px;
-  display:flex;align-items:center;justify-content:center;color:#ccc;transition:color .2s;}
+.rq-total-box{padding:16px;background:var(--vto);border:2px solid var(--vl);border-radius:12px;font-size:28px;font-weight:900;text-align:center;min-height:62px;display:flex;align-items:center;justify-content:center;color:#ccc;transition:color .2s;}
 .rq-total-box.has-value{color:var(--vp);}
+
+/* ══ SPLASH QUICK-ACCESS CARDS ══ */
+.sp-qa-card{
+  display:flex;align-items:center;gap:12px;
+  padding:13px 14px;
+  border-radius:14px;
+  cursor:pointer;
+  transition:all .2s;
+  border:1.5px solid rgba(255,255,255,.18);
+  background:rgba(255,255,255,.10);
+}
+.sp-qa-card:active{background:rgba(255,255,255,.22);transform:scale(.98);}
+.sp-qa-icon{font-size:24px;width:36px;text-align:center;flex-shrink:0;}
+.sp-qa-text{flex:1;}
+.sp-qa-title{color:#fff;font-size:14px;font-weight:700;line-height:1.2;}
+.sp-qa-sub{color:#B7E4C7;font-size:11px;margin-top:2px;}
+.sp-qa-arrow{color:rgba(255,255,255,.5);font-size:16px;}
 </style>
 </head>
 <body>
@@ -217,38 +214,98 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
   <span>88% 🔋</span>
 </div>
 
-<!-- ═══ SPLASH ═══ -->
+<!-- ═══════════════════════════════════════
+     SPLASH — MODIFICADO
+═══════════════════════════════════════ -->
 <div class="screen active" id="s-splash"
   style="background:linear-gradient(160deg,#1B4332,#2D6A4F 60%,#52B788);
-  align-items:center;justify-content:center;gap:20px;padding:40px 28px;">
-  <div style="text-align:center;">
-    <div style="font-size:68px;margin-bottom:8px;">🌿</div>
-    <div style="color:#fff;font-size:30px;font-weight:900;letter-spacing:-1px;">PredioApp</div>
-    <div style="color:#B7E4C7;font-size:13px;margin-top:4px;">Registro simple para tu campo · Piloto v5</div>
+  align-items:center;justify-content:flex-start;gap:0;padding:0;overflow-y:auto;">
+
+  <!-- Logo + título -->
+  <div style="text-align:center;padding:36px 28px 24px;width:100%;">
+    <div style="font-size:62px;margin-bottom:6px;">🌿</div>
+    <div style="color:#fff;font-size:28px;font-weight:900;letter-spacing:-1px;">PredioApp</div>
+    <div style="color:#B7E4C7;font-size:12px;margin-top:3px;">Registro simple para tu campo · Piloto v5</div>
   </div>
-  <div style="width:100%;display:flex;flex-direction:column;gap:10px;">
+
+  <!-- Botones principales: Iniciar sesión + Crear cuenta -->
+  <div style="width:100%;padding:0 24px;display:flex;flex-direction:column;gap:10px;">
     <button class="btn" onclick="goTo('s-perfil')"
-      style="background:#fff;color:#1B4332;font-size:16px;padding:16px;">🟢 &nbsp;Iniciar sesión</button>
+      style="background:#fff;color:#1B4332;font-size:15px;padding:15px;font-weight:800;">
+      🟢 &nbsp;Iniciar sesión
+    </button>
     <button class="btn" onclick="goTo('s-perfil')"
-      style="border:2px solid rgba(255,255,255,.6);color:#fff;font-size:16px;padding:16px;background:transparent;">➕ &nbsp;Crear cuenta</button>
+      style="border:2px solid rgba(255,255,255,.6);color:#fff;font-size:15px;padding:15px;background:transparent;font-weight:700;">
+      ➕ &nbsp;Crear cuenta
+    </button>
   </div>
-  <div style="color:#B7E4C7;font-size:12px;text-align:center;">
-    ¿Tiene código de programa?<br>
-    <span style="text-decoration:underline;cursor:pointer;">Ingresar código →</span>
+
+  <!-- Separador -->
+  <div style="width:100%;padding:20px 24px 12px;display:flex;align-items:center;gap:10px;">
+    <div style="flex:1;height:1px;background:rgba(255,255,255,.2);"></div>
+    <span style="color:rgba(255,255,255,.5);font-size:11px;font-weight:600;white-space:nowrap;">ACCESO DIRECTO</span>
+    <div style="flex:1;height:1px;background:rgba(255,255,255,.2);"></div>
   </div>
-  <div style="position:absolute;bottom:22px;color:#95D5B2;font-size:11px;">v2.0 · Piloto v5</div>
+
+  <!-- Tres opciones de acceso directo -->
+  <div style="width:100%;padding:0 24px;display:flex;flex-direction:column;gap:8px;">
+
+    <!-- 1. Registrar usuario -->
+    <div class="sp-qa-card" onclick="goTo('s-perfil')">
+      <div class="sp-qa-icon">👤</div>
+      <div class="sp-qa-text">
+        <div class="sp-qa-title">Registrar usuario</div>
+        <div class="sp-qa-sub">Datos del predio e información personal</div>
+      </div>
+      <div class="sp-qa-arrow">›</div>
+    </div>
+
+    <!-- 2. Ingresar datos -->
+    <div class="sp-qa-card" onclick="goTo('s-home')">
+      <div class="sp-qa-icon">📝</div>
+      <div class="sp-qa-text">
+        <div class="sp-qa-title">Ingresar datos</div>
+        <div class="sp-qa-sub">Registra ventas, costos y unidades de negocio</div>
+      </div>
+      <div class="sp-qa-arrow">›</div>
+    </div>
+
+    <!-- 3. Ver resumen -->
+    <div class="sp-qa-card" onclick="goTo('s-resumen')">
+      <div class="sp-qa-icon">📊</div>
+      <div class="sp-qa-text">
+        <div class="sp-qa-title">Ver resumen</div>
+        <div class="sp-qa-sub">Resultados prediales, margen bruto y KPIs</div>
+      </div>
+      <div class="sp-qa-arrow">›</div>
+    </div>
+
+  </div>
+
+  <!-- Código de programa -->
+  <div style="width:100%;padding:20px 24px 10px;text-align:center;">
+    <div style="color:#B7E4C7;font-size:12px;">
+      ¿Tiene código de programa?&nbsp;
+      <span style="text-decoration:underline;cursor:pointer;font-weight:600;">Ingresar código →</span>
+    </div>
+  </div>
+
+  <!-- Versión -->
+  <div style="width:100%;text-align:center;padding:8px 0 20px;">
+    <span style="color:#95D5B2;font-size:11px;">v2.0 · Piloto v5</span>
+  </div>
+
 </div>
+<!-- FIN SPLASH -->
 
 <!-- ═══ PERFIL — Datos del Predio ═══ -->
 <div class="screen" id="s-perfil">
   <div class="hdr">
     <span class="hdr-bk" onclick="goTo('s-splash')">←</span>
-    <!-- CHANGED: title -->
     <h2>Datos del Predio</h2>
     <span class="hdr-ic">🏡</span>
   </div>
   <div style="overflow-y:auto;padding-bottom:85px;">
-    <!-- Photo -->
     <div style="background:#F0FFF4;padding:16px;text-align:center;">
       <div onclick="showT('📷 Abrir cámara')"
         style="width:85px;height:85px;border-radius:16px;background:#C7F9CC;
@@ -256,8 +313,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
         font-size:36px;border:3px dashed #52B788;cursor:pointer;">🏡</div>
       <div style="font-size:12px;color:#52B788;font-weight:600;">Toca para agregar foto del predio</div>
     </div>
-
-    <!-- INFORMACIÓN DEL PREDIO (top) — CHANGED: moved predio fields here -->
     <div class="sec">
       <div class="sec-t">Información del Predio</div>
       <div class="f"><label>🏡 Nombre predio</label>
@@ -280,32 +335,23 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
           <option>Otro</option>
         </select></div>
     </div>
-
     <div class="div"></div>
-
-    <!-- INFORMACIÓN USUARIO (bottom) — CHANGED: renamed, new fields, no año, no Pareto -->
     <div class="sec">
       <div class="sec-t">Información Usuario</div>
       <div class="f"><label>👤 Nombre completo</label>
         <input type="text" id="p-nombre" value="María González Rojas"></div>
       <div class="f"><label>📱 Teléfono</label>
         <input type="tel" value="+56 9 8234 5678"></div>
-      <!-- NEW: email -->
       <div class="f"><label>📧 Email</label>
         <input type="email" placeholder="correo@ejemplo.com"></div>
-      <!-- NEW: cargo -->
       <div class="f"><label>💼 Cargo</label>
         <select>
-          <option>Propietario/a</option>
-          <option>Administrador/a</option>
-          <option>Encargado/a de Campo</option>
-          <option>Asesor/a Técnico/a</option>
+          <option>Propietario/a</option><option>Administrador/a</option>
+          <option>Encargado/a de Campo</option><option>Asesor/a Técnico/a</option>
           <option>Otro</option>
         </select></div>
-      <!-- NEW: dirección -->
       <div class="f"><label>📍 Dirección</label>
         <input type="text" placeholder="Ej: Camino Los Arrayanes 1234, Los Lagos"></div>
-      <!-- REMOVED: Año contable, REMOVED: Pareto box -->
       <div style="margin-top:16px;">
         <button class="btn bp" onclick="goTo('s-rubros')">Siguiente: Mis Unidades de Negocio →</button>
       </div>
@@ -383,24 +429,17 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
       </div>
     </div>
   </div>
-
   <div style="overflow-y:auto;padding-bottom:72px;">
-
-    <!-- FAB — CHANGED: name, NO flow strip -->
     <div class="rq-fab-section">
       <button class="rq-fab-btn" onclick="openRQ()">
         <span style="font-size:22px;">⚡</span>
         <div style="text-align:left;">
-          <!-- CHANGED: "Registro Rápido" → "Registra venta o costo" -->
           <div style="font-size:16px;font-weight:800;">Registra venta o costo</div>
           <div style="font-size:11px;opacity:.8;font-weight:400;">Completa en 4 pasos</div>
         </div>
         <span style="margin-left:auto;font-size:20px;">→</span>
       </button>
-      <!-- REMOVED: rq-flow-strip (símbolos) -->
     </div>
-
-    <!-- MIS UNIDADES DE NEGOCIO -->
     <div class="sec">
       <div class="sec-t">Mis Unidades de Negocio</div>
       <div id="h-rubros"></div>
@@ -408,10 +447,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
         <span onclick="goTo('s-rubros')" style="font-size:12px;color:var(--vp);cursor:pointer;font-weight:600;">✏️ Editar unidades de negocio</span>
       </div>
     </div>
-
     <div class="div"></div>
-
-    <!-- MENÚ PRINCIPAL — CHANGED: renamed, moved to bottom, alertas as sub-menu -->
     <div class="sec">
       <div class="sec-t">Menú Principal</div>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
@@ -421,12 +457,9 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
         <button class="btn bs bsm" onclick="goTo('s-comparativo')">⚖️ Benchmark</button>
         <button class="btn bs bsm" onclick="showT('📤 ElCanelo_ProcesamientoInfo_2025-07-15.xlsx')">📤 Exportar</button>
         <button class="btn bs bsm" onclick="goTo('s-mercado')">🛒 Mercado</button>
-        <!-- NEW: Modificar Unidades de Negocios -->
         <button class="btn bs bsm" onclick="goTo('s-rubros')">🏢 Modificar Unidades</button>
-        <!-- NEW: Alertas como sub-menú -->
         <button class="btn bs bsm" id="btn-alertas-toggle" onclick="toggleAlertas()">🔔 Alertas ▼</button>
       </div>
-      <!-- Alertas sub-menu panel (expandable) -->
       <div id="alertas-panel" style="display:none;margin-top:12px;padding-top:10px;border-top:2px solid var(--vpa);">
         <div style="font-size:11px;font-weight:700;color:var(--vp);text-transform:uppercase;letter-spacing:.8px;margin-bottom:8px;">⚠️ Alertas activas</div>
         <div class="al ald"><span class="al-ic">🔴</span><div class="al-tx"><strong>Forraje conservado = $0</strong>Bovina: campo clave para análisis Eslabón Débil.</div></div>
@@ -434,9 +467,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
         <div class="al als"><span class="al-ic">✅</span><div class="al-tx">Enero y Febrero guardados correctamente en Bovina.</div></div>
       </div>
     </div>
-
-  </div><!-- /scroll -->
-
+  </div>
   <div class="bnav">
     <div class="ni active" onclick="goTo('s-home')"><span class="ni-ic">🏠</span><span class="ni-lb">Inicio</span></div>
     <div class="ni" onclick="goTo('s-resumen')"><span class="ni-ic">📊</span><span class="ni-lb">Resumen</span></div>
@@ -448,35 +479,24 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
 
 <!-- ═══ BOVINA ═══ -->
 <div class="screen" id="s-bovina">
-  <div class="hdr">
-    <span class="hdr-bk" onclick="goTo('s-home')">←</span>
-    <h2>🐄 Ganadería Bovina</h2>
-    <span class="hdr-ic" onclick="showT('📷 Foto rodeo')">📷</span>
-  </div>
+  <div class="hdr"><span class="hdr-bk" onclick="goTo('s-home')">←</span><h2>🐄 Ganadería Bovina</h2><span class="hdr-ic" onclick="showT('📷 Foto rodeo')">📷</span></div>
   <div class="tabs" id="bov-tabs">
     <div class="tab active" onclick="swTab(this,'bov-ing','bov-tabs')">💰 Ingresos</div>
     <div class="tab" onclick="swTab(this,'bov-cos','bov-tabs')">📉 Costos</div>
     <div class="tab" onclick="swTab(this,'bov-ua','bov-tabs')">🐄 UA</div>
     <div class="tab" onclick="swTab(this,'bov-kpi','bov-tabs')">📈 KPIs</div>
   </div>
-  <div class="mes-w" id="bov-mes-w">
-    <div class="mes-lbl">📅 Mes a registrar:</div>
-    <div class="mes-s" id="bov-mes-s"></div>
-    <div class="mes-cur" id="bov-mes-cur">Mes: ENERO 2025</div>
-  </div>
+  <div class="mes-w" id="bov-mes-w"><div class="mes-lbl">📅 Mes a registrar:</div><div class="mes-s" id="bov-mes-s"></div><div class="mes-cur" id="bov-mes-cur">Mes: ENERO 2025</div></div>
   <div id="bov-ing" style="overflow-y:auto;padding-bottom:70px;display:block;">
     <div class="sec">
       <div class="sec-t">💰 Ingresos Brutos</div>
-      <div class="f"><label>Venta de animales (kg / cabezas)</label>
-        <input type="number" id="bi1" oninput="cBov()" value="4200000" placeholder="$0">
-        <div class="foto" onclick="showT('📷 Boleta venta')"><div class="foto-th">🧾</div><div class="foto-tx"><strong>📷 Adjuntar boleta</strong>Foto o archivo</div></div>
-      </div>
+      <div class="f"><label>Venta de animales (kg / cabezas)</label><input type="number" id="bi1" oninput="cBov()" value="4200000" placeholder="$0"></div>
       <div class="f"><label>Venta subproductos (leche, lana, cuero)</label><input type="number" id="bi2" oninput="cBov()" placeholder="$0"></div>
       <div class="f"><label>Venta reproductores / pie de cría</label><input type="number" id="bi3" oninput="cBov()" placeholder="$0"></div>
       <div class="f"><label>Subsidios / bonos</label><input type="number" id="bi4" oninput="cBov()" value="380000" placeholder="$0"></div>
-      <div class="f"><label>Mediería (sistema de medias)</label><input type="number" id="bi5" oninput="cBov()" placeholder="$0"></div>
-      <div class="f"><label>Arriendo de parcela ($/cabeza/día)</label><input type="number" id="bi6" oninput="cBov()" placeholder="$0"></div>
-      <div class="f"><label>Arriendo de talaje (pastoreo externo)</label><input type="number" id="bi7" oninput="cBov()" placeholder="$0"></div>
+      <div class="f"><label>Mediería</label><input type="number" id="bi5" oninput="cBov()" placeholder="$0"></div>
+      <div class="f"><label>Arriendo de parcela</label><input type="number" id="bi6" oninput="cBov()" placeholder="$0"></div>
+      <div class="f"><label>Arriendo de talaje</label><input type="number" id="bi7" oninput="cBov()" placeholder="$0"></div>
       <div class="f"><label>Otro ingreso 1</label><input type="number" id="bi8" oninput="cBov()" placeholder="$0"></div>
       <div class="f"><label>Otro ingreso 2</label><input type="number" id="bi9" oninput="cBov()" placeholder="$0"></div>
       <div class="res"><div class="rl">📊 Total Ingresos</div><div class="rv" id="b-ti">$ 4.580.000</div><div class="rs">calculado automáticamente</div></div>
@@ -486,21 +506,13 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
   <div id="bov-cos" style="overflow-y:auto;padding-bottom:70px;display:none;">
     <div class="sec">
       <div class="sec-t">📉 Costos Directos</div>
-      <div class="al ali"><span class="al-ic">ℹ️</span><div class="al-tx">Solo costos que <strong>desaparecen</strong> si elimina este rubro del predio.</div></div>
       <div class="f"><label>Suplemento mineral / sales</label><input type="number" id="bc1" oninput="cBov()" value="85000" placeholder="$0"></div>
       <div class="f"><label>Concentrados / pellets</label><input type="number" id="bc2" oninput="cBov()" placeholder="$0"></div>
-      <div class="f">
-        <label>⚠️ Forraje conservado (heno, ensilaje, fardos)</label>
-        <div class="hint" style="color:var(--rojo);font-weight:700;">🔴 Campo obligatorio — análisis Eslabón Débil</div>
-        <input type="number" id="bc3" oninput="cBov()" value="320000" style="border-color:var(--rojo);" placeholder="$0">
-      </div>
-      <div class="f"><label>Veterinaria y medicamentos</label>
-        <input type="number" id="bc4" oninput="cBov()" value="145000" placeholder="$0"></div>
-      <div class="f"><label>Mano de obra PAGADA</label>
-        <select style="margin-bottom:6px;"><option>Permanente</option><option>Temporal / temporada</option><option>Contratista externo</option></select>
-        <input type="number" id="bc5" oninput="cBov()" value="280000" placeholder="$0"></div>
+      <div class="f"><label>⚠️ Forraje conservado</label><div class="hint" style="color:var(--rojo);font-weight:700;">🔴 Obligatorio — Eslabón Débil</div><input type="number" id="bc3" oninput="cBov()" value="320000" style="border-color:var(--rojo);" placeholder="$0"></div>
+      <div class="f"><label>Veterinaria y medicamentos</label><input type="number" id="bc4" oninput="cBov()" value="145000" placeholder="$0"></div>
+      <div class="f"><label>Mano de obra PAGADA</label><input type="number" id="bc5" oninput="cBov()" value="280000" placeholder="$0"></div>
       <div class="f"><label>Transporte / flete / acopio</label><input type="number" id="bc6" oninput="cBov()" placeholder="$0"></div>
-      <div class="f"><label>Manejo de praderas (fertilización, encalado)</label><input type="number" id="bc7" oninput="cBov()" value="190000" placeholder="$0"></div>
+      <div class="f"><label>Manejo de praderas</label><input type="number" id="bc7" oninput="cBov()" value="190000" placeholder="$0"></div>
       <div class="f"><label>Maquinaria / arriendo maquinaria</label><input type="number" id="bc8" oninput="cBov()" placeholder="$0"></div>
       <div class="f"><label>Compra de animales para reposición</label><input type="number" id="bc9" oninput="cBov()" placeholder="$0"></div>
       <div class="res rw" style="margin-top:12px;"><div class="rl">📉 Total Costos Directos</div><div class="rv" id="b-tc">$ 1.020.000</div></div>
@@ -511,16 +523,11 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
   <div id="bov-ua" style="overflow-y:auto;padding-bottom:70px;display:none;">
     <div class="sec">
       <div class="sec-t">🐄 Unidades Animales (UA)</div>
-      <div class="al ali"><span class="al-ic">ℹ️</span><div class="al-tx">Factor UA = Peso promedio ÷ 450 kg. Automático.</div></div>
       <div style="overflow-x:auto;margin:0 -18px;padding:0 18px;">
-        <table class="uat">
-          <thead><tr><th>Categoría</th><th>N°</th><th>Kg prom</th><th>UA</th></tr></thead>
-          <tbody id="bov-ua-body"></tbody>
-        </table>
+        <table class="uat"><thead><tr><th>Categoría</th><th>N°</th><th>Kg prom</th><th>UA</th></tr></thead><tbody id="bov-ua-body"></tbody></table>
       </div>
       <div style="margin-top:13px;">
-        <div class="f"><label>📐 Superficie pastoreo efectiva (ha)</label>
-          <input type="number" id="bov-ha" value="72" oninput="cUABov()"></div>
+        <div class="f"><label>📐 Superficie pastoreo efectiva (ha)</label><input type="number" id="bov-ha" value="72" oninput="cUABov()"></div>
         <div class="res"><div class="rl">▶ Carga Animal Efectiva</div><div class="rv" id="bov-ca">1.05 UA/ha</div><div class="rs" id="bov-cas">75.7 UA ÷ 72 ha</div></div>
       </div>
       <button class="btn bp" onclick="showT('✅ UA guardadas')">💾 &nbsp;Guardar UA</button>
@@ -528,10 +535,10 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
   </div>
   <div id="bov-kpi" style="overflow-y:auto;padding-bottom:70px;display:none;">
     <div class="sec">
-      <div class="sec-t">📐 Indicadores Adicionales</div>
+      <div class="sec-t">📐 Indicadores</div>
       <div class="f"><label>Superficie dedicada (ha)</label><input type="number" id="bk-ha" oninput="cBovKPI()" placeholder="0"></div>
       <div class="f"><label>Margen Bruto / ha (CLP/ha)</label><div class="cv" id="bk-gpha">—</div></div>
-      <div class="f"><label>Unidades producidas (kg, cab., litros)</label><input type="number" id="bk-u" placeholder="0"></div>
+      <div class="f"><label>Unidades producidas</label><input type="number" id="bk-u" placeholder="0"></div>
       <div class="f"><label>Precio promedio venta (CLP/unidad)</label><input type="number" id="bk-pvu" placeholder="0"></div>
       <div class="f"><label>Ingreso total / ha</label><div class="cv" id="bk-itha">—</div></div>
     </div>
@@ -540,12 +547,12 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
       <div class="sec-t">⚖️ Punto de Equilibrio</div>
       <div class="f"><label>Unidades totales vendidas</label><input type="number" id="be-u" oninput="cBovEq()" placeholder="0"></div>
       <div class="f"><label>Costo directo / unidad</label><div class="cv" id="be-cu">— CLP/u</div></div>
-      <div class="f"><label>Precio promedio recibido (CLP/unidad)</label><input type="number" id="be-p" oninput="cBovEq()" placeholder="0"></div>
+      <div class="f"><label>Precio promedio recibido</label><input type="number" id="be-p" oninput="cBovEq()" placeholder="0"></div>
       <div class="f"><label>▶ Margen por unidad</label><div class="cv" id="be-m">— CLP/u</div></div>
     </div>
     <div class="div"></div>
     <div class="sec">
-      <div class="sec-t">🛒 Compra y Venta de Animales</div>
+      <div class="sec-t">🛒 Compra y Venta</div>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
         <div class="f"><label>Cab. compradas</label><input type="number" id="bcv-cc" oninput="cBovCV()" placeholder="0"></div>
         <div class="f"><label>Kg comprados</label><input type="number" id="bcv-ck" oninput="cBovCV()" placeholder="0"></div>
@@ -563,9 +570,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
     <div class="div"></div>
     <div class="sec">
       <div class="sec-t">💰 Capital y Retorno</div>
-      <div class="f"><label>Capital invertido excl. tierra (CLP)</label>
-        <div class="hint">Animales + infraestructura + maquinaria.</div>
-        <input type="number" id="bcap" oninput="cBovCV()" placeholder="$0"></div>
+      <div class="f"><label>Capital invertido excl. tierra (CLP)</label><input type="number" id="bcap" oninput="cBovCV()" placeholder="$0"></div>
       <div class="f"><label>ROIC sobre capital invertido (%)</label><div class="cv" id="broic">—</div></div>
       <button class="btn bp" onclick="showT('✅ KPIs guardados')">💾 &nbsp;Guardar KPIs</button>
     </div>
@@ -585,7 +590,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
     <div class="sec">
       <div class="sec-t">💰 Ingresos Brutos</div>
       <div class="f"><label>Venta de animales</label><input type="number" id="oi1" oninput="cOvi()" placeholder="$0"></div>
-      <div class="f"><label>Venta subproductos (leche, lana)</label><input type="number" id="oi2" oninput="cOvi()" placeholder="$0"></div>
+      <div class="f"><label>Venta subproductos</label><input type="number" id="oi2" oninput="cOvi()" placeholder="$0"></div>
       <div class="f"><label>Venta reproductores</label><input type="number" id="oi3" oninput="cOvi()" placeholder="$0"></div>
       <div class="f"><label>Subsidios / bonos</label><input type="number" id="oi4" oninput="cOvi()" placeholder="$0"></div>
       <div class="f"><label>Otro ingreso</label><input type="number" id="oi5" oninput="cOvi()" placeholder="$0"></div>
@@ -596,10 +601,10 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
   <div id="ovi-cos" style="overflow-y:auto;padding-bottom:70px;display:none;">
     <div class="sec">
       <div class="sec-t">📉 Costos Directos</div>
-      <div class="f"><label>⚠️ Forraje conservado</label><div class="hint" style="color:var(--rojo);font-weight:700;">🔴 Obligatorio — Eslabón Débil</div><input type="number" id="oc1" oninput="cOvi()" style="border-color:var(--rojo);" placeholder="$0"></div>
-      <div class="f"><label>Veterinaria y medicamentos</label><input type="number" id="oc2" oninput="cOvi()" placeholder="$0"></div>
+      <div class="f"><label>⚠️ Forraje conservado</label><div class="hint" style="color:var(--rojo);font-weight:700;">🔴 Obligatorio</div><input type="number" id="oc1" oninput="cOvi()" style="border-color:var(--rojo);" placeholder="$0"></div>
+      <div class="f"><label>Veterinaria</label><input type="number" id="oc2" oninput="cOvi()" placeholder="$0"></div>
       <div class="f"><label>Mano de obra PAGADA</label><input type="number" id="oc3" oninput="cOvi()" placeholder="$0"></div>
-      <div class="f"><label>Transporte / flete</label><input type="number" id="oc4" oninput="cOvi()" placeholder="$0"></div>
+      <div class="f"><label>Transporte</label><input type="number" id="oc4" oninput="cOvi()" placeholder="$0"></div>
       <div class="f"><label>Manejo de praderas</label><input type="number" id="oc5" oninput="cOvi()" placeholder="$0"></div>
       <div class="f"><label>Compra animales reposición</label><input type="number" id="oc6" oninput="cOvi()" placeholder="$0"></div>
       <div class="res rw" style="margin-top:12px;"><div class="rl">📉 Total Costos</div><div class="rv" id="ov-tc">$ 0</div></div>
@@ -643,11 +648,11 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
       <div class="sec-t">📉 Costos Directos</div>
       <div class="f"><label>Forraje / restos de cosecha</label><input type="number" id="poc1" oninput="cPor()" placeholder="$0"></div>
       <div class="f"><label>Otro alimento</label><input type="number" id="poc2" oninput="cPor()" placeholder="$0"></div>
-      <div class="f"><label>Lechón destetado (compra)</label><input type="number" id="poc3" oninput="cPor()" placeholder="$0"></div>
+      <div class="f"><label>Lechón destetado</label><input type="number" id="poc3" oninput="cPor()" placeholder="$0"></div>
       <div class="f"><label>Mano de obra PAGADA</label><input type="number" id="poc4" oninput="cPor()" placeholder="$0"></div>
       <div class="f"><label>Instalaciones y mantención</label><input type="number" id="poc5" oninput="cPor()" placeholder="$0"></div>
       <div class="f"><label>Energía</label><input type="number" id="poc6" oninput="cPor()" placeholder="$0"></div>
-      <div class="f"><label>Veterinaria y medicamentos</label><input type="number" id="poc7" oninput="cPor()" placeholder="$0"></div>
+      <div class="f"><label>Veterinaria</label><input type="number" id="poc7" oninput="cPor()" placeholder="$0"></div>
       <div class="res rw" style="margin-top:12px;"><div class="rl">📉 Total Costos</div><div class="rv" id="po-tc">$ 0</div></div>
       <div class="res"><div class="rl">✅ Margen Bruto</div><div class="rv" id="po-gp">$ 0</div><div class="rs" id="po-gpm">% MB: —</div></div>
       <button class="btn bp" style="margin-top:12px;" onclick="showT('✅ Guardado')">💾 &nbsp;Guardar Costos</button>
@@ -675,7 +680,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
     <div class="sec">
       <div class="sec-t">💰 Ingresos Brutos</div>
       <div class="f"><label>Venta de animales</label><input type="number" id="cai1" oninput="cCap()" placeholder="$0"></div>
-      <div class="f"><label>Venta subproductos (leche, lana)</label><input type="number" id="cai2" oninput="cCap()" placeholder="$0"></div>
+      <div class="f"><label>Venta subproductos</label><input type="number" id="cai2" oninput="cCap()" placeholder="$0"></div>
       <div class="f"><label>Venta reproductores</label><input type="number" id="cai3" oninput="cCap()" placeholder="$0"></div>
       <div class="f"><label>Subsidios / bonos</label><input type="number" id="cai4" oninput="cCap()" placeholder="$0"></div>
       <div class="f"><label>Otro ingreso</label><input type="number" id="cai5" oninput="cCap()" placeholder="$0"></div>
@@ -686,14 +691,14 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
   <div id="cap-cos" style="overflow-y:auto;padding-bottom:70px;display:none;">
     <div class="sec">
       <div class="sec-t">📉 Costos Directos</div>
-      <div class="f"><label>Forraje fresco (pastizal, praderas)</label><input type="number" id="cac1" oninput="cCap()" placeholder="$0"></div>
-      <div class="f"><label>⚠️ Forraje conservado</label><div class="hint" style="color:var(--rojo);font-weight:700;">🔴 Obligatorio — Eslabón Débil</div><input type="number" id="cac2" oninput="cCap()" style="border-color:var(--rojo);" placeholder="$0"></div>
-      <div class="f"><label>Concentrados (maíz, avena, soya)</label><input type="number" id="cac3" oninput="cCap()" placeholder="$0"></div>
-      <div class="f"><label>Suplemento mineral / sales</label><input type="number" id="cac4" oninput="cCap()" placeholder="$0"></div>
+      <div class="f"><label>Forraje fresco</label><input type="number" id="cac1" oninput="cCap()" placeholder="$0"></div>
+      <div class="f"><label>⚠️ Forraje conservado</label><div class="hint" style="color:var(--rojo);font-weight:700;">🔴 Obligatorio</div><input type="number" id="cac2" oninput="cCap()" style="border-color:var(--rojo);" placeholder="$0"></div>
+      <div class="f"><label>Concentrados</label><input type="number" id="cac3" oninput="cCap()" placeholder="$0"></div>
+      <div class="f"><label>Suplemento mineral</label><input type="number" id="cac4" oninput="cCap()" placeholder="$0"></div>
       <div class="f"><label>Reposición de ganado</label><input type="number" id="cac5" oninput="cCap()" placeholder="$0"></div>
       <div class="f"><label>Mano de obra PAGADA</label><input type="number" id="cac6" oninput="cCap()" placeholder="$0"></div>
       <div class="f"><label>Infraestructura y equipamiento</label><input type="number" id="cac7" oninput="cCap()" placeholder="$0"></div>
-      <div class="f"><label>Logística y transporte</label><input type="number" id="cac8" oninput="cCap()" placeholder="$0"></div>
+      <div class="f"><label>Transporte</label><input type="number" id="cac8" oninput="cCap()" placeholder="$0"></div>
       <div class="res rw" style="margin-top:12px;"><div class="rl">📉 Total Costos</div><div class="rv" id="ca-tc">$ 0</div></div>
       <div class="res"><div class="rl">✅ Margen Bruto</div><div class="rv" id="ca-gp">$ 0</div><div class="rs" id="ca-gpm">% MB: —</div></div>
       <button class="btn bp" style="margin-top:12px;" onclick="showT('✅ Guardado')">💾 &nbsp;Guardar Costos</button>
@@ -722,8 +727,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
     <div class="sec">
       <div class="sec-t">💰 Ingresos Brutos</div>
       <div class="f"><label>Venta de huevos</label><input type="number" id="avi1" oninput="cAvi()" placeholder="$0"></div>
-      <div class="f"><label>Venta gallinas de descarte</label><input type="number" id="avi2" oninput="cAvi()" placeholder="$0"></div>
-      <div class="f"><label>Venta pollitas / pollos</label><input type="number" id="avi3" oninput="cAvi()" placeholder="$0"></div>
+      <div class="f"><label>Gallinas de descarte</label><input type="number" id="avi2" oninput="cAvi()" placeholder="$0"></div>
+      <div class="f"><label>Pollitas / pollos</label><input type="number" id="avi3" oninput="cAvi()" placeholder="$0"></div>
       <div class="f"><label>Subsidios / bonos</label><input type="number" id="avi4" oninput="cAvi()" placeholder="$0"></div>
       <div class="f"><label>Otro ingreso</label><input type="number" id="avi5" oninput="cAvi()" placeholder="$0"></div>
       <div class="res"><div class="rl">📊 Total Ingresos</div><div class="rv" id="av-ti">$ 0</div></div>
@@ -735,11 +740,11 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
       <div class="sec-t">📉 Costos Directos</div>
       <div class="f"><label>Alimentación – Maíz</label><input type="number" id="avc1" oninput="cAvi()" placeholder="$0"></div>
       <div class="f"><label>Alimentación – Afrecho / soya</label><input type="number" id="avc2" oninput="cAvi()" placeholder="$0"></div>
-      <div class="f"><label>Alimentación – Otros insumos</label><input type="number" id="avc3" oninput="cAvi()" placeholder="$0"></div>
+      <div class="f"><label>Alimentación – Otros</label><input type="number" id="avc3" oninput="cAvi()" placeholder="$0"></div>
       <div class="f"><label>Mano de obra – Permanente</label><input type="number" id="avc4" oninput="cAvi()" placeholder="$0"></div>
       <div class="f"><label>Mano de obra – Temporal</label><input type="number" id="avc5" oninput="cAvi()" placeholder="$0"></div>
       <div class="f"><label>Transporte y distribución</label><input type="number" id="avc6" oninput="cAvi()" placeholder="$0"></div>
-      <div class="f"><label>Embalaje (cajas, bandejas)</label><input type="number" id="avc7" oninput="cAvi()" placeholder="$0"></div>
+      <div class="f"><label>Embalaje</label><input type="number" id="avc7" oninput="cAvi()" placeholder="$0"></div>
       <div class="f"><label>Electricidad y agua</label><input type="number" id="avc8" oninput="cAvi()" placeholder="$0"></div>
       <div class="res rw" style="margin-top:12px;"><div class="rl">📉 Total Costos</div><div class="rv" id="av-tc">$ 0</div></div>
       <div class="res"><div class="rl">✅ Margen Bruto</div><div class="rv" id="av-gp">$ 0</div><div class="rs" id="av-gpm">% MB: —</div></div>
@@ -778,7 +783,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
       <div class="f"><label>Venta de tours / experiencias</label><input type="number" id="ti1" oninput="cTur()" placeholder="$0"></div>
       <div class="f"><label>Alojamiento</label><input type="number" id="ti2" oninput="cTur()" placeholder="$0"></div>
       <div class="f"><label>Alimentación / eventos</label><input type="number" id="ti3" oninput="cTur()" placeholder="$0"></div>
-      <div class="f"><label>Venta productos locales / merchandising</label><input type="number" id="ti4" oninput="cTur()" placeholder="$0"></div>
+      <div class="f"><label>Productos locales / merchandising</label><input type="number" id="ti4" oninput="cTur()" placeholder="$0"></div>
       <div class="f"><label>Otro ingreso</label><input type="number" id="ti5" oninput="cTur()" placeholder="$0"></div>
       <div class="res"><div class="rl">📊 Total Ingresos</div><div class="rv" id="tu-ti">$ 0</div></div>
       <button class="btn bp" onclick="showT('✅ Guardado')">💾 &nbsp;Guardar Ingresos</button>
@@ -792,7 +797,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
       <div class="f"><label>Insumos y materiales</label><input type="number" id="tc3" oninput="cTur()" placeholder="$0"></div>
       <div class="f"><label>Mantención de instalaciones</label><input type="number" id="tc4" oninput="cTur()" placeholder="$0"></div>
       <div class="f"><label>Marketing y comisiones</label><input type="number" id="tc5" oninput="cTur()" placeholder="$0"></div>
-      <div class="f"><label>Plataformas de reserva (Booking, Airbnb)</label><input type="number" id="tc6" oninput="cTur()" placeholder="$0"></div>
+      <div class="f"><label>Plataformas de reserva</label><input type="number" id="tc6" oninput="cTur()" placeholder="$0"></div>
       <div class="res rw" style="margin-top:12px;"><div class="rl">📉 Total Costos</div><div class="rv" id="tu-tc">$ 0</div></div>
       <div class="res"><div class="rl">✅ Margen Bruto</div><div class="rv" id="tu-gp">$ 0</div><div class="rs" id="tu-gpm">% MB: —</div></div>
       <button class="btn bp" style="margin-top:12px;" onclick="showT('✅ Guardado')">💾 &nbsp;Guardar Costos</button>
@@ -856,18 +861,11 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
   <div style="overflow-y:auto;padding-bottom:85px;">
     <div style="padding:12px 18px;background:#FFF8E1;">
       <div class="al alw" style="margin:0;"><span class="al-ic">⚠️</span><div class="al-tx"><strong>¡Importante!</strong>NO repita aquí costos ya registrados en cada rubro.</div></div>
-      <div class="al ali" style="margin-top:6px;margin-bottom:0;">
-        <span class="al-ic">💡</span>
-        <div class="al-tx"><strong>Montos anuales</strong>Ingrese el total del año. Si prefiere mensual, multiplique por 12.</div>
-      </div>
+      <div class="al ali" style="margin-top:6px;margin-bottom:0;"><span class="al-ic">💡</span><div class="al-tx"><strong>Montos anuales</strong>Ingrese el total del año. Si prefiere mensual, multiplique por 12.</div></div>
     </div>
     <div class="sec">
       <div class="sec-t">💰 Costos Anuales Fijos</div>
-      <!-- NEW: campo año -->
-      <div class="f">
-        <label>📅 Año</label>
-        <input type="number" id="cf-anio" value="2025" placeholder="Año" style="font-size:18px;font-weight:700;">
-      </div>
+      <div class="f"><label>📅 Año</label><input type="number" id="cf-anio" value="2025" placeholder="Año" style="font-size:18px;font-weight:700;"></div>
       <div class="f"><label>🏘️ Arriendo de campo</label><input type="number" placeholder="$0 / año" id="cf1" oninput="cCF()"></div>
       <div class="f"><label>🏦 Crédito / dividendo</label><input type="number" id="cf2" oninput="cCF()" value="1800000"></div>
       <div class="f"><label>🗂️ Administración</label><input type="number" id="cf3" oninput="cCF()" value="600000"></div>
@@ -881,11 +879,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
       <div class="f"><label>🌱 Agrónomo</label><input type="number" id="cf11" oninput="cCF()"></div>
       <div class="f"><label>🤝 Asesorías generales</label><input type="number" id="cf12" oninput="cCF()"></div>
       <div class="f"><label>Otro costo fijo</label><input type="text" placeholder="Descripción" style="margin-bottom:6px;"><input type="number" id="cf13" oninput="cCF()" placeholder="$0 / año"></div>
-      <!-- CHANGED: removed "(referencial)" and "Se integrará en Taller 2" -->
-      <div class="res rb">
-        <div class="rl">TOTAL COSTOS FIJOS</div>
-        <div class="rv" id="cf-tot">$ 4.760.000</div>
-      </div>
+      <div class="res rb"><div class="rl">TOTAL COSTOS FIJOS</div><div class="rv" id="cf-tot">$ 4.760.000</div></div>
       <button class="btn bp" style="margin-top:14px;" onclick="showT('✅ Costos fijos guardados')">💾 &nbsp;Guardar Costos Fijos</button>
     </div>
   </div>
@@ -956,42 +950,11 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
     <div style="padding:12px 18px;background:#FFF3E0;font-size:12px;color:#E65100;line-height:1.5;">Registre los eslabones débiles identificados en el análisis del predio.</div>
     <div class="sec">
       <div class="sec-t">➕ Nuevo Eslabón Débil</div>
-
-      <!-- NEW: fecha evaluada como primera opción -->
-      <div class="f">
-        <label>📅 Fecha evaluada</label>
-        <input type="date" id="wl-fecha"
-          style="font-size:14px;font-weight:600;background:var(--ami);border:2px solid #E8D44D;border-radius:10px;padding:10px 12px;width:100%;font-family:inherit;outline:none;">
-      </div>
-
-      <div class="f">
-        <label>🔗 Tipo de eslabón débil</label>
-        <select id="wl-tipo">
-          <option>🌱 Biológico (praderas, producción, suelo, agua)</option>
-          <option>👥 Social / Humano (gestión, conocimiento, personas)</option>
-          <option>💰 Financiero (costos, ingresos, margen, liquidez)</option>
-        </select>
-      </div>
-      <div class="f"><label>Unidad de negocio</label>
-        <select id="wl-rubro">
-          <option>🐄 Ganadería Bovina</option><option>🐑 Ganadería Ovina</option>
-          <option>🐖 Ganadería Porcina</option><option>🐐 Ganadería Caprina</option>
-          <option>🐔 Avicultura-Huevos</option><option>🌾 Forraje-Agrícola</option>
-          <option>🌽 Cultivos Anuales</option><option>🥬 Hortalizas</option>
-          <option>🍎 Frutales</option><option>🏕️ Turismo</option>
-          <option>🍯 Apicultura</option><option>Otro</option>
-        </select>
-      </div>
-      <div class="f"><label>Descripción del eslabón débil</label>
-        <textarea rows="3" id="wl-desc" placeholder="Ej: Alto costo de forraje conservado en invierno..."
-          style="background:var(--ami);border:2px solid #E8D44D;border-radius:10px;padding:10px;width:100%;font-size:13px;font-family:inherit;"></textarea></div>
-      <div class="f"><label>Variable o costo afectado</label>
-        <select id="wl-costo">
-          <option>Forraje conservado (heno, fardos)</option><option>Mano de obra</option>
-          <option>Veterinaria</option><option>Alimentación</option>
-          <option>Maquinaria</option><option>Transporte</option>
-          <option>Manejo de praderas</option><option>Otro</option>
-        </select></div>
+      <div class="f"><label>📅 Fecha evaluada</label><input type="date" id="wl-fecha" style="font-size:14px;font-weight:600;background:var(--ami);border:2px solid #E8D44D;border-radius:10px;padding:10px 12px;width:100%;font-family:inherit;outline:none;"></div>
+      <div class="f"><label>🔗 Tipo de eslabón débil</label><select id="wl-tipo"><option>🌱 Biológico (praderas, producción, suelo, agua)</option><option>👥 Social / Humano (gestión, conocimiento, personas)</option><option>💰 Financiero (costos, ingresos, margen, liquidez)</option></select></div>
+      <div class="f"><label>Unidad de negocio</label><select id="wl-rubro"><option>🐄 Ganadería Bovina</option><option>🐑 Ganadería Ovina</option><option>🐖 Ganadería Porcina</option><option>🐐 Ganadería Caprina</option><option>🐔 Avicultura-Huevos</option><option>🌾 Forraje-Agrícola</option><option>🌽 Cultivos Anuales</option><option>🥬 Hortalizas</option><option>🍎 Frutales</option><option>🏕️ Turismo</option><option>🍯 Apicultura</option><option>Otro</option></select></div>
+      <div class="f"><label>Descripción del eslabón débil</label><textarea rows="3" id="wl-desc" placeholder="Ej: Alto costo de forraje conservado en invierno..." style="background:var(--ami);border:2px solid #E8D44D;border-radius:10px;padding:10px;width:100%;font-size:13px;font-family:inherit;"></textarea></div>
+      <div class="f"><label>Variable o costo afectado</label><select id="wl-costo"><option>Forraje conservado (heno, fardos)</option><option>Mano de obra</option><option>Veterinaria</option><option>Alimentación</option><option>Maquinaria</option><option>Transporte</option><option>Manejo de praderas</option><option>Otro</option></select></div>
       <div class="f"><label>Prioridad</label>
         <div style="display:flex;gap:7px;margin-top:3px;">
           <button class="btn bsm" id="wl-alta" onclick="setPrio('Alta')" style="background:#FFEBEE;color:#C62828;border:2px solid #FFCDD2;flex:1;">🔴 Alta</button>
@@ -999,7 +962,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
           <button class="btn bsm" id="wl-baja" onclick="setPrio('Baja')" style="background:#F1F8E9;color:#558B2F;border:2px solid #C5E1A5;flex:1;">🟢 Baja</button>
         </div>
       </div>
-      <!-- REMOVED: Taller N° field -->
       <button class="btn bp" onclick="addWL()">💾 &nbsp;Guardar Eslabón Débil</button>
     </div>
     <div class="div"></div>
@@ -1025,7 +987,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
 <div class="screen" id="s-comparativo">
   <div class="hdr"><span class="hdr-bk" onclick="goTo('s-home')">←</span><h2>⚖️ Benchmark Bovino</h2></div>
   <div style="overflow-y:auto;padding-bottom:85px;">
-    <div style="padding:12px 18px;background:#E8EAF6;font-size:12px;color:#283593;line-height:1.5;"><strong>Benchmark Bovino – Ganadería Bovina</strong><br>Conv. vs. Regenerativo · ODEPA 2024</div>
+    <div style="padding:12px 18px;background:#E8EAF6;font-size:12px;color:#283593;line-height:1.5;"><strong>Benchmark Bovino</strong><br>Conv. vs. Regenerativo · ODEPA 2024</div>
     <div class="sec">
       <div class="cmp" style="margin-bottom:10px;"><div class="cmp-h" style="background:#E3F2FD;color:#1565C0;">🔵 Convencional</div><div class="cmp-h" style="background:var(--vpa);color:var(--vp);">🌿 Regenerativo</div></div>
       <div class="sec-t">1. Superficie y Rebaño</div>
@@ -1104,21 +1066,10 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
     <div class="div"></div>
     <div class="sec">
       <div class="sec-t">📋 Mis Precios vs. Mercado</div>
-      <div class="f"><label>Rubro / Producto</label>
-        <select id="merc-rubro" onchange="autoFillMercRef()">
-          <option>🐄 Bovina – Novillos ($$/kg)</option>
-          <option>🐑 Ovina – Corderos ($$/kg)</option>
-          <option>🐔 Huevos ($$/docena)</option>
-          <option>🌾 Trigo ($$/qq)</option>
-          <option>Otro</option>
-        </select></div>
+      <div class="f"><label>Rubro / Producto</label><select id="merc-rubro" onchange="autoFillMercRef()"><option>🐄 Bovina – Novillos ($$/kg)</option><option>🐑 Ovina – Corderos ($$/kg)</option><option>🐔 Huevos ($$/docena)</option><option>🌾 Trigo ($$/qq)</option><option>Otro</option></select></div>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
         <div class="f"><label>Mi precio</label><input type="number" id="merc-mio" placeholder="CLP"></div>
-        <div class="f">
-          <label>Precio mercado</label>
-          <input type="number" id="merc-ref" placeholder="CLP">
-          <div id="merc-ref-note" style="display:none;font-size:10px;color:#6A1B9A;margin-top:3px;font-weight:600;">📡 Pre-cargado desde ODEPA Jul 2025</div>
-        </div>
+        <div class="f"><label>Precio mercado</label><input type="number" id="merc-ref" placeholder="CLP"><div id="merc-ref-note" style="display:none;font-size:10px;color:#6A1B9A;margin-top:3px;font-weight:600;">📡 Pre-cargado desde ODEPA Jul 2025</div></div>
       </div>
       <div class="f"><label>Diferencia</label><div class="cv" id="merc-dif">—</div></div>
       <button class="btn bp" onclick="cMercDif()">💾 &nbsp;Registrar Precio</button>
@@ -1135,24 +1086,17 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
   </div>
 </div>
 
-<!-- ═══════════════════════════════
-     REGISTRA VENTA O COSTO
-═══════════════════════════════ -->
+<!-- ═══ REGISTRA VENTA O COSTO ═══ -->
 <div class="screen" id="s-rq">
   <div class="hdr">
     <span class="hdr-bk" onclick="rqBack()">←</span>
-    <!-- CHANGED: name -->
     <h2>⚡ Registra venta o costo</h2>
     <span style="font-size:11px;color:#B7E4C7;font-weight:600;" id="rq-step-lbl">Paso 1/4</span>
   </div>
-
   <div class="rq-step-bar">
-    <div class="rq-dot active" id="rq-d1">1</div>
-    <div class="rq-line" id="rq-l1"></div>
-    <div class="rq-dot" id="rq-d2">2</div>
-    <div class="rq-line" id="rq-l2"></div>
-    <div class="rq-dot" id="rq-d3">3</div>
-    <div class="rq-line" id="rq-l3"></div>
+    <div class="rq-dot active" id="rq-d1">1</div><div class="rq-line" id="rq-l1"></div>
+    <div class="rq-dot" id="rq-d2">2</div><div class="rq-line" id="rq-l2"></div>
+    <div class="rq-dot" id="rq-d3">3</div><div class="rq-line" id="rq-l3"></div>
     <div class="rq-dot" id="rq-d4">4</div>
   </div>
 
@@ -1160,19 +1104,12 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
   <div id="rq-s1" style="overflow-y:auto;padding-bottom:80px;display:block;">
     <div class="sec">
       <div class="sec-t">📅 Fecha del registro</div>
-      <div class="al ali" style="margin-bottom:12px;">
-        <span class="al-ic">💡</span>
-        <div class="al-tx">La fecha determina en qué <strong>mes</strong> se guarda el dato automáticamente.</div>
-      </div>
-      <div class="f">
-        <label>Fecha</label>
-        <input type="date" id="rq-fecha" style="font-size:16px;font-weight:700;background:var(--ami);border:2px solid #E8D44D;border-radius:10px;padding:12px;width:100%;font-family:inherit;">
-      </div>
+      <div class="al ali" style="margin-bottom:12px;"><span class="al-ic">💡</span><div class="al-tx">La fecha determina en qué <strong>mes</strong> se guarda el dato automáticamente.</div></div>
+      <div class="f"><label>Fecha</label><input type="date" id="rq-fecha" style="font-size:16px;font-weight:700;background:var(--ami);border:2px solid #E8D44D;border-radius:10px;padding:12px;width:100%;font-family:inherit;"></div>
       <div id="rq-fecha-preview" style="font-size:13px;color:var(--vp);font-weight:700;padding:4px 0 8px;"></div>
     </div>
     <div class="div"></div>
     <div class="sec">
-      <!-- CHANGED: "Seleccione el rubro" → "Seleccione la unidad de negocio" -->
       <div class="sec-t">🌿 Seleccione la unidad de negocio</div>
       <div id="rq-rubro-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:8px;"></div>
     </div>
@@ -1181,7 +1118,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
     </div>
   </div>
 
-  <!-- PASO 2: Tipo (Ingreso / Costo) -->
+  <!-- PASO 2: Tipo -->
   <div id="rq-s2" style="overflow-y:auto;padding-bottom:80px;display:none;">
     <div class="sec">
       <div class="sec-t">📂 Tipo de registro</div>
@@ -1218,71 +1155,48 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
     </div>
   </div>
 
-  <!-- PASO 4: Cantidad + Precio (REDESIGNED — siempre qty×price, no editable total) -->
+  <!-- PASO 4: Cantidad + Precio (siempre qty×price, total no editable) -->
   <div id="rq-s4" style="overflow-y:auto;padding-bottom:80px;display:none;">
-    <!-- Summary card -->
     <div id="rq-summary" style="background:linear-gradient(135deg,#1B4332,#52B788);color:white;padding:16px 18px;">
       <div style="font-size:10px;font-weight:600;opacity:.7;text-transform:uppercase;letter-spacing:.8px;margin-bottom:6px;">📍 Guardando en:</div>
       <div style="font-size:15px;font-weight:800;" id="rq-sum-rubro">—</div>
       <div style="font-size:12px;opacity:.8;margin-top:2px;" id="rq-sum-tipo">—</div>
       <div style="font-size:11px;opacity:.7;margin-top:2px;" id="rq-sum-concepto">—</div>
     </div>
-
     <div class="sec">
-      <!-- Label changes based on tipo (ing/cos) -->
       <div class="sec-t" id="rq-step4-label">📦 Cantidad y precio de venta</div>
-
-      <!-- Campo 1: Cantidad (siempre) -->
       <div class="f">
         <label id="rq-qty-label">Cantidad (unidades, kg, litros, cab.)</label>
         <input type="number" id="rq-qty" placeholder="0" oninput="rqCalcTotal()" min="0" step="any"
           style="background:var(--ami);border:2px solid #E8D44D;border-radius:10px;padding:12px;width:100%;font-size:22px;font-weight:700;font-family:inherit;outline:none;">
       </div>
-
-      <!-- Campo 2: Precio o Monto por unidad (siempre) -->
       <div class="f">
         <label id="rq-uprice-label">Precio por unidad (CLP)</label>
         <input type="number" id="rq-uprice" placeholder="0" oninput="rqCalcTotal()" min="0"
           style="background:var(--ami);border:2px solid #E8D44D;border-radius:10px;padding:12px;width:100%;font-size:22px;font-weight:700;font-family:inherit;outline:none;">
       </div>
-
-      <!-- Monto Total calculado (NO editable) -->
       <div class="f">
         <label>💰 Monto Total <span style="font-size:10px;color:#888;font-weight:400;">(calculado · no editable)</span></label>
         <div id="rq-total-display" class="rq-total-box">$ —</div>
         <div id="rq-total-formula" style="font-size:12px;color:var(--vp);font-weight:600;margin-top:5px;text-align:right;min-height:16px;"></div>
       </div>
     </div>
-
     <div class="div"></div>
-
     <div class="sec">
       <div class="sec-t">📷 Evidencia (opcional)</div>
       <div class="foto" onclick="rqFoto()" id="rq-foto-btn">
         <div class="foto-th" id="rq-foto-th">📷</div>
-        <div class="foto-tx">
-          <strong id="rq-foto-lbl">Adjuntar boleta o comprobante</strong>
-          <span id="rq-foto-sub">Toca para tomar foto o subir archivo</span>
-        </div>
+        <div class="foto-tx"><strong id="rq-foto-lbl">Adjuntar boleta o comprobante</strong><span id="rq-foto-sub">Toca para tomar foto o subir archivo</span></div>
       </div>
     </div>
-
     <div class="div"></div>
-
     <div class="sec">
       <div class="sec-t">📝 Nota (opcional)</div>
-      <div class="f">
-        <textarea id="rq-nota" rows="3"
-          placeholder="Ej: Fardos x5, proveedor Agrícola del Sur, factura 1234..."
-          style="background:var(--ami);border:2px solid #E8D44D;border-radius:10px;padding:10px 12px;width:100%;font-size:13px;font-family:inherit;"></textarea>
-      </div>
+      <div class="f"><textarea id="rq-nota" rows="3" placeholder="Ej: Fardos x5, proveedor Agrícola del Sur..." style="background:var(--ami);border:2px solid #E8D44D;border-radius:10px;padding:10px 12px;width:100%;font-size:13px;font-family:inherit;"></textarea></div>
     </div>
-
     <div style="position:sticky;bottom:0;background:#fff;padding:12px 18px;border-top:1px solid #eee;display:flex;gap:8px;">
       <button class="btn bo" onclick="rqPrev()" style="flex:1;padding:13px;">← Atrás</button>
-      <button class="btn" onclick="rqSave()" style="flex:2;background:linear-gradient(135deg,#1B4332,#52B788);color:#fff;font-size:15px;font-weight:800;border-radius:13px;padding:14px;border:none;cursor:pointer;font-family:inherit;">
-        ✅ &nbsp;Guardar Registro
-      </button>
+      <button class="btn" onclick="rqSave()" style="flex:2;background:linear-gradient(135deg,#1B4332,#52B788);color:#fff;font-size:15px;font-weight:800;border-radius:13px;padding:14px;border:none;cursor:pointer;font-family:inherit;">✅ &nbsp;Guardar Registro</button>
     </div>
   </div>
 
@@ -1293,9 +1207,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
       <div style="font-size:22px;font-weight:900;color:var(--vp);">¡Guardado con éxito!</div>
       <div style="font-size:13px;color:#888;margin-top:4px;">El resumen mensual y anual se actualizó automáticamente</div>
     </div>
-    <div class="sec" style="padding-top:0;">
-      <div id="rq-success-card" style="background:var(--vto);border:2px solid var(--vl);border-radius:14px;padding:16px;"></div>
-    </div>
+    <div class="sec" style="padding-top:0;"><div id="rq-success-card" style="background:var(--vto);border:2px solid var(--vl);border-radius:14px;padding:16px;"></div></div>
     <div class="sec">
       <div class="sec-t">🗂️ Ruta del dato guardado</div>
       <div id="rq-ruta" style="display:flex;align-items:center;gap:4px;flex-wrap:wrap;padding:12px;background:var(--gc);border-radius:10px;font-size:12px;font-weight:600;"></div>
@@ -1310,7 +1222,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
     </div>
   </div>
 </div>
-<!-- FIN REGISTRA VENTA O COSTO -->
 
 <!-- TOAST -->
 <div class="toast" id="toast"></div>
@@ -1318,401 +1229,167 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
 </div><!-- /phone -->
 
 <script>
-// ══════════════════════
-// DATOS
-// ══════════════════════
 const MESES=['ENE','FEB','MAR','ABR','MAY','JUN','JUL','AGO','SEP','OCT','NOV','DIC'];
 const MESES_FULL=['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
-const UA_BOV=[
-  {cat:'🐂 Toro',n:2,kg:520},{cat:'🐄 Vaca',n:42,kg:420},
-  {cat:'🐃 Novillo',n:18,kg:320},{cat:'🐄 Novilla',n:10,kg:280},
-  {cat:'🐮 Ternero',n:24,kg:160},{cat:'🐮 Ternera',n:20,kg:150}
-];
-const UA_OVI=[
-  {cat:'🐏 Carnero',n:0,kg:70},{cat:'🐑 Oveja',n:0,kg:55},
-  {cat:'🐑 Borrego',n:0,kg:40},{cat:'🐑 Borrega',n:0,kg:38},
-  {cat:'🐑 Cordero',n:0,kg:22},{cat:'🐑 Cordera',n:0,kg:20}
-];
-const UA_POR=[
-  {cat:'🐗 Verraco',n:0,kg:180},{cat:'🐷 Cerda reproductora',n:0,kg:150},
-  {cat:'🐷 Cerdo(a) engorda',n:0,kg:90},{cat:'🐽 Lechón',n:0,kg:12}
-];
-const UA_CAP=[
-  {cat:'🐐 Macho cabrío',n:0,kg:65},{cat:'🐐 Cabra',n:0,kg:45},
-  {cat:'🐐 Cabrito',n:0,kg:20},{cat:'🐐 Cabrita',n:0,kg:18}
-];
-
+const UA_BOV=[{cat:'🐂 Toro',n:2,kg:520},{cat:'🐄 Vaca',n:42,kg:420},{cat:'🐃 Novillo',n:18,kg:320},{cat:'🐄 Novilla',n:10,kg:280},{cat:'🐮 Ternero',n:24,kg:160},{cat:'🐮 Ternera',n:20,kg:150}];
+const UA_OVI=[{cat:'🐏 Carnero',n:0,kg:70},{cat:'🐑 Oveja',n:0,kg:55},{cat:'🐑 Borrego',n:0,kg:40},{cat:'🐑 Borrega',n:0,kg:38},{cat:'🐑 Cordero',n:0,kg:22},{cat:'🐑 Cordera',n:0,kg:20}];
+const UA_POR=[{cat:'🐗 Verraco',n:0,kg:180},{cat:'🐷 Cerda reproductora',n:0,kg:150},{cat:'🐷 Cerdo(a) engorda',n:0,kg:90},{cat:'🐽 Lechón',n:0,kg:12}];
+const UA_CAP=[{cat:'🐐 Macho cabrío',n:0,kg:65},{cat:'🐐 Cabra',n:0,kg:45},{cat:'🐐 Cabrito',n:0,kg:20},{cat:'🐐 Cabrita',n:0,kg:18}];
 let rubrosSel=['bovina','forraje'];
 const RUBRO_DEF={
-  bovina:    {n:'Ganadería Bovina',  em:'🐄',s:'s-bovina'},
-  ovina:     {n:'Ganadería Ovina',   em:'🐑',s:'s-ovina'},
-  porcina:   {n:'Ganadería Porcina', em:'🐖',s:'s-porcina'},
-  caprina:   {n:'Ganadería Caprina', em:'🐐',s:'s-caprina'},
-  avicultura:{n:'Avicultura-Huevos', em:'🐔',s:'s-avicultura'},
-  turismo:   {n:'Turismo',           em:'🏕️',s:'s-turismo'},
-  forraje:   {n:'Forraje-Agrícola',  em:'🌾',s:'s-generic',gk:'forraje'},
-  cultivos:  {n:'Cultivos Anuales',  em:'🌽',s:'s-generic',gk:'cultivos'},
-  hortalizas:{n:'Hortalizas-Huerta', em:'🥬',s:'s-generic',gk:'hortalizas'},
-  frutales:  {n:'Frutales',          em:'🍎',s:'s-generic',gk:'frutales'},
-  flores:    {n:'Flores',            em:'🌸',s:'s-generic',gk:'flores'},
-  vinedos:   {n:'Viñedos',           em:'🍇',s:'s-generic',gk:'vinedos'},
-  apicultura:{n:'Apicultura',        em:'🍯',s:'s-generic',gk:'apicultura'},
-  quesos:    {n:'Agroind. Quesos',   em:'🧀',s:'s-generic',gk:'quesos'},
-  lacteos:   {n:'Agroind. Lácteos',  em:'🥛',s:'s-generic',gk:'lacteos'},
-  lombricultura:{n:'Lombricultura',  em:'🪱',s:'s-generic',gk:'lombricultura'}
+  bovina:{n:'Ganadería Bovina',em:'🐄',s:'s-bovina'},
+  ovina:{n:'Ganadería Ovina',em:'🐑',s:'s-ovina'},
+  porcina:{n:'Ganadería Porcina',em:'🐖',s:'s-porcina'},
+  caprina:{n:'Ganadería Caprina',em:'🐐',s:'s-caprina'},
+  avicultura:{n:'Avicultura-Huevos',em:'🐔',s:'s-avicultura'},
+  turismo:{n:'Turismo',em:'🏕️',s:'s-turismo'},
+  forraje:{n:'Forraje-Agrícola',em:'🌾',s:'s-generic',gk:'forraje'},
+  cultivos:{n:'Cultivos Anuales',em:'🌽',s:'s-generic',gk:'cultivos'},
+  hortalizas:{n:'Hortalizas-Huerta',em:'🥬',s:'s-generic',gk:'hortalizas'},
+  frutales:{n:'Frutales',em:'🍎',s:'s-generic',gk:'frutales'},
+  flores:{n:'Flores',em:'🌸',s:'s-generic',gk:'flores'},
+  vinedos:{n:'Viñedos',em:'🍇',s:'s-generic',gk:'vinedos'},
+  apicultura:{n:'Apicultura',em:'🍯',s:'s-generic',gk:'apicultura'},
+  quesos:{n:'Agroind. Quesos',em:'🧀',s:'s-generic',gk:'quesos'},
+  lacteos:{n:'Agroind. Lácteos',em:'🥛',s:'s-generic',gk:'lacteos'},
+  lombricultura:{n:'Lombricultura',em:'🪱',s:'s-generic',gk:'lombricultura'}
 };
 const GENERIC_CFG={
-  forraje:{i:['Venta de producto principal','Venta de subproducto','Venta directa (feria, redes)','Subsidios / bonos','Otro ingreso'],c:['Semillas / plantines','Fertilizantes y enmiendas','Agroquímicos','Riego','Mano de Obra PAGADA','Maquinaria / arriendo','Transporte / flete','Otros costos operacionales']},
-  cultivos:{i:['Venta de producto principal','Venta de subproducto','Venta directa','Subsidios / bonos','Otro ingreso'],c:['Semillas / plantines','Fertilizantes y enmiendas','Agroquímicos','Riego','Mano de Obra PAGADA','Maquinaria / arriendo','Transporte / flete','Otros costos operacionales']},
-  hortalizas:{i:['Venta producto principal','Venta directa (feria, huerta)','Subsidios / bonos','Otro ingreso'],c:['Semillas / plantines','Fertilizantes','Agroquímicos','Riego','Mano de Obra PAGADA','Embalaje y envases','Transporte / distribución','Otros costos operacionales']},
-  frutales:{i:['Venta fruta fresca','Venta fruta proceso','Venta directa','Subsidios / bonos','Otro ingreso'],c:['Fertilizantes','Agroquímicos','Riego','Mano de Obra PAGADA','Maquinaria / cosecha','Embalaje','Transporte / flete','Otros costos operacionales']},
-  flores:{i:['Venta flores frescas','Venta bouquets / arreglos','Venta directa','Subsidios / bonos','Otro ingreso'],c:['Semillas / bulbos','Fertilizantes','Agroquímicos','Riego','Mano de Obra PAGADA','Embalaje','Transporte','Otros costos operacionales']},
-  vinedos:{i:['Venta de uva','Venta de vino','Venta directa (enoturismo)','Subsidios / bonos','Otro ingreso'],c:['Insumos enológicos','Fertilizantes','Agroquímicos','Mano de Obra PAGADA','Maquinaria / vendimia','Embalaje','Transporte','Otros costos operacionales']},
-  apicultura:{i:['Venta de miel','Venta de cera / propóleo / polen','Venta de núcleos / reinas','Subsidios / bonos','Otro ingreso'],c:['Alimentación artificial','Insumos sanitarios','Materiales de colmenas','Mano de Obra PAGADA','Embalaje','Transporte / traslado colmenas','Arriendo de sitios','Otros costos operacionales']},
-  quesos:{i:['Venta de quesos (kg)','Venta de suero / subproductos','Venta directa','Subsidios / bonos','Otro ingreso'],c:['Leche (materia prima)','Fermentos y cuajo','Sal, envases, embalaje','Energía','Mano de Obra PAGADA','Materiales de limpieza','Transporte','Otros costos operacionales']},
-  lacteos:{i:['Venta de leche fluida','Venta de productos procesados','Venta directa','Subsidios / bonos','Otro ingreso'],c:['Insumos de procesamiento','Energía','Mano de Obra PAGADA','Materiales de limpieza','Transporte','Certificaciones','Otros costos operacionales']},
-  lombricultura:{i:['Venta de humus / lombricomposta','Venta de lombrices','Venta de lixiviado','Subsidios / bonos','Otro ingreso'],c:['Materiales orgánicos','Envases y embalaje','Mano de Obra PAGADA','Transporte','Otros costos operacionales']}
+  forraje:{i:['Venta de producto principal','Venta de subproducto','Venta directa','Subsidios / bonos','Otro ingreso'],c:['Semillas / plantines','Fertilizantes y enmiendas','Agroquímicos','Riego','Mano de Obra PAGADA','Maquinaria / arriendo','Transporte / flete','Otros costos operacionales']},
+  cultivos:{i:['Venta de producto principal','Venta de subproducto','Venta directa','Subsidios / bonos','Otro ingreso'],c:['Semillas / plantines','Fertilizantes','Agroquímicos','Riego','Mano de Obra PAGADA','Maquinaria','Transporte','Otros costos']},
+  hortalizas:{i:['Venta producto principal','Venta directa','Subsidios / bonos','Otro ingreso'],c:['Semillas / plantines','Fertilizantes','Agroquímicos','Riego','Mano de Obra PAGADA','Embalaje','Transporte','Otros costos']},
+  frutales:{i:['Venta fruta fresca','Venta fruta proceso','Venta directa','Subsidios / bonos','Otro ingreso'],c:['Fertilizantes','Agroquímicos','Riego','Mano de Obra PAGADA','Maquinaria','Embalaje','Transporte','Otros costos']},
+  flores:{i:['Venta flores frescas','Venta bouquets','Venta directa','Subsidios / bonos','Otro ingreso'],c:['Semillas / bulbos','Fertilizantes','Agroquímicos','Riego','Mano de Obra PAGADA','Embalaje','Transporte','Otros costos']},
+  vinedos:{i:['Venta de uva','Venta de vino','Venta directa','Subsidios / bonos','Otro ingreso'],c:['Insumos enológicos','Fertilizantes','Agroquímicos','Mano de Obra PAGADA','Maquinaria','Embalaje','Transporte','Otros costos']},
+  apicultura:{i:['Venta de miel','Venta de cera / propóleo','Venta de núcleos','Subsidios / bonos','Otro ingreso'],c:['Alimentación artificial','Insumos sanitarios','Materiales colmenas','Mano de Obra PAGADA','Embalaje','Transporte','Arriendo sitios','Otros costos']},
+  quesos:{i:['Venta de quesos (kg)','Venta de subproductos','Venta directa','Subsidios / bonos','Otro ingreso'],c:['Leche (materia prima)','Fermentos y cuajo','Sal, envases','Energía','Mano de Obra PAGADA','Materiales limpieza','Transporte','Otros costos']},
+  lacteos:{i:['Venta de leche fluida','Venta productos procesados','Venta directa','Subsidios / bonos','Otro ingreso'],c:['Insumos procesamiento','Energía','Mano de Obra PAGADA','Materiales limpieza','Transporte','Certificaciones','Otros costos']},
+  lombricultura:{i:['Venta de humus','Venta de lombrices','Venta de lixiviado','Subsidios / bonos','Otro ingreso'],c:['Materiales orgánicos','Envases y embalaje','Mano de Obra PAGADA','Transporte','Otros costos']}
 };
-
 let wlPrio='Media';
 let currentGenKey='forraje';
 
-// ═══════════════ NAVEGACIÓN ═══════════════
 function goTo(id){
   document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
   const t=document.getElementById(id);
   if(t){t.classList.add('active');t.scrollTop=0;}
   if(id==='s-home') updateHome();
 }
-
-// ═══════════════ TABS ═══════════════
 function swTab(el,contentId,navId){
   document.getElementById(navId).querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
   el.classList.add('active');
   const screen=el.closest('.screen');
   screen.querySelectorAll(':scope > div[id]').forEach(d=>{
-    if(!d.classList.contains('tabs')&&!d.classList.contains('mes-w')&&
-       !d.classList.contains('hdr')&&!d.classList.contains('bnav')&&!d.classList.contains('stk')){
-      d.style.display='none';
-    }
+    if(!d.classList.contains('tabs')&&!d.classList.contains('mes-w')&&!d.classList.contains('hdr')&&!d.classList.contains('bnav')&&!d.classList.contains('stk')){d.style.display='none';}
   });
-  const c=document.getElementById(contentId);
-  if(c) c.style.display='block';
+  const c=document.getElementById(contentId);if(c) c.style.display='block';
 }
-
-// ═══════════════ MES SELECTOR ═══════════════
 function buildMes(selId,lblId){
-  const sel=document.getElementById(selId);
-  if(!sel) return;
-  sel.innerHTML=MESES.map((m,i)=>
-    `<div class="mb${i===0?' active':''}" onclick="selMes(this,'${lblId}')">${m}<span class="dot"></span></div>`
-  ).join('');
+  const sel=document.getElementById(selId);if(!sel) return;
+  sel.innerHTML=MESES.map((m,i)=>`<div class="mb${i===0?' active':''}" onclick="selMes(this,'${lblId}')">${m}<span class="dot"></span></div>`).join('');
 }
 function selMes(el,lblId){
   el.closest('.mes-s').querySelectorAll('.mb').forEach(b=>b.classList.remove('active'));
   el.classList.add('active');
   const idx=Array.from(el.closest('.mes-s').children).indexOf(el);
-  const lbl=document.getElementById(lblId);
-  if(lbl) lbl.textContent=`Mes: ${MESES[idx]} 2025`;
+  const lbl=document.getElementById(lblId);if(lbl) lbl.textContent=`Mes: ${MESES[idx]} 2025`;
 }
-
-// ═══════════════ UA TABLE ═══════════════
 function buildUATable(tbodyId,cats,prefix){
-  const tbody=document.getElementById(tbodyId);
-  if(!tbody) return;
-  tbody.innerHTML=cats.map(c=>
-    `<tr>
-      <td>${c.cat}</td>
-      <td><input type="number" value="${c.n||''}" min="0" oninput="calcUAGeneric('${tbodyId}','${prefix}')"></td>
-      <td><input type="number" value="${c.kg||''}" min="0" oninput="calcUAGeneric('${tbodyId}','${prefix}')"></td>
-      <td style="font-weight:700;color:#1565C0;">${c.n&&c.kg?(c.n*c.kg/450).toFixed(1):'0.0'}</td>
-    </tr>`
-  ).join('')+`<tr class="uat-tot"><td colspan="3">▶ TOTAL UA</td><td id="${prefix}-ua-tot">0.0</td></tr>`;
+  const tbody=document.getElementById(tbodyId);if(!tbody) return;
+  tbody.innerHTML=cats.map(c=>`<tr><td>${c.cat}</td><td><input type="number" value="${c.n||''}" min="0" oninput="calcUAGeneric('${tbodyId}','${prefix}')"></td><td><input type="number" value="${c.kg||''}" min="0" oninput="calcUAGeneric('${tbodyId}','${prefix}')"></td><td style="font-weight:700;color:#1565C0;">${c.n&&c.kg?(c.n*c.kg/450).toFixed(1):'0.0'}</td></tr>`).join('')+`<tr class="uat-tot"><td colspan="3">▶ TOTAL UA</td><td id="${prefix}-ua-tot">0.0</td></tr>`;
   calcUAGeneric(tbodyId,prefix);
 }
 function calcUAGeneric(tbodyId,prefix){
-  const tbody=document.getElementById(tbodyId);
-  if(!tbody) return 0;
+  const tbody=document.getElementById(tbodyId);if(!tbody) return 0;
   let tot=0;
   tbody.querySelectorAll('tr:not(.uat-tot)').forEach(row=>{
     const ins=row.querySelectorAll('input');
-    if(ins.length>=2){
-      const n=parseFloat(ins[0].value||0),kg=parseFloat(ins[1].value||0);
-      const ua=n*kg/450; tot+=ua;
-      const td=row.querySelector('td:last-child');
-      if(td) td.textContent=ua.toFixed(1);
-    }
+    if(ins.length>=2){const n=parseFloat(ins[0].value||0),kg=parseFloat(ins[1].value||0);const ua=n*kg/450;tot+=ua;const td=row.querySelector('td:last-child');if(td) td.textContent=ua.toFixed(1);}
   });
-  const totEl=document.getElementById(prefix+'-ua-tot');
-  if(totEl) totEl.textContent=tot.toFixed(1);
-  return tot;
+  const totEl=document.getElementById(prefix+'-ua-tot');if(totEl) totEl.textContent=tot.toFixed(1);return tot;
 }
-
-// ═══════════════ CHECKBOX RUBROS ═══════════════
 function tChk(el){
-  el.classList.toggle('sel');
-  el.querySelector('.chk-box').textContent=el.classList.contains('sel')?'✓':'';
-  updateRubrosCount();
+  el.classList.toggle('sel');el.querySelector('.chk-box').textContent=el.classList.contains('sel')?'✓':'';updateRubrosCount();
 }
 function updateRubrosCount(){
   rubrosSel=Array.from(document.querySelectorAll('.chk.sel')).map(el=>el.getAttribute('data-r'));
-  const btn=document.getElementById('btn-confirmar');
-  if(btn) btn.textContent=`✅  Confirmar unidades de negocio (${rubrosSel.length})`;
+  const btn=document.getElementById('btn-confirmar');if(btn) btn.textContent=`✅  Confirmar unidades de negocio (${rubrosSel.length})`;
 }
-function confirmarRubros(){
-  rubrosSel=Array.from(document.querySelectorAll('.chk.sel')).map(el=>el.getAttribute('data-r'));
-  updateHome();
-  goTo('s-home');
-}
-
-// ═══════════════ HOME ═══════════════
+function confirmarRubros(){rubrosSel=Array.from(document.querySelectorAll('.chk.sel')).map(el=>el.getAttribute('data-r'));updateHome();goTo('s-home');}
 function updateHome(){
-  const nom=document.getElementById('p-predio');
-  const hNom=document.getElementById('h-nom');
+  const nom=document.getElementById('p-predio');const hNom=document.getElementById('h-nom');
   if(nom&&hNom) hNom.textContent=nom.value||'Mi Predio';
-  const list=document.getElementById('h-rubros');
-  if(!list) return;
+  const list=document.getElementById('h-rubros');if(!list) return;
   list.innerHTML=rubrosSel.map(key=>{
-    const d=RUBRO_DEF[key];
-    if(!d) return '';
+    const d=RUBRO_DEF[key];if(!d) return '';
     const hasData=key==='bovina';
-    return `<div class="rc${hasData?' ok':''}" onclick="openRubro('${key}')">
-      <div class="rc-em">${d.em}</div>
-      <div class="rc-inf">
-        <div class="rc-nm">${d.n}</div>
-        <div class="rc-st"><span class="bdg ${hasData?'bg':'bx'}">${hasData?'Con datos':'Sin datos'}</span>&nbsp;${hasData?'8':'0'} de 12 meses</div>
-        <div class="prog"><div class="prog-f" style="width:${hasData?'67':'0'}%"></div></div>
-      </div>
-      <div class="rc-ar">›</div>
-    </div>`;
+    return `<div class="rc${hasData?' ok':''}" onclick="openRubro('${key}')"><div class="rc-em">${d.em}</div><div class="rc-inf"><div class="rc-nm">${d.n}</div><div class="rc-st"><span class="bdg ${hasData?'bg':'bx'}">${hasData?'Con datos':'Sin datos'}</span>&nbsp;${hasData?'8':'0'} de 12 meses</div><div class="prog"><div class="prog-f" style="width:${hasData?'67':'0'}%"></div></div></div><div class="rc-ar">›</div></div>`;
   }).join('');
-  const tot=document.getElementById('res-total-rubros');
-  if(tot) tot.textContent=rubrosSel.length;
+  const tot=document.getElementById('res-total-rubros');if(tot) tot.textContent=rubrosSel.length;
 }
-function openRubro(key){
-  const d=RUBRO_DEF[key];
-  if(!d) return;
-  if(d.s==='s-generic') openGeneric(d.gk);
-  else goTo(d.s);
-}
-
-// ═══════════════ ALERTAS SUB-MENÚ ═══════════════
+function openRubro(key){const d=RUBRO_DEF[key];if(!d) return;if(d.s==='s-generic') openGeneric(d.gk);else goTo(d.s);}
 function toggleAlertas(){
-  const panel=document.getElementById('alertas-panel');
-  const btn=document.getElementById('btn-alertas-toggle');
-  if(!panel) return;
-  const isHidden=panel.style.display==='none';
-  panel.style.display=isHidden?'block':'none';
+  const panel=document.getElementById('alertas-panel');const btn=document.getElementById('btn-alertas-toggle');if(!panel) return;
+  const isHidden=panel.style.display==='none';panel.style.display=isHidden?'block':'none';
   if(btn) btn.innerHTML=isHidden?'🔔 Alertas ▲':'🔔 Alertas ▼';
 }
-
-// ═══════════════ GENERIC ENTERPRISE ═══════════════
 function openGeneric(key){
-  currentGenKey=key;
-  const cfg=GENERIC_CFG[key];
-  const d=RUBRO_DEF[key];
-  if(!cfg||!d) return;
+  currentGenKey=key;const cfg=GENERIC_CFG[key];const d=RUBRO_DEF[key];if(!cfg||!d) return;
   document.getElementById('gen-title').textContent=d.em+' '+d.n;
-  document.getElementById('gen-ing-fields').innerHTML=cfg.i.map((lbl,i)=>
-    `<div class="f"><label>${lbl}</label><input type="number" id="gen-i${i+1}" oninput="cGen()" placeholder="$0"></div>`
-  ).join('');
-  document.getElementById('gen-cos-fields').innerHTML=cfg.c.map((lbl,i)=>
-    `<div class="f"><label>${lbl}</label><input type="number" id="gen-c${i+1}" oninput="cGen()" placeholder="$0"></div>`
-  ).join('');
+  document.getElementById('gen-ing-fields').innerHTML=cfg.i.map((lbl,i)=>`<div class="f"><label>${lbl}</label><input type="number" id="gen-i${i+1}" oninput="cGen()" placeholder="$0"></div>`).join('');
+  document.getElementById('gen-cos-fields').innerHTML=cfg.c.map((lbl,i)=>`<div class="f"><label>${lbl}</label><input type="number" id="gen-c${i+1}" oninput="cGen()" placeholder="$0"></div>`).join('');
   goTo('s-generic');
 }
-
-// ═══════════════ HELPERS ═══════════════
 function getNum(id){const el=document.getElementById(id);return el?parseFloat(el.value||0):0;}
 function setTxt(id,val){const el=document.getElementById(id);if(el) el.textContent=val;}
 function fmt(n){return '$ '+Math.round(n).toLocaleString('es-CL');}
 function fmtN(n){return Math.round(n).toLocaleString('es-CL');}
-function fmtK(n){
-  if(Math.abs(n)>=1e6) return '$'+(n/1e6).toFixed(1)+'M';
-  if(Math.abs(n)>=1e3) return '$'+(n/1e3).toFixed(0)+'K';
-  return '$'+n;
-}
-
-// ═══════════════ CÁLCULOS ═══════════════
+function fmtK(n){if(Math.abs(n)>=1e6) return '$'+(n/1e6).toFixed(1)+'M';if(Math.abs(n)>=1e3) return '$'+(n/1e3).toFixed(0)+'K';return '$'+n;}
 function cBov(){
   const ing=[1,2,3,4,5,6,7,8,9].reduce((a,i)=>a+getNum('bi'+i),0);
   const cos=[1,2,3,4,5,6,7,8,9].reduce((a,i)=>a+getNum('bc'+i),0);
   const gp=ing-cos;const gpm=ing>0?(gp/ing*100).toFixed(1):0;
-  setTxt('b-ti',fmt(ing));setTxt('b-tc',fmt(cos));
-  setTxt('b-gp',fmt(gp));setTxt('b-gpm','% MB: '+gpm+'%');
+  setTxt('b-ti',fmt(ing));setTxt('b-tc',fmt(cos));setTxt('b-gp',fmt(gp));setTxt('b-gpm','% MB: '+gpm+'%');
   document.getElementById('h-ing').textContent=ing>0?fmtK(ing):'—';
   document.getElementById('h-gp').textContent=ing>0?gpm+'%':'—';
   document.getElementById('h-cos').textContent=cos>0?fmtK(cos):'—';
 }
-function cBovKPI(){
-  const ha=getNum('bk-ha');
-  const ing=[1,2,3,4,5,6,7,8,9].reduce((a,i)=>a+getNum('bi'+i),0);
-  const gp=ing-[1,2,3,4,5,6,7,8,9].reduce((a,i)=>a+getNum('bc'+i),0);
-  setTxt('bk-gpha',ha>0?fmt(gp/ha)+' CLP/ha':'—');
-  setTxt('bk-itha',ha>0?fmt(ing/ha)+' CLP/ha':'—');
-}
-function cBovEq(){
-  const u=getNum('be-u'),p=getNum('be-p');
-  const cos=[1,2,3,4,5,6,7,8,9].reduce((a,i)=>a+getNum('bc'+i),0);
-  const cu=u>0?cos/u:0;
-  setTxt('be-cu',u>0?fmtN(cu)+' CLP/u':'—');
-  setTxt('be-m',u>0&&p>0?fmtN(p-cu)+' CLP/u':'—');
-}
-function cBovMort(){
-  const n=getNum('bm-n'),t=getNum('bm-t');
-  const cos=[1,2,3,4,5,6,7,8,9].reduce((a,i)=>a+getNum('bc'+i),0);
-  const ef=Math.round(n*(1-t/100));
-  setTxt('bm-ef',n>0?ef+' cab.':'—');
-  setTxt('bm-co',n>0?fmt((n-ef)*(n>0?cos/n:0)):'—');
-}
+function cBovKPI(){const ha=getNum('bk-ha');const ing=[1,2,3,4,5,6,7,8,9].reduce((a,i)=>a+getNum('bi'+i),0);const gp=ing-[1,2,3,4,5,6,7,8,9].reduce((a,i)=>a+getNum('bc'+i),0);setTxt('bk-gpha',ha>0?fmt(gp/ha)+' CLP/ha':'—');setTxt('bk-itha',ha>0?fmt(ing/ha)+' CLP/ha':'—');}
+function cBovEq(){const u=getNum('be-u'),p=getNum('be-p');const cos=[1,2,3,4,5,6,7,8,9].reduce((a,i)=>a+getNum('bc'+i),0);const cu=u>0?cos/u:0;setTxt('be-cu',u>0?fmtN(cu)+' CLP/u':'—');setTxt('be-m',u>0&&p>0?fmtN(p-cu)+' CLP/u':'—');}
 function cBovCV(){
-  const ck=getNum('bcv-ck'),cc=getNum('bcv-cc');
-  const vk=getNum('bcv-vk'),vc=getNum('bcv-vc');
-  const dias=getNum('bcv-d');
-  const ingCom=[1,2,3,4,5,6,7,8,9].reduce((a,i)=>a+getNum('bc'+i),0);
+  const ck=getNum('bcv-ck'),cc=getNum('bcv-cc'),vk=getNum('bcv-vk'),vc=getNum('bcv-vc'),dias=getNum('bcv-d');
   const ingVen=[1,2,3,4,5,6,7,8,9].reduce((a,i)=>a+getNum('bi'+i),0);
+  const ingCom=[1,2,3,4,5,6,7,8,9].reduce((a,i)=>a+getNum('bc'+i),0);
   const cap=getNum('bcap');const gp=ingVen-ingCom;
-  const ppco=cc>0&&ck>0?ck/cc:0;
-  const ppve=vc>0&&vk>0?ingVen/vk:0;
-  const spr=ppve-ppco;
+  const ppco=cc>0&&ck>0?ck/cc:0;const ppve=vc>0&&vk>0?ingVen/vk:0;const spr=ppve-ppco;
   const gdp=cc>0&&dias>0&&ck>0&&vk>0?(vk/vc-ck/cc)/dias:0;
-  setTxt('bcv-pc',ppco>0?fmtN(ppco)+' CLP/kg':'—');
-  setTxt('bcv-pv',ppve>0?fmtN(ppve)+' CLP/kg':'—');
-  setTxt('bcv-sp',ppco>0&&ppve>0?fmtN(spr)+' CLP/kg':'—');
-  setTxt('bcv-gdp',gdp>0?gdp.toFixed(3)+' kg/día':'—');
+  setTxt('bcv-pc',ppco>0?fmtN(ppco)+' CLP/kg':'—');setTxt('bcv-pv',ppve>0?fmtN(ppve)+' CLP/kg':'—');
+  setTxt('bcv-sp',ppco>0&&ppve>0?fmtN(spr)+' CLP/kg':'—');setTxt('bcv-gdp',gdp>0?gdp.toFixed(3)+' kg/día':'—');
   setTxt('broic',cap>0?(gp/cap*100).toFixed(1)+'%':'—');
 }
-function cUABov(){
-  const tot=calcUAGeneric('bov-ua-body','bov');
-  const ha=parseFloat(document.getElementById('bov-ha')?.value||1);
-  const carga=ha>0?(tot/ha).toFixed(2):0;
-  setTxt('bov-ca',carga+' UA/ha');
-  setTxt('bov-cas',tot.toFixed(1)+' UA ÷ '+ha+' ha');
-  setTxt('res-ua-bov',tot.toFixed(1)+' UA');
-  setTxt('res-ua-tot',tot.toFixed(1)+' UA');
-  setTxt('res-ca','▶ Carga Animal: '+carga+' UA/ha');
-}
-function cOvi(){
-  const ing=[1,2,3,4,5].reduce((a,i)=>a+getNum('oi'+i),0);
-  const cos=[1,2,3,4,5,6].reduce((a,i)=>a+getNum('oc'+i),0);
-  const gp=ing-cos;const gpm=ing>0?(gp/ing*100).toFixed(1):0;
-  setTxt('ov-ti',fmt(ing));setTxt('ov-tc',fmt(cos));
-  setTxt('ov-gp',fmt(gp));setTxt('ov-gpm','% MB: '+gpm+'%');
-}
-function cUAOvi(){
-  const tot=calcUAGeneric('ovi-ua-body','ovi');
-  const ha=parseFloat(document.getElementById('ovi-ha')?.value||0);
-  setTxt('ovi-ca',ha>0?(tot/ha).toFixed(2)+' UA/ha':'— UA/ha');
-  setTxt('ovi-cas',ha>0?tot.toFixed(1)+' UA ÷ '+ha+' ha':'ingrese ha');
-}
-function cPor(){
-  const ing=[1,2,3,4,5].reduce((a,i)=>a+getNum('poi'+i),0);
-  const cos=[1,2,3,4,5,6,7].reduce((a,i)=>a+getNum('poc'+i),0);
-  const gp=ing-cos;const gpm=ing>0?(gp/ing*100).toFixed(1):0;
-  setTxt('po-ti',fmt(ing));setTxt('po-tc',fmt(cos));
-  setTxt('po-gp',fmt(gp));setTxt('po-gpm','% MB: '+gpm+'%');
-}
-function cCap(){
-  const ing=[1,2,3,4,5].reduce((a,i)=>a+getNum('cai'+i),0);
-  const cos=[1,2,3,4,5,6,7,8].reduce((a,i)=>a+getNum('cac'+i),0);
-  const gp=ing-cos;const gpm=ing>0?(gp/ing*100).toFixed(1):0;
-  setTxt('ca-ti',fmt(ing));setTxt('ca-tc',fmt(cos));
-  setTxt('ca-gp',fmt(gp));setTxt('ca-gpm','% MB: '+gpm+'%');
-}
-function cUACap(){
-  const tot=calcUAGeneric('cap-ua-body','cap');
-  const ha=parseFloat(document.getElementById('cap-ha')?.value||0);
-  setTxt('cap-ca',ha>0?(tot/ha).toFixed(2)+' UA/ha':'— UA/ha');
-  setTxt('cap-cas',ha>0?tot.toFixed(1)+' UA ÷ '+ha+' ha':'ingrese ha');
-}
-function cAvi(){
-  const ing=[1,2,3,4,5].reduce((a,i)=>a+getNum('avi'+i),0);
-  const cos=[1,2,3,4,5,6,7,8].reduce((a,i)=>a+getNum('avc'+i),0);
-  const gp=ing-cos;const gpm=ing>0?(gp/ing*100).toFixed(1):0;
-  setTxt('av-ti',fmt(ing));setTxt('av-tc',fmt(cos));
-  setTxt('av-gp',fmt(gp));setTxt('av-gpm','% MB: '+gpm+'%');
-}
-function cAviInd(){
-  const cos=[1,2,3,4,5,6,7,8].reduce((a,i)=>a+getNum('avc'+i),0);
-  const base=Math.max(getNum('avi-base'),1);
-  setTxt('avi-gpup',(getNum('avi1')-cos)>0?fmt((getNum('avi1')-cos)/base)+'/up':'—');
-}
-function cAviEq(){
-  const u=getNum('ave-u'),p=getNum('ave-p');
-  const cos=[1,2,3,4,5,6,7,8].reduce((a,i)=>a+getNum('avc'+i),0);
-  const cu=u>0?cos/u:0;
-  setTxt('ave-cu',u>0?fmtN(cu)+' CLP/u':'—');
-  setTxt('ave-m',u>0&&p>0?fmtN(p-cu)+' CLP/u':'—');
-}
-function cTur(){
-  const ing=[1,2,3,4,5].reduce((a,i)=>a+getNum('ti'+i),0);
-  const cos=[1,2,3,4,5,6].reduce((a,i)=>a+getNum('tc'+i),0);
-  const gp=ing-cos;const gpm=ing>0?(gp/ing*100).toFixed(1):0;
-  setTxt('tu-ti',fmt(ing));setTxt('tu-tc',fmt(cos));
-  setTxt('tu-gp',fmt(gp));setTxt('tu-gpm','% MB: '+gpm+'%');
-}
-function cTurEq(){
-  const u=getNum('tu-uni'),p=getNum('tu-pvu');
-  const cos=[1,2,3,4,5,6].reduce((a,i)=>a+getNum('tc'+i),0);
-  const cu=u>0?cos/u:0;
-  setTxt('tu-cdu',u>0?fmtN(cu)+' CLP/u':'—');
-  setTxt('tu-mpu',u>0&&p>0?fmtN(p-cu)+' CLP/u':'—');
-}
-function cGen(){
-  const cfg=GENERIC_CFG[currentGenKey];
-  if(!cfg) return;
-  let ing=0;for(let i=1;i<=cfg.i.length;i++) ing+=getNum('gen-i'+i);
-  let cos=0;for(let i=1;i<=cfg.c.length;i++) cos+=getNum('gen-c'+i);
-  const gp=ing-cos;const gpm=ing>0?(gp/ing*100).toFixed(1):0;
-  setTxt('gen-ti',fmt(ing));setTxt('gen-tc',fmt(cos));
-  setTxt('gen-gp',fmt(gp));setTxt('gen-gpm','% MB: '+gpm+'%');
-}
-function cGenInd(){
-  const ha=getNum('gen-ha');
-  const cfg=GENERIC_CFG[currentGenKey];
-  let gp=0;
-  if(cfg){
-    let ing=0;for(let i=1;i<=cfg.i.length;i++) ing+=getNum('gen-i'+i);
-    let cos=0;for(let i=1;i<=cfg.c.length;i++) cos+=getNum('gen-c'+i);
-    gp=ing-cos;
-  }
-  setTxt('gen-gpha',ha>0?fmt(gp/ha)+' CLP/ha':'—');
-}
-function cGenEq(){
-  const u=getNum('gen-eu'),p=getNum('gen-ep');
-  const cfg=GENERIC_CFG[currentGenKey];
-  let cos=0;
-  if(cfg) for(let i=1;i<=cfg.c.length;i++) cos+=getNum('gen-c'+i);
-  const cu=u>0?cos/u:0;
-  setTxt('gen-ecu',u>0?fmtN(cu)+' CLP/u':'—');
-  setTxt('gen-em',u>0&&p>0?fmtN(p-cu)+' CLP/u':'—');
-}
-function cCF(){
-  let tot=0;
-  for(let i=1;i<=13;i++) tot+=getNum('cf'+i);
-  setTxt('cf-tot',fmt(tot));
-}
+function cUABov(){const tot=calcUAGeneric('bov-ua-body','bov');const ha=parseFloat(document.getElementById('bov-ha')?.value||1);const carga=ha>0?(tot/ha).toFixed(2):0;setTxt('bov-ca',carga+' UA/ha');setTxt('bov-cas',tot.toFixed(1)+' UA ÷ '+ha+' ha');setTxt('res-ua-bov',tot.toFixed(1)+' UA');setTxt('res-ua-tot',tot.toFixed(1)+' UA');setTxt('res-ca','▶ Carga Animal: '+carga+' UA/ha');}
+function cOvi(){const ing=[1,2,3,4,5].reduce((a,i)=>a+getNum('oi'+i),0);const cos=[1,2,3,4,5,6].reduce((a,i)=>a+getNum('oc'+i),0);const gp=ing-cos;const gpm=ing>0?(gp/ing*100).toFixed(1):0;setTxt('ov-ti',fmt(ing));setTxt('ov-tc',fmt(cos));setTxt('ov-gp',fmt(gp));setTxt('ov-gpm','% MB: '+gpm+'%');}
+function cUAOvi(){const tot=calcUAGeneric('ovi-ua-body','ovi');const ha=parseFloat(document.getElementById('ovi-ha')?.value||0);setTxt('ovi-ca',ha>0?(tot/ha).toFixed(2)+' UA/ha':'— UA/ha');setTxt('ovi-cas',ha>0?tot.toFixed(1)+' UA ÷ '+ha+' ha':'ingrese ha');}
+function cPor(){const ing=[1,2,3,4,5].reduce((a,i)=>a+getNum('poi'+i),0);const cos=[1,2,3,4,5,6,7].reduce((a,i)=>a+getNum('poc'+i),0);const gp=ing-cos;const gpm=ing>0?(gp/ing*100).toFixed(1):0;setTxt('po-ti',fmt(ing));setTxt('po-tc',fmt(cos));setTxt('po-gp',fmt(gp));setTxt('po-gpm','% MB: '+gpm+'%');}
+function cCap(){const ing=[1,2,3,4,5].reduce((a,i)=>a+getNum('cai'+i),0);const cos=[1,2,3,4,5,6,7,8].reduce((a,i)=>a+getNum('cac'+i),0);const gp=ing-cos;const gpm=ing>0?(gp/ing*100).toFixed(1):0;setTxt('ca-ti',fmt(ing));setTxt('ca-tc',fmt(cos));setTxt('ca-gp',fmt(gp));setTxt('ca-gpm','% MB: '+gpm+'%');}
+function cUACap(){const tot=calcUAGeneric('cap-ua-body','cap');const ha=parseFloat(document.getElementById('cap-ha')?.value||0);setTxt('cap-ca',ha>0?(tot/ha).toFixed(2)+' UA/ha':'— UA/ha');setTxt('cap-cas',ha>0?tot.toFixed(1)+' UA ÷ '+ha+' ha':'ingrese ha');}
+function cAvi(){const ing=[1,2,3,4,5].reduce((a,i)=>a+getNum('avi'+i),0);const cos=[1,2,3,4,5,6,7,8].reduce((a,i)=>a+getNum('avc'+i),0);const gp=ing-cos;const gpm=ing>0?(gp/ing*100).toFixed(1):0;setTxt('av-ti',fmt(ing));setTxt('av-tc',fmt(cos));setTxt('av-gp',fmt(gp));setTxt('av-gpm','% MB: '+gpm+'%');}
+function cAviInd(){const cos=[1,2,3,4,5,6,7,8].reduce((a,i)=>a+getNum('avc'+i),0);const base=Math.max(getNum('avi-base'),1);setTxt('avi-gpup',(getNum('avi1')-cos)>0?fmt((getNum('avi1')-cos)/base)+'/up':'—');}
+function cAviEq(){const u=getNum('ave-u'),p=getNum('ave-p');const cos=[1,2,3,4,5,6,7,8].reduce((a,i)=>a+getNum('avc'+i),0);const cu=u>0?cos/u:0;setTxt('ave-cu',u>0?fmtN(cu)+' CLP/u':'—');setTxt('ave-m',u>0&&p>0?fmtN(p-cu)+' CLP/u':'—');}
+function cTur(){const ing=[1,2,3,4,5].reduce((a,i)=>a+getNum('ti'+i),0);const cos=[1,2,3,4,5,6].reduce((a,i)=>a+getNum('tc'+i),0);const gp=ing-cos;const gpm=ing>0?(gp/ing*100).toFixed(1):0;setTxt('tu-ti',fmt(ing));setTxt('tu-tc',fmt(cos));setTxt('tu-gp',fmt(gp));setTxt('tu-gpm','% MB: '+gpm+'%');}
+function cTurEq(){const u=getNum('tu-uni'),p=getNum('tu-pvu');const cos=[1,2,3,4,5,6].reduce((a,i)=>a+getNum('tc'+i),0);const cu=u>0?cos/u:0;setTxt('tu-cdu',u>0?fmtN(cu)+' CLP/u':'—');setTxt('tu-mpu',u>0&&p>0?fmtN(p-cu)+' CLP/u':'—');}
+function cGen(){const cfg=GENERIC_CFG[currentGenKey];if(!cfg) return;let ing=0;for(let i=1;i<=cfg.i.length;i++) ing+=getNum('gen-i'+i);let cos=0;for(let i=1;i<=cfg.c.length;i++) cos+=getNum('gen-c'+i);const gp=ing-cos;const gpm=ing>0?(gp/ing*100).toFixed(1):0;setTxt('gen-ti',fmt(ing));setTxt('gen-tc',fmt(cos));setTxt('gen-gp',fmt(gp));setTxt('gen-gpm','% MB: '+gpm+'%');}
+function cGenInd(){const ha=getNum('gen-ha');const cfg=GENERIC_CFG[currentGenKey];let gp=0;if(cfg){let ing=0;for(let i=1;i<=cfg.i.length;i++) ing+=getNum('gen-i'+i);let cos=0;for(let i=1;i<=cfg.c.length;i++) cos+=getNum('gen-c'+i);gp=ing-cos;}setTxt('gen-gpha',ha>0?fmt(gp/ha)+' CLP/ha':'—');}
+function cGenEq(){const u=getNum('gen-eu'),p=getNum('gen-ep');const cfg=GENERIC_CFG[currentGenKey];let cos=0;if(cfg) for(let i=1;i<=cfg.c.length;i++) cos+=getNum('gen-c'+i);const cu=u>0?cos/u:0;setTxt('gen-ecu',u>0?fmtN(cu)+' CLP/u':'—');setTxt('gen-em',u>0&&p>0?fmtN(p-cu)+' CLP/u':'—');}
+function cCF(){let tot=0;for(let i=1;i<=13;i++) tot+=getNum('cf'+i);setTxt('cf-tot',fmt(tot));}
 function cCmp(){
   const f=(ids)=>ids.reduce((a,id)=>a+getNum(id),0);
-  const haC=getNum('cmp-ha-c'),ingC=f(['cmp-ic','cmp-dc','cmp-sc']);
-  const cdC=f(['cmp-moc','cmp-mac','cmp-sacc','cmp-alc','cmp-prc']);
-  const ciC=f(['cmp-adc','cmp-repc']),kgC=getNum('cmp-kgc'),vcC=getNum('cmp-vc');
-  const haR=getNum('cmp-ha-r'),ingR=f(['cmp-ir','cmp-dr','cmp-sr']);
-  const cdR=f(['cmp-mor','cmp-mar','cmp-sacr','cmp-alr','cmp-prr']);
-  const ciR=f(['cmp-adr','cmp-repr']),kgR=getNum('cmp-kgr'),vcR=getNum('cmp-vr');
-  const calc=(ing,cd,ci,ha,kg,vc)=>{
-    const ct=cd+ci,cukg=kg>0?ct/kg:0,mbkg=kg>0?(ing-cd)/kg:0;
-    const mn=ing-ct,mnha=ha>0?mn/ha:0,ua=vc*1.15,ca=ha>0?ua/ha:0,kgha=ha>0?kg/ha:0;
-    return{ha,vc,ua,ca,kgha,ing,cd,ci,ct,cukg,mbkg,mn,mnha};
-  };
-  const rc=calc(ingC,cdC,ciC,haC,kgC,vcC);
-  const rr=calc(ingR,cdR,ciR,haR,kgR,vcR);
-  const setR=(idC,idR,valC,valR,isCLP)=>{
-    const fv=(v)=>v>0?(isCLP?fmt(v):v.toFixed(2)):'—';
-    setTxt(idC,fv(valC));setTxt(idR,fv(valR));
-  };
-  setR('cr-ha-c','cr-ha-r',rc.ha,rr.ha,false);
-  setR('cr-vac-c','cr-vac-r',rc.vc,rr.vc,false);
+  const haC=getNum('cmp-ha-c'),ingC=f(['cmp-ic','cmp-dc','cmp-sc']),cdC=f(['cmp-moc','cmp-mac','cmp-sacc','cmp-alc','cmp-prc']),ciC=f(['cmp-adc','cmp-repc']),kgC=getNum('cmp-kgc'),vcC=getNum('cmp-vc');
+  const haR=getNum('cmp-ha-r'),ingR=f(['cmp-ir','cmp-dr','cmp-sr']),cdR=f(['cmp-mor','cmp-mar','cmp-sacr','cmp-alr','cmp-prr']),ciR=f(['cmp-adr','cmp-repr']),kgR=getNum('cmp-kgr'),vcR=getNum('cmp-vr');
+  const calc=(ing,cd,ci,ha,kg,vc)=>{const ct=cd+ci,cukg=kg>0?ct/kg:0,mbkg=kg>0?(ing-cd)/kg:0,mn=ing-ct,mnha=ha>0?mn/ha:0,ua=vc*1.15,ca=ha>0?ua/ha:0,kgha=ha>0?kg/ha:0;return{ha,vc,ua,ca,kgha,ing,cd,ci,ct,cukg,mbkg,mn,mnha};};
+  const rc=calc(ingC,cdC,ciC,haC,kgC,vcC);const rr=calc(ingR,cdR,ciR,haR,kgR,vcR);
+  const setR=(idC,idR,valC,valR,isCLP)=>{const fv=(v)=>v>0?(isCLP?fmt(v):v.toFixed(2)):'—';setTxt(idC,fv(valC));setTxt(idR,fv(valR));};
+  setR('cr-ha-c','cr-ha-r',rc.ha,rr.ha,false);setR('cr-vac-c','cr-vac-r',rc.vc,rr.vc,false);
   setTxt('cr-ua-c',rc.ua>0?rc.ua.toFixed(1):'—');setTxt('cr-ua-r',rr.ua>0?rr.ua.toFixed(1):'—');
   setTxt('cr-ca-c',rc.ca>0?rc.ca.toFixed(2)+' UA/ha':'—');setTxt('cr-ca-r',rr.ca>0?rr.ca.toFixed(2)+' UA/ha':'—');
   setR('cr-ter-c','cr-ter-r',getNum('cmp-tc'),getNum('cmp-tr'),false);
@@ -1725,481 +1402,141 @@ function cCmp(){
   setTxt('cr-mnh-c',rc.mnha!==0?fmt(rc.mnha)+'/ha':'—');setTxt('cr-mnh-r',rr.mnha!==0?fmt(rr.mnha)+'/ha':'—');
 }
 function showMercado(tipo){
-  const data={
-    bovina:[{p:'Novillos ($/kg vivo)',ref:'$1.900–$2.100'},{p:'Vacas descarte ($/kg)',ref:'$1.400–$1.600'},{p:'Terneros al destete ($/kg)',ref:'$2.200–$2.600'}],
-    ovina:[{p:'Corderos ($/kg vivo)',ref:'$2.800–$3.200'},{p:'Ovinos descarte ($/cab.)',ref:'$40.000–$55.000'}],
-    avicultura:[{p:'Huevos cat. A ($/docena)',ref:'$2.800–$3.200'},{p:'Huevos campo libre',ref:'$3.500–$4.200'}],
-    forraje:[{p:'Heno ballica ($/fardo 15 kg)',ref:'$3.500–$4.500'},{p:'Ensilaje maíz ($/ton)',ref:'$55.000–$75.000'}],
-    otros:[{p:'Miel ($/kg)',ref:'$5.000–$8.000'},{p:'Queso artesanal ($/kg)',ref:'$8.000–$12.000'}]
-  };
-  const rows=(data[tipo]||[]).map(r=>
-    `<div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--gb);">
-      <span style="font-size:12px;font-weight:600;">${r.p}</span>
-      <span class="bdg bg" style="font-size:11px;">${r.ref}</span>
-    </div>`
-  ).join('');
-  document.getElementById('merc-content').innerHTML=
-    `<div style="background:#fff;border:2px solid var(--gb);border-radius:12px;padding:12px;">
-      <div style="font-size:11px;color:#888;margin-bottom:8px;">Precios ODEPA · Jul 2025</div>
-      ${rows}
-    </div>`;
+  const data={bovina:[{p:'Novillos ($/kg vivo)',ref:'$1.900–$2.100'},{p:'Vacas descarte ($/kg)',ref:'$1.400–$1.600'},{p:'Terneros al destete ($/kg)',ref:'$2.200–$2.600'}],ovina:[{p:'Corderos ($/kg vivo)',ref:'$2.800–$3.200'}],avicultura:[{p:'Huevos cat. A ($/docena)',ref:'$2.800–$3.200'}],forraje:[{p:'Heno ballica ($/fardo 15 kg)',ref:'$3.500–$4.500'},{p:'Trigo ($/ qq)',ref:'$14.000–$16.000'}],otros:[{p:'Miel ($/kg)',ref:'$5.000–$8.000'},{p:'Queso artesanal ($/kg)',ref:'$8.000–$12.000'}]};
+  const rows=(data[tipo]||[]).map(r=>`<div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--gb);"><span style="font-size:12px;font-weight:600;">${r.p}</span><span class="bdg bg" style="font-size:11px;">${r.ref}</span></div>`).join('');
+  document.getElementById('merc-content').innerHTML=`<div style="background:#fff;border:2px solid var(--gb);border-radius:12px;padding:12px;"><div style="font-size:11px;color:#888;margin-bottom:8px;">Precios ODEPA · Jul 2025</div>${rows}</div>`;
 }
 function autoFillMercRef(){
   const sel=document.getElementById('merc-rubro')?.value||'';
   const ODEPA_MED={'🐄 Bovina – Novillos ($$/kg)':2000,'🐑 Ovina – Corderos ($$/kg)':3000,'🐔 Huevos ($$/docena)':3000,'🌾 Trigo ($$/qq)':15000};
-  const ref=document.getElementById('merc-ref');
-  const note=document.getElementById('merc-ref-note');
-  if(ref&&ODEPA_MED[sel]){
-    ref.value=ODEPA_MED[sel];ref.style.background='#F3E5F5';ref.style.borderColor='#CE93D8';
-    if(note) note.style.display='block';
-  } else if(ref){
-    ref.value='';ref.style.background='';ref.style.borderColor='';
-    if(note) note.style.display='none';
-  }
+  const ref=document.getElementById('merc-ref');const note=document.getElementById('merc-ref-note');
+  if(ref&&ODEPA_MED[sel]){ref.value=ODEPA_MED[sel];ref.style.background='#F3E5F5';ref.style.borderColor='#CE93D8';if(note) note.style.display='block';}
+  else if(ref){ref.value='';ref.style.background='';ref.style.borderColor='';if(note) note.style.display='none';}
 }
 function cMercDif(){
   const mio=getNum('merc-mio'),ref=getNum('merc-ref');
-  if(mio>0&&ref>0){
-    const dif=mio-ref,pct=(dif/ref*100).toFixed(1);
-    setTxt('merc-dif',fmtN(dif)+' CLP ('+pct+'%)');
-    showT(dif>=0?'✅ Su precio está '+pct+'% sobre el mercado':'⚠️ Su precio está '+Math.abs(pct)+'% bajo el mercado');
-  } else showT('⚠️ Ingrese ambos precios');
+  if(mio>0&&ref>0){const dif=mio-ref,pct=(dif/ref*100).toFixed(1);setTxt('merc-dif',fmtN(dif)+' CLP ('+pct+'%)');showT(dif>=0?'✅ Su precio está '+pct+'% sobre el mercado':'⚠️ Su precio está '+Math.abs(pct)+'% bajo el mercado');}
+  else showT('⚠️ Ingrese ambos precios');
 }
-function setPrio(nivel){
-  wlPrio=nivel;
-  ['Alta','Media','Baja'].forEach(n=>{
-    const btn=document.getElementById('wl-'+n.toLowerCase());
-    if(btn) btn.style.fontWeight=n===nivel?'800':'normal';
-  });
-  showT('Prioridad: '+nivel);
-}
+function setPrio(nivel){wlPrio=nivel;['Alta','Media','Baja'].forEach(n=>{const btn=document.getElementById('wl-'+n.toLowerCase());if(btn) btn.style.fontWeight=n===nivel?'800':'normal';});showT('Prioridad: '+nivel);}
 function addWL(){
-  // CHANGED: get fecha evaluada, no taller
-  const fecha=document.getElementById('wl-fecha')?.value||'';
-  const tipo=document.getElementById('wl-tipo')?.value||'';
-  const rubro=document.getElementById('wl-rubro')?.value;
-  const desc=document.getElementById('wl-desc')?.value;
-  const costo=document.getElementById('wl-costo')?.value;
-  if(!desc||desc.trim()===''){showT('⚠️ Escriba una descripción');return;}
-  if(!fecha){showT('⚠️ Ingrese la fecha evaluada');return;}
-  const colors={Alta:'var(--rojo)',Media:'#F57C00',Baja:'#558B2F'};
-  const borders={Alta:'#FFCDD2',Media:'#FFE082',Baja:'#C5E1A5'};
-  const emojis={Alta:'🔴',Media:'🟡',Baja:'🟢'};
-  const item=document.createElement('div');
-  item.style.cssText=`background:#fff;border:2px solid ${borders[wlPrio]};border-left:5px solid ${colors[wlPrio]};border-radius:13px;padding:13px;margin-bottom:9px;`;
-  item.innerHTML=`
-    <div style="display:flex;justify-content:space-between;margin-bottom:5px;">
-      <span style="font-weight:700;font-size:13px;">${rubro}</span>
-      <span class="bdg" style="background:${borders[wlPrio]};color:${colors[wlPrio]};">${emojis[wlPrio]} ${wlPrio}</span>
-    </div>
-    <div style="font-size:11px;color:#777;margin-bottom:4px;">${tipo}</div>
-    <div style="font-size:12px;color:#555;margin-bottom:5px;">${desc}</div>
-    <div style="font-size:11px;color:#888;">📅 Evaluado: ${fecha} · 📎 Variable: ${costo}</div>
-    <div style="display:flex;gap:7px;margin-top:8px;">
-      <button class="btn bo bsm" style="flex:1;font-size:11px;" onclick="showT('✏️ Editar')">✏️ Editar</button>
-      <button class="btn bsm" style="background:#FFEBEE;color:var(--rojo);border:2px solid #FFCDD2;flex:1;font-size:11px;" onclick="this.closest('div[style]').remove();showT('🗑️ Eliminado')">🗑️ Eliminar</button>
-    </div>`;
+  const fecha=document.getElementById('wl-fecha')?.value||'';const tipo=document.getElementById('wl-tipo')?.value||'';
+  const rubro=document.getElementById('wl-rubro')?.value;const desc=document.getElementById('wl-desc')?.value;const costo=document.getElementById('wl-costo')?.value;
+  if(!desc||desc.trim()===''){showT('⚠️ Escriba una descripción');return;}if(!fecha){showT('⚠️ Ingrese la fecha evaluada');return;}
+  const colors={Alta:'var(--rojo)',Media:'#F57C00',Baja:'#558B2F'};const borders={Alta:'#FFCDD2',Media:'#FFE082',Baja:'#C5E1A5'};const emojis={Alta:'🔴',Media:'🟡',Baja:'🟢'};
+  const item=document.createElement('div');item.style.cssText=`background:#fff;border:2px solid ${borders[wlPrio]};border-left:5px solid ${colors[wlPrio]};border-radius:13px;padding:13px;margin-bottom:9px;`;
+  item.innerHTML=`<div style="display:flex;justify-content:space-between;margin-bottom:5px;"><span style="font-weight:700;font-size:13px;">${rubro}</span><span class="bdg" style="background:${borders[wlPrio]};color:${colors[wlPrio]};">${emojis[wlPrio]} ${wlPrio}</span></div><div style="font-size:11px;color:#777;margin-bottom:4px;">${tipo}</div><div style="font-size:12px;color:#555;margin-bottom:5px;">${desc}</div><div style="font-size:11px;color:#888;">📅 Evaluado: ${fecha} · 📎 Variable: ${costo}</div><div style="display:flex;gap:7px;margin-top:8px;"><button class="btn bo bsm" style="flex:1;font-size:11px;" onclick="showT('✏️ Editar')">✏️ Editar</button><button class="btn bsm" style="background:#FFEBEE;color:var(--rojo);border:2px solid #FFCDD2;flex:1;font-size:11px;" onclick="this.closest('div[style]').remove();showT('🗑️ Eliminado')">🗑️ Eliminar</button></div>`;
   document.getElementById('wl-list').prepend(item);
-  if(document.getElementById('wl-desc')) document.getElementById('wl-desc').value='';
-  if(document.getElementById('wl-fecha')) document.getElementById('wl-fecha').value='';
+  if(document.getElementById('wl-desc')) document.getElementById('wl-desc').value='';if(document.getElementById('wl-fecha')) document.getElementById('wl-fecha').value='';
   showT('✅ Eslabón débil registrado');
 }
-function showT(msg){
-  const t=document.getElementById('toast');
-  t.textContent=msg;t.classList.add('show');
-  setTimeout(()=>t.classList.remove('show'),2500);
-}
+function showT(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2500);}
 
-// ══════════════════════════════════════
-// REGISTRA VENTA O COSTO — ESTADO
-// ══════════════════════════════════════
-const RQ={
-  step:1, tipo:'', rubro:'', concepto:'', conceptoId:'',
-  mes:0, monto:0, nota:'', fotoOk:false, log:[]
-};
-
-// Conceptos por rubro y tipo
+// ══ REGISTRA VENTA O COSTO ══
+const RQ={step:1,tipo:'',rubro:'',concepto:'',conceptoId:'',mes:0,monto:0,nota:'',fotoOk:false,log:[]};
 const RQ_CONCEPTOS={
-  bovina:{
-    ing:[
-      {l:'Venta de animales (kg / cabezas)',id:'bi1',warn:false},
-      {l:'Venta subproductos (leche, lana, cuero)',id:'bi2',warn:false},
-      {l:'Venta reproductores / pie de cría',id:'bi3',warn:false},
-      {l:'Subsidios / bonos',id:'bi4',warn:false},
-      {l:'Mediería (sistema de medias)',id:'bi5',warn:false},
-      {l:'Arriendo de parcela',id:'bi6',warn:false},
-      {l:'Arriendo de talaje',id:'bi7',warn:false},
-      {l:'Otro ingreso 1',id:'bi8',warn:false},
-      {l:'Otro ingreso 2',id:'bi9',warn:false}
-    ],
-    cos:[
-      {l:'Suplemento mineral / sales',id:'bc1',warn:false},
-      {l:'Concentrados / pellets',id:'bc2',warn:false},
-      {l:'⚠️ Forraje conservado (heno, ensilaje, fardos)',id:'bc3',warn:true},
-      {l:'Veterinaria y medicamentos',id:'bc4',warn:false},
-      {l:'Mano de obra PAGADA',id:'bc5',warn:false},
-      {l:'Transporte / flete / acopio',id:'bc6',warn:false},
-      {l:'Manejo de praderas',id:'bc7',warn:false},
-      {l:'Maquinaria / arriendo maquinaria',id:'bc8',warn:false},
-      {l:'Compra animales para reposición',id:'bc9',warn:false}
-    ]
-  },
-  ovina:{
-    ing:[{l:'Venta de animales',id:'oi1',warn:false},{l:'Venta subproductos',id:'oi2',warn:false},{l:'Venta reproductores',id:'oi3',warn:false},{l:'Subsidios / bonos',id:'oi4',warn:false},{l:'Otro ingreso',id:'oi5',warn:false}],
-    cos:[{l:'⚠️ Forraje conservado',id:'oc1',warn:true},{l:'Veterinaria',id:'oc2',warn:false},{l:'Mano de obra',id:'oc3',warn:false},{l:'Transporte',id:'oc4',warn:false},{l:'Manejo de praderas',id:'oc5',warn:false},{l:'Compra animales reposición',id:'oc6',warn:false}]
-  },
-  porcina:{
-    ing:[{l:'Venta de animales',id:'poi1',warn:false},{l:'Venta subproductos',id:'poi2',warn:false},{l:'Venta reproductores',id:'poi3',warn:false},{l:'Subsidios / bonos',id:'poi4',warn:false},{l:'Otro ingreso',id:'poi5',warn:false}],
-    cos:[{l:'Forraje / restos cosecha',id:'poc1',warn:false},{l:'Otro alimento',id:'poc2',warn:false},{l:'Lechón destetado',id:'poc3',warn:false},{l:'Mano de obra',id:'poc4',warn:false},{l:'Instalaciones y mantención',id:'poc5',warn:false},{l:'Energía',id:'poc6',warn:false},{l:'Veterinaria',id:'poc7',warn:false}]
-  },
-  caprina:{
-    ing:[{l:'Venta de animales',id:'cai1',warn:false},{l:'Venta subproductos',id:'cai2',warn:false},{l:'Venta reproductores',id:'cai3',warn:false},{l:'Subsidios / bonos',id:'cai4',warn:false},{l:'Otro ingreso',id:'cai5',warn:false}],
-    cos:[{l:'Forraje fresco',id:'cac1',warn:false},{l:'⚠️ Forraje conservado',id:'cac2',warn:true},{l:'Concentrados',id:'cac3',warn:false},{l:'Suplemento mineral',id:'cac4',warn:false},{l:'Reposición de ganado',id:'cac5',warn:false},{l:'Mano de obra',id:'cac6',warn:false},{l:'Infraestructura',id:'cac7',warn:false},{l:'Transporte',id:'cac8',warn:false}]
-  },
-  avicultura:{
-    ing:[{l:'Venta de huevos',id:'avi1',warn:false},{l:'Gallinas de descarte',id:'avi2',warn:false},{l:'Pollitas / pollos',id:'avi3',warn:false},{l:'Subsidios / bonos',id:'avi4',warn:false},{l:'Otro ingreso',id:'avi5',warn:false}],
-    cos:[{l:'Alimentación – Maíz',id:'avc1',warn:false},{l:'Alimentación – Afrecho / soya',id:'avc2',warn:false},{l:'Alimentación – Otros',id:'avc3',warn:false},{l:'Mano de obra Permanente',id:'avc4',warn:false},{l:'Mano de obra Temporal',id:'avc5',warn:false},{l:'Transporte y distribución',id:'avc6',warn:false},{l:'Embalaje',id:'avc7',warn:false},{l:'Electricidad y agua',id:'avc8',warn:false}]
-  },
-  turismo:{
-    ing:[{l:'Venta de tours / experiencias',id:'ti1',warn:false},{l:'Alojamiento',id:'ti2',warn:false},{l:'Alimentación / eventos',id:'ti3',warn:false},{l:'Productos locales',id:'ti4',warn:false},{l:'Otro ingreso',id:'ti5',warn:false}],
-    cos:[{l:'Mano de obra Permanente',id:'tc1',warn:false},{l:'Mano de obra Temporal',id:'tc2',warn:false},{l:'Insumos y materiales',id:'tc3',warn:false},{l:'Mantención instalaciones',id:'tc4',warn:false},{l:'Marketing y comisiones',id:'tc5',warn:false},{l:'Plataformas de reserva',id:'tc6',warn:false}]
-  }
+  bovina:{ing:[{l:'Venta de animales (kg / cabezas)',id:'bi1',warn:false},{l:'Venta subproductos',id:'bi2',warn:false},{l:'Venta reproductores',id:'bi3',warn:false},{l:'Subsidios / bonos',id:'bi4',warn:false},{l:'Mediería',id:'bi5',warn:false},{l:'Arriendo de parcela',id:'bi6',warn:false},{l:'Arriendo de talaje',id:'bi7',warn:false},{l:'Otro ingreso 1',id:'bi8',warn:false},{l:'Otro ingreso 2',id:'bi9',warn:false}],cos:[{l:'Suplemento mineral / sales',id:'bc1',warn:false},{l:'Concentrados / pellets',id:'bc2',warn:false},{l:'⚠️ Forraje conservado',id:'bc3',warn:true},{l:'Veterinaria y medicamentos',id:'bc4',warn:false},{l:'Mano de obra PAGADA',id:'bc5',warn:false},{l:'Transporte / flete',id:'bc6',warn:false},{l:'Manejo de praderas',id:'bc7',warn:false},{l:'Maquinaria',id:'bc8',warn:false},{l:'Compra animales reposición',id:'bc9',warn:false}]},
+  ovina:{ing:[{l:'Venta de animales',id:'oi1',warn:false},{l:'Venta subproductos',id:'oi2',warn:false},{l:'Venta reproductores',id:'oi3',warn:false},{l:'Subsidios / bonos',id:'oi4',warn:false},{l:'Otro ingreso',id:'oi5',warn:false}],cos:[{l:'⚠️ Forraje conservado',id:'oc1',warn:true},{l:'Veterinaria',id:'oc2',warn:false},{l:'Mano de obra',id:'oc3',warn:false},{l:'Transporte',id:'oc4',warn:false},{l:'Manejo de praderas',id:'oc5',warn:false},{l:'Compra animales reposición',id:'oc6',warn:false}]},
+  porcina:{ing:[{l:'Venta de animales',id:'poi1',warn:false},{l:'Venta subproductos',id:'poi2',warn:false},{l:'Venta reproductores',id:'poi3',warn:false},{l:'Subsidios / bonos',id:'poi4',warn:false},{l:'Otro ingreso',id:'poi5',warn:false}],cos:[{l:'Forraje / restos cosecha',id:'poc1',warn:false},{l:'Otro alimento',id:'poc2',warn:false},{l:'Lechón destetado',id:'poc3',warn:false},{l:'Mano de obra',id:'poc4',warn:false},{l:'Instalaciones y mantención',id:'poc5',warn:false},{l:'Energía',id:'poc6',warn:false},{l:'Veterinaria',id:'poc7',warn:false}]},
+  caprina:{ing:[{l:'Venta de animales',id:'cai1',warn:false},{l:'Venta subproductos',id:'cai2',warn:false},{l:'Venta reproductores',id:'cai3',warn:false},{l:'Subsidios / bonos',id:'cai4',warn:false},{l:'Otro ingreso',id:'cai5',warn:false}],cos:[{l:'Forraje fresco',id:'cac1',warn:false},{l:'⚠️ Forraje conservado',id:'cac2',warn:true},{l:'Concentrados',id:'cac3',warn:false},{l:'Suplemento mineral',id:'cac4',warn:false},{l:'Reposición de ganado',id:'cac5',warn:false},{l:'Mano de obra',id:'cac6',warn:false},{l:'Infraestructura',id:'cac7',warn:false},{l:'Transporte',id:'cac8',warn:false}]},
+  avicultura:{ing:[{l:'Venta de huevos',id:'avi1',warn:false},{l:'Gallinas de descarte',id:'avi2',warn:false},{l:'Pollitas / pollos',id:'avi3',warn:false},{l:'Subsidios / bonos',id:'avi4',warn:false},{l:'Otro ingreso',id:'avi5',warn:false}],cos:[{l:'Alimentación – Maíz',id:'avc1',warn:false},{l:'Alimentación – Afrecho/soya',id:'avc2',warn:false},{l:'Alimentación – Otros',id:'avc3',warn:false},{l:'Mano de obra Permanente',id:'avc4',warn:false},{l:'Mano de obra Temporal',id:'avc5',warn:false},{l:'Transporte y distribución',id:'avc6',warn:false},{l:'Embalaje',id:'avc7',warn:false},{l:'Electricidad y agua',id:'avc8',warn:false}]},
+  turismo:{ing:[{l:'Venta de tours / experiencias',id:'ti1',warn:false},{l:'Alojamiento',id:'ti2',warn:false},{l:'Alimentación / eventos',id:'ti3',warn:false},{l:'Productos locales',id:'ti4',warn:false},{l:'Otro ingreso',id:'ti5',warn:false}],cos:[{l:'Mano de obra Permanente',id:'tc1',warn:false},{l:'Mano de obra Temporal',id:'tc2',warn:false},{l:'Insumos y materiales',id:'tc3',warn:false},{l:'Mantención instalaciones',id:'tc4',warn:false},{l:'Marketing y comisiones',id:'tc5',warn:false},{l:'Plataformas de reserva',id:'tc6',warn:false}]}
 };
-
 function rqGetConceptos(key,tipo){
   if(RQ_CONCEPTOS[key]) return RQ_CONCEPTOS[key][tipo]||[];
-  const cfg=GENERIC_CFG[key];
-  if(!cfg) return [];
+  const cfg=GENERIC_CFG[key];if(!cfg) return [];
   if(tipo==='ing') return cfg.i.map((l,i)=>({l,id:`gen-i${i+1}`,warn:false}));
   return cfg.c.map((l,i)=>({l,id:`gen-c${i+1}`,warn:false}));
 }
-
-// ── Abrir ──
 function openRQ(){
-  RQ.step=1;RQ.tipo='';RQ.rubro='';RQ.concepto='';RQ.conceptoId='';
-  RQ.monto=0;RQ.nota='';RQ.fotoOk=false;
-
-  const hoy=new Date();
-  const fechaEl=document.getElementById('rq-fecha');
-  if(fechaEl) fechaEl.value=hoy.toISOString().split('T')[0];
-  rqFechaPreview();
-
-  document.querySelectorAll('.rq-type-btn').forEach(b=>b.classList.remove('rq-type-sel'));
-  rqBuildRubroGrid();
-  rqShowStep(1);
-  goTo('s-rq');
+  RQ.step=1;RQ.tipo='';RQ.rubro='';RQ.concepto='';RQ.conceptoId='';RQ.monto=0;RQ.nota='';RQ.fotoOk=false;
+  const hoy=new Date();const fechaEl=document.getElementById('rq-fecha');if(fechaEl) fechaEl.value=hoy.toISOString().split('T')[0];
+  rqFechaPreview();document.querySelectorAll('.rq-type-btn').forEach(b=>b.classList.remove('rq-type-sel'));
+  rqBuildRubroGrid();rqShowStep(1);goTo('s-rq');
 }
-
-// ── Mostrar paso ──
 function rqShowStep(n){
-  RQ.step=n;
-  [1,2,3,4,5].forEach(i=>{
-    const el=document.getElementById('rq-s'+i);
-    if(el) el.style.display=i===n?'block':'none';
-  });
+  RQ.step=n;[1,2,3,4,5].forEach(i=>{const el=document.getElementById('rq-s'+i);if(el) el.style.display=i===n?'block':'none';});
   const labels=['Paso 1/4 · Negocio','Paso 2/4 · Tipo','Paso 3/4 · Concepto','Paso 4/4 · Cantidad','¡Guardado!'];
   setTxt('rq-step-lbl',labels[n-1]||'');
-  [1,2,3,4].forEach(i=>{
-    const d=document.getElementById('rq-d'+i);
-    if(!d) return;
-    d.className='rq-dot';
-    if(i<n) d.classList.add('done');
-    else if(i===n) d.classList.add('active');
-  });
-  [1,2,3].forEach(i=>{
-    const l=document.getElementById('rq-l'+i);
-    if(l) l.className='rq-line'+(i<n?' done':'');
-  });
+  [1,2,3,4].forEach(i=>{const d=document.getElementById('rq-d'+i);if(!d) return;d.className='rq-dot';if(i<n) d.classList.add('done');else if(i===n) d.classList.add('active');});
+  [1,2,3].forEach(i=>{const l=document.getElementById('rq-l'+i);if(l) l.className='rq-line'+(i<n?' done':'');});
 }
-
-// ── Siguiente ──
 function rqNext(){
-  if(RQ.step===1){
-    if(!RQ.rubro){showT('⚠️ Seleccione una unidad de negocio');return;}
-    const d=RUBRO_DEF[RQ.rubro];
-    const bc=document.getElementById('rq-bc-tipo');
-    if(bc) bc.textContent=`${d?d.em+' '+d.n:RQ.rubro} · ${MESES_FULL[RQ.mes]} 2025`;
-    rqShowStep(2);return;
-  }
-  if(RQ.step===2){
-    if(!RQ.tipo){showT('⚠️ Seleccione Ingreso o Costo');return;}
-    rqBuildConceptoList();
-    rqShowStep(3);return;
-  }
-  if(RQ.step===3){
-    if(!RQ.concepto){showT('⚠️ Seleccione un concepto');return;}
-    rqBuildStep4();
-    rqShowStep(4);return;
-  }
+  if(RQ.step===1){if(!RQ.rubro){showT('⚠️ Seleccione una unidad de negocio');return;}const d=RUBRO_DEF[RQ.rubro];const bc=document.getElementById('rq-bc-tipo');if(bc) bc.textContent=`${d?d.em+' '+d.n:RQ.rubro} · ${MESES_FULL[RQ.mes]} 2025`;rqShowStep(2);return;}
+  if(RQ.step===2){if(!RQ.tipo){showT('⚠️ Seleccione Ingreso o Costo');return;}rqBuildConceptoList();rqShowStep(3);return;}
+  if(RQ.step===3){if(!RQ.concepto){showT('⚠️ Seleccione un concepto');return;}rqBuildStep4();rqShowStep(4);return;}
   if(RQ.step===4){rqSave();return;}
 }
-
 function rqPrev(){if(RQ.step>1) rqShowStep(RQ.step-1);else goTo('s-home');}
 function rqBack(){if(RQ.step>1) rqPrev();else goTo('s-home');}
-
-function rqTipo(t){
-  RQ.tipo=t;
-  document.querySelectorAll('.rq-type-btn').forEach(b=>b.classList.remove('rq-type-sel'));
-  document.getElementById('rq-t-'+t).classList.add('rq-type-sel');
-}
-
+function rqTipo(t){RQ.tipo=t;document.querySelectorAll('.rq-type-btn').forEach(b=>b.classList.remove('rq-type-sel'));document.getElementById('rq-t-'+t).classList.add('rq-type-sel');}
 function rqFechaPreview(){
-  const val=document.getElementById('rq-fecha')?.value;
-  if(!val){setTxt('rq-fecha-preview','');return;}
-  const d=new Date(val+'T12:00:00');
-  RQ.mes=d.getMonth();
-  const prev=document.getElementById('rq-fecha-preview');
-  if(prev) prev.textContent=`→ Se guardará en: ${MESES_FULL[d.getMonth()]} ${d.getFullYear()}`;
+  const val=document.getElementById('rq-fecha')?.value;if(!val){setTxt('rq-fecha-preview','');return;}
+  const d=new Date(val+'T12:00:00');RQ.mes=d.getMonth();
+  const prev=document.getElementById('rq-fecha-preview');if(prev) prev.textContent=`→ Se guardará en: ${MESES_FULL[d.getMonth()]} ${d.getFullYear()}`;
 }
-
 function rqBuildRubroGrid(){
-  const grid=document.getElementById('rq-rubro-grid');
-  if(!grid) return;
+  const grid=document.getElementById('rq-rubro-grid');if(!grid) return;
   const lista=rubrosSel.length>0?rubrosSel:['bovina','forraje'];
-  grid.innerHTML=lista.map(key=>{
-    const d=RUBRO_DEF[key];
-    if(!d) return '';
-    return `<div class="rq-mini-card" id="rq-rc-${key}" onclick="rqSelRubro('${key}')">
-      <div style="font-size:28px;">${d.em}</div>
-      <div class="rq-mini-label" style="font-size:12px;font-weight:700;color:var(--gt);text-align:center;line-height:1.3;">${d.n}</div>
-    </div>`;
-  }).join('');
+  grid.innerHTML=lista.map(key=>{const d=RUBRO_DEF[key];if(!d) return '';return `<div class="rq-mini-card" id="rq-rc-${key}" onclick="rqSelRubro('${key}')"><div style="font-size:28px;">${d.em}</div><div class="rq-mini-label" style="font-size:12px;font-weight:700;color:var(--gt);text-align:center;line-height:1.3;">${d.n}</div></div>`;}).join('');
 }
-
-function rqSelRubro(key){
-  RQ.rubro=key;
-  document.querySelectorAll('.rq-mini-card').forEach(c=>c.classList.remove('rq-mini-sel'));
-  const card=document.getElementById('rq-rc-'+key);
-  if(card) card.classList.add('rq-mini-sel');
-}
-
+function rqSelRubro(key){RQ.rubro=key;document.querySelectorAll('.rq-mini-card').forEach(c=>c.classList.remove('rq-mini-sel'));const card=document.getElementById('rq-rc-'+key);if(card) card.classList.add('rq-mini-sel');}
 function rqBuildConceptoList(){
-  const d=RUBRO_DEF[RQ.rubro];
-  const title=document.getElementById('rq-concepto-title');
-  if(title) title.textContent=`📋 Concepto — ${d?d.em+' '+d.n:''}`;
-  const bc=document.getElementById('rq-bc2');
-  const tipoLabel=RQ.tipo==='ing'?'💰 Ingreso':'📉 Costo';
-  if(bc) bc.textContent=`${tipoLabel} · ${MESES_FULL[RQ.mes]} 2025 · ${d?d.em+' '+d.n:''}`;
-  const gk=d?.gk||RQ.rubro;
-  const conceptos=rqGetConceptos(gk,RQ.tipo);
-  const list=document.getElementById('rq-concepto-list');
-  if(!list) return;
-  if(conceptos.length===0){
-    list.innerHTML='<div class="al ali"><span class="al-ic">ℹ️</span><div class="al-tx">No hay conceptos configurados.</div></div>';
-    return;
-  }
-  list.innerHTML=conceptos.map((c,i)=>`
-    <div class="rq-concepto-item${c.warn?' rq-concepto-warn':''}"
-      id="rq-ci-${i}" onclick="rqSelConcepto(${i},'${c.l.replace(/'/g,"\\'")}','${c.id}')">
-      <div style="font-size:16px;flex-shrink:0;">${c.warn?'⚠️':'📋'}</div>
-      <div style="font-size:13px;font-weight:600;flex:1;line-height:1.4;">${c.l.replace('⚠️ ','')}</div>
-      <div style="font-size:16px;color:#ccc;">›</div>
-    </div>`
-  ).join('');
+  const d=RUBRO_DEF[RQ.rubro];const title=document.getElementById('rq-concepto-title');if(title) title.textContent=`📋 Concepto — ${d?d.em+' '+d.n:''}`;
+  const bc=document.getElementById('rq-bc2');const tipoLabel=RQ.tipo==='ing'?'💰 Ingreso':'📉 Costo';if(bc) bc.textContent=`${tipoLabel} · ${MESES_FULL[RQ.mes]} 2025 · ${d?d.em+' '+d.n:''}`;
+  const gk=d?.gk||RQ.rubro;const conceptos=rqGetConceptos(gk,RQ.tipo);const list=document.getElementById('rq-concepto-list');if(!list) return;
+  if(conceptos.length===0){list.innerHTML='<div class="al ali"><span class="al-ic">ℹ️</span><div class="al-tx">No hay conceptos configurados.</div></div>';return;}
+  list.innerHTML=conceptos.map((c,i)=>`<div class="rq-concepto-item${c.warn?' rq-concepto-warn':''}" id="rq-ci-${i}" onclick="rqSelConcepto(${i},'${c.l.replace(/'/g,"\\'")}','${c.id}')"><div style="font-size:16px;flex-shrink:0;">${c.warn?'⚠️':'📋'}</div><div style="font-size:13px;font-weight:600;flex:1;line-height:1.4;">${c.l.replace('⚠️ ','')}</div><div style="font-size:16px;color:#ccc;">›</div></div>`).join('');
 }
-
 function rqSelConcepto(i,label,inputId){
-  RQ.concepto=label;RQ.conceptoId=inputId;
-  document.querySelectorAll('.rq-concepto-item').forEach(el=>el.classList.remove('rq-concepto-sel'));
-  const sel=document.getElementById('rq-ci-'+i);
-  if(sel) sel.classList.add('rq-concepto-sel');
+  RQ.concepto=label;RQ.conceptoId=inputId;document.querySelectorAll('.rq-concepto-item').forEach(el=>el.classList.remove('rq-concepto-sel'));const sel=document.getElementById('rq-ci-'+i);if(sel) sel.classList.add('rq-concepto-sel');
 }
-
-// ── Paso 4: construir con etiquetas según tipo ──
 function rqBuildStep4(){
-  const d=RUBRO_DEF[RQ.rubro];
-  const tipoLabel=RQ.tipo==='ing'?'💰 Ingreso':'📉 Costo';
-  setTxt('rq-sum-rubro',(d?d.em+' '+d.n:'—'));
-  setTxt('rq-sum-tipo',tipoLabel+' · '+MESES_FULL[RQ.mes]+' 2025');
-  setTxt('rq-sum-concepto','📋 '+RQ.concepto);
-
-  // CHANGED: update labels always based on tipo
-  const step4Label=document.getElementById('rq-step4-label');
-  const qtyLbl=document.getElementById('rq-qty-label');
-  const upriceLbl=document.getElementById('rq-uprice-label');
-  if(RQ.tipo==='ing'){
-    if(step4Label) step4Label.textContent='📦 Cantidad y precio de venta';
-    if(qtyLbl) qtyLbl.textContent='Cantidad (unidades, kg, litros, cab.)';
-    if(upriceLbl) upriceLbl.textContent='Precio por unidad (CLP)';
-  } else {
-    if(step4Label) step4Label.textContent='📦 Cantidad y costo unitario';
-    if(qtyLbl) qtyLbl.textContent='Cantidad';
-    if(upriceLbl) upriceLbl.textContent='Monto por unidad (CLP)';
-  }
-
-  // Reset inputs
-  const qtyEl=document.getElementById('rq-qty');
-  const upriceEl=document.getElementById('rq-uprice');
-  if(qtyEl) qtyEl.value='';
-  if(upriceEl) upriceEl.value='';
-
-  // Reset total display
-  const td=document.getElementById('rq-total-display');
-  if(td){td.textContent='$ —';td.className='rq-total-box';}
-  const tf=document.getElementById('rq-total-formula');
-  if(tf) tf.textContent='';
-  RQ.monto=0;
-
-  // Reset nota y foto
-  const notaEl=document.getElementById('rq-nota');
-  if(notaEl) notaEl.value='';
-  RQ.fotoOk=false;
-  const th=document.getElementById('rq-foto-th');
-  const lbl=document.getElementById('rq-foto-lbl');
-  const sub=document.getElementById('rq-foto-sub');
-  if(th) th.textContent='📷';
-  if(lbl) lbl.textContent='Adjuntar boleta o comprobante';
-  if(sub) sub.textContent='Toca para tomar foto o subir archivo';
+  const d=RUBRO_DEF[RQ.rubro];const tipoLabel=RQ.tipo==='ing'?'💰 Ingreso':'📉 Costo';
+  setTxt('rq-sum-rubro',(d?d.em+' '+d.n:'—'));setTxt('rq-sum-tipo',tipoLabel+' · '+MESES_FULL[RQ.mes]+' 2025');setTxt('rq-sum-concepto','📋 '+RQ.concepto);
+  const step4Label=document.getElementById('rq-step4-label');const qtyLbl=document.getElementById('rq-qty-label');const upriceLbl=document.getElementById('rq-uprice-label');
+  if(RQ.tipo==='ing'){if(step4Label) step4Label.textContent='📦 Cantidad y precio de venta';if(qtyLbl) qtyLbl.textContent='Cantidad (unidades, kg, litros, cab.)';if(upriceLbl) upriceLbl.textContent='Precio por unidad (CLP)';}
+  else{if(step4Label) step4Label.textContent='📦 Cantidad y costo unitario';if(qtyLbl) qtyLbl.textContent='Cantidad';if(upriceLbl) upriceLbl.textContent='Monto por unidad (CLP)';}
+  const qtyEl=document.getElementById('rq-qty');const upriceEl=document.getElementById('rq-uprice');if(qtyEl) qtyEl.value='';if(upriceEl) upriceEl.value='';
+  const td=document.getElementById('rq-total-display');if(td){td.textContent='$ —';td.className='rq-total-box';}const tf=document.getElementById('rq-total-formula');if(tf) tf.textContent='';RQ.monto=0;
+  const notaEl=document.getElementById('rq-nota');if(notaEl) notaEl.value='';RQ.fotoOk=false;
+  const th=document.getElementById('rq-foto-th');const lbl=document.getElementById('rq-foto-lbl');const sub=document.getElementById('rq-foto-sub');
+  if(th) th.textContent='📷';if(lbl) lbl.textContent='Adjuntar boleta o comprobante';if(sub) sub.textContent='Toca para tomar foto o subir archivo';
 }
-
-// CHANGED: siempre calcular qty × uprice (no editable total)
 function rqCalcTotal(){
-  const qty=parseFloat(document.getElementById('rq-qty')?.value||0);
-  const uprice=parseFloat(document.getElementById('rq-uprice')?.value||0);
-  const total=Math.round(qty*uprice);
-  RQ.monto=total;
-  const td=document.getElementById('rq-total-display');
-  const tf=document.getElementById('rq-total-formula');
-  if(td){
-    if(total>0){
-      td.textContent=fmt(total);
-      td.className='rq-total-box has-value';
-    } else {
-      td.textContent='$ —';
-      td.className='rq-total-box';
-    }
-  }
-  if(tf){
-    if(qty>0&&uprice>0){
-      tf.textContent=`${fmtN(qty)} × $${fmtN(uprice)} = ${fmt(total)}`;
-    } else {
-      tf.textContent='';
-    }
-  }
+  const qty=parseFloat(document.getElementById('rq-qty')?.value||0);const uprice=parseFloat(document.getElementById('rq-uprice')?.value||0);const total=Math.round(qty*uprice);RQ.monto=total;
+  const td=document.getElementById('rq-total-display');const tf=document.getElementById('rq-total-formula');
+  if(td){if(total>0){td.textContent=fmt(total);td.className='rq-total-box has-value';}else{td.textContent='$ —';td.className='rq-total-box';}}
+  if(tf){if(qty>0&&uprice>0) tf.textContent=`${fmtN(qty)} × $${fmtN(uprice)} = ${fmt(total)}`;else tf.textContent='';}
 }
-
-function rqFoto(){
-  RQ.fotoOk=true;
-  const th=document.getElementById('rq-foto-th');
-  const lbl=document.getElementById('rq-foto-lbl');
-  const sub=document.getElementById('rq-foto-sub');
-  if(th) th.textContent='✅';
-  if(lbl) lbl.textContent='Foto adjunta correctamente';
-  if(sub) sub.textContent='Toca para cambiar';
-  showT('📷 Foto adjuntada');
-}
-
-// ── Guardar ──
+function rqFoto(){RQ.fotoOk=true;const th=document.getElementById('rq-foto-th');const lbl=document.getElementById('rq-foto-lbl');const sub=document.getElementById('rq-foto-sub');if(th) th.textContent='✅';if(lbl) lbl.textContent='Foto adjunta correctamente';if(sub) sub.textContent='Toca para cambiar';showT('📷 Foto adjuntada');}
 function rqSave(){
-  // CHANGED: use RQ.monto set by rqCalcTotal (qty × uprice)
-  const monto=RQ.monto;
-  if(monto<=0){showT('⚠️ Ingrese cantidad y precio para calcular el monto');return;}
-
-  const targetEl=document.getElementById(RQ.conceptoId);
-  if(targetEl){
-    const valorActual=parseFloat(targetEl.value||0);
-    targetEl.value=valorActual+monto;
-  }
-
+  const monto=RQ.monto;if(monto<=0){showT('⚠️ Ingrese cantidad y precio para calcular el monto');return;}
+  const targetEl=document.getElementById(RQ.conceptoId);if(targetEl){const valorActual=parseFloat(targetEl.value||0);targetEl.value=valorActual+monto;}
   const gk=RUBRO_DEF[RQ.rubro]?.gk||RQ.rubro;
-  switch(RQ.rubro){
-    case 'bovina':cBov();break;case 'ovina':cOvi();break;
-    case 'porcina':cPor();break;case 'caprina':cCap();break;
-    case 'avicultura':cAvi();break;case 'turismo':cTur();break;
-    default:currentGenKey=gk;cGen();
-  }
-
+  switch(RQ.rubro){case 'bovina':cBov();break;case 'ovina':cOvi();break;case 'porcina':cPor();break;case 'caprina':cCap();break;case 'avicultura':cAvi();break;case 'turismo':cTur();break;default:currentGenKey=gk;cGen();}
   RQ.nota=document.getElementById('rq-nota')?.value||'';
-  const entrada={
-    emoji:RUBRO_DEF[RQ.rubro]?.em||'📋',
-    rubro:RUBRO_DEF[RQ.rubro]?.n||RQ.rubro,
-    tipo:RQ.tipo==='ing'?'💰 Ingreso':'📉 Costo',
-    concepto:RQ.concepto,monto,
-    mes:MESES_FULL[RQ.mes],foto:RQ.fotoOk,nota:RQ.nota,
-    hora:new Date().toLocaleTimeString('es-CL',{hour:'2-digit',minute:'2-digit'})
-  };
-  RQ.log.unshift(entrada);
-  rqBuildSuccess(entrada);
-  rqShowStep(5);
+  const entrada={emoji:RUBRO_DEF[RQ.rubro]?.em||'📋',rubro:RUBRO_DEF[RQ.rubro]?.n||RQ.rubro,tipo:RQ.tipo==='ing'?'💰 Ingreso':'📉 Costo',concepto:RQ.concepto,monto,mes:MESES_FULL[RQ.mes],foto:RQ.fotoOk,nota:RQ.nota,hora:new Date().toLocaleTimeString('es-CL',{hour:'2-digit',minute:'2-digit'})};
+  RQ.log.unshift(entrada);rqBuildSuccess(entrada);rqShowStep(5);
 }
-
 function rqBuildSuccess(e){
   const card=document.getElementById('rq-success-card');
-  if(card) card.innerHTML=`
-    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
-      <div style="font-size:16px;font-weight:800;color:var(--vp);">${e.emoji} ${e.rubro}</div>
-      <span class="bdg ${e.tipo.includes('💰')?'bg':'br'}">${e.tipo}</span>
-    </div>
-    <div style="font-size:13px;color:var(--gt);margin-bottom:4px;">📋 ${e.concepto.replace('⚠️ ','')}</div>
-    <div style="font-size:24px;font-weight:900;color:var(--vp);margin:8px 0;">${fmt(e.monto)}</div>
-    <div style="display:flex;gap:12px;font-size:12px;color:#888;">
-      <span>📅 ${e.mes} 2025</span>
-      <span>${e.foto?'📷 Con foto':'📷 Sin foto'}</span>
-      <span>🕐 ${e.hora}</span>
-    </div>
-    ${e.nota?`<div style="font-size:12px;color:#555;margin-top:8px;padding-top:8px;border-top:1px solid #eee;">📝 ${e.nota}</div>`:''}
-  `;
+  if(card) card.innerHTML=`<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;"><div style="font-size:16px;font-weight:800;color:var(--vp);">${e.emoji} ${e.rubro}</div><span class="bdg ${e.tipo.includes('💰')?'bg':'br'}">${e.tipo}</span></div><div style="font-size:13px;color:var(--gt);margin-bottom:4px;">📋 ${e.concepto.replace('⚠️ ','')}</div><div style="font-size:24px;font-weight:900;color:var(--vp);margin:8px 0;">${fmt(e.monto)}</div><div style="display:flex;gap:12px;font-size:12px;color:#888;"><span>📅 ${e.mes} 2025</span><span>${e.foto?'📷 Con foto':'📷 Sin foto'}</span><span>🕐 ${e.hora}</span></div>${e.nota?`<div style="font-size:12px;color:#555;margin-top:8px;padding-top:8px;border-top:1px solid #eee;">📝 ${e.nota}</div>`:''}`;
   const ruta=document.getElementById('rq-ruta');
-  if(ruta){
-    const arrow='<span style="color:#ccc;margin:0 2px;">→</span>';
-    ruta.innerHTML=[
-      `<span style="background:var(--vp);color:#fff;padding:4px 8px;border-radius:6px;font-size:11px;">📅 ${e.mes}</span>`,
-      arrow,
-      `<span style="background:var(--vpa);color:var(--vp);padding:4px 8px;border-radius:6px;font-size:11px;">${e.emoji} ${e.rubro}</span>`,
-      arrow,
-      `<span style="background:${e.tipo.includes('💰')?'#E8F5E9':'#FFF3E0'};color:${e.tipo.includes('💰')?'var(--vp)':'#E65100'};padding:4px 8px;border-radius:6px;font-size:11px;">${e.tipo}</span>`,
-      arrow,
-      `<span style="background:var(--vp);color:#fff;padding:4px 8px;border-radius:6px;font-size:11px;font-weight:800;">${fmt(e.monto)}</span>`
-    ].join('');
-  }
-  const logSec=document.getElementById('rq-log-section');
-  const logList=document.getElementById('rq-log-list');
-  const logCount=document.getElementById('rq-log-count');
-  if(RQ.log.length>0&&logSec&&logList){
-    logSec.style.display='block';
-    if(logCount) logCount.textContent=RQ.log.length;
-    logList.innerHTML=RQ.log.slice(0,5).map((l,i)=>`
-      <div class="rq-log-entry${i===0?' latest':''}">
-        <div style="font-size:20px;flex-shrink:0;">${l.emoji}</div>
-        <div style="flex:1;">
-          <div style="font-size:12px;font-weight:700;">${l.concepto.replace('⚠️ ','').substring(0,30)}</div>
-          <div style="font-size:11px;color:#888;">${l.rubro} · ${l.hora}</div>
-        </div>
-        <div style="font-size:13px;font-weight:800;color:${l.tipo.includes('💰')?'var(--vp)':'var(--rojo)'};">${fmt(l.monto)}</div>
-      </div>`
-    ).join('');
-  }
+  if(ruta){const arrow='<span style="color:#ccc;margin:0 2px;">→</span>';ruta.innerHTML=[`<span style="background:var(--vp);color:#fff;padding:4px 8px;border-radius:6px;font-size:11px;">📅 ${e.mes}</span>`,arrow,`<span style="background:var(--vpa);color:var(--vp);padding:4px 8px;border-radius:6px;font-size:11px;">${e.emoji} ${e.rubro}</span>`,arrow,`<span style="background:${e.tipo.includes('💰')?'#E8F5E9':'#FFF3E0'};color:${e.tipo.includes('💰')?'var(--vp)':'#E65100'};padding:4px 8px;border-radius:6px;font-size:11px;">${e.tipo}</span>`,arrow,`<span style="background:var(--vp);color:#fff;padding:4px 8px;border-radius:6px;font-size:11px;font-weight:800;">${fmt(e.monto)}</span>`].join('');}
+  const logSec=document.getElementById('rq-log-section');const logList=document.getElementById('rq-log-list');const logCount=document.getElementById('rq-log-count');
+  if(RQ.log.length>0&&logSec&&logList){logSec.style.display='block';if(logCount) logCount.textContent=RQ.log.length;logList.innerHTML=RQ.log.slice(0,5).map((l,i)=>`<div class="rq-log-entry${i===0?' latest':''}"><div style="font-size:20px;flex-shrink:0;">${l.emoji}</div><div style="flex:1;"><div style="font-size:12px;font-weight:700;">${l.concepto.replace('⚠️ ','').substring(0,30)}</div><div style="font-size:11px;color:#888;">${l.rubro} · ${l.hora}</div></div><div style="font-size:13px;font-weight:800;color:${l.tipo.includes('💰')?'var(--vp)':'var(--rojo)'};">${fmt(l.monto)}</div></div>`).join('');}
 }
 
-// ══════════════════════
-// INIT
-// ══════════════════════
 document.addEventListener('DOMContentLoaded',()=>{
-  buildMes('bov-mes-s','bov-mes-cur');buildMes('ovi-mes-s','ovi-mes-cur');
-  buildMes('por-mes-s','por-mes-cur');buildMes('cap-mes-s','cap-mes-cur');
-  buildMes('avi-mes-s','avi-mes-cur');buildMes('tur-mes-s','tur-mes-cur');
-  buildMes('gen-mes-s','gen-mes-cur');
-  buildUATable('bov-ua-body',UA_BOV,'bov');buildUATable('ovi-ua-body',UA_OVI,'ovi');
-  buildUATable('por-ua-body',UA_POR,'por');buildUATable('cap-ua-body',UA_CAP,'cap');
+  buildMes('bov-mes-s','bov-mes-cur');buildMes('ovi-mes-s','ovi-mes-cur');buildMes('por-mes-s','por-mes-cur');buildMes('cap-mes-s','cap-mes-cur');buildMes('avi-mes-s','avi-mes-cur');buildMes('tur-mes-s','tur-mes-cur');buildMes('gen-mes-s','gen-mes-cur');
+  buildUATable('bov-ua-body',UA_BOV,'bov');buildUATable('ovi-ua-body',UA_OVI,'ovi');buildUATable('por-ua-body',UA_POR,'por');buildUATable('cap-ua-body',UA_CAP,'cap');
   cBov();cCF();updateHome();autoFillMercRef();
-
-  ['bov-cos','bov-ua','bov-kpi','ovi-cos','ovi-ua',
-   'por-cos','por-ua','cap-cos','cap-ua',
-   'avi-cos','avi-ind','tur-cos','tur-ind','gen-cos','gen-ind'
-  ].forEach(id=>{const el=document.getElementById(id);if(el) el.style.display='none';});
-
-  const fechaEl=document.getElementById('rq-fecha');
-  if(fechaEl) fechaEl.addEventListener('change',rqFechaPreview);
-
+  ['bov-cos','bov-ua','bov-kpi','ovi-cos','ovi-ua','por-cos','por-ua','cap-cos','cap-ua','avi-cos','avi-ind','tur-cos','tur-ind','gen-cos','gen-ind'].forEach(id=>{const el=document.getElementById(id);if(el) el.style.display='none';});
+  const fechaEl=document.getElementById('rq-fecha');if(fechaEl) fechaEl.addEventListener('change',rqFechaPreview);
   document.addEventListener('input',e=>{
-    if(e.target.closest('#bov-ua-body')) cUABov();
-    if(e.target.closest('#ovi-ua-body')) cUAOvi();
-    if(e.target.closest('#por-ua-body')) calcUAGeneric('por-ua-body','por');
-    if(e.target.closest('#cap-ua-body')) cUACap();
-    if(e.target.id==='merc-mio'||e.target.id==='merc-ref'){
-      const dif=getNum('merc-mio')-getNum('merc-ref');
-      setTxt('merc-dif',getNum('merc-mio')>0&&getNum('merc-ref')>0?fmtN(dif)+' CLP':'—');
-    }
+    if(e.target.closest('#bov-ua-body')) cUABov();if(e.target.closest('#ovi-ua-body')) cUAOvi();if(e.target.closest('#por-ua-body')) calcUAGeneric('por-ua-body','por');if(e.target.closest('#cap-ua-body')) cUACap();
+    if(e.target.id==='merc-mio'||e.target.id==='merc-ref'){const dif=getNum('merc-mio')-getNum('merc-ref');setTxt('merc-dif',getNum('merc-mio')>0&&getNum('merc-ref')>0?fmtN(dif)+' CLP':'—');}
   });
 });
 </script>
