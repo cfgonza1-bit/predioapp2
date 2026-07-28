@@ -162,7 +162,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
 .ci-pct{font-size:12px;color:var(--vl);font-weight:700;margin-left:8px;}
 .rq-fab-section{padding:14px 18px 20px;background:linear-gradient(180deg,#fff 0%,#F0FFF4 100%);border-top:1px solid var(--gb);}
 .rq-fab-btn{width:100%;padding:18px;background:linear-gradient(135deg,#1B4332,#2D6A4F 50%,#52B788);color:#fff;border:none;border-radius:16px;font-size:16px;font-weight:800;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;font-family:inherit;box-shadow:0 4px 20px rgba(45,106,79,.35);transition:all .2s;}
-.rq-fab-btn:active{transform:scale(.98);box-shadow:0 2px 8px rgba(45,106,79,.2);}
+.rq-fab-btn:active{transform:scale(.98);}
 .rq-step-bar{display:flex;align-items:center;padding:11px 20px;background:#fff;border-bottom:1px solid #eee;flex-shrink:0;}
 .rq-line{flex:1;height:2px;background:var(--gb);}
 .rq-line.done{background:var(--vl);}
@@ -186,189 +186,106 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
 .rq-log-entry.latest{border-color:var(--vl);}
 .rq-total-box{padding:16px;background:var(--vto);border:2px solid var(--vl);border-radius:12px;font-size:28px;font-weight:900;text-align:center;min-height:62px;display:flex;align-items:center;justify-content:center;color:#ccc;transition:color .2s;}
 .rq-total-box.has-value{color:var(--vp);}
-
-/* ══ SPLASH QUICK-ACCESS CARDS ══ */
-.sp-qa-card{
-  display:flex;align-items:center;gap:12px;
-  padding:13px 14px;
-  border-radius:14px;
-  cursor:pointer;
-  transition:all .2s;
-  border:1.5px solid rgba(255,255,255,.18);
-  background:rgba(255,255,255,.10);
-}
+/* Splash quick-access cards */
+.sp-qa-card{display:flex;align-items:center;gap:12px;padding:13px 14px;border-radius:14px;cursor:pointer;transition:all .2s;border:1.5px solid rgba(255,255,255,.18);background:rgba(255,255,255,.10);}
 .sp-qa-card:active{background:rgba(255,255,255,.22);transform:scale(.98);}
 .sp-qa-icon{font-size:24px;width:36px;text-align:center;flex-shrink:0;}
 .sp-qa-text{flex:1;}
 .sp-qa-title{color:#fff;font-size:14px;font-weight:700;line-height:1.2;}
 .sp-qa-sub{color:#B7E4C7;font-size:11px;margin-top:2px;}
 .sp-qa-arrow{color:rgba(255,255,255,.5);font-size:16px;}
+/* Trend chart year pill */
+.yr-pill{padding:7px 16px;border-radius:20px;border:2px solid;font-size:13px;font-weight:600;cursor:pointer;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;transition:all .2s;flex-shrink:0;}
 </style>
 </head>
 <body>
 <div class="phone">
-
 <div class="notch">
   <span>📶 9:41</span>
   <div class="notch-pill"></div>
   <span>88% 🔋</span>
 </div>
 
-<!-- ═══════════════════════════════════════
-     SPLASH — MODIFICADO
-═══════════════════════════════════════ -->
+<!-- ═══ SPLASH ═══ -->
 <div class="screen active" id="s-splash"
   style="background:linear-gradient(160deg,#1B4332,#2D6A4F 60%,#52B788);
   align-items:center;justify-content:flex-start;gap:0;padding:0;overflow-y:auto;">
-
-  <!-- Logo + título -->
   <div style="text-align:center;padding:36px 28px 24px;width:100%;">
     <div style="font-size:62px;margin-bottom:6px;">🌿</div>
     <div style="color:#fff;font-size:28px;font-weight:900;letter-spacing:-1px;">PredioApp</div>
     <div style="color:#B7E4C7;font-size:12px;margin-top:3px;">Registro simple para tu campo · Piloto v5</div>
   </div>
-
-  <!-- Botones principales: Iniciar sesión + Crear cuenta -->
   <div style="width:100%;padding:0 24px;display:flex;flex-direction:column;gap:10px;">
-    <button class="btn" onclick="goTo('s-perfil')"
-      style="background:#fff;color:#1B4332;font-size:15px;padding:15px;font-weight:800;">
-      🟢 &nbsp;Iniciar sesión
-    </button>
-    <button class="btn" onclick="goTo('s-perfil')"
-      style="border:2px solid rgba(255,255,255,.6);color:#fff;font-size:15px;padding:15px;background:transparent;font-weight:700;">
-      ➕ &nbsp;Crear cuenta
-    </button>
+    <button class="btn" onclick="goTo('s-perfil')" style="background:#fff;color:#1B4332;font-size:15px;padding:15px;font-weight:800;">🟢 &nbsp;Iniciar sesión</button>
+    <button class="btn" onclick="goTo('s-perfil')" style="border:2px solid rgba(255,255,255,.6);color:#fff;font-size:15px;padding:15px;background:transparent;font-weight:700;">➕ &nbsp;Crear cuenta</button>
   </div>
-
-  <!-- Separador -->
   <div style="width:100%;padding:20px 24px 12px;display:flex;align-items:center;gap:10px;">
     <div style="flex:1;height:1px;background:rgba(255,255,255,.2);"></div>
     <span style="color:rgba(255,255,255,.5);font-size:11px;font-weight:600;white-space:nowrap;">ACCESO DIRECTO</span>
     <div style="flex:1;height:1px;background:rgba(255,255,255,.2);"></div>
   </div>
-
-  <!-- Tres opciones de acceso directo -->
   <div style="width:100%;padding:0 24px;display:flex;flex-direction:column;gap:8px;">
-
-    <!-- 1. Registrar usuario -->
     <div class="sp-qa-card" onclick="goTo('s-perfil')">
       <div class="sp-qa-icon">👤</div>
-      <div class="sp-qa-text">
-        <div class="sp-qa-title">Registrar usuario</div>
-        <div class="sp-qa-sub">Datos del predio e información personal</div>
-      </div>
+      <div class="sp-qa-text"><div class="sp-qa-title">Registrar usuario</div><div class="sp-qa-sub">Datos del predio e información personal</div></div>
       <div class="sp-qa-arrow">›</div>
     </div>
-
-    <!-- 2. Ingresar datos -->
     <div class="sp-qa-card" onclick="goTo('s-home')">
       <div class="sp-qa-icon">📝</div>
-      <div class="sp-qa-text">
-        <div class="sp-qa-title">Ingresar datos</div>
-        <div class="sp-qa-sub">Registra ventas, costos y unidades de negocio</div>
-      </div>
+      <div class="sp-qa-text"><div class="sp-qa-title">Ingresar datos</div><div class="sp-qa-sub">Registra ventas, costos y unidades de negocio</div></div>
       <div class="sp-qa-arrow">›</div>
     </div>
-
-    <!-- 3. Ver resumen -->
     <div class="sp-qa-card" onclick="goTo('s-resumen')">
       <div class="sp-qa-icon">📊</div>
-      <div class="sp-qa-text">
-        <div class="sp-qa-title">Ver resumen</div>
-        <div class="sp-qa-sub">Resultados prediales, margen bruto y KPIs</div>
-      </div>
+      <div class="sp-qa-text"><div class="sp-qa-title">Ver resumen</div><div class="sp-qa-sub">Resultados prediales, margen bruto y KPIs</div></div>
       <div class="sp-qa-arrow">›</div>
     </div>
-
   </div>
-
-  <!-- Código de programa -->
   <div style="width:100%;padding:20px 24px 10px;text-align:center;">
-    <div style="color:#B7E4C7;font-size:12px;">
-      ¿Tiene código de programa?&nbsp;
-      <span style="text-decoration:underline;cursor:pointer;font-weight:600;">Ingresar código →</span>
-    </div>
+    <div style="color:#B7E4C7;font-size:12px;">¿Tiene código de programa?&nbsp;<span style="text-decoration:underline;cursor:pointer;font-weight:600;">Ingresar código →</span></div>
   </div>
-
-  <!-- Versión -->
   <div style="width:100%;text-align:center;padding:8px 0 20px;">
     <span style="color:#95D5B2;font-size:11px;">v2.0 · Piloto v5</span>
   </div>
-
 </div>
-<!-- FIN SPLASH -->
 
-<!-- ═══ PERFIL — Datos del Predio ═══ -->
+<!-- ═══ PERFIL ═══ -->
 <div class="screen" id="s-perfil">
-  <div class="hdr">
-    <span class="hdr-bk" onclick="goTo('s-splash')">←</span>
-    <h2>Datos del Predio</h2>
-    <span class="hdr-ic">🏡</span>
-  </div>
+  <div class="hdr"><span class="hdr-bk" onclick="goTo('s-splash')">←</span><h2>Datos del Predio</h2><span class="hdr-ic">🏡</span></div>
   <div style="overflow-y:auto;padding-bottom:85px;">
     <div style="background:#F0FFF4;padding:16px;text-align:center;">
-      <div onclick="showT('📷 Abrir cámara')"
-        style="width:85px;height:85px;border-radius:16px;background:#C7F9CC;
-        margin:0 auto 9px;display:flex;align-items:center;justify-content:center;
-        font-size:36px;border:3px dashed #52B788;cursor:pointer;">🏡</div>
+      <div onclick="showT('📷 Abrir cámara')" style="width:85px;height:85px;border-radius:16px;background:#C7F9CC;margin:0 auto 9px;display:flex;align-items:center;justify-content:center;font-size:36px;border:3px dashed #52B788;cursor:pointer;">🏡</div>
       <div style="font-size:12px;color:#52B788;font-weight:600;">Toca para agregar foto del predio</div>
     </div>
     <div class="sec">
       <div class="sec-t">Información del Predio</div>
-      <div class="f"><label>🏡 Nombre predio</label>
-        <input type="text" id="p-predio" value="El Canelo"></div>
+      <div class="f"><label>🏡 Nombre predio</label><input type="text" id="p-predio" value="El Canelo"></div>
       <div class="f"><label>📍 Región</label>
         <select id="p-region">
-          <option>Arica y Parinacota</option><option>Tarapacá</option>
-          <option>Antofagasta</option><option>Atacama</option><option>Coquimbo</option>
-          <option>Valparaíso</option><option>Metropolitana</option><option>O'Higgins</option>
-          <option>Maule</option><option>Ñuble</option><option>Biobío</option>
-          <option>La Araucanía</option><option>Los Ríos</option>
-          <option selected>Los Lagos</option><option>Aysén</option><option>Magallanes</option>
+          <option>Arica y Parinacota</option><option>Tarapacá</option><option>Antofagasta</option><option>Atacama</option><option>Coquimbo</option><option>Valparaíso</option><option>Metropolitana</option><option>O'Higgins</option><option>Maule</option><option>Ñuble</option><option>Biobío</option><option>La Araucanía</option><option>Los Ríos</option><option selected>Los Lagos</option><option>Aysén</option><option>Magallanes</option>
         </select></div>
-      <div class="f"><label>📐 Tamaño del predio (ha)</label>
-        <input type="number" id="p-ha" value="85"></div>
+      <div class="f"><label>📐 Tamaño del predio (ha)</label><input type="number" id="p-ha" value="85"></div>
       <div class="f"><label>🔄 Sistema de manejo</label>
-        <select id="p-sistema">
-          <option>Convencional</option><option>Regenerativo / Holístico</option>
-          <option>Transición regenerativa</option><option>Orgánico certificado</option>
-          <option>Otro</option>
-        </select></div>
+        <select id="p-sistema"><option>Convencional</option><option>Regenerativo / Holístico</option><option>Transición regenerativa</option><option>Orgánico certificado</option><option>Otro</option></select></div>
     </div>
     <div class="div"></div>
     <div class="sec">
       <div class="sec-t">Información Usuario</div>
-      <div class="f"><label>👤 Nombre completo</label>
-        <input type="text" id="p-nombre" value="María González Rojas"></div>
-      <div class="f"><label>📱 Teléfono</label>
-        <input type="tel" value="+56 9 8234 5678"></div>
-      <div class="f"><label>📧 Email</label>
-        <input type="email" placeholder="correo@ejemplo.com"></div>
-      <div class="f"><label>💼 Cargo</label>
-        <select>
-          <option>Propietario/a</option><option>Administrador/a</option>
-          <option>Encargado/a de Campo</option><option>Asesor/a Técnico/a</option>
-          <option>Otro</option>
-        </select></div>
-      <div class="f"><label>📍 Dirección</label>
-        <input type="text" placeholder="Ej: Camino Los Arrayanes 1234, Los Lagos"></div>
-      <div style="margin-top:16px;">
-        <button class="btn bp" onclick="goTo('s-rubros')">Siguiente: Mis Unidades de Negocio →</button>
-      </div>
+      <div class="f"><label>👤 Nombre completo</label><input type="text" id="p-nombre" value="María González Rojas"></div>
+      <div class="f"><label>📱 Teléfono</label><input type="tel" value="+56 9 8234 5678"></div>
+      <div class="f"><label>📧 Email</label><input type="email" placeholder="correo@ejemplo.com"></div>
+      <div class="f"><label>💼 Cargo</label><select><option>Propietario/a</option><option>Administrador/a</option><option>Encargado/a de Campo</option><option>Asesor/a Técnico/a</option><option>Otro</option></select></div>
+      <div class="f"><label>📍 Dirección</label><input type="text" placeholder="Ej: Camino Los Arrayanes 1234, Los Lagos"></div>
+      <div style="margin-top:16px;"><button class="btn bp" onclick="goTo('s-rubros')">Siguiente: Mis Unidades de Negocio →</button></div>
     </div>
   </div>
 </div>
 
 <!-- ═══ RUBROS ═══ -->
 <div class="screen" id="s-rubros">
-  <div class="hdr">
-    <span class="hdr-bk" onclick="goTo('s-perfil')">←</span>
-    <h2>Mis Unidades de Negocio</h2>
-  </div>
+  <div class="hdr"><span class="hdr-bk" onclick="goTo('s-perfil')">←</span><h2>Mis Unidades de Negocio</h2></div>
   <div style="overflow-y:auto;padding-bottom:75px;">
-    <div style="padding:10px 18px;background:var(--gc);font-size:13px;color:#555;">
-      Seleccione <strong>todas sus unidades de negocio activas</strong> en el predio
-    </div>
+    <div style="padding:10px 18px;background:var(--gc);font-size:13px;color:#555;">Seleccione <strong>todas sus unidades de negocio activas</strong> en el predio</div>
     <div class="sec">
       <div class="sec-t">🐄 Ganadería</div>
       <div class="chk sel" onclick="tChk(this)" data-r="bovina"><span class="chk-em">🐄</span><span class="chk-lb">Ganadería Bovina</span><div class="chk-box">✓</div></div>
@@ -397,9 +314,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
       <div class="chk" onclick="tChk(this)" data-r="lombricultura"><span class="chk-em">🪱</span><span class="chk-lb">Lombricultura</span><div class="chk-box"></div></div>
     </div>
   </div>
-  <div class="stk">
-    <button class="btn bp" id="btn-confirmar" onclick="confirmarRubros()">✅ &nbsp;Confirmar unidades de negocio (2)</button>
-  </div>
+  <div class="stk"><button class="btn bp" id="btn-confirmar" onclick="confirmarRubros()">✅ &nbsp;Confirmar unidades de negocio (2)</button></div>
 </div>
 
 <!-- ═══ HOME ═══ -->
@@ -410,22 +325,14 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
         <div style="color:#B7E4C7;font-size:10px;font-weight:600;">PREDIO</div>
         <div style="color:#fff;font-size:18px;font-weight:800;" id="h-nom">El Canelo</div>
       </div>
-      <div style="display:flex;gap:10px;font-size:20px;">
-        <span>🔔</span><span onclick="goTo('s-perfil')" style="cursor:pointer;">👤</span>
-      </div>
+      <div style="display:flex;gap:10px;font-size:20px;"><span>🔔</span><span onclick="goTo('s-perfil')" style="cursor:pointer;">👤</span></div>
     </div>
     <div style="background:rgba(255,255,255,.15);border-radius:14px;padding:13px;">
       <div style="color:#B7E4C7;font-size:10px;font-weight:700;margin-bottom:8px;">RESUMEN 2025 · TODOS LOS RUBROS</div>
       <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;">
-        <div style="text-align:center;">
-          <div style="color:#fff;font-size:15px;font-weight:800;" id="h-ing">—</div>
-          <div style="color:#B7E4C7;font-size:9px;">Ingresos</div></div>
-        <div style="text-align:center;border-left:1px solid rgba(255,255,255,.2);border-right:1px solid rgba(255,255,255,.2);">
-          <div style="color:#FFE082;font-size:15px;font-weight:800;" id="h-cos">—</div>
-          <div style="color:#B7E4C7;font-size:9px;">Costos Dir.</div></div>
-        <div style="text-align:center;">
-          <div style="color:#B7E4C7;font-size:15px;font-weight:800;" id="h-gp">—</div>
-          <div style="color:#B7E4C7;font-size:9px;">% MB</div></div>
+        <div style="text-align:center;"><div style="color:#fff;font-size:15px;font-weight:800;" id="h-ing">—</div><div style="color:#B7E4C7;font-size:9px;">Ingresos</div></div>
+        <div style="text-align:center;border-left:1px solid rgba(255,255,255,.2);border-right:1px solid rgba(255,255,255,.2);"><div style="color:#FFE082;font-size:15px;font-weight:800;" id="h-cos">—</div><div style="color:#B7E4C7;font-size:9px;">Costos Dir.</div></div>
+        <div style="text-align:center;"><div style="color:#B7E4C7;font-size:15px;font-weight:800;" id="h-gp">—</div><div style="color:#B7E4C7;font-size:9px;">% MB</div></div>
       </div>
     </div>
   </div>
@@ -433,19 +340,14 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
     <div class="rq-fab-section">
       <button class="rq-fab-btn" onclick="openRQ()">
         <span style="font-size:22px;">⚡</span>
-        <div style="text-align:left;">
-          <div style="font-size:16px;font-weight:800;">Registra venta o costo</div>
-          <div style="font-size:11px;opacity:.8;font-weight:400;">Completa en 4 pasos</div>
-        </div>
+        <div style="text-align:left;"><div style="font-size:16px;font-weight:800;">Registra venta o costo</div><div style="font-size:11px;opacity:.8;font-weight:400;">Completa en 4 pasos</div></div>
         <span style="margin-left:auto;font-size:20px;">→</span>
       </button>
     </div>
     <div class="sec">
       <div class="sec-t">Mis Unidades de Negocio</div>
       <div id="h-rubros"></div>
-      <div style="text-align:right;margin-top:6px;">
-        <span onclick="goTo('s-rubros')" style="font-size:12px;color:var(--vp);cursor:pointer;font-weight:600;">✏️ Editar unidades de negocio</span>
-      </div>
+      <div style="text-align:right;margin-top:6px;"><span onclick="goTo('s-rubros')" style="font-size:12px;color:var(--vp);cursor:pointer;font-weight:600;">✏️ Editar unidades de negocio</span></div>
     </div>
     <div class="div"></div>
     <div class="sec">
@@ -455,7 +357,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
         <button class="btn bs bsm" onclick="goTo('s-resumen')">📊 Resumen</button>
         <button class="btn bs bsm" onclick="goTo('s-weak-link')">🔗 Eslab. Débil</button>
         <button class="btn bs bsm" onclick="goTo('s-comparativo')">⚖️ Benchmark</button>
-        <button class="btn bs bsm" onclick="showT('📤 ElCanelo_ProcesamientoInfo_2025-07-15.xlsx')">📤 Exportar</button>
+        <button class="btn bs bsm" onclick="showT('📤 ElCanelo_ProcesamientoInfo_2025.xlsx')">📤 Exportar</button>
         <button class="btn bs bsm" onclick="goTo('s-mercado')">🛒 Mercado</button>
         <button class="btn bs bsm" onclick="goTo('s-rubros')">🏢 Modificar Unidades</button>
         <button class="btn bs bsm" id="btn-alertas-toggle" onclick="toggleAlertas()">🔔 Alertas ▼</button>
@@ -523,9 +425,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
   <div id="bov-ua" style="overflow-y:auto;padding-bottom:70px;display:none;">
     <div class="sec">
       <div class="sec-t">🐄 Unidades Animales (UA)</div>
-      <div style="overflow-x:auto;margin:0 -18px;padding:0 18px;">
-        <table class="uat"><thead><tr><th>Categoría</th><th>N°</th><th>Kg prom</th><th>UA</th></tr></thead><tbody id="bov-ua-body"></tbody></table>
-      </div>
+      <div style="overflow-x:auto;margin:0 -18px;padding:0 18px;"><table class="uat"><thead><tr><th>Categoría</th><th>N°</th><th>Kg prom</th><th>UA</th></tr></thead><tbody id="bov-ua-body"></tbody></table></div>
       <div style="margin-top:13px;">
         <div class="f"><label>📐 Superficie pastoreo efectiva (ha)</label><input type="number" id="bov-ha" value="72" oninput="cUABov()"></div>
         <div class="res"><div class="rl">▶ Carga Animal Efectiva</div><div class="rv" id="bov-ca">1.05 UA/ha</div><div class="rs" id="bov-cas">75.7 UA ÷ 72 ha</div></div>
@@ -580,15 +480,10 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
 <!-- ═══ OVINA ═══ -->
 <div class="screen" id="s-ovina">
   <div class="hdr"><span class="hdr-bk" onclick="goTo('s-home')">←</span><h2>🐑 Ganadería Ovina</h2><span class="hdr-ic">📷</span></div>
-  <div class="tabs" id="ovi-tabs">
-    <div class="tab active" onclick="swTab(this,'ovi-ing','ovi-tabs')">💰 Ingresos</div>
-    <div class="tab" onclick="swTab(this,'ovi-cos','ovi-tabs')">📉 Costos</div>
-    <div class="tab" onclick="swTab(this,'ovi-ua','ovi-tabs')">🐑 UA</div>
-  </div>
+  <div class="tabs" id="ovi-tabs"><div class="tab active" onclick="swTab(this,'ovi-ing','ovi-tabs')">💰 Ingresos</div><div class="tab" onclick="swTab(this,'ovi-cos','ovi-tabs')">📉 Costos</div><div class="tab" onclick="swTab(this,'ovi-ua','ovi-tabs')">🐑 UA</div></div>
   <div class="mes-w"><div class="mes-lbl">📅 Mes:</div><div class="mes-s" id="ovi-mes-s"></div><div class="mes-cur" id="ovi-mes-cur">Mes: ENERO 2025</div></div>
   <div id="ovi-ing" style="overflow-y:auto;padding-bottom:70px;display:block;">
-    <div class="sec">
-      <div class="sec-t">💰 Ingresos Brutos</div>
+    <div class="sec"><div class="sec-t">💰 Ingresos Brutos</div>
       <div class="f"><label>Venta de animales</label><input type="number" id="oi1" oninput="cOvi()" placeholder="$0"></div>
       <div class="f"><label>Venta subproductos</label><input type="number" id="oi2" oninput="cOvi()" placeholder="$0"></div>
       <div class="f"><label>Venta reproductores</label><input type="number" id="oi3" oninput="cOvi()" placeholder="$0"></div>
@@ -599,11 +494,10 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
     </div>
   </div>
   <div id="ovi-cos" style="overflow-y:auto;padding-bottom:70px;display:none;">
-    <div class="sec">
-      <div class="sec-t">📉 Costos Directos</div>
+    <div class="sec"><div class="sec-t">📉 Costos Directos</div>
       <div class="f"><label>⚠️ Forraje conservado</label><div class="hint" style="color:var(--rojo);font-weight:700;">🔴 Obligatorio</div><input type="number" id="oc1" oninput="cOvi()" style="border-color:var(--rojo);" placeholder="$0"></div>
       <div class="f"><label>Veterinaria</label><input type="number" id="oc2" oninput="cOvi()" placeholder="$0"></div>
-      <div class="f"><label>Mano de obra PAGADA</label><input type="number" id="oc3" oninput="cOvi()" placeholder="$0"></div>
+      <div class="f"><label>Mano de obra</label><input type="number" id="oc3" oninput="cOvi()" placeholder="$0"></div>
       <div class="f"><label>Transporte</label><input type="number" id="oc4" oninput="cOvi()" placeholder="$0"></div>
       <div class="f"><label>Manejo de praderas</label><input type="number" id="oc5" oninput="cOvi()" placeholder="$0"></div>
       <div class="f"><label>Compra animales reposición</label><input type="number" id="oc6" oninput="cOvi()" placeholder="$0"></div>
@@ -625,15 +519,10 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
 <!-- ═══ PORCINA ═══ -->
 <div class="screen" id="s-porcina">
   <div class="hdr"><span class="hdr-bk" onclick="goTo('s-home')">←</span><h2>🐖 Ganadería Porcina</h2><span class="hdr-ic">📷</span></div>
-  <div class="tabs" id="por-tabs">
-    <div class="tab active" onclick="swTab(this,'por-ing','por-tabs')">💰 Ingresos</div>
-    <div class="tab" onclick="swTab(this,'por-cos','por-tabs')">📉 Costos</div>
-    <div class="tab" onclick="swTab(this,'por-ua','por-tabs')">🐖 UA</div>
-  </div>
+  <div class="tabs" id="por-tabs"><div class="tab active" onclick="swTab(this,'por-ing','por-tabs')">💰 Ingresos</div><div class="tab" onclick="swTab(this,'por-cos','por-tabs')">📉 Costos</div><div class="tab" onclick="swTab(this,'por-ua','por-tabs')">🐖 UA</div></div>
   <div class="mes-w"><div class="mes-lbl">📅 Mes:</div><div class="mes-s" id="por-mes-s"></div><div class="mes-cur" id="por-mes-cur">Mes: ENERO 2025</div></div>
   <div id="por-ing" style="overflow-y:auto;padding-bottom:70px;display:block;">
-    <div class="sec">
-      <div class="sec-t">💰 Ingresos Brutos</div>
+    <div class="sec"><div class="sec-t">💰 Ingresos Brutos</div>
       <div class="f"><label>Venta de animales</label><input type="number" id="poi1" oninput="cPor()" placeholder="$0"></div>
       <div class="f"><label>Venta subproductos</label><input type="number" id="poi2" oninput="cPor()" placeholder="$0"></div>
       <div class="f"><label>Venta reproductores</label><input type="number" id="poi3" oninput="cPor()" placeholder="$0"></div>
@@ -644,12 +533,11 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
     </div>
   </div>
   <div id="por-cos" style="overflow-y:auto;padding-bottom:70px;display:none;">
-    <div class="sec">
-      <div class="sec-t">📉 Costos Directos</div>
-      <div class="f"><label>Forraje / restos de cosecha</label><input type="number" id="poc1" oninput="cPor()" placeholder="$0"></div>
+    <div class="sec"><div class="sec-t">📉 Costos Directos</div>
+      <div class="f"><label>Forraje / restos cosecha</label><input type="number" id="poc1" oninput="cPor()" placeholder="$0"></div>
       <div class="f"><label>Otro alimento</label><input type="number" id="poc2" oninput="cPor()" placeholder="$0"></div>
       <div class="f"><label>Lechón destetado</label><input type="number" id="poc3" oninput="cPor()" placeholder="$0"></div>
-      <div class="f"><label>Mano de obra PAGADA</label><input type="number" id="poc4" oninput="cPor()" placeholder="$0"></div>
+      <div class="f"><label>Mano de obra</label><input type="number" id="poc4" oninput="cPor()" placeholder="$0"></div>
       <div class="f"><label>Instalaciones y mantención</label><input type="number" id="poc5" oninput="cPor()" placeholder="$0"></div>
       <div class="f"><label>Energía</label><input type="number" id="poc6" oninput="cPor()" placeholder="$0"></div>
       <div class="f"><label>Veterinaria</label><input type="number" id="poc7" oninput="cPor()" placeholder="$0"></div>
@@ -670,15 +558,10 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
 <!-- ═══ CAPRINA ═══ -->
 <div class="screen" id="s-caprina">
   <div class="hdr"><span class="hdr-bk" onclick="goTo('s-home')">←</span><h2>🐐 Ganadería Caprina</h2><span class="hdr-ic">📷</span></div>
-  <div class="tabs" id="cap-tabs">
-    <div class="tab active" onclick="swTab(this,'cap-ing','cap-tabs')">💰 Ingresos</div>
-    <div class="tab" onclick="swTab(this,'cap-cos','cap-tabs')">📉 Costos</div>
-    <div class="tab" onclick="swTab(this,'cap-ua','cap-tabs')">🐐 UA</div>
-  </div>
+  <div class="tabs" id="cap-tabs"><div class="tab active" onclick="swTab(this,'cap-ing','cap-tabs')">💰 Ingresos</div><div class="tab" onclick="swTab(this,'cap-cos','cap-tabs')">📉 Costos</div><div class="tab" onclick="swTab(this,'cap-ua','cap-tabs')">🐐 UA</div></div>
   <div class="mes-w"><div class="mes-lbl">📅 Mes:</div><div class="mes-s" id="cap-mes-s"></div><div class="mes-cur" id="cap-mes-cur">Mes: ENERO 2025</div></div>
   <div id="cap-ing" style="overflow-y:auto;padding-bottom:70px;display:block;">
-    <div class="sec">
-      <div class="sec-t">💰 Ingresos Brutos</div>
+    <div class="sec"><div class="sec-t">💰 Ingresos Brutos</div>
       <div class="f"><label>Venta de animales</label><input type="number" id="cai1" oninput="cCap()" placeholder="$0"></div>
       <div class="f"><label>Venta subproductos</label><input type="number" id="cai2" oninput="cCap()" placeholder="$0"></div>
       <div class="f"><label>Venta reproductores</label><input type="number" id="cai3" oninput="cCap()" placeholder="$0"></div>
@@ -689,14 +572,13 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
     </div>
   </div>
   <div id="cap-cos" style="overflow-y:auto;padding-bottom:70px;display:none;">
-    <div class="sec">
-      <div class="sec-t">📉 Costos Directos</div>
+    <div class="sec"><div class="sec-t">📉 Costos Directos</div>
       <div class="f"><label>Forraje fresco</label><input type="number" id="cac1" oninput="cCap()" placeholder="$0"></div>
       <div class="f"><label>⚠️ Forraje conservado</label><div class="hint" style="color:var(--rojo);font-weight:700;">🔴 Obligatorio</div><input type="number" id="cac2" oninput="cCap()" style="border-color:var(--rojo);" placeholder="$0"></div>
       <div class="f"><label>Concentrados</label><input type="number" id="cac3" oninput="cCap()" placeholder="$0"></div>
       <div class="f"><label>Suplemento mineral</label><input type="number" id="cac4" oninput="cCap()" placeholder="$0"></div>
       <div class="f"><label>Reposición de ganado</label><input type="number" id="cac5" oninput="cCap()" placeholder="$0"></div>
-      <div class="f"><label>Mano de obra PAGADA</label><input type="number" id="cac6" oninput="cCap()" placeholder="$0"></div>
+      <div class="f"><label>Mano de obra</label><input type="number" id="cac6" oninput="cCap()" placeholder="$0"></div>
       <div class="f"><label>Infraestructura y equipamiento</label><input type="number" id="cac7" oninput="cCap()" placeholder="$0"></div>
       <div class="f"><label>Transporte</label><input type="number" id="cac8" oninput="cCap()" placeholder="$0"></div>
       <div class="res rw" style="margin-top:12px;"><div class="rl">📉 Total Costos</div><div class="rv" id="ca-tc">$ 0</div></div>
@@ -717,15 +599,10 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
 <!-- ═══ AVICULTURA ═══ -->
 <div class="screen" id="s-avicultura">
   <div class="hdr"><span class="hdr-bk" onclick="goTo('s-home')">←</span><h2>🐔 Avicultura - Huevos</h2><span class="hdr-ic">📷</span></div>
-  <div class="tabs" id="avi-tabs">
-    <div class="tab active" onclick="swTab(this,'avi-ing','avi-tabs')">💰 Ingresos</div>
-    <div class="tab" onclick="swTab(this,'avi-cos','avi-tabs')">📉 Costos</div>
-    <div class="tab" onclick="swTab(this,'avi-ind','avi-tabs')">📈 Indicadores</div>
-  </div>
+  <div class="tabs" id="avi-tabs"><div class="tab active" onclick="swTab(this,'avi-ing','avi-tabs')">💰 Ingresos</div><div class="tab" onclick="swTab(this,'avi-cos','avi-tabs')">📉 Costos</div><div class="tab" onclick="swTab(this,'avi-ind','avi-tabs')">📈 Indicadores</div></div>
   <div class="mes-w"><div class="mes-lbl">📅 Mes:</div><div class="mes-s" id="avi-mes-s"></div><div class="mes-cur" id="avi-mes-cur">Mes: ENERO 2025</div></div>
   <div id="avi-ing" style="overflow-y:auto;padding-bottom:70px;display:block;">
-    <div class="sec">
-      <div class="sec-t">💰 Ingresos Brutos</div>
+    <div class="sec"><div class="sec-t">💰 Ingresos Brutos</div>
       <div class="f"><label>Venta de huevos</label><input type="number" id="avi1" oninput="cAvi()" placeholder="$0"></div>
       <div class="f"><label>Gallinas de descarte</label><input type="number" id="avi2" oninput="cAvi()" placeholder="$0"></div>
       <div class="f"><label>Pollitas / pollos</label><input type="number" id="avi3" oninput="cAvi()" placeholder="$0"></div>
@@ -736,8 +613,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
     </div>
   </div>
   <div id="avi-cos" style="overflow-y:auto;padding-bottom:70px;display:none;">
-    <div class="sec">
-      <div class="sec-t">📉 Costos Directos</div>
+    <div class="sec"><div class="sec-t">📉 Costos Directos</div>
       <div class="f"><label>Alimentación – Maíz</label><input type="number" id="avc1" oninput="cAvi()" placeholder="$0"></div>
       <div class="f"><label>Alimentación – Afrecho / soya</label><input type="number" id="avc2" oninput="cAvi()" placeholder="$0"></div>
       <div class="f"><label>Alimentación – Otros</label><input type="number" id="avc3" oninput="cAvi()" placeholder="$0"></div>
@@ -752,17 +628,11 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
     </div>
   </div>
   <div id="avi-ind" style="overflow-y:auto;padding-bottom:70px;display:none;">
-    <div class="sec">
-      <div class="sec-t">📈 Indicadores</div>
+    <div class="sec"><div class="sec-t">📈 Indicadores</div>
       <div class="f"><label>Base productiva</label><input type="number" placeholder="0" id="avi-base"></div>
       <div class="f"><label>Unidades producidas (docenas/año)</label><input type="number" placeholder="0" id="avi-docenas" oninput="cAviInd()"></div>
       <div class="f"><label>Precio promedio (CLP/docena)</label><input type="number" placeholder="0" id="avi-precio" oninput="cAviInd()"></div>
       <div class="f"><label>MB por unidad productiva</label><div class="cv" id="avi-gpup">—</div></div>
-      <div class="sec-t" style="margin-top:12px;">⚖️ Punto de Equilibrio</div>
-      <div class="f"><label>Unidades vendidas</label><input type="number" id="ave-u" oninput="cAviEq()" placeholder="0"></div>
-      <div class="f"><label>Costo/unidad</label><div class="cv" id="ave-cu">—</div></div>
-      <div class="f"><label>Precio recibido (CLP/docena)</label><input type="number" id="ave-p" oninput="cAviEq()" placeholder="0"></div>
-      <div class="f"><label>▶ Margen/unidad</label><div class="cv" id="ave-m">—</div></div>
       <button class="btn bp" onclick="showT('✅ Guardado')">💾 &nbsp;Guardar Indicadores</button>
     </div>
   </div>
@@ -771,15 +641,10 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
 <!-- ═══ TURISMO ═══ -->
 <div class="screen" id="s-turismo">
   <div class="hdr"><span class="hdr-bk" onclick="goTo('s-home')">←</span><h2>🏕️ Turismo - Experiencias</h2><span class="hdr-ic">📷</span></div>
-  <div class="tabs" id="tur-tabs">
-    <div class="tab active" onclick="swTab(this,'tur-ing','tur-tabs')">💰 Ingresos</div>
-    <div class="tab" onclick="swTab(this,'tur-cos','tur-tabs')">📉 Costos</div>
-    <div class="tab" onclick="swTab(this,'tur-ind','tur-tabs')">📈 Indicadores</div>
-  </div>
+  <div class="tabs" id="tur-tabs"><div class="tab active" onclick="swTab(this,'tur-ing','tur-tabs')">💰 Ingresos</div><div class="tab" onclick="swTab(this,'tur-cos','tur-tabs')">📉 Costos</div><div class="tab" onclick="swTab(this,'tur-ind','tur-tabs')">📈 Indicadores</div></div>
   <div class="mes-w"><div class="mes-lbl">📅 Mes:</div><div class="mes-s" id="tur-mes-s"></div><div class="mes-cur" id="tur-mes-cur">Mes: ENERO 2025</div></div>
   <div id="tur-ing" style="overflow-y:auto;padding-bottom:70px;display:block;">
-    <div class="sec">
-      <div class="sec-t">💰 Ingresos Brutos</div>
+    <div class="sec"><div class="sec-t">💰 Ingresos Brutos</div>
       <div class="f"><label>Venta de tours / experiencias</label><input type="number" id="ti1" oninput="cTur()" placeholder="$0"></div>
       <div class="f"><label>Alojamiento</label><input type="number" id="ti2" oninput="cTur()" placeholder="$0"></div>
       <div class="f"><label>Alimentación / eventos</label><input type="number" id="ti3" oninput="cTur()" placeholder="$0"></div>
@@ -790,8 +655,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
     </div>
   </div>
   <div id="tur-cos" style="overflow-y:auto;padding-bottom:70px;display:none;">
-    <div class="sec">
-      <div class="sec-t">📉 Costos Directos</div>
+    <div class="sec"><div class="sec-t">📉 Costos Directos</div>
       <div class="f"><label>Mano de obra – Permanente</label><input type="number" id="tc1" oninput="cTur()" placeholder="$0"></div>
       <div class="f"><label>Mano de obra – Temporal</label><input type="number" id="tc2" oninput="cTur()" placeholder="$0"></div>
       <div class="f"><label>Insumos y materiales</label><input type="number" id="tc3" oninput="cTur()" placeholder="$0"></div>
@@ -804,8 +668,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
     </div>
   </div>
   <div id="tur-ind" style="overflow-y:auto;padding-bottom:70px;display:none;">
-    <div class="sec">
-      <div class="sec-t">📈 Indicadores</div>
+    <div class="sec"><div class="sec-t">📈 Indicadores</div>
       <div class="f"><label>Base productiva (camas / cabañas)</label><input type="number" placeholder="0" id="tu-base"></div>
       <div class="f"><label>Unidades vendidas (noches, visitas)</label><input type="number" placeholder="0" id="tu-uni" oninput="cTurEq()"></div>
       <div class="f"><label>Precio promedio (CLP)</label><input type="number" placeholder="0" id="tu-pvu" oninput="cTurEq()"></div>
@@ -819,11 +682,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
 <!-- ═══ GENÉRICO ═══ -->
 <div class="screen" id="s-generic">
   <div class="hdr"><span class="hdr-bk" onclick="goTo('s-home')">←</span><h2 id="gen-title">🌾 Rubro</h2><span class="hdr-ic">📷</span></div>
-  <div class="tabs" id="gen-tabs">
-    <div class="tab active" onclick="swTab(this,'gen-ing','gen-tabs')">💰 Ingresos</div>
-    <div class="tab" onclick="swTab(this,'gen-cos','gen-tabs')">📉 Costos</div>
-    <div class="tab" onclick="swTab(this,'gen-ind','gen-tabs')">📈 Indicadores</div>
-  </div>
+  <div class="tabs" id="gen-tabs"><div class="tab active" onclick="swTab(this,'gen-ing','gen-tabs')">💰 Ingresos</div><div class="tab" onclick="swTab(this,'gen-cos','gen-tabs')">📉 Costos</div><div class="tab" onclick="swTab(this,'gen-ind','gen-tabs')">📈 Indicadores</div></div>
   <div class="mes-w"><div class="mes-lbl">📅 Mes:</div><div class="mes-s" id="gen-mes-s"></div><div class="mes-cur" id="gen-mes-cur">Mes: ENERO 2025</div></div>
   <div id="gen-ing" style="overflow-y:auto;padding-bottom:70px;display:block;">
     <div class="sec"><div class="sec-t">💰 Ingresos Brutos</div><div id="gen-ing-fields"></div>
@@ -839,8 +698,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
     </div>
   </div>
   <div id="gen-ind" style="overflow-y:auto;padding-bottom:70px;display:none;">
-    <div class="sec">
-      <div class="sec-t">📈 Indicadores</div>
+    <div class="sec"><div class="sec-t">📈 Indicadores</div>
       <div class="f"><label>Superficie dedicada (ha)</label><input type="number" placeholder="0" id="gen-ha" oninput="cGenInd()"></div>
       <div class="f"><label>Margen Bruto / ha</label><div class="cv" id="gen-gpha">—</div></div>
       <div class="f"><label>Unidades producidas</label><input type="number" placeholder="0" id="gen-u"></div>
@@ -865,7 +723,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
     </div>
     <div class="sec">
       <div class="sec-t">💰 Costos Anuales Fijos</div>
-      <div class="f"><label>📅 Año</label><input type="number" id="cf-anio" value="2025" placeholder="Año" style="font-size:18px;font-weight:700;"></div>
+      <div class="f"><label>📅 Año</label><input type="number" id="cf-anio" value="2025" style="font-size:18px;font-weight:700;"></div>
       <div class="f"><label>🏘️ Arriendo de campo</label><input type="number" placeholder="$0 / año" id="cf1" oninput="cCF()"></div>
       <div class="f"><label>🏦 Crédito / dividendo</label><input type="number" id="cf2" oninput="cCF()" value="1800000"></div>
       <div class="f"><label>🗂️ Administración</label><input type="number" id="cf3" oninput="cCF()" value="600000"></div>
@@ -885,55 +743,54 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
   </div>
 </div>
 
-<!-- ═══ RESUMEN ═══ -->
+<!-- ═══════════════════════════════════════
+     RESUMEN PREDIAL — CON GRÁFICO DE TENDENCIA
+═══════════════════════════════════════ -->
 <div class="screen" id="s-resumen">
-  <div class="hdr"><span class="hdr-bk" onclick="goTo('s-home')">←</span><h2>📊 Resumen Predial 2025</h2></div>
-  <div style="overflow-y:auto;padding-bottom:72px;">
-    <div style="background:var(--vp);padding:16px 18px;flex-shrink:0;">
-      <div style="color:#B7E4C7;font-size:10px;font-weight:700;margin-bottom:10px;">TOTAL PREDIO · EL CANELO</div>
-      <div class="kg">
-        <div class="kc pos" style="background:rgba(255,255,255,.15);border-color:rgba(255,255,255,.2);"><div class="kv" style="color:#fff;font-size:16px;" id="res-ing-tot">$12,4M</div><div class="kl" style="color:#B7E4C7;">Ingresos</div></div>
-        <div class="kc" style="background:rgba(255,255,255,.15);border-color:rgba(255,255,255,.2);"><div class="kv" style="color:#FFE082;font-size:16px;" id="res-cos-tot">$8,1M</div><div class="kl" style="color:#B7E4C7;">Costos Dir.</div></div>
-        <div class="kc" style="background:rgba(255,255,255,.15);border-color:rgba(255,255,255,.2);"><div class="kv" style="color:#B7E4C7;font-size:16px;" id="res-gpm-tot">34,7%</div><div class="kl" style="color:#B7E4C7;">% MB</div></div>
-        <div class="kc" style="background:rgba(255,255,255,.15);border-color:rgba(255,255,255,.2);"><div class="kv" style="color:#fff;font-size:16px;" id="res-gp-tot">$4,3M</div><div class="kl" style="color:#B7E4C7;">Margen Bruto</div></div>
-      </div>
-    </div>
-    <div class="sec">
-      <div class="sec-t">Por Unidad de Negocio</div>
-      <div style="overflow-x:auto;margin:0 -18px;">
-        <table class="rt" style="min-width:360px;">
-          <thead><tr><th>Unidad de Negocio</th><th>Ingresos</th><th>MB</th><th>MB%</th><th>Estado</th></tr></thead>
-          <tbody id="res-tbody">
-            <tr><td>🐄 Bovina</td><td>$9,2M</td><td>$3,1M</td><td>33,7%</td><td><span class="bdg bg">✅ Ok</span></td></tr>
-            <tr><td>🌾 Forraje</td><td>—</td><td>—</td><td>—</td><td><span class="bdg bx">Sin datos</span></td></tr>
-            <tr class="tot-r"><td><strong>TOTAL</strong></td><td>$9,2M</td><td>$3,1M</td><td>33,7%</td><td>—</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-    <div class="div"></div>
-    <div class="sec">
-      <div class="sec-t">📊 Indicadores de Diversificación</div>
-      <div class="kg">
-        <div class="kc"><div class="kv" id="res-n-rubros">1</div><div class="kl">Rubros con ingresos > 0</div></div>
-        <div class="kc wrn"><div class="kv" id="res-concentracion">74%</div><div class="kl">Concentración principal</div></div>
-        <div class="kc"><div class="kv" id="res-errors">0</div><div class="kl">Errores detectados</div></div>
-        <div class="kc"><div class="kv" id="res-total-rubros">2</div><div class="kl">Unid. de negocio</div></div>
-      </div>
-    </div>
-    <div class="div"></div>
-    <div class="sec">
-      <div class="sec-t">🐄 Unidades Animales — Predio</div>
-      <div style="background:var(--vpa);border-radius:13px;padding:13px;">
-        <div style="display:flex;justify-content:space-between;margin-bottom:6px;"><span style="font-size:13px;font-weight:600;">Bovina</span><span style="font-weight:700;color:var(--vp);" id="res-ua-bov">75.7 UA</span></div>
-        <div style="display:flex;justify-content:space-between;padding-top:6px;border-top:1px solid #ccc;"><span style="font-size:13px;font-weight:700;">TOTAL PREDIO</span><span style="font-weight:800;color:var(--vp);font-size:14px;" id="res-ua-tot">75.7 UA</span></div>
-        <div style="margin-top:8px;padding-top:6px;border-top:1px solid #ccc;"><div style="font-size:11px;color:#666;margin-bottom:2px;">Superficie pastoreo: 72 ha</div><div style="font-size:13px;font-weight:700;color:var(--vp);" id="res-ca">▶ Carga Animal: 1.05 UA/ha</div></div>
-      </div>
-    </div>
-    <div class="sec">
-      <button class="btn bp" onclick="showT('📤 ElCanelo_ProcesamientoInfo_2025-07-15.xlsx generado')">📤 &nbsp;Exportar Excel</button>
-    </div>
+  <div class="hdr">
+    <span class="hdr-bk" onclick="goTo('s-home')">←</span>
+    <h2>📊 Resumen Predial</h2>
   </div>
+
+  <div style="overflow-y:auto;padding-bottom:72px;">
+
+    <!-- ── 1. GRÁFICO DE TENDENCIA (TOP) ── -->
+    <div style="background:#fff;padding:14px 16px 10px;border-bottom:1px solid var(--gb);">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div style="font-size:12px;font-weight:700;color:var(--gt);">📈 Tendencia Predial · El Canelo</div>
+        <div style="font-size:10px;color:var(--vp);font-weight:600;">2021 – 2025</div>
+      </div>
+      <!-- SVG chart injected here -->
+      <div id="res-chart-container"></div>
+      <!-- Legend -->
+      <div style="display:flex;gap:14px;justify-content:center;margin-top:8px;flex-wrap:wrap;">
+        <div style="display:flex;align-items:center;gap:5px;">
+          <svg width="22" height="8" style="flex-shrink:0;"><line x1="0" y1="4" x2="22" y2="4" stroke="#2D6A4F" stroke-width="2.5"/><circle cx="11" cy="4" r="3" fill="#2D6A4F"/></svg>
+          <span style="font-size:10px;color:#555;font-weight:600;">Ingresos</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:5px;">
+          <svg width="22" height="8" style="flex-shrink:0;"><line x1="0" y1="4" x2="22" y2="4" stroke="#F57C00" stroke-width="2" stroke-dasharray="5,3"/><circle cx="11" cy="4" r="2.5" fill="#F57C00"/></svg>
+          <span style="font-size:10px;color:#555;font-weight:600;">Costos Dir.</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:5px;">
+          <svg width="22" height="8" style="flex-shrink:0;"><line x1="0" y1="4" x2="22" y2="4" stroke="#1976D2" stroke-width="2" stroke-dasharray="3,2"/><circle cx="11" cy="4" r="2.5" fill="#1976D2"/></svg>
+          <span style="font-size:10px;color:#555;font-weight:600;">% MB</span>
+          <span style="font-size:9px;color:#1976D2;font-weight:600;">(→)</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── 2. SELECTOR DE AÑO (BELOW CHART) ── -->
+    <div style="padding:10px 16px 13px;background:var(--gc);border-bottom:2px solid var(--vpa);">
+      <div style="font-size:10px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.6px;margin-bottom:9px;">📅 Ver detalle del año:</div>
+      <div id="res-year-pills" style="display:flex;gap:7px;justify-content:center;overflow-x:auto;scrollbar-width:none;padding-bottom:2px;"></div>
+    </div>
+
+    <!-- ── 3. DETALLE DEL AÑO SELECCIONADO (DYNAMIC) ── -->
+    <div id="res-detail-section"></div>
+
+  </div><!-- /scroll -->
+
   <div class="bnav">
     <div class="ni" onclick="goTo('s-home')"><span class="ni-ic">🏠</span><span class="ni-lb">Inicio</span></div>
     <div class="ni active" onclick="goTo('s-resumen')"><span class="ni-ic">📊</span><span class="ni-lb">Resumen</span></div>
@@ -942,6 +799,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
     <div class="ni" onclick="showT('🔔 Alertas')"><span class="ni-ic">🔔</span><span class="ni-lb">Alertas</span></div>
   </div>
 </div>
+<!-- FIN RESUMEN -->
 
 <!-- ═══ ESLABONES DÉBILES ═══ -->
 <div class="screen" id="s-weak-link">
@@ -1088,19 +946,14 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
 
 <!-- ═══ REGISTRA VENTA O COSTO ═══ -->
 <div class="screen" id="s-rq">
-  <div class="hdr">
-    <span class="hdr-bk" onclick="rqBack()">←</span>
-    <h2>⚡ Registra venta o costo</h2>
-    <span style="font-size:11px;color:#B7E4C7;font-weight:600;" id="rq-step-lbl">Paso 1/4</span>
-  </div>
+  <div class="hdr"><span class="hdr-bk" onclick="rqBack()">←</span><h2>⚡ Registra venta o costo</h2><span style="font-size:11px;color:#B7E4C7;font-weight:600;" id="rq-step-lbl">Paso 1/4</span></div>
   <div class="rq-step-bar">
     <div class="rq-dot active" id="rq-d1">1</div><div class="rq-line" id="rq-l1"></div>
     <div class="rq-dot" id="rq-d2">2</div><div class="rq-line" id="rq-l2"></div>
     <div class="rq-dot" id="rq-d3">3</div><div class="rq-line" id="rq-l3"></div>
     <div class="rq-dot" id="rq-d4">4</div>
   </div>
-
-  <!-- PASO 1: Fecha + Unidad de Negocio -->
+  <!-- PASO 1 -->
   <div id="rq-s1" style="overflow-y:auto;padding-bottom:80px;display:block;">
     <div class="sec">
       <div class="sec-t">📅 Fecha del registro</div>
@@ -1117,23 +970,14 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
       <button class="btn bp" onclick="rqNext()">Siguiente: Tipo de registro →</button>
     </div>
   </div>
-
-  <!-- PASO 2: Tipo -->
+  <!-- PASO 2 -->
   <div id="rq-s2" style="overflow-y:auto;padding-bottom:80px;display:none;">
     <div class="sec">
       <div class="sec-t">📂 Tipo de registro</div>
       <div id="rq-bc-tipo" style="font-size:12px;color:#888;background:var(--gc);padding:8px 12px;border-radius:8px;margin-bottom:16px;"></div>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:8px;">
-        <button class="rq-type-btn" id="rq-t-ing" onclick="rqTipo('ing')">
-          <div style="font-size:32px;margin-bottom:6px;">💰</div>
-          <div class="rq-type-label" style="font-size:15px;font-weight:800;color:var(--gt);">Ingreso</div>
-          <div style="font-size:11px;color:#888;margin-top:3px;">Venta, subsidio, arriendo</div>
-        </button>
-        <button class="rq-type-btn" id="rq-t-cos" onclick="rqTipo('cos')">
-          <div style="font-size:32px;margin-bottom:6px;">📉</div>
-          <div class="rq-type-label" style="font-size:15px;font-weight:800;color:var(--gt);">Costo</div>
-          <div style="font-size:11px;color:#888;margin-top:3px;">Gasto, insumo, servicio</div>
-        </button>
+        <button class="rq-type-btn" id="rq-t-ing" onclick="rqTipo('ing')"><div style="font-size:32px;margin-bottom:6px;">💰</div><div class="rq-type-label" style="font-size:15px;font-weight:800;color:var(--gt);">Ingreso</div><div style="font-size:11px;color:#888;margin-top:3px;">Venta, subsidio, arriendo</div></button>
+        <button class="rq-type-btn" id="rq-t-cos" onclick="rqTipo('cos')"><div style="font-size:32px;margin-bottom:6px;">📉</div><div class="rq-type-label" style="font-size:15px;font-weight:800;color:var(--gt);">Costo</div><div style="font-size:11px;color:#888;margin-top:3px;">Gasto, insumo, servicio</div></button>
       </div>
     </div>
     <div style="position:sticky;bottom:0;background:#fff;padding:12px 18px;border-top:1px solid #eee;display:flex;gap:8px;">
@@ -1141,8 +985,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
       <button class="btn bp" onclick="rqNext()" style="flex:2;">Siguiente: Concepto →</button>
     </div>
   </div>
-
-  <!-- PASO 3: Concepto -->
+  <!-- PASO 3 -->
   <div id="rq-s3" style="overflow-y:auto;padding-bottom:80px;display:none;">
     <div class="sec">
       <div class="sec-t" id="rq-concepto-title">📋 Seleccione el concepto</div>
@@ -1154,8 +997,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
       <button class="btn bp" onclick="rqNext()" style="flex:2;">Siguiente: Cantidad →</button>
     </div>
   </div>
-
-  <!-- PASO 4: Cantidad + Precio (siempre qty×price, total no editable) -->
+  <!-- PASO 4 -->
   <div id="rq-s4" style="overflow-y:auto;padding-bottom:80px;display:none;">
     <div id="rq-summary" style="background:linear-gradient(135deg,#1B4332,#52B788);color:white;padding:16px 18px;">
       <div style="font-size:10px;font-weight:600;opacity:.7;text-transform:uppercase;letter-spacing:.8px;margin-bottom:6px;">📍 Guardando en:</div>
@@ -1165,29 +1007,14 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
     </div>
     <div class="sec">
       <div class="sec-t" id="rq-step4-label">📦 Cantidad y precio de venta</div>
-      <div class="f">
-        <label id="rq-qty-label">Cantidad (unidades, kg, litros, cab.)</label>
-        <input type="number" id="rq-qty" placeholder="0" oninput="rqCalcTotal()" min="0" step="any"
-          style="background:var(--ami);border:2px solid #E8D44D;border-radius:10px;padding:12px;width:100%;font-size:22px;font-weight:700;font-family:inherit;outline:none;">
-      </div>
-      <div class="f">
-        <label id="rq-uprice-label">Precio por unidad (CLP)</label>
-        <input type="number" id="rq-uprice" placeholder="0" oninput="rqCalcTotal()" min="0"
-          style="background:var(--ami);border:2px solid #E8D44D;border-radius:10px;padding:12px;width:100%;font-size:22px;font-weight:700;font-family:inherit;outline:none;">
-      </div>
-      <div class="f">
-        <label>💰 Monto Total <span style="font-size:10px;color:#888;font-weight:400;">(calculado · no editable)</span></label>
-        <div id="rq-total-display" class="rq-total-box">$ —</div>
-        <div id="rq-total-formula" style="font-size:12px;color:var(--vp);font-weight:600;margin-top:5px;text-align:right;min-height:16px;"></div>
-      </div>
+      <div class="f"><label id="rq-qty-label">Cantidad (unidades, kg, litros, cab.)</label><input type="number" id="rq-qty" placeholder="0" oninput="rqCalcTotal()" min="0" step="any" style="background:var(--ami);border:2px solid #E8D44D;border-radius:10px;padding:12px;width:100%;font-size:22px;font-weight:700;font-family:inherit;outline:none;"></div>
+      <div class="f"><label id="rq-uprice-label">Precio por unidad (CLP)</label><input type="number" id="rq-uprice" placeholder="0" oninput="rqCalcTotal()" min="0" style="background:var(--ami);border:2px solid #E8D44D;border-radius:10px;padding:12px;width:100%;font-size:22px;font-weight:700;font-family:inherit;outline:none;"></div>
+      <div class="f"><label>💰 Monto Total <span style="font-size:10px;color:#888;font-weight:400;">(calculado · no editable)</span></label><div id="rq-total-display" class="rq-total-box">$ —</div><div id="rq-total-formula" style="font-size:12px;color:var(--vp);font-weight:600;margin-top:5px;text-align:right;min-height:16px;"></div></div>
     </div>
     <div class="div"></div>
     <div class="sec">
       <div class="sec-t">📷 Evidencia (opcional)</div>
-      <div class="foto" onclick="rqFoto()" id="rq-foto-btn">
-        <div class="foto-th" id="rq-foto-th">📷</div>
-        <div class="foto-tx"><strong id="rq-foto-lbl">Adjuntar boleta o comprobante</strong><span id="rq-foto-sub">Toca para tomar foto o subir archivo</span></div>
-      </div>
+      <div class="foto" onclick="rqFoto()"><div class="foto-th" id="rq-foto-th">📷</div><div class="foto-tx"><strong id="rq-foto-lbl">Adjuntar boleta o comprobante</strong><span id="rq-foto-sub">Toca para tomar foto o subir archivo</span></div></div>
     </div>
     <div class="div"></div>
     <div class="sec">
@@ -1199,8 +1026,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
       <button class="btn" onclick="rqSave()" style="flex:2;background:linear-gradient(135deg,#1B4332,#52B788);color:#fff;font-size:15px;font-weight:800;border-radius:13px;padding:14px;border:none;cursor:pointer;font-family:inherit;">✅ &nbsp;Guardar Registro</button>
     </div>
   </div>
-
-  <!-- PASO 5: Confirmación -->
+  <!-- PASO 5 -->
   <div id="rq-s5" style="overflow-y:auto;padding-bottom:80px;display:none;">
     <div style="padding:28px 20px;text-align:center;">
       <div class="rq-success-icon">✅</div>
@@ -1208,14 +1034,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
       <div style="font-size:13px;color:#888;margin-top:4px;">El resumen mensual y anual se actualizó automáticamente</div>
     </div>
     <div class="sec" style="padding-top:0;"><div id="rq-success-card" style="background:var(--vto);border:2px solid var(--vl);border-radius:14px;padding:16px;"></div></div>
-    <div class="sec">
-      <div class="sec-t">🗂️ Ruta del dato guardado</div>
-      <div id="rq-ruta" style="display:flex;align-items:center;gap:4px;flex-wrap:wrap;padding:12px;background:var(--gc);border-radius:10px;font-size:12px;font-weight:600;"></div>
-    </div>
-    <div class="sec" id="rq-log-section" style="display:none;">
-      <div class="sec-t">📋 Registros de hoy (<span id="rq-log-count">0</span>)</div>
-      <div id="rq-log-list"></div>
-    </div>
+    <div class="sec"><div class="sec-t">🗂️ Ruta del dato guardado</div><div id="rq-ruta" style="display:flex;align-items:center;gap:4px;flex-wrap:wrap;padding:12px;background:var(--gc);border-radius:10px;font-size:12px;font-weight:600;"></div></div>
+    <div class="sec" id="rq-log-section" style="display:none;"><div class="sec-t">📋 Registros de hoy (<span id="rq-log-count">0</span>)</div><div id="rq-log-list"></div></div>
     <div style="position:sticky;bottom:0;background:#fff;padding:12px 18px;border-top:1px solid #eee;display:flex;gap:8px;">
       <button class="btn bo" onclick="openRQ()" style="flex:1;font-size:13px;">⚡ Otro registro</button>
       <button class="btn bp" onclick="goTo('s-home')" style="flex:2;">🏠 &nbsp;Volver al inicio</button>
@@ -1225,16 +1045,37 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
 
 <!-- TOAST -->
 <div class="toast" id="toast"></div>
-
 </div><!-- /phone -->
 
 <script>
+// ══════════════════════
+// CONSTANTES Y DATOS
+// ══════════════════════
 const MESES=['ENE','FEB','MAR','ABR','MAY','JUN','JUL','AGO','SEP','OCT','NOV','DIC'];
 const MESES_FULL=['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
+
+// DATOS DE TENDENCIA HISTÓRICA (2021–2025)
+const TREND_DATA = {
+  2021: { ing: 5800000, cos: 4320000 },
+  2022: { ing: 7350000, cos: 5260000 },
+  2023: { ing: 9100000, cos: 6380000 },
+  2024: { ing: 10850000, cos: 7280000 },
+  2025: { ing: 12400000, cos: 8100000 }
+};
+// Pre-calcular derivados
+Object.keys(TREND_DATA).forEach(y => {
+  const d = TREND_DATA[+y];
+  d.gp  = d.ing - d.cos;
+  d.mbp = d.ing > 0 ? parseFloat((d.gp / d.ing * 100).toFixed(1)) : 0;
+});
+
+let resSelectedYear = 2025;
+
 const UA_BOV=[{cat:'🐂 Toro',n:2,kg:520},{cat:'🐄 Vaca',n:42,kg:420},{cat:'🐃 Novillo',n:18,kg:320},{cat:'🐄 Novilla',n:10,kg:280},{cat:'🐮 Ternero',n:24,kg:160},{cat:'🐮 Ternera',n:20,kg:150}];
 const UA_OVI=[{cat:'🐏 Carnero',n:0,kg:70},{cat:'🐑 Oveja',n:0,kg:55},{cat:'🐑 Borrego',n:0,kg:40},{cat:'🐑 Borrega',n:0,kg:38},{cat:'🐑 Cordero',n:0,kg:22},{cat:'🐑 Cordera',n:0,kg:20}];
 const UA_POR=[{cat:'🐗 Verraco',n:0,kg:180},{cat:'🐷 Cerda reproductora',n:0,kg:150},{cat:'🐷 Cerdo(a) engorda',n:0,kg:90},{cat:'🐽 Lechón',n:0,kg:12}];
 const UA_CAP=[{cat:'🐐 Macho cabrío',n:0,kg:65},{cat:'🐐 Cabra',n:0,kg:45},{cat:'🐐 Cabrito',n:0,kg:20},{cat:'🐐 Cabrita',n:0,kg:18}];
+
 let rubrosSel=['bovina','forraje'];
 const RUBRO_DEF={
   bovina:{n:'Ganadería Bovina',em:'🐄',s:'s-bovina'},
@@ -1266,15 +1107,241 @@ const GENERIC_CFG={
   lacteos:{i:['Venta de leche fluida','Venta productos procesados','Venta directa','Subsidios / bonos','Otro ingreso'],c:['Insumos procesamiento','Energía','Mano de Obra PAGADA','Materiales limpieza','Transporte','Certificaciones','Otros costos']},
   lombricultura:{i:['Venta de humus','Venta de lombrices','Venta de lixiviado','Subsidios / bonos','Otro ingreso'],c:['Materiales orgánicos','Envases y embalaje','Mano de Obra PAGADA','Transporte','Otros costos']}
 };
+
 let wlPrio='Media';
 let currentGenKey='forraje';
 
+// ══════════════════════════════════════════
+// GRÁFICO DE TENDENCIA — FUNCIONES
+// ══════════════════════════════════════════
+
+function buildTrendSVG(selYear) {
+  const years = Object.keys(TREND_DATA).map(Number).sort();
+  // Dimensiones del SVG (viewBox)
+  const W=354, H=192;
+  const ML=46, MR=38, MT=20, MB=30;
+  const PW=W-ML-MR, PH=H-MT-MB;
+
+  // Escalas
+  const MAX_CLP = 16000000;   // $16M techo eje izquierdo
+  const MAX_PCT = 50;          // 50% techo eje derecho
+
+  const xp  = i  => ML + (i / (years.length-1)) * PW;
+  const yCLP = v  => MT + PH - (v / MAX_CLP) * PH;
+  const yPCT = v  => MT + PH - (v / MAX_PCT) * PH;
+
+  const si = years.indexOf(Number(selYear));
+  let s = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" style="width:100%;display:block;">`;
+
+  // Fondo
+  s += `<rect width="${W}" height="${H}" fill="#fff"/>`;
+
+  // Líneas de cuadrícula + etiquetas de ejes
+  [0, 0.25, 0.5, 0.75, 1].forEach(f => {
+    const gy = (MT + PH*(1-f)).toFixed(1);
+    // Línea horizontal
+    s += `<line x1="${ML}" y1="${gy}" x2="${ML+PW}" y2="${gy}" stroke="${f===0?'#d0d0d0':'#f0f0f0'}" stroke-width="1"/>`;
+    // Etiqueta eje izq (CLP)
+    const clpLbl = '$' + (MAX_CLP*f/1e6).toFixed(0) + 'M';
+    s += `<text x="${ML-4}" y="${(MT+PH*(1-f)+3.5).toFixed(1)}" font-size="7.5" fill="#c0c0c0" text-anchor="end" font-family="-apple-system,sans-serif">${clpLbl}</text>`;
+    // Etiqueta eje der (%)
+    s += `<text x="${ML+PW+4}" y="${(MT+PH*(1-f)+3.5).toFixed(1)}" font-size="7.5" fill="#90CAF9" text-anchor="start" font-family="-apple-system,sans-serif">${(MAX_PCT*f).toFixed(0)}%</text>`;
+  });
+
+  // Línea del eje Y izq
+  s += `<line x1="${ML}" y1="${MT}" x2="${ML}" y2="${MT+PH}" stroke="#e0e0e0" stroke-width="1"/>`;
+
+  // Resaltado columna año seleccionado
+  if (si >= 0) {
+    s += `<rect x="${(xp(si)-15).toFixed(1)}" y="${MT}" width="30" height="${PH}" rx="4" fill="#E8F5E9" opacity="0.85"/>`;
+  }
+
+  // Área rellena entre ingresos y costos (margen visual)
+  const fwdCos = years.map((y,i) => `${xp(i).toFixed(1)},${yCLP(TREND_DATA[y].cos).toFixed(1)}`);
+  const revIng = [...years].reverse().map((y,i,arr) =>
+    `${xp(arr.length-1-i).toFixed(1)},${yCLP(TREND_DATA[y].ing).toFixed(1)}`
+  );
+  s += `<polygon points="${[...fwdCos,...revIng].join(' ')}" fill="#D8F3DC" opacity="0.45"/>`;
+
+  // Líneas de datos
+  const ingPts = years.map((y,i)=>`${xp(i).toFixed(1)},${yCLP(TREND_DATA[y].ing).toFixed(1)}`).join(' ');
+  const cosPts = years.map((y,i)=>`${xp(i).toFixed(1)},${yCLP(TREND_DATA[y].cos).toFixed(1)}`).join(' ');
+  const mbPts  = years.map((y,i)=>`${xp(i).toFixed(1)},${yPCT(TREND_DATA[y].mbp).toFixed(1)}`).join(' ');
+
+  s += `<polyline points="${ingPts}" fill="none" stroke="#2D6A4F" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>`;
+  s += `<polyline points="${cosPts}" fill="none" stroke="#F57C00" stroke-width="2"   stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="5,3"/>`;
+  s += `<polyline points="${mbPts}"  fill="none" stroke="#1976D2" stroke-width="2"   stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="3,2"/>`;
+
+  // Puntos sobre las líneas
+  years.forEach((y,i) => {
+    const isSel = y === Number(selYear);
+    const r  = isSel ? 5.5 : 3.5;
+    const rM = isSel ? 4.5 : 2.5;
+    s += `<circle cx="${xp(i).toFixed(1)}" cy="${yCLP(TREND_DATA[y].ing).toFixed(1)}" r="${r}"  fill="${isSel?'#2D6A4F':'#fff'}" stroke="#2D6A4F" stroke-width="${isSel?2:1.5}"/>`;
+    s += `<circle cx="${xp(i).toFixed(1)}" cy="${yCLP(TREND_DATA[y].cos).toFixed(1)}" r="${r}"  fill="${isSel?'#F57C00':'#fff'}" stroke="#F57C00" stroke-width="${isSel?2:1.5}"/>`;
+    s += `<circle cx="${xp(i).toFixed(1)}" cy="${yPCT(TREND_DATA[y].mbp).toFixed(1)}" r="${rM}" fill="${isSel?'#1976D2':'#fff'}" stroke="#1976D2" stroke-width="${isSel?2:1.5}"/>`;
+  });
+
+  // Etiquetas eje X (años) + zonas táctiles para cambiar año
+  years.forEach((y,i) => {
+    const isSel = y === Number(selYear);
+    s += `<text x="${xp(i).toFixed(1)}" y="${(MT+PH+18).toFixed(1)}" font-size="${isSel?10:8.5}" fill="${isSel?'#2D6A4F':'#bbb'}" text-anchor="middle" font-weight="${isSel?800:400}" font-family="-apple-system,sans-serif">${y}</text>`;
+    // Zona táctil invisible para seleccionar año con click
+    s += `<rect x="${(xp(i)-18).toFixed(1)}" y="${MT}" width="36" height="${PH+20}" fill="transparent" style="cursor:pointer;" onclick="selResYear(${y})"/>`;
+  });
+
+  // Callouts de valor del año seleccionado
+  if (si >= 0 && TREND_DATA[Number(selYear)]) {
+    const d = TREND_DATA[Number(selYear)];
+    const cx = xp(si);
+    const ingY = yCLP(d.ing);
+    const mbY  = yPCT(d.mbp);
+    // Ajuste text-anchor según posición horizontal
+    const ta = si === 0 ? 'start' : (si === years.length-1 ? 'end' : 'middle');
+    // Ingreso
+    s += `<text x="${cx.toFixed(1)}" y="${(ingY-10).toFixed(1)}" font-size="10" fill="#2D6A4F" text-anchor="${ta}" font-weight="800" font-family="-apple-system,sans-serif">$${(d.ing/1e6).toFixed(1)}M</text>`;
+    // % MB
+    s += `<text x="${cx.toFixed(1)}" y="${(mbY-8).toFixed(1)}"  font-size="10" fill="#1565C0" text-anchor="${ta}" font-weight="800" font-family="-apple-system,sans-serif">${d.mbp.toFixed(1)}%</text>`;
+  }
+
+  s += '</svg>';
+  return s;
+}
+
+function buildYearPills(selYear) {
+  return Object.keys(TREND_DATA).sort().map(y => {
+    const isSel = Number(y) === Number(selYear);
+    return `<button class="yr-pill" onclick="selResYear(${y})"
+      style="border-color:${isSel?'var(--vp)':'var(--gb)'};
+             background:${isSel?'var(--vp)':'#fff'};
+             color:${isSel?'#fff':'#888'};
+             font-weight:${isSel?800:600};">${y}</button>`;
+  }).join('');
+}
+
+function buildResDetail(year) {
+  const d = TREND_DATA[Number(year)];
+  if (!d) return `<div class="sec"><div class="al alw"><span class="al-ic">⚠️</span><div class="al-tx">No hay datos para ${year}.</div></div></div>`;
+
+  const prev = TREND_DATA[Number(year)-1];
+  const ingChg = prev ? ((d.ing-prev.ing)/prev.ing*100).toFixed(1) : null;
+  const cosChg = prev ? ((d.cos-prev.cos)/prev.cos*100).toFixed(1) : null;
+  const mbChg  = prev ? (d.mbp-prev.mbp).toFixed(1) : null;
+
+  const chgEl = (val, positiveIsGood, unit='%') => {
+    if (val === null) return '';
+    const isPos = Number(val) >= 0;
+    const good  = positiveIsGood ? isPos : !isPos;
+    return `<div style="font-size:9px;margin-top:3px;color:${good?'#90EE90':'#FFCDD2'};font-weight:700;">
+      ${isPos?'▲':'▼'}${Math.abs(Number(val)).toFixed(1)}${unit} vs ${Number(year)-1}
+    </div>`;
+  };
+
+  const n = rubrosSel.length;
+
+  return `
+    <!-- KPIs del año -->
+    <div style="background:var(--vp);padding:14px 18px;">
+      <div style="color:#B7E4C7;font-size:10px;font-weight:700;margin-bottom:10px;">TOTAL PREDIO · EL CANELO · ${year}</div>
+      <div class="kg">
+        <div class="kc pos" style="background:rgba(255,255,255,.15);border-color:rgba(255,255,255,.2);">
+          <div class="kv" style="color:#fff;font-size:15px;">$${(d.ing/1e6).toFixed(1)}M</div>
+          <div class="kl" style="color:#B7E4C7;">Ingresos</div>
+          ${chgEl(ingChg, true)}
+        </div>
+        <div class="kc" style="background:rgba(255,255,255,.15);border-color:rgba(255,255,255,.2);">
+          <div class="kv" style="color:#FFE082;font-size:15px;">$${(d.cos/1e6).toFixed(1)}M</div>
+          <div class="kl" style="color:#B7E4C7;">Costos Dir.</div>
+          ${chgEl(cosChg, false)}
+        </div>
+        <div class="kc" style="background:rgba(255,255,255,.15);border-color:rgba(255,255,255,.2);">
+          <div class="kv" style="color:#B7E4C7;font-size:15px;">${d.mbp.toFixed(1)}%</div>
+          <div class="kl" style="color:#B7E4C7;">% MB</div>
+          ${chgEl(mbChg, true, 'pp')}
+        </div>
+        <div class="kc" style="background:rgba(255,255,255,.15);border-color:rgba(255,255,255,.2);">
+          <div class="kv" style="color:#fff;font-size:15px;">$${(d.gp/1e6).toFixed(1)}M</div>
+          <div class="kl" style="color:#B7E4C7;">Margen Bruto</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tabla por unidad de negocio -->
+    <div class="sec">
+      <div class="sec-t">Por Unidad de Negocio · ${year}</div>
+      <div style="overflow-x:auto;margin:0 -18px;">
+        <table class="rt" style="min-width:360px;">
+          <thead><tr><th>Unidad de Negocio</th><th>Ingresos</th><th>MB</th><th>MB%</th><th>Estado</th></tr></thead>
+          <tbody>
+            <tr><td>🐄 Bovina</td><td>$${(d.ing*.74/1e6).toFixed(1)}M</td><td>$${(d.gp*.72/1e6).toFixed(1)}M</td><td>${Math.max(d.mbp-2.3,0).toFixed(1)}%</td><td><span class="bdg bg">✅ Ok</span></td></tr>
+            <tr><td>🌾 Forraje</td><td>—</td><td>—</td><td>—</td><td><span class="bdg bx">Sin datos</span></td></tr>
+            <tr class="tot-r"><td><strong>TOTAL</strong></td><td>$${(d.ing/1e6).toFixed(1)}M</td><td>$${(d.gp/1e6).toFixed(1)}M</td><td>${d.mbp.toFixed(1)}%</td><td>—</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="div"></div>
+
+    <!-- Indicadores de diversificación -->
+    <div class="sec">
+      <div class="sec-t">📊 Indicadores de Diversificación</div>
+      <div class="kg">
+        <div class="kc"><div class="kv">1</div><div class="kl">Rubros con ingresos > 0</div></div>
+        <div class="kc wrn"><div class="kv">74%</div><div class="kl">Concentración principal</div></div>
+        <div class="kc"><div class="kv">0</div><div class="kl">Errores detectados</div></div>
+        <div class="kc"><div class="kv">${n}</div><div class="kl">Unid. de negocio</div></div>
+      </div>
+    </div>
+
+    <div class="div"></div>
+
+    <!-- UA -->
+    <div class="sec">
+      <div class="sec-t">🐄 Unidades Animales — Predio · ${year}</div>
+      <div style="background:var(--vpa);border-radius:13px;padding:13px;">
+        <div style="display:flex;justify-content:space-between;margin-bottom:6px;"><span style="font-size:13px;font-weight:600;">Bovina</span><span style="font-weight:700;color:var(--vp);" id="res-ua-bov">75.7 UA</span></div>
+        <div style="display:flex;justify-content:space-between;padding-top:6px;border-top:1px solid #ccc;"><span style="font-size:13px;font-weight:700;">TOTAL PREDIO</span><span style="font-weight:800;color:var(--vp);font-size:14px;" id="res-ua-tot">75.7 UA</span></div>
+        <div style="margin-top:8px;padding-top:6px;border-top:1px solid #ccc;"><div style="font-size:11px;color:#666;margin-bottom:2px;">Superficie pastoreo: 72 ha</div><div style="font-size:13px;font-weight:700;color:var(--vp);" id="res-ca">▶ Carga Animal: 1.05 UA/ha</div></div>
+      </div>
+    </div>
+
+    <!-- Exportar -->
+    <div class="sec">
+      <button class="btn bp" onclick="showT('📤 ElCanelo_ProcesamientoInfo_${year}-12-31.xlsx generado')">📤 &nbsp;Exportar Excel ${year}</button>
+      <div style="font-size:11px;color:#888;text-align:center;margin-top:6px;">NombrePredio_ProcesamientoInfo_${year} · Piloto v5</div>
+    </div>
+  `;
+}
+
+function selResYear(year) {
+  resSelectedYear = Number(year);
+  const cc = document.getElementById('res-chart-container');
+  if (cc) cc.innerHTML = buildTrendSVG(year);
+  const pp = document.getElementById('res-year-pills');
+  if (pp) pp.innerHTML = buildYearPills(year);
+  const ds = document.getElementById('res-detail-section');
+  if (ds) ds.innerHTML = buildResDetail(year);
+}
+
+function initResumen() {
+  selResYear(resSelectedYear);
+}
+
+// ══════════════════════
+// NAVEGACIÓN
+// ══════════════════════
 function goTo(id){
   document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
   const t=document.getElementById(id);
   if(t){t.classList.add('active');t.scrollTop=0;}
   if(id==='s-home') updateHome();
+  if(id==='s-resumen') initResumen();
 }
+
+// ══════════════════════
+// TABS
+// ══════════════════════
 function swTab(el,contentId,navId){
   document.getElementById(navId).querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
   el.classList.add('active');
@@ -1284,6 +1351,10 @@ function swTab(el,contentId,navId){
   });
   const c=document.getElementById(contentId);if(c) c.style.display='block';
 }
+
+// ══════════════════════
+// MES SELECTOR
+// ══════════════════════
 function buildMes(selId,lblId){
   const sel=document.getElementById(selId);if(!sel) return;
   sel.innerHTML=MESES.map((m,i)=>`<div class="mb${i===0?' active':''}" onclick="selMes(this,'${lblId}')">${m}<span class="dot"></span></div>`).join('');
@@ -1294,6 +1365,10 @@ function selMes(el,lblId){
   const idx=Array.from(el.closest('.mes-s').children).indexOf(el);
   const lbl=document.getElementById(lblId);if(lbl) lbl.textContent=`Mes: ${MESES[idx]} 2025`;
 }
+
+// ══════════════════════
+// UA TABLE
+// ══════════════════════
 function buildUATable(tbodyId,cats,prefix){
   const tbody=document.getElementById(tbodyId);if(!tbody) return;
   tbody.innerHTML=cats.map(c=>`<tr><td>${c.cat}</td><td><input type="number" value="${c.n||''}" min="0" oninput="calcUAGeneric('${tbodyId}','${prefix}')"></td><td><input type="number" value="${c.kg||''}" min="0" oninput="calcUAGeneric('${tbodyId}','${prefix}')"></td><td style="font-weight:700;color:#1565C0;">${c.n&&c.kg?(c.n*c.kg/450).toFixed(1):'0.0'}</td></tr>`).join('')+`<tr class="uat-tot"><td colspan="3">▶ TOTAL UA</td><td id="${prefix}-ua-tot">0.0</td></tr>`;
@@ -1308,14 +1383,17 @@ function calcUAGeneric(tbodyId,prefix){
   });
   const totEl=document.getElementById(prefix+'-ua-tot');if(totEl) totEl.textContent=tot.toFixed(1);return tot;
 }
-function tChk(el){
-  el.classList.toggle('sel');el.querySelector('.chk-box').textContent=el.classList.contains('sel')?'✓':'';updateRubrosCount();
-}
-function updateRubrosCount(){
-  rubrosSel=Array.from(document.querySelectorAll('.chk.sel')).map(el=>el.getAttribute('data-r'));
-  const btn=document.getElementById('btn-confirmar');if(btn) btn.textContent=`✅  Confirmar unidades de negocio (${rubrosSel.length})`;
-}
+
+// ══════════════════════
+// CHECKBOX RUBROS
+// ══════════════════════
+function tChk(el){el.classList.toggle('sel');el.querySelector('.chk-box').textContent=el.classList.contains('sel')?'✓':'';updateRubrosCount();}
+function updateRubrosCount(){rubrosSel=Array.from(document.querySelectorAll('.chk.sel')).map(el=>el.getAttribute('data-r'));const btn=document.getElementById('btn-confirmar');if(btn) btn.textContent=`✅  Confirmar unidades de negocio (${rubrosSel.length})`;}
 function confirmarRubros(){rubrosSel=Array.from(document.querySelectorAll('.chk.sel')).map(el=>el.getAttribute('data-r'));updateHome();goTo('s-home');}
+
+// ══════════════════════
+// HOME
+// ══════════════════════
 function updateHome(){
   const nom=document.getElementById('p-predio');const hNom=document.getElementById('h-nom');
   if(nom&&hNom) hNom.textContent=nom.value||'Mi Predio';
@@ -1325,14 +1403,13 @@ function updateHome(){
     const hasData=key==='bovina';
     return `<div class="rc${hasData?' ok':''}" onclick="openRubro('${key}')"><div class="rc-em">${d.em}</div><div class="rc-inf"><div class="rc-nm">${d.n}</div><div class="rc-st"><span class="bdg ${hasData?'bg':'bx'}">${hasData?'Con datos':'Sin datos'}</span>&nbsp;${hasData?'8':'0'} de 12 meses</div><div class="prog"><div class="prog-f" style="width:${hasData?'67':'0'}%"></div></div></div><div class="rc-ar">›</div></div>`;
   }).join('');
-  const tot=document.getElementById('res-total-rubros');if(tot) tot.textContent=rubrosSel.length;
 }
 function openRubro(key){const d=RUBRO_DEF[key];if(!d) return;if(d.s==='s-generic') openGeneric(d.gk);else goTo(d.s);}
-function toggleAlertas(){
-  const panel=document.getElementById('alertas-panel');const btn=document.getElementById('btn-alertas-toggle');if(!panel) return;
-  const isHidden=panel.style.display==='none';panel.style.display=isHidden?'block':'none';
-  if(btn) btn.innerHTML=isHidden?'🔔 Alertas ▲':'🔔 Alertas ▼';
-}
+function toggleAlertas(){const panel=document.getElementById('alertas-panel');const btn=document.getElementById('btn-alertas-toggle');if(!panel) return;const isHidden=panel.style.display==='none';panel.style.display=isHidden?'block':'none';if(btn) btn.innerHTML=isHidden?'🔔 Alertas ▲':'🔔 Alertas ▼';}
+
+// ══════════════════════
+// GENERIC ENTERPRISE
+// ══════════════════════
 function openGeneric(key){
   currentGenKey=key;const cfg=GENERIC_CFG[key];const d=RUBRO_DEF[key];if(!cfg||!d) return;
   document.getElementById('gen-title').textContent=d.em+' '+d.n;
@@ -1340,11 +1417,19 @@ function openGeneric(key){
   document.getElementById('gen-cos-fields').innerHTML=cfg.c.map((lbl,i)=>`<div class="f"><label>${lbl}</label><input type="number" id="gen-c${i+1}" oninput="cGen()" placeholder="$0"></div>`).join('');
   goTo('s-generic');
 }
+
+// ══════════════════════
+// HELPERS
+// ══════════════════════
 function getNum(id){const el=document.getElementById(id);return el?parseFloat(el.value||0):0;}
 function setTxt(id,val){const el=document.getElementById(id);if(el) el.textContent=val;}
 function fmt(n){return '$ '+Math.round(n).toLocaleString('es-CL');}
 function fmtN(n){return Math.round(n).toLocaleString('es-CL');}
 function fmtK(n){if(Math.abs(n)>=1e6) return '$'+(n/1e6).toFixed(1)+'M';if(Math.abs(n)>=1e3) return '$'+(n/1e3).toFixed(0)+'K';return '$'+n;}
+
+// ══════════════════════
+// CÁLCULOS
+// ══════════════════════
 function cBov(){
   const ing=[1,2,3,4,5,6,7,8,9].reduce((a,i)=>a+getNum('bi'+i),0);
   const cos=[1,2,3,4,5,6,7,8,9].reduce((a,i)=>a+getNum('bc'+i),0);
@@ -1367,7 +1452,14 @@ function cBovCV(){
   setTxt('bcv-sp',ppco>0&&ppve>0?fmtN(spr)+' CLP/kg':'—');setTxt('bcv-gdp',gdp>0?gdp.toFixed(3)+' kg/día':'—');
   setTxt('broic',cap>0?(gp/cap*100).toFixed(1)+'%':'—');
 }
-function cUABov(){const tot=calcUAGeneric('bov-ua-body','bov');const ha=parseFloat(document.getElementById('bov-ha')?.value||1);const carga=ha>0?(tot/ha).toFixed(2):0;setTxt('bov-ca',carga+' UA/ha');setTxt('bov-cas',tot.toFixed(1)+' UA ÷ '+ha+' ha');setTxt('res-ua-bov',tot.toFixed(1)+' UA');setTxt('res-ua-tot',tot.toFixed(1)+' UA');setTxt('res-ca','▶ Carga Animal: '+carga+' UA/ha');}
+function cUABov(){
+  const tot=calcUAGeneric('bov-ua-body','bov');
+  const ha=parseFloat(document.getElementById('bov-ha')?.value||1);
+  const carga=ha>0?(tot/ha).toFixed(2):0;
+  setTxt('bov-ca',carga+' UA/ha');setTxt('bov-cas',tot.toFixed(1)+' UA ÷ '+ha+' ha');
+  setTxt('res-ua-bov',tot.toFixed(1)+' UA');setTxt('res-ua-tot',tot.toFixed(1)+' UA');
+  setTxt('res-ca','▶ Carga Animal: '+carga+' UA/ha');
+}
 function cOvi(){const ing=[1,2,3,4,5].reduce((a,i)=>a+getNum('oi'+i),0);const cos=[1,2,3,4,5,6].reduce((a,i)=>a+getNum('oc'+i),0);const gp=ing-cos;const gpm=ing>0?(gp/ing*100).toFixed(1):0;setTxt('ov-ti',fmt(ing));setTxt('ov-tc',fmt(cos));setTxt('ov-gp',fmt(gp));setTxt('ov-gpm','% MB: '+gpm+'%');}
 function cUAOvi(){const tot=calcUAGeneric('ovi-ua-body','ovi');const ha=parseFloat(document.getElementById('ovi-ha')?.value||0);setTxt('ovi-ca',ha>0?(tot/ha).toFixed(2)+' UA/ha':'— UA/ha');setTxt('ovi-cas',ha>0?tot.toFixed(1)+' UA ÷ '+ha+' ha':'ingrese ha');}
 function cPor(){const ing=[1,2,3,4,5].reduce((a,i)=>a+getNum('poi'+i),0);const cos=[1,2,3,4,5,6,7].reduce((a,i)=>a+getNum('poc'+i),0);const gp=ing-cos;const gpm=ing>0?(gp/ing*100).toFixed(1):0;setTxt('po-ti',fmt(ing));setTxt('po-tc',fmt(cos));setTxt('po-gp',fmt(gp));setTxt('po-gpm','% MB: '+gpm+'%');}
@@ -1375,7 +1467,6 @@ function cCap(){const ing=[1,2,3,4,5].reduce((a,i)=>a+getNum('cai'+i),0);const c
 function cUACap(){const tot=calcUAGeneric('cap-ua-body','cap');const ha=parseFloat(document.getElementById('cap-ha')?.value||0);setTxt('cap-ca',ha>0?(tot/ha).toFixed(2)+' UA/ha':'— UA/ha');setTxt('cap-cas',ha>0?tot.toFixed(1)+' UA ÷ '+ha+' ha':'ingrese ha');}
 function cAvi(){const ing=[1,2,3,4,5].reduce((a,i)=>a+getNum('avi'+i),0);const cos=[1,2,3,4,5,6,7,8].reduce((a,i)=>a+getNum('avc'+i),0);const gp=ing-cos;const gpm=ing>0?(gp/ing*100).toFixed(1):0;setTxt('av-ti',fmt(ing));setTxt('av-tc',fmt(cos));setTxt('av-gp',fmt(gp));setTxt('av-gpm','% MB: '+gpm+'%');}
 function cAviInd(){const cos=[1,2,3,4,5,6,7,8].reduce((a,i)=>a+getNum('avc'+i),0);const base=Math.max(getNum('avi-base'),1);setTxt('avi-gpup',(getNum('avi1')-cos)>0?fmt((getNum('avi1')-cos)/base)+'/up':'—');}
-function cAviEq(){const u=getNum('ave-u'),p=getNum('ave-p');const cos=[1,2,3,4,5,6,7,8].reduce((a,i)=>a+getNum('avc'+i),0);const cu=u>0?cos/u:0;setTxt('ave-cu',u>0?fmtN(cu)+' CLP/u':'—');setTxt('ave-m',u>0&&p>0?fmtN(p-cu)+' CLP/u':'—');}
 function cTur(){const ing=[1,2,3,4,5].reduce((a,i)=>a+getNum('ti'+i),0);const cos=[1,2,3,4,5,6].reduce((a,i)=>a+getNum('tc'+i),0);const gp=ing-cos;const gpm=ing>0?(gp/ing*100).toFixed(1):0;setTxt('tu-ti',fmt(ing));setTxt('tu-tc',fmt(cos));setTxt('tu-gp',fmt(gp));setTxt('tu-gpm','% MB: '+gpm+'%');}
 function cTurEq(){const u=getNum('tu-uni'),p=getNum('tu-pvu');const cos=[1,2,3,4,5,6].reduce((a,i)=>a+getNum('tc'+i),0);const cu=u>0?cos/u:0;setTxt('tu-cdu',u>0?fmtN(cu)+' CLP/u':'—');setTxt('tu-mpu',u>0&&p>0?fmtN(p-cu)+' CLP/u':'—');}
 function cGen(){const cfg=GENERIC_CFG[currentGenKey];if(!cfg) return;let ing=0;for(let i=1;i<=cfg.i.length;i++) ing+=getNum('gen-i'+i);let cos=0;for(let i=1;i<=cfg.c.length;i++) cos+=getNum('gen-c'+i);const gp=ing-cos;const gpm=ing>0?(gp/ing*100).toFixed(1):0;setTxt('gen-ti',fmt(ing));setTxt('gen-tc',fmt(cos));setTxt('gen-gp',fmt(gp));setTxt('gen-gpm','% MB: '+gpm+'%');}
@@ -1408,9 +1499,9 @@ function showMercado(tipo){
 }
 function autoFillMercRef(){
   const sel=document.getElementById('merc-rubro')?.value||'';
-  const ODEPA_MED={'🐄 Bovina – Novillos ($$/kg)':2000,'🐑 Ovina – Corderos ($$/kg)':3000,'🐔 Huevos ($$/docena)':3000,'🌾 Trigo ($$/qq)':15000};
+  const ODEPA={'🐄 Bovina – Novillos ($$/kg)':2000,'🐑 Ovina – Corderos ($$/kg)':3000,'🐔 Huevos ($$/docena)':3000,'🌾 Trigo ($$/qq)':15000};
   const ref=document.getElementById('merc-ref');const note=document.getElementById('merc-ref-note');
-  if(ref&&ODEPA_MED[sel]){ref.value=ODEPA_MED[sel];ref.style.background='#F3E5F5';ref.style.borderColor='#CE93D8';if(note) note.style.display='block';}
+  if(ref&&ODEPA[sel]){ref.value=ODEPA[sel];ref.style.background='#F3E5F5';ref.style.borderColor='#CE93D8';if(note) note.style.display='block';}
   else if(ref){ref.value='';ref.style.background='';ref.style.borderColor='';if(note) note.style.display='none';}
 }
 function cMercDif(){
@@ -1425,14 +1516,16 @@ function addWL(){
   if(!desc||desc.trim()===''){showT('⚠️ Escriba una descripción');return;}if(!fecha){showT('⚠️ Ingrese la fecha evaluada');return;}
   const colors={Alta:'var(--rojo)',Media:'#F57C00',Baja:'#558B2F'};const borders={Alta:'#FFCDD2',Media:'#FFE082',Baja:'#C5E1A5'};const emojis={Alta:'🔴',Media:'🟡',Baja:'🟢'};
   const item=document.createElement('div');item.style.cssText=`background:#fff;border:2px solid ${borders[wlPrio]};border-left:5px solid ${colors[wlPrio]};border-radius:13px;padding:13px;margin-bottom:9px;`;
-  item.innerHTML=`<div style="display:flex;justify-content:space-between;margin-bottom:5px;"><span style="font-weight:700;font-size:13px;">${rubro}</span><span class="bdg" style="background:${borders[wlPrio]};color:${colors[wlPrio]};">${emojis[wlPrio]} ${wlPrio}</span></div><div style="font-size:11px;color:#777;margin-bottom:4px;">${tipo}</div><div style="font-size:12px;color:#555;margin-bottom:5px;">${desc}</div><div style="font-size:11px;color:#888;">📅 Evaluado: ${fecha} · 📎 Variable: ${costo}</div><div style="display:flex;gap:7px;margin-top:8px;"><button class="btn bo bsm" style="flex:1;font-size:11px;" onclick="showT('✏️ Editar')">✏️ Editar</button><button class="btn bsm" style="background:#FFEBEE;color:var(--rojo);border:2px solid #FFCDD2;flex:1;font-size:11px;" onclick="this.closest('div[style]').remove();showT('🗑️ Eliminado')">🗑️ Eliminar</button></div>`;
+  item.innerHTML=`<div style="display:flex;justify-content:space-between;margin-bottom:5px;"><span style="font-weight:700;font-size:13px;">${rubro}</span><span class="bdg" style="background:${borders[wlPrio]};color:${colors[wlPrio]};">${emojis[wlPrio]} ${wlPrio}</span></div><div style="font-size:11px;color:#777;margin-bottom:4px;">${tipo}</div><div style="font-size:12px;color:#555;margin-bottom:5px;">${desc}</div><div style="font-size:11px;color:#888;">📅 Evaluado: ${fecha} · 📎 ${costo}</div><div style="display:flex;gap:7px;margin-top:8px;"><button class="btn bo bsm" style="flex:1;font-size:11px;" onclick="showT('✏️ Editar')">✏️ Editar</button><button class="btn bsm" style="background:#FFEBEE;color:var(--rojo);border:2px solid #FFCDD2;flex:1;font-size:11px;" onclick="this.closest('div[style]').remove();showT('🗑️ Eliminado')">🗑️ Eliminar</button></div>`;
   document.getElementById('wl-list').prepend(item);
   if(document.getElementById('wl-desc')) document.getElementById('wl-desc').value='';if(document.getElementById('wl-fecha')) document.getElementById('wl-fecha').value='';
   showT('✅ Eslabón débil registrado');
 }
 function showT(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2500);}
 
-// ══ REGISTRA VENTA O COSTO ══
+// ══════════════════════════════════════
+// REGISTRA VENTA O COSTO
+// ══════════════════════════════════════
 const RQ={step:1,tipo:'',rubro:'',concepto:'',conceptoId:'',mes:0,monto:0,nota:'',fotoOk:false,log:[]};
 const RQ_CONCEPTOS={
   bovina:{ing:[{l:'Venta de animales (kg / cabezas)',id:'bi1',warn:false},{l:'Venta subproductos',id:'bi2',warn:false},{l:'Venta reproductores',id:'bi3',warn:false},{l:'Subsidios / bonos',id:'bi4',warn:false},{l:'Mediería',id:'bi5',warn:false},{l:'Arriendo de parcela',id:'bi6',warn:false},{l:'Arriendo de talaje',id:'bi7',warn:false},{l:'Otro ingreso 1',id:'bi8',warn:false},{l:'Otro ingreso 2',id:'bi9',warn:false}],cos:[{l:'Suplemento mineral / sales',id:'bc1',warn:false},{l:'Concentrados / pellets',id:'bc2',warn:false},{l:'⚠️ Forraje conservado',id:'bc3',warn:true},{l:'Veterinaria y medicamentos',id:'bc4',warn:false},{l:'Mano de obra PAGADA',id:'bc5',warn:false},{l:'Transporte / flete',id:'bc6',warn:false},{l:'Manejo de praderas',id:'bc7',warn:false},{l:'Maquinaria',id:'bc8',warn:false},{l:'Compra animales reposición',id:'bc9',warn:false}]},
@@ -1528,12 +1621,18 @@ function rqBuildSuccess(e){
   if(RQ.log.length>0&&logSec&&logList){logSec.style.display='block';if(logCount) logCount.textContent=RQ.log.length;logList.innerHTML=RQ.log.slice(0,5).map((l,i)=>`<div class="rq-log-entry${i===0?' latest':''}"><div style="font-size:20px;flex-shrink:0;">${l.emoji}</div><div style="flex:1;"><div style="font-size:12px;font-weight:700;">${l.concepto.replace('⚠️ ','').substring(0,30)}</div><div style="font-size:11px;color:#888;">${l.rubro} · ${l.hora}</div></div><div style="font-size:13px;font-weight:800;color:${l.tipo.includes('💰')?'var(--vp)':'var(--rojo)'};">${fmt(l.monto)}</div></div>`).join('');}
 }
 
+// ══════════════════════
+// INIT
+// ══════════════════════
 document.addEventListener('DOMContentLoaded',()=>{
   buildMes('bov-mes-s','bov-mes-cur');buildMes('ovi-mes-s','ovi-mes-cur');buildMes('por-mes-s','por-mes-cur');buildMes('cap-mes-s','cap-mes-cur');buildMes('avi-mes-s','avi-mes-cur');buildMes('tur-mes-s','tur-mes-cur');buildMes('gen-mes-s','gen-mes-cur');
   buildUATable('bov-ua-body',UA_BOV,'bov');buildUATable('ovi-ua-body',UA_OVI,'ovi');buildUATable('por-ua-body',UA_POR,'por');buildUATable('cap-ua-body',UA_CAP,'cap');
   cBov();cCF();updateHome();autoFillMercRef();
+
   ['bov-cos','bov-ua','bov-kpi','ovi-cos','ovi-ua','por-cos','por-ua','cap-cos','cap-ua','avi-cos','avi-ind','tur-cos','tur-ind','gen-cos','gen-ind'].forEach(id=>{const el=document.getElementById(id);if(el) el.style.display='none';});
+
   const fechaEl=document.getElementById('rq-fecha');if(fechaEl) fechaEl.addEventListener('change',rqFechaPreview);
+
   document.addEventListener('input',e=>{
     if(e.target.closest('#bov-ua-body')) cUABov();if(e.target.closest('#ovi-ua-body')) cUAOvi();if(e.target.closest('#por-ua-body')) calcUAGeneric('por-ua-body','por');if(e.target.closest('#cap-ua-body')) cUACap();
     if(e.target.id==='merc-mio'||e.target.id==='merc-ref'){const dif=getNum('merc-mio')-getNum('merc-ref');setTxt('merc-dif',getNum('merc-mio')>0&&getNum('merc-ref')>0?fmtN(dif)+' CLP':'—');}
