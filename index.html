@@ -186,6 +186,10 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
 .rq-log-entry.latest{border-color:var(--vl);}
 .rq-total-box{padding:16px;background:var(--vto);border:2px solid var(--vl);border-radius:12px;font-size:28px;font-weight:900;text-align:center;min-height:62px;display:flex;align-items:center;justify-content:center;color:#ccc;transition:color .2s;}
 .rq-total-box.has-value{color:var(--vp);}
+/* KPI family banners */
+.kpi-fam{padding:9px 18px;display:flex;align-items:center;gap:8px;flex-shrink:0;}
+.kpi-fam-lbl{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;}
+.kpi-fam-sub{font-size:10px;margin-top:1px;}
 /* Splash quick-access cards */
 .sp-qa-card{display:flex;align-items:center;gap:12px;padding:13px 14px;border-radius:14px;cursor:pointer;transition:all .2s;border:1.5px solid rgba(255,255,255,.18);background:rgba(255,255,255,.10);}
 .sp-qa-card:active{background:rgba(255,255,255,.22);transform:scale(.98);}
@@ -196,6 +200,12 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
 .sp-qa-arrow{color:rgba(255,255,255,.5);font-size:16px;}
 /* Trend chart year pill */
 .yr-pill{padding:7px 16px;border-radius:20px;border:2px solid;font-size:13px;font-weight:600;cursor:pointer;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;transition:all .2s;flex-shrink:0;}
+/* Motor Económico */
+.me-row{display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid var(--gb);}
+.me-lbl{font-size:13px;font-weight:600;color:var(--gt);flex:1;}
+.me-val{font-size:14px;font-weight:700;margin-left:8px;}
+.me-pct{font-size:12px;font-weight:700;color:#aaa;margin-left:8px;min-width:38px;text-align:right;}
+.me-subtotal{background:var(--vpa);border-radius:8px;margin:4px -14px;padding:9px 14px;}
 </style>
 </head>
 <body>
@@ -292,7 +302,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
       <div class="chk" onclick="tChk(this)" data-r="ovina"><span class="chk-em">🐑</span><span class="chk-lb">Ganadería Ovina</span><div class="chk-box"></div></div>
       <div class="chk" onclick="tChk(this)" data-r="porcina"><span class="chk-em">🐖</span><span class="chk-lb">Ganadería Porcina</span><div class="chk-box"></div></div>
       <div class="chk" onclick="tChk(this)" data-r="caprina"><span class="chk-em">🐐</span><span class="chk-lb">Ganadería Caprina</span><div class="chk-box"></div></div>
-      <div class="chk" onclick="tChk(this)" data-r="avicultura"><span class="chk-em">🐔</span><span class="chk-lb">Avicultura - Huevos</span><div class="chk-box"></div></div>
+      <div class="chk" onclick="tChk(this)" data-r="avicultura"><span class="chk-em">🐔</span><span class="chk-lb">Avicultura</span><div class="chk-box"></div></div>
     </div>
     <div class="div"></div>
     <div class="sec">
@@ -382,68 +392,71 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
 <!-- ═══ BOVINA ═══ -->
 <div class="screen" id="s-bovina">
   <div class="hdr"><span class="hdr-bk" onclick="goTo('s-home')">←</span><h2>🐄 Ganadería Bovina</h2><span class="hdr-ic" onclick="showT('📷 Foto rodeo')">📷</span></div>
+  <!-- TABS REORDENADOS: KPIs primero (según preferencia) -->
   <div class="tabs" id="bov-tabs">
-    <div class="tab active" onclick="swTab(this,'bov-ing','bov-tabs')">💰 Ingresos</div>
+    <div class="tab active" onclick="swTab(this,'bov-kpi','bov-tabs')">📈 KPIs</div>
+    <div class="tab" onclick="swTab(this,'bov-ing','bov-tabs')">💰 Ingresos</div>
     <div class="tab" onclick="swTab(this,'bov-cos','bov-tabs')">📉 Costos</div>
     <div class="tab" onclick="swTab(this,'bov-ua','bov-tabs')">🐄 UA</div>
-    <div class="tab" onclick="swTab(this,'bov-kpi','bov-tabs')">📈 KPIs</div>
   </div>
   <div class="mes-w" id="bov-mes-w"><div class="mes-lbl">📅 Mes a registrar:</div><div class="mes-s" id="bov-mes-s"></div><div class="mes-cur" id="bov-mes-cur">Mes: ENERO 2025</div></div>
-  <div id="bov-ing" style="overflow-y:auto;padding-bottom:70px;display:block;">
-    <div class="sec">
-      <div class="sec-t">💰 Ingresos Brutos</div>
-      <div class="f"><label>Venta de animales (kg / cabezas)</label><input type="number" id="bi1" oninput="cBov()" value="4200000" placeholder="$0"></div>
-      <div class="f"><label>Venta subproductos (leche, lana, cuero)</label><input type="number" id="bi2" oninput="cBov()" placeholder="$0"></div>
-      <div class="f"><label>Venta reproductores / pie de cría</label><input type="number" id="bi3" oninput="cBov()" placeholder="$0"></div>
-      <div class="f"><label>Subsidios / bonos</label><input type="number" id="bi4" oninput="cBov()" value="380000" placeholder="$0"></div>
-      <div class="f"><label>Mediería</label><input type="number" id="bi5" oninput="cBov()" placeholder="$0"></div>
-      <div class="f"><label>Arriendo de parcela</label><input type="number" id="bi6" oninput="cBov()" placeholder="$0"></div>
-      <div class="f"><label>Arriendo de talaje</label><input type="number" id="bi7" oninput="cBov()" placeholder="$0"></div>
-      <div class="f"><label>Otro ingreso 1</label><input type="number" id="bi8" oninput="cBov()" placeholder="$0"></div>
-      <div class="f"><label>Otro ingreso 2</label><input type="number" id="bi9" oninput="cBov()" placeholder="$0"></div>
-      <div class="res"><div class="rl">📊 Total Ingresos</div><div class="rv" id="b-ti">$ 4.580.000</div><div class="rs">calculado automáticamente</div></div>
-      <button class="btn bp" onclick="showT('✅ Ingresos guardados')">💾 &nbsp;Guardar Ingresos</button>
+
+  <!-- KPIs — PRIMERO, con 4 familias -->
+  <div id="bov-kpi" style="overflow-y:auto;padding-bottom:70px;display:block;">
+
+    <!-- ── FAMILIA 1: DESEMPEÑO ── -->
+    <div class="kpi-fam" style="background:#E3F2FD;border-left:4px solid #1976D2;">
+      <span style="font-size:18px;">💙</span>
+      <div><div class="kpi-fam-lbl" style="color:#1565C0;">DESEMPEÑO</div><div class="kpi-fam-sub" style="color:#1976D2;">¿El predio gana plata?</div></div>
     </div>
-  </div>
-  <div id="bov-cos" style="overflow-y:auto;padding-bottom:70px;display:none;">
     <div class="sec">
-      <div class="sec-t">📉 Costos Directos</div>
-      <div class="f"><label>Suplemento mineral / sales</label><input type="number" id="bc1" oninput="cBov()" value="85000" placeholder="$0"></div>
-      <div class="f"><label>Concentrados / pellets</label><input type="number" id="bc2" oninput="cBov()" placeholder="$0"></div>
-      <div class="f"><label>⚠️ Forraje conservado</label><div class="hint" style="color:var(--rojo);font-weight:700;">🔴 Obligatorio — Eslabón Débil</div><input type="number" id="bc3" oninput="cBov()" value="320000" style="border-color:var(--rojo);" placeholder="$0"></div>
-      <div class="f"><label>Veterinaria y medicamentos</label><input type="number" id="bc4" oninput="cBov()" value="145000" placeholder="$0"></div>
-      <div class="f"><label>Mano de obra PAGADA</label><input type="number" id="bc5" oninput="cBov()" value="280000" placeholder="$0"></div>
-      <div class="f"><label>Transporte / flete / acopio</label><input type="number" id="bc6" oninput="cBov()" placeholder="$0"></div>
-      <div class="f"><label>Manejo de praderas</label><input type="number" id="bc7" oninput="cBov()" value="190000" placeholder="$0"></div>
-      <div class="f"><label>Maquinaria / arriendo maquinaria</label><input type="number" id="bc8" oninput="cBov()" placeholder="$0"></div>
-      <div class="f"><label>Compra de animales para reposición</label><input type="number" id="bc9" oninput="cBov()" placeholder="$0"></div>
-      <div class="res rw" style="margin-top:12px;"><div class="rl">📉 Total Costos Directos</div><div class="rv" id="b-tc">$ 1.020.000</div></div>
-      <div class="res"><div class="rl">✅ Margen Bruto</div><div class="rv" id="b-gp">$ 3.560.000</div><div class="rs" id="b-gpm">% MB: 77.7%</div></div>
-      <button class="btn bp" style="margin-top:12px;" onclick="showT('✅ Costos guardados')">💾 &nbsp;Guardar Costos</button>
-    </div>
-  </div>
-  <div id="bov-ua" style="overflow-y:auto;padding-bottom:70px;display:none;">
-    <div class="sec">
-      <div class="sec-t">🐄 Unidades Animales (UA)</div>
-      <div style="overflow-x:auto;margin:0 -18px;padding:0 18px;"><table class="uat"><thead><tr><th>Categoría</th><th>N°</th><th>Kg prom</th><th>UA</th></tr></thead><tbody id="bov-ua-body"></tbody></table></div>
-      <div style="margin-top:13px;">
-        <div class="f"><label>📐 Superficie pastoreo efectiva (ha)</label><input type="number" id="bov-ha" value="72" oninput="cUABov()"></div>
-        <div class="res"><div class="rl">▶ Carga Animal Efectiva</div><div class="rv" id="bov-ca">1.05 UA/ha</div><div class="rs" id="bov-cas">75.7 UA ÷ 72 ha</div></div>
+      <div class="kg">
+        <div class="kc pos">
+          <div class="kv" id="bk-mbpct">—</div>
+          <div class="kl">% Margen Bruto<br><span style="font-size:9px;color:#aaa;">Med. piloto: 31%</span></div>
+        </div>
+        <div class="kc" id="bk-mn-kc">
+          <div class="kv" id="bk-mn-kpi">—</div>
+          <div class="kl">Margen Neto est.<br><span style="font-size:9px;color:#aaa;">MB − costos fijos</span></div>
+        </div>
+        <div class="kc">
+          <div class="kv" id="broic2">—</div>
+          <div class="kl">ROI del predio<br><span style="font-size:9px;color:#aaa;">MB / cap. inv.</span></div>
+        </div>
+        <div class="kc">
+          <div class="kv" id="bk-gpha-kpi">—</div>
+          <div class="kl">MB / ha<br><span style="font-size:9px;color:#aaa;">Margen ÷ ha</span></div>
+        </div>
       </div>
-      <button class="btn bp" onclick="showT('✅ UA guardadas')">💾 &nbsp;Guardar UA</button>
     </div>
-  </div>
-  <div id="bov-kpi" style="overflow-y:auto;padding-bottom:70px;display:none;">
+
+    <div class="div"></div>
+
+    <!-- ── FAMILIA 2: PRODUCTIVIDAD ── -->
+    <div class="kpi-fam" style="background:#E8F5E9;border-left:4px solid #2D6A4F;">
+      <span style="font-size:18px;">💚</span>
+      <div><div class="kpi-fam-lbl" style="color:#1B4332;">PRODUCTIVIDAD</div><div class="kpi-fam-sub" style="color:#2D6A4F;">¿Con cuántos recursos?</div></div>
+    </div>
     <div class="sec">
-      <div class="sec-t">📐 Indicadores</div>
       <div class="f"><label>Superficie dedicada (ha)</label><input type="number" id="bk-ha" oninput="cBovKPI()" placeholder="0"></div>
       <div class="f"><label>Margen Bruto / ha (CLP/ha)</label><div class="cv" id="bk-gpha">—</div></div>
       <div class="f"><label>Unidades producidas</label><input type="number" id="bk-u" placeholder="0"></div>
       <div class="f"><label>Precio promedio venta (CLP/unidad)</label><input type="number" id="bk-pvu" placeholder="0"></div>
       <div class="f"><label>Ingreso total / ha</label><div class="cv" id="bk-itha">—</div></div>
     </div>
+
     <div class="div"></div>
+
+    <!-- ── FAMILIA 3: GESTIÓN ── -->
+    <div class="kpi-fam" style="background:#FAFAFA;border-left:4px solid #607D8B;">
+      <span style="font-size:18px;">⚫</span>
+      <div><div class="kpi-fam-lbl" style="color:#37474F;">GESTIÓN</div><div class="kpi-fam-sub" style="color:#607D8B;">¿Se está ejecutando?</div></div>
+    </div>
     <div class="sec">
+      <div class="kg" style="margin-bottom:12px;">
+        <div class="kc"><div class="kv">1/12</div><div class="kl">Plan vs. real<br>meses cargados</div></div>
+        <div class="kc wrn"><div class="kv">1</div><div class="kl">Restricciones<br>activas</div></div>
+      </div>
       <div class="sec-t">⚖️ Punto de Equilibrio</div>
       <div class="f"><label>Unidades totales vendidas</label><input type="number" id="be-u" oninput="cBovEq()" placeholder="0"></div>
       <div class="f"><label>Costo directo / unidad</label><div class="cv" id="be-cu">— CLP/u</div></div>
@@ -472,7 +485,103 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
       <div class="sec-t">💰 Capital y Retorno</div>
       <div class="f"><label>Capital invertido excl. tierra (CLP)</label><input type="number" id="bcap" oninput="cBovCV()" placeholder="$0"></div>
       <div class="f"><label>ROIC sobre capital invertido (%)</label><div class="cv" id="broic">—</div></div>
-      <button class="btn bp" onclick="showT('✅ KPIs guardados')">💾 &nbsp;Guardar KPIs</button>
+    </div>
+
+    <div class="div"></div>
+
+    <!-- ── FAMILIA 4: CAPITAL ECOLÓGICO (NUEVA) ── -->
+    <div class="kpi-fam" style="background:#E8F5E9;border-left:4px solid #52B788;">
+      <span style="font-size:18px;">🌿</span>
+      <div><div class="kpi-fam-lbl" style="color:#1B4332;">CAPITAL ECOLÓGICO</div><div class="kpi-fam-sub" style="color:#2D6A4F;">¿El campo mejora?</div></div>
+    </div>
+    <div class="sec">
+      <div class="al ali" style="margin-bottom:10px;"><span class="al-ic">💡</span><div class="al-tx"><strong>3 indicadores medibles esta semana, sin costo adicional</strong>Suficientes para detectar tendencia.</div></div>
+      <div class="f">
+        <label>📅 Días de descanso del potrero (promedio)</label>
+        <input type="number" id="bk-dias-desc" placeholder="0 días" oninput="cBovEco()">
+        <div class="hint">Meta regenerativa: ≥ 60 días · Ya está en el registro de rotación, solo hay que calcularlo.</div>
+      </div>
+      <div class="f">
+        <label>🌱 Cobertura de suelo (%)</label>
+        <input type="number" id="bk-cobertura" placeholder="0%" min="0" max="100" oninput="cBovEco()">
+        <div class="hint">1 foto/potrero/mes desde el celular · Estimación visual, no medición de precisión.</div>
+      </div>
+      <div class="f">
+        <label>🌍 Materia orgánica del suelo (%) · <span style="color:#F57C00;font-weight:700;">ANUAL</span></label>
+        <input type="number" id="bk-mo" placeholder="%" step="0.1" oninput="cBovEco()">
+        <div class="hint" style="color:#F57C00;">Línea base anual, no mensual. Requiere análisis de laboratorio; señal tarda 1–3 años.</div>
+      </div>
+      <div id="bk-eco-result" style="display:none;">
+        <div class="res">
+          <div class="rl">🌿 Estado Capital Ecológico</div>
+          <div class="rv" id="bk-eco-val" style="font-size:13px;font-weight:700;">—</div>
+          <div class="rs" id="bk-eco-sub">Complete los indicadores</div>
+        </div>
+      </div>
+      <button class="btn bp" onclick="showT('✅ KPIs y Capital Ecológico guardados')">💾 &nbsp;Guardar KPIs</button>
+    </div>
+  </div>
+
+  <!-- INGRESOS -->
+  <div id="bov-ing" style="overflow-y:auto;padding-bottom:70px;display:none;">
+    <div class="sec">
+      <div class="sec-t">💰 Ingresos Brutos</div>
+      <div class="f"><label>Venta de animales (kg / cabezas)</label><input type="number" id="bi1" oninput="cBov()" value="4200000" placeholder="$0"></div>
+      <div class="f"><label>Venta subproductos (leche, lana, cuero)</label><input type="number" id="bi2" oninput="cBov()" placeholder="$0"></div>
+      <div class="f"><label>Venta reproductores / pie de cría</label><input type="number" id="bi3" oninput="cBov()" placeholder="$0"></div>
+      <div class="f"><label>Subsidios / bonos</label><input type="number" id="bi4" oninput="cBov()" value="380000" placeholder="$0"></div>
+      <div class="f"><label>Mediería</label><input type="number" id="bi5" oninput="cBov()" placeholder="$0"></div>
+      <div class="f"><label>Arriendo de parcela</label><input type="number" id="bi6" oninput="cBov()" placeholder="$0"></div>
+      <div class="f"><label>Arriendo de talaje</label><input type="number" id="bi7" oninput="cBov()" placeholder="$0"></div>
+      <div class="f"><label>Otro ingreso 1</label><input type="number" id="bi8" oninput="cBov()" placeholder="$0"></div>
+      <div class="f"><label>Otro ingreso 2</label><input type="number" id="bi9" oninput="cBov()" placeholder="$0"></div>
+      <div class="res"><div class="rl">📊 Total Ingresos</div><div class="rv" id="b-ti">$ 4.580.000</div><div class="rs">calculado automáticamente</div></div>
+      <button class="btn bp" onclick="showT('✅ Ingresos guardados')">💾 &nbsp;Guardar Ingresos</button>
+    </div>
+  </div>
+
+  <!-- COSTOS — con Margen Neto estimado -->
+  <div id="bov-cos" style="overflow-y:auto;padding-bottom:70px;display:none;">
+    <div class="sec">
+      <div class="sec-t">📉 Costos Directos</div>
+      <div class="f"><label>Suplemento mineral / sales</label><input type="number" id="bc1" oninput="cBov()" value="85000" placeholder="$0"></div>
+      <div class="f"><label>Concentrados / pellets</label><input type="number" id="bc2" oninput="cBov()" placeholder="$0"></div>
+      <div class="f"><label>⚠️ Forraje conservado</label><div class="hint" style="color:var(--rojo);font-weight:700;">🔴 Obligatorio — Eslabón Débil</div><input type="number" id="bc3" oninput="cBov()" value="320000" style="border-color:var(--rojo);" placeholder="$0"></div>
+      <div class="f"><label>Veterinaria y medicamentos</label><input type="number" id="bc4" oninput="cBov()" value="145000" placeholder="$0"></div>
+      <div class="f"><label>Mano de obra PAGADA</label><input type="number" id="bc5" oninput="cBov()" value="280000" placeholder="$0"></div>
+      <div class="f"><label>Transporte / flete / acopio</label><input type="number" id="bc6" oninput="cBov()" placeholder="$0"></div>
+      <div class="f"><label>Manejo de praderas</label><input type="number" id="bc7" oninput="cBov()" value="190000" placeholder="$0"></div>
+      <div class="f"><label>Maquinaria / arriendo maquinaria</label><input type="number" id="bc8" oninput="cBov()" placeholder="$0"></div>
+      <div class="f"><label>Compra de animales para reposición</label><input type="number" id="bc9" oninput="cBov()" placeholder="$0"></div>
+      <div class="res rw" style="margin-top:12px;"><div class="rl">📉 Total Costos Directos</div><div class="rv" id="b-tc">$ 1.020.000</div></div>
+      <!-- RESULTADO MB con referencia de mediana -->
+      <div class="res">
+        <div class="rl">✅ Margen Bruto</div>
+        <div class="rv" id="b-gp">$ 3.560.000</div>
+        <div class="rs" id="b-gpm">% MB: 77.7%</div>
+        <div style="font-size:10px;color:var(--vp);margin-top:4px;padding-top:4px;border-top:1px solid rgba(82,183,136,.3);">📊 Mediana piloto BOV (n=10): 31% · Rango real: −4% a 90%</div>
+      </div>
+      <!-- NUEVO: Margen Neto estimado -->
+      <div class="res rb" id="b-mn-box">
+        <div class="rl">🔵 Margen Neto estimado</div>
+        <div class="rv" id="b-mn">—</div>
+        <div class="rs" id="b-mns">Ingresa costos fijos en 🏠 Costos Fijos para calcular</div>
+        <div style="font-size:10px;color:#5C6BC0;margin-top:4px;padding-top:4px;border-top:1px solid rgba(159,168,218,.3);">📊 Mediana piloto: ≈ 0% · 5/10 predios con Margen Neto negativo</div>
+      </div>
+      <button class="btn bp" style="margin-top:12px;" onclick="showT('✅ Costos guardados')">💾 &nbsp;Guardar Costos</button>
+    </div>
+  </div>
+
+  <!-- UA -->
+  <div id="bov-ua" style="overflow-y:auto;padding-bottom:70px;display:none;">
+    <div class="sec">
+      <div class="sec-t">🐄 Unidades Animales (UA)</div>
+      <div style="overflow-x:auto;margin:0 -18px;padding:0 18px;"><table class="uat"><thead><tr><th>Categoría</th><th>N°</th><th>Kg prom</th><th>UA</th></tr></thead><tbody id="bov-ua-body"></tbody></table></div>
+      <div style="margin-top:13px;">
+        <div class="f"><label>📐 Superficie pastoreo efectiva (ha)</label><input type="number" id="bov-ha" value="72" oninput="cUABov()"></div>
+        <div class="res"><div class="rl">▶ Carga Animal Efectiva</div><div class="rv" id="bov-ca">1.05 UA/ha</div><div class="rs" id="bov-cas">75.7 UA ÷ 72 ha</div></div>
+      </div>
+      <button class="btn bp" onclick="showT('✅ UA guardadas')">💾 &nbsp;Guardar UA</button>
     </div>
   </div>
 </div>
@@ -738,7 +847,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
       <div class="f"><label>🤝 Asesorías generales</label><input type="number" id="cf12" oninput="cCF()"></div>
       <div class="f"><label>Otro costo fijo</label><input type="text" placeholder="Descripción" style="margin-bottom:6px;"><input type="number" id="cf13" oninput="cCF()" placeholder="$0 / año"></div>
       <div class="res rb"><div class="rl">TOTAL COSTOS FIJOS</div><div class="rv" id="cf-tot">$ 4.760.000</div></div>
-      <button class="btn bp" style="margin-top:14px;" onclick="showT('✅ Costos fijos guardados')">💾 &nbsp;Guardar Costos Fijos</button>
+      <button class="btn bp" style="margin-top:14px;" onclick="showT('✅ Costos fijos guardados');cBov();">💾 &nbsp;Guardar Costos Fijos</button>
     </div>
   </div>
 </div>
@@ -760,9 +869,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
         <div style="font-size:12px;font-weight:700;color:var(--gt);">📈 Tendencia Predial · El Canelo</div>
         <div style="font-size:10px;color:var(--vp);font-weight:600;">2021 – 2025</div>
       </div>
-      <!-- SVG chart injected here -->
       <div id="res-chart-container"></div>
-      <!-- Legend -->
       <div style="display:flex;gap:14px;justify-content:center;margin-top:8px;flex-wrap:wrap;">
         <div style="display:flex;align-items:center;gap:5px;">
           <svg width="22" height="8" style="flex-shrink:0;"><line x1="0" y1="4" x2="22" y2="4" stroke="#2D6A4F" stroke-width="2.5"/><circle cx="11" cy="4" r="3" fill="#2D6A4F"/></svg>
@@ -780,7 +887,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
       </div>
     </div>
 
-    <!-- ── 2. SELECTOR DE AÑO (BELOW CHART) ── -->
+    <!-- ── 2. SELECTOR DE AÑO ── -->
     <div style="padding:10px 16px 13px;background:var(--gc);border-bottom:2px solid var(--vpa);">
       <div style="font-size:10px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.6px;margin-bottom:9px;">📅 Ver detalle del año:</div>
       <div id="res-year-pills" style="display:flex;gap:7px;justify-content:center;overflow-x:auto;scrollbar-width:none;padding-bottom:2px;"></div>
@@ -789,7 +896,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
     <!-- ── 3. DETALLE DEL AÑO SELECCIONADO (DYNAMIC) ── -->
     <div id="res-detail-section"></div>
 
-  </div><!-- /scroll -->
+  </div>
 
   <div class="bnav">
     <div class="ni" onclick="goTo('s-home')"><span class="ni-ic">🏠</span><span class="ni-lb">Inicio</span></div>
@@ -799,7 +906,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
     <div class="ni" onclick="showT('🔔 Alertas')"><span class="ni-ic">🔔</span><span class="ni-lb">Alertas</span></div>
   </div>
 </div>
-<!-- FIN RESUMEN -->
 
 <!-- ═══ ESLABONES DÉBILES ═══ -->
 <div class="screen" id="s-weak-link">
@@ -810,7 +916,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
       <div class="sec-t">➕ Nuevo Eslabón Débil</div>
       <div class="f"><label>📅 Fecha evaluada</label><input type="date" id="wl-fecha" style="font-size:14px;font-weight:600;background:var(--ami);border:2px solid #E8D44D;border-radius:10px;padding:10px 12px;width:100%;font-family:inherit;outline:none;"></div>
       <div class="f"><label>🔗 Tipo de eslabón débil</label><select id="wl-tipo"><option>🌱 Biológico (praderas, producción, suelo, agua)</option><option>👥 Social / Humano (gestión, conocimiento, personas)</option><option>💰 Financiero (costos, ingresos, margen, liquidez)</option></select></div>
-      <div class="f"><label>Unidad de negocio</label><select id="wl-rubro"><option>🐄 Ganadería Bovina</option><option>🐑 Ganadería Ovina</option><option>🐖 Ganadería Porcina</option><option>🐐 Ganadería Caprina</option><option>🐔 Avicultura-Huevos</option><option>🌾 Forraje-Agrícola</option><option>🌽 Cultivos Anuales</option><option>🥬 Hortalizas</option><option>🍎 Frutales</option><option>🏕️ Turismo</option><option>🍯 Apicultura</option><option>Otro</option></select></div>
+      <div class="f"><label>Unidad de negocio</label><select id="wl-rubro"><option>🐄 Ganadería Bovina</option><option>🐑 Ganadería Ovina</option><option>🐖 Ganadería Porcina</option><option>🐐 Ganadería Caprina</option><option>🐔 Avicultura</option><option>🌾 Forraje-Agrícola</option><option>🌽 Cultivos Anuales</option><option>🥬 Hortalizas</option><option>🍎 Frutales</option><option>🏕️ Turismo</option><option>🍯 Apicultura</option><option>Otro</option></select></div>
       <div class="f"><label>Descripción del eslabón débil</label><textarea rows="3" id="wl-desc" placeholder="Ej: Alto costo de forraje conservado en invierno..." style="background:var(--ami);border:2px solid #E8D44D;border-radius:10px;padding:10px;width:100%;font-size:13px;font-family:inherit;"></textarea></div>
       <div class="f"><label>Variable o costo afectado</label><select id="wl-costo"><option>Forraje conservado (heno, fardos)</option><option>Mano de obra</option><option>Veterinaria</option><option>Alimentación</option><option>Maquinaria</option><option>Transporte</option><option>Manejo de praderas</option><option>Otro</option></select></div>
       <div class="f"><label>Prioridad</label>
@@ -953,7 +1059,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
     <div class="rq-dot" id="rq-d3">3</div><div class="rq-line" id="rq-l3"></div>
     <div class="rq-dot" id="rq-d4">4</div>
   </div>
-  <!-- PASO 1 -->
   <div id="rq-s1" style="overflow-y:auto;padding-bottom:80px;display:block;">
     <div class="sec">
       <div class="sec-t">📅 Fecha del registro</div>
@@ -970,7 +1075,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
       <button class="btn bp" onclick="rqNext()">Siguiente: Tipo de registro →</button>
     </div>
   </div>
-  <!-- PASO 2 -->
   <div id="rq-s2" style="overflow-y:auto;padding-bottom:80px;display:none;">
     <div class="sec">
       <div class="sec-t">📂 Tipo de registro</div>
@@ -985,7 +1089,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
       <button class="btn bp" onclick="rqNext()" style="flex:2;">Siguiente: Concepto →</button>
     </div>
   </div>
-  <!-- PASO 3 -->
   <div id="rq-s3" style="overflow-y:auto;padding-bottom:80px;display:none;">
     <div class="sec">
       <div class="sec-t" id="rq-concepto-title">📋 Seleccione el concepto</div>
@@ -997,7 +1100,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
       <button class="btn bp" onclick="rqNext()" style="flex:2;">Siguiente: Cantidad →</button>
     </div>
   </div>
-  <!-- PASO 4 -->
   <div id="rq-s4" style="overflow-y:auto;padding-bottom:80px;display:none;">
     <div id="rq-summary" style="background:linear-gradient(135deg,#1B4332,#52B788);color:white;padding:16px 18px;">
       <div style="font-size:10px;font-weight:600;opacity:.7;text-transform:uppercase;letter-spacing:.8px;margin-bottom:6px;">📍 Guardando en:</div>
@@ -1026,7 +1128,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
       <button class="btn" onclick="rqSave()" style="flex:2;background:linear-gradient(135deg,#1B4332,#52B788);color:#fff;font-size:15px;font-weight:800;border-radius:13px;padding:14px;border:none;cursor:pointer;font-family:inherit;">✅ &nbsp;Guardar Registro</button>
     </div>
   </div>
-  <!-- PASO 5 -->
   <div id="rq-s5" style="overflow-y:auto;padding-bottom:80px;display:none;">
     <div style="padding:28px 20px;text-align:center;">
       <div class="rq-success-icon">✅</div>
@@ -1054,7 +1155,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
 const MESES=['ENE','FEB','MAR','ABR','MAY','JUN','JUL','AGO','SEP','OCT','NOV','DIC'];
 const MESES_FULL=['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
 
-// DATOS DE TENDENCIA HISTÓRICA (2021–2025)
 const TREND_DATA = {
   2021: { ing: 5800000, cos: 4320000 },
   2022: { ing: 7350000, cos: 5260000 },
@@ -1062,7 +1162,6 @@ const TREND_DATA = {
   2024: { ing: 10850000, cos: 7280000 },
   2025: { ing: 12400000, cos: 8100000 }
 };
-// Pre-calcular derivados
 Object.keys(TREND_DATA).forEach(y => {
   const d = TREND_DATA[+y];
   d.gp  = d.ing - d.cos;
@@ -1082,7 +1181,7 @@ const RUBRO_DEF={
   ovina:{n:'Ganadería Ovina',em:'🐑',s:'s-ovina'},
   porcina:{n:'Ganadería Porcina',em:'🐖',s:'s-porcina'},
   caprina:{n:'Ganadería Caprina',em:'🐐',s:'s-caprina'},
-  avicultura:{n:'Avicultura-Huevos',em:'🐔',s:'s-avicultura'},
+  avicultura:{n:'Avicultura',em:'🐔',s:'s-avicultura'},
   turismo:{n:'Turismo',em:'🏕️',s:'s-turismo'},
   forraje:{n:'Forraje-Agrícola',em:'🌾',s:'s-generic',gk:'forraje'},
   cultivos:{n:'Cultivos Anuales',em:'🌽',s:'s-generic',gk:'cultivos'},
@@ -1112,67 +1211,43 @@ let wlPrio='Media';
 let currentGenKey='forraje';
 
 // ══════════════════════════════════════════
-// GRÁFICO DE TENDENCIA — FUNCIONES
+// GRÁFICO DE TENDENCIA
 // ══════════════════════════════════════════
-
 function buildTrendSVG(selYear) {
   const years = Object.keys(TREND_DATA).map(Number).sort();
-  // Dimensiones del SVG (viewBox)
   const W=354, H=192;
   const ML=46, MR=38, MT=20, MB=30;
   const PW=W-ML-MR, PH=H-MT-MB;
-
-  // Escalas
-  const MAX_CLP = 16000000;   // $16M techo eje izquierdo
-  const MAX_PCT = 50;          // 50% techo eje derecho
-
+  const MAX_CLP = 16000000;
+  const MAX_PCT = 50;
   const xp  = i  => ML + (i / (years.length-1)) * PW;
   const yCLP = v  => MT + PH - (v / MAX_CLP) * PH;
   const yPCT = v  => MT + PH - (v / MAX_PCT) * PH;
-
   const si = years.indexOf(Number(selYear));
   let s = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" style="width:100%;display:block;">`;
-
-  // Fondo
   s += `<rect width="${W}" height="${H}" fill="#fff"/>`;
-
-  // Líneas de cuadrícula + etiquetas de ejes
   [0, 0.25, 0.5, 0.75, 1].forEach(f => {
     const gy = (MT + PH*(1-f)).toFixed(1);
-    // Línea horizontal
     s += `<line x1="${ML}" y1="${gy}" x2="${ML+PW}" y2="${gy}" stroke="${f===0?'#d0d0d0':'#f0f0f0'}" stroke-width="1"/>`;
-    // Etiqueta eje izq (CLP)
     const clpLbl = '$' + (MAX_CLP*f/1e6).toFixed(0) + 'M';
     s += `<text x="${ML-4}" y="${(MT+PH*(1-f)+3.5).toFixed(1)}" font-size="7.5" fill="#c0c0c0" text-anchor="end" font-family="-apple-system,sans-serif">${clpLbl}</text>`;
-    // Etiqueta eje der (%)
     s += `<text x="${ML+PW+4}" y="${(MT+PH*(1-f)+3.5).toFixed(1)}" font-size="7.5" fill="#90CAF9" text-anchor="start" font-family="-apple-system,sans-serif">${(MAX_PCT*f).toFixed(0)}%</text>`;
   });
-
-  // Línea del eje Y izq
   s += `<line x1="${ML}" y1="${MT}" x2="${ML}" y2="${MT+PH}" stroke="#e0e0e0" stroke-width="1"/>`;
-
-  // Resaltado columna año seleccionado
   if (si >= 0) {
     s += `<rect x="${(xp(si)-15).toFixed(1)}" y="${MT}" width="30" height="${PH}" rx="4" fill="#E8F5E9" opacity="0.85"/>`;
   }
-
-  // Área rellena entre ingresos y costos (margen visual)
   const fwdCos = years.map((y,i) => `${xp(i).toFixed(1)},${yCLP(TREND_DATA[y].cos).toFixed(1)}`);
   const revIng = [...years].reverse().map((y,i,arr) =>
     `${xp(arr.length-1-i).toFixed(1)},${yCLP(TREND_DATA[y].ing).toFixed(1)}`
   );
   s += `<polygon points="${[...fwdCos,...revIng].join(' ')}" fill="#D8F3DC" opacity="0.45"/>`;
-
-  // Líneas de datos
   const ingPts = years.map((y,i)=>`${xp(i).toFixed(1)},${yCLP(TREND_DATA[y].ing).toFixed(1)}`).join(' ');
   const cosPts = years.map((y,i)=>`${xp(i).toFixed(1)},${yCLP(TREND_DATA[y].cos).toFixed(1)}`).join(' ');
   const mbPts  = years.map((y,i)=>`${xp(i).toFixed(1)},${yPCT(TREND_DATA[y].mbp).toFixed(1)}`).join(' ');
-
   s += `<polyline points="${ingPts}" fill="none" stroke="#2D6A4F" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>`;
   s += `<polyline points="${cosPts}" fill="none" stroke="#F57C00" stroke-width="2"   stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="5,3"/>`;
   s += `<polyline points="${mbPts}"  fill="none" stroke="#1976D2" stroke-width="2"   stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="3,2"/>`;
-
-  // Puntos sobre las líneas
   years.forEach((y,i) => {
     const isSel = y === Number(selYear);
     const r  = isSel ? 5.5 : 3.5;
@@ -1181,29 +1256,20 @@ function buildTrendSVG(selYear) {
     s += `<circle cx="${xp(i).toFixed(1)}" cy="${yCLP(TREND_DATA[y].cos).toFixed(1)}" r="${r}"  fill="${isSel?'#F57C00':'#fff'}" stroke="#F57C00" stroke-width="${isSel?2:1.5}"/>`;
     s += `<circle cx="${xp(i).toFixed(1)}" cy="${yPCT(TREND_DATA[y].mbp).toFixed(1)}" r="${rM}" fill="${isSel?'#1976D2':'#fff'}" stroke="#1976D2" stroke-width="${isSel?2:1.5}"/>`;
   });
-
-  // Etiquetas eje X (años) + zonas táctiles para cambiar año
   years.forEach((y,i) => {
     const isSel = y === Number(selYear);
     s += `<text x="${xp(i).toFixed(1)}" y="${(MT+PH+18).toFixed(1)}" font-size="${isSel?10:8.5}" fill="${isSel?'#2D6A4F':'#bbb'}" text-anchor="middle" font-weight="${isSel?800:400}" font-family="-apple-system,sans-serif">${y}</text>`;
-    // Zona táctil invisible para seleccionar año con click
     s += `<rect x="${(xp(i)-18).toFixed(1)}" y="${MT}" width="36" height="${PH+20}" fill="transparent" style="cursor:pointer;" onclick="selResYear(${y})"/>`;
   });
-
-  // Callouts de valor del año seleccionado
   if (si >= 0 && TREND_DATA[Number(selYear)]) {
     const d = TREND_DATA[Number(selYear)];
     const cx = xp(si);
     const ingY = yCLP(d.ing);
     const mbY  = yPCT(d.mbp);
-    // Ajuste text-anchor según posición horizontal
     const ta = si === 0 ? 'start' : (si === years.length-1 ? 'end' : 'middle');
-    // Ingreso
     s += `<text x="${cx.toFixed(1)}" y="${(ingY-10).toFixed(1)}" font-size="10" fill="#2D6A4F" text-anchor="${ta}" font-weight="800" font-family="-apple-system,sans-serif">$${(d.ing/1e6).toFixed(1)}M</text>`;
-    // % MB
     s += `<text x="${cx.toFixed(1)}" y="${(mbY-8).toFixed(1)}"  font-size="10" fill="#1565C0" text-anchor="${ta}" font-weight="800" font-family="-apple-system,sans-serif">${d.mbp.toFixed(1)}%</text>`;
   }
-
   s += '</svg>';
   return s;
 }
@@ -1219,6 +1285,9 @@ function buildYearPills(selYear) {
   }).join('');
 }
 
+// ══════════════════════════════════════════
+// RESUMEN: buildResDetail CON MOTOR ECONÓMICO
+// ══════════════════════════════════════════
 function buildResDetail(year) {
   const d = TREND_DATA[Number(year)];
   if (!d) return `<div class="sec"><div class="al alw"><span class="al-ic">⚠️</span><div class="al-tx">No hay datos para ${year}.</div></div></div>`;
@@ -1236,6 +1305,13 @@ function buildResDetail(year) {
       ${isPos?'▲':'▼'}${Math.abs(Number(val)).toFixed(1)}${unit} vs ${Number(year)-1}
     </div>`;
   };
+
+  // Motor Económico: costos fijos del DOM
+  const cfTot=[1,2,3,4,5,6,7,8,9,10,11,12,13].reduce((a,i)=>a+getNum('cf'+i),0);
+  const mn = d.gp - cfTot;
+  const mnPct = d.ing > 0 ? (mn/d.ing*100).toFixed(1) : '—';
+  const cfPct = d.ing > 0 ? (cfTot/d.ing*100).toFixed(0) : '—';
+  const mnColor = cfTot>0 ? (mn>=0?'var(--vp)':'var(--rojo)') : '#aaa';
 
   const n = rubrosSel.length;
 
@@ -1265,6 +1341,47 @@ function buildResDetail(year) {
         </div>
       </div>
     </div>
+
+    <!-- ═══ MOTOR ECONÓMICO (NUEVO) ═══ -->
+    <div class="sec">
+      <div class="sec-t">⚙️ Motor Económico · ${year}</div>
+      <div style="background:#fff;border:2px solid var(--gb);border-radius:13px;padding:14px;">
+        <div class="me-row">
+          <span class="me-lbl">💰 Ingresos</span>
+          <span class="me-val" style="color:var(--vp);">$${(d.ing/1e6).toFixed(1)}M</span>
+          <span class="me-pct" style="color:var(--vp);">100%</span>
+        </div>
+        <div class="me-row">
+          <span class="me-lbl">− Costos directos</span>
+          <span class="me-val" style="color:#E65100;">−$${(d.cos/1e6).toFixed(1)}M</span>
+          <span class="me-pct" style="color:#E65100;">${(d.cos/d.ing*100).toFixed(0)}%</span>
+        </div>
+        <div class="me-row me-subtotal">
+          <span class="me-lbl" style="font-weight:800;color:var(--vp);">= Margen Bruto</span>
+          <span class="me-val" style="color:var(--vp);font-weight:800;">$${(d.gp/1e6).toFixed(1)}M</span>
+          <span class="me-pct" style="color:var(--vp);font-weight:800;">${d.mbp.toFixed(0)}%</span>
+        </div>
+        <div class="me-row">
+          <span class="me-lbl">− Costos fijos</span>
+          <span class="me-val" style="color:#607D8B;">${cfTot>0?'−$'+(cfTot/1e6).toFixed(1)+'M':'s/d'}</span>
+          <span class="me-pct" style="color:#607D8B;">${cfTot>0?cfPct+'%':'—'}</span>
+        </div>
+        <div class="me-row" style="border-bottom:none;">
+          <span class="me-lbl" style="font-weight:800;">= Margen Neto</span>
+          <span class="me-val" style="color:${mnColor};font-weight:800;">${cfTot>0?(mn>=0?'$':'−$')+(Math.abs(mn)/1e6).toFixed(1)+'M':'pendiente'}</span>
+          <span class="me-pct" style="color:${mnColor};font-weight:800;">${cfTot>0?mnPct+'%':'—'}</span>
+        </div>
+      </div>
+      <div class="al alw" style="margin-top:8px;">
+        <span class="al-ic">📊</span>
+        <div class="al-tx">
+          <strong>Referencia piloto BOV (n=10 predios) · ODEPA</strong>
+          MB mediana: 31% · Rango: −4% a 90% · Costos fijos medianos: 45% del ingreso · 5/10 predios con Margen Neto negativo
+        </div>
+      </div>
+    </div>
+
+    <div class="div"></div>
 
     <!-- Tabla por unidad de negocio -->
     <div class="sec">
@@ -1427,20 +1544,75 @@ function fmt(n){return '$ '+Math.round(n).toLocaleString('es-CL');}
 function fmtN(n){return Math.round(n).toLocaleString('es-CL');}
 function fmtK(n){if(Math.abs(n)>=1e6) return '$'+(n/1e6).toFixed(1)+'M';if(Math.abs(n)>=1e3) return '$'+(n/1e3).toFixed(0)+'K';return '$'+n;}
 
-// ══════════════════════
-// CÁLCULOS
-// ══════════════════════
+// ══════════════════════════════════
+// CÁLCULOS — BOVINA ACTUALIZADO
+// ══════════════════════════════════
 function cBov(){
   const ing=[1,2,3,4,5,6,7,8,9].reduce((a,i)=>a+getNum('bi'+i),0);
   const cos=[1,2,3,4,5,6,7,8,9].reduce((a,i)=>a+getNum('bc'+i),0);
-  const gp=ing-cos;const gpm=ing>0?(gp/ing*100).toFixed(1):0;
-  setTxt('b-ti',fmt(ing));setTxt('b-tc',fmt(cos));setTxt('b-gp',fmt(gp));setTxt('b-gpm','% MB: '+gpm+'%');
+  const gp=ing-cos;
+  const gpm=ing>0?(gp/ing*100).toFixed(1):0;
+  setTxt('b-ti',fmt(ing));
+  setTxt('b-tc',fmt(cos));
+  setTxt('b-gp',fmt(gp));
+  setTxt('b-gpm','% MB: '+gpm+'%');
+
+  // NUEVO: Margen Neto = MB - Costos Fijos prorrateados
+  const cfTot=[1,2,3,4,5,6,7,8,9,10,11,12,13].reduce((a,i)=>a+getNum('cf'+i),0);
+  const nRub=Math.max(rubrosSel.length,1);
+  const cfProrrat=cfTot/nRub;
+  const mn=gp-cfProrrat;
+  const mnEl=document.getElementById('b-mn');
+  const mnsEl=document.getElementById('b-mns');
+  const mnKc=document.getElementById('bk-mn-kc');
+  if(mnEl) mnEl.textContent=cfTot>0?fmt(mn):'—';
+  if(mnsEl) mnsEl.textContent=cfTot>0?
+    'MB ('+fmt(gp)+') − CF prorrat. ('+fmt(cfProrrat)+')':
+    'Ingresa costos fijos en 🏠 Costos Fijos para calcular';
+  // Colorear tarjeta KPI de Margen Neto
+  if(mnKc&&cfTot>0){
+    mnKc.style.background=mn>=0?'#E8F5E9':'#FFEBEE';
+    mnKc.style.border=mn>=0?'1px solid #52B788':'1px solid #FFCDD2';
+    const mnKpiEl=document.getElementById('bk-mn-kpi');
+    if(mnKpiEl){mnKpiEl.style.color=mn>=0?'var(--vp)':'var(--rojo)';mnKpiEl.textContent=fmt(mn);}
+  }
+  // Actualizar % MB en KPI
+  setTxt('bk-mbpct',ing>0?gpm+'%':'—');
+  // Actualizar header home
   document.getElementById('h-ing').textContent=ing>0?fmtK(ing):'—';
   document.getElementById('h-gp').textContent=ing>0?gpm+'%':'—';
   document.getElementById('h-cos').textContent=cos>0?fmtK(cos):'—';
 }
-function cBovKPI(){const ha=getNum('bk-ha');const ing=[1,2,3,4,5,6,7,8,9].reduce((a,i)=>a+getNum('bi'+i),0);const gp=ing-[1,2,3,4,5,6,7,8,9].reduce((a,i)=>a+getNum('bc'+i),0);setTxt('bk-gpha',ha>0?fmt(gp/ha)+' CLP/ha':'—');setTxt('bk-itha',ha>0?fmt(ing/ha)+' CLP/ha':'—');}
-function cBovEq(){const u=getNum('be-u'),p=getNum('be-p');const cos=[1,2,3,4,5,6,7,8,9].reduce((a,i)=>a+getNum('bc'+i),0);const cu=u>0?cos/u:0;setTxt('be-cu',u>0?fmtN(cu)+' CLP/u':'—');setTxt('be-m',u>0&&p>0?fmtN(p-cu)+' CLP/u':'—');}
+
+function cBovKPI(){
+  const ha=getNum('bk-ha');
+  const ing=[1,2,3,4,5,6,7,8,9].reduce((a,i)=>a+getNum('bi'+i),0);
+  const cos=[1,2,3,4,5,6,7,8,9].reduce((a,i)=>a+getNum('bc'+i),0);
+  const gp=ing-cos;
+  const gpm=ing>0?(gp/ing*100).toFixed(1):0;
+  setTxt('bk-gpha',ha>0?fmt(gp/ha)+' CLP/ha':'—');
+  setTxt('bk-itha',ha>0?fmt(ing/ha)+' CLP/ha':'—');
+  setTxt('bk-gpha-kpi',ha>0?fmtK(Math.round(gp/ha))+'/ha':'—');
+  setTxt('bk-mbpct',ing>0?gpm+'%':'—');
+  // Margen Neto en KPI
+  const cfTot=[1,2,3,4,5,6,7,8,9,10,11,12,13].reduce((a,i)=>a+getNum('cf'+i),0);
+  const nRub=Math.max(rubrosSel.length,1);
+  const mn=gp-cfTot/nRub;
+  const mnKpiEl=document.getElementById('bk-mn-kpi');
+  if(mnKpiEl) mnKpiEl.textContent=cfTot>0?fmt(mn):'—';
+  // ROI
+  const cap=getNum('bcap');
+  setTxt('broic2',cap>0?(gp/cap*100).toFixed(1)+'%':'—');
+}
+
+function cBovEq(){
+  const u=getNum('be-u'),p=getNum('be-p');
+  const cos=[1,2,3,4,5,6,7,8,9].reduce((a,i)=>a+getNum('bc'+i),0);
+  const cu=u>0?cos/u:0;
+  setTxt('be-cu',u>0?fmtN(cu)+' CLP/u':'—');
+  setTxt('be-m',u>0&&p>0?fmtN(p-cu)+' CLP/u':'—');
+}
+
 function cBovCV(){
   const ck=getNum('bcv-ck'),cc=getNum('bcv-cc'),vk=getNum('bcv-vk'),vc=getNum('bcv-vc'),dias=getNum('bcv-d');
   const ingVen=[1,2,3,4,5,6,7,8,9].reduce((a,i)=>a+getNum('bi'+i),0);
@@ -1451,7 +1623,27 @@ function cBovCV(){
   setTxt('bcv-pc',ppco>0?fmtN(ppco)+' CLP/kg':'—');setTxt('bcv-pv',ppve>0?fmtN(ppve)+' CLP/kg':'—');
   setTxt('bcv-sp',ppco>0&&ppve>0?fmtN(spr)+' CLP/kg':'—');setTxt('bcv-gdp',gdp>0?gdp.toFixed(3)+' kg/día':'—');
   setTxt('broic',cap>0?(gp/cap*100).toFixed(1)+'%':'—');
+  setTxt('broic2',cap>0?(gp/cap*100).toFixed(1)+'%':'—');
 }
+
+// NUEVO: Capital Ecológico
+function cBovEco(){
+  const dias=getNum('bk-dias-desc');
+  const cob=getNum('bk-cobertura');
+  const mo=getNum('bk-mo');
+  const resEl=document.getElementById('bk-eco-result');
+  if(!resEl) return;
+  const filled=[dias,cob,mo].filter(v=>v>0).length;
+  if(filled===0){resEl.style.display='none';return;}
+  resEl.style.display='block';
+  let partes=[];let ok=0;
+  if(dias>0){const bien=dias>=60;partes.push((bien?'✅':'⚠️')+' Descanso: '+dias+'d'+(bien?'':' (meta ≥60)'));if(bien)ok++;}
+  if(cob>0){const bien=cob>=70;partes.push((bien?'✅':'⚠️')+' Cobertura: '+cob+'%'+(bien?'':' (meta ≥70%)'));if(bien)ok++;}
+  if(mo>0){partes.push('🌍 MO: '+mo+'% (anual)');ok++;}
+  setTxt('bk-eco-val',partes.join(' · ')||'—');
+  setTxt('bk-eco-sub',filled+'/3 indicadores · '+ok+'/'+filled+' en meta');
+}
+
 function cUABov(){
   const tot=calcUAGeneric('bov-ua-body','bov');
   const ha=parseFloat(document.getElementById('bov-ha')?.value||1);
@@ -1472,7 +1664,7 @@ function cTurEq(){const u=getNum('tu-uni'),p=getNum('tu-pvu');const cos=[1,2,3,4
 function cGen(){const cfg=GENERIC_CFG[currentGenKey];if(!cfg) return;let ing=0;for(let i=1;i<=cfg.i.length;i++) ing+=getNum('gen-i'+i);let cos=0;for(let i=1;i<=cfg.c.length;i++) cos+=getNum('gen-c'+i);const gp=ing-cos;const gpm=ing>0?(gp/ing*100).toFixed(1):0;setTxt('gen-ti',fmt(ing));setTxt('gen-tc',fmt(cos));setTxt('gen-gp',fmt(gp));setTxt('gen-gpm','% MB: '+gpm+'%');}
 function cGenInd(){const ha=getNum('gen-ha');const cfg=GENERIC_CFG[currentGenKey];let gp=0;if(cfg){let ing=0;for(let i=1;i<=cfg.i.length;i++) ing+=getNum('gen-i'+i);let cos=0;for(let i=1;i<=cfg.c.length;i++) cos+=getNum('gen-c'+i);gp=ing-cos;}setTxt('gen-gpha',ha>0?fmt(gp/ha)+' CLP/ha':'—');}
 function cGenEq(){const u=getNum('gen-eu'),p=getNum('gen-ep');const cfg=GENERIC_CFG[currentGenKey];let cos=0;if(cfg) for(let i=1;i<=cfg.c.length;i++) cos+=getNum('gen-c'+i);const cu=u>0?cos/u:0;setTxt('gen-ecu',u>0?fmtN(cu)+' CLP/u':'—');setTxt('gen-em',u>0&&p>0?fmtN(p-cu)+' CLP/u':'—');}
-function cCF(){let tot=0;for(let i=1;i<=13;i++) tot+=getNum('cf'+i);setTxt('cf-tot',fmt(tot));}
+function cCF(){let tot=0;for(let i=1;i<=13;i++) tot+=getNum('cf'+i);setTxt('cf-tot',fmt(tot));cBov();}
 function cCmp(){
   const f=(ids)=>ids.reduce((a,id)=>a+getNum(id),0);
   const haC=getNum('cmp-ha-c'),ingC=f(['cmp-ic','cmp-dc','cmp-sc']),cdC=f(['cmp-moc','cmp-mac','cmp-sacc','cmp-alc','cmp-prc']),ciC=f(['cmp-adc','cmp-repc']),kgC=getNum('cmp-kgc'),vcC=getNum('cmp-vc');
@@ -1629,7 +1821,15 @@ document.addEventListener('DOMContentLoaded',()=>{
   buildUATable('bov-ua-body',UA_BOV,'bov');buildUATable('ovi-ua-body',UA_OVI,'ovi');buildUATable('por-ua-body',UA_POR,'por');buildUATable('cap-ua-body',UA_CAP,'cap');
   cBov();cCF();updateHome();autoFillMercRef();
 
-  ['bov-cos','bov-ua','bov-kpi','ovi-cos','ovi-ua','por-cos','por-ua','cap-cos','cap-ua','avi-cos','avi-ind','tur-cos','tur-ind','gen-cos','gen-ind'].forEach(id=>{const el=document.getElementById(id);if(el) el.style.display='none';});
+  // ACTUALIZADO: bov-ing oculto por defecto (KPIs es la primera pestaña)
+  ['bov-ing','bov-cos','bov-ua',
+   'ovi-cos','ovi-ua',
+   'por-cos','por-ua',
+   'cap-cos','cap-ua',
+   'avi-cos','avi-ind',
+   'tur-cos','tur-ind',
+   'gen-cos','gen-ind'
+  ].forEach(id=>{const el=document.getElementById(id);if(el) el.style.display='none';});
 
   const fechaEl=document.getElementById('rq-fecha');if(fechaEl) fechaEl.addEventListener('change',rqFechaPreview);
 
